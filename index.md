@@ -28,8 +28,8 @@
 - [Module 13 - Logout](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2013%20-%20Logout/logout.md)
 
 #### VOLUME 3 — MAIN WORKSPACE
-- [Dynamic Content Area](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Dynamic%20Content%20Area/dynamic_content_area.md)
-- [Breadcrumb](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Breadcrumb/breadcrumb.md)
+- [1. Dynamic Content Area](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Dynamic%20Content%20Area/dynamic_content_area.md)
+- [2. Breadcrumb System](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Breadcrumb/breadcrumb.md)
 - [Page Header](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Page%20Header/page_header.md)
 - [Action Toolbar](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Action%20Toolbar/action_toolbar.md)
 - [Filter Bar](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Filter%20Bar/filter_bar.md)
