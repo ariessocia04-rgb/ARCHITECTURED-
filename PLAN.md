@@ -2,7 +2,28 @@
 
 ## APPLICATION: TECHNICIAN REPAIR SAAS
 
-## NAVIGATION FLOW
+## 1. COMPONENT USAGE MATRIX
+
+| Module | Header | Sidebar | Breadcrumb | Action Toolbar | Filter Bar | Search Result | Data Table | Cards | Timeline | Forms | Modal | Drawer | Toast | Footer |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Dashboard | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Repair Queue | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Job Order | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Diagnosis | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Quotation | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Repair | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Parts | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Testing | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Completed | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Reports | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Notification | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Profile | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+---
+
+## 2. NAVIGATION FLOW
+
+### PRIMARY NAVIGATION (Linear Workflow)
 ```text
 Login
 ↓
@@ -25,19 +46,43 @@ Testing
 Completed
 ↓
 Reports
-↓
-Notification
-↓
-Profile
-↓
-Logout
 ```
+
+### SECONDARY NAVIGATION (Global Actions)
+- **Any Page** → Global Search
+- **Any Page** → QR Scanner
+- **Any Page** → Notifications (Center)
+- **Any Page** → Profile (Settings)
+- **Any Page** → Logout
 
 ---
 
-## VOLUME 1 — HEADER
+## 3. USER JOURNEY: END-TO-END TECHNICIAN WORKFLOW
+
+1. **AUTHENTICATION**: Technician logs into the Repair SaaS.
+2. **OVERVIEW**: Checks Dashboard for KPIs and high-priority alerts.
+3. **AQUISITION**: Visits Repair Queue to accept unassigned jobs or view personal queue.
+4. **INSPECTION**: Opens a Job Order to verify device identity and condition.
+5. **ASSESSMENT**: Proceeds to Diagnosis System to identify faults and recommend repairs.
+6. **COSTING**: Generates a Quotation for parts and labor for customer approval.
+7. **EXECUTION**: Starts Repair System once approved; reserves and installs parts.
+8. **INVENTORY**: Manages parts usage and stock levels in the Parts System.
+9. **VERIFICATION**: Submits repaired device to Testing System for functional validation.
+10. **FINALIZATION**: Marks as Completed; prepares for release, takes payment, and triggers warranty.
+11. **ANALYSIS**: Reviews personal and branch productivity via Reports Module.
+
+---
+
+## 4. VOLUME 1 — HEADER ARCHITECTURE
 
 ### HEADER MODULE: Profile
+```text
+Screen Name: Profile
+Purpose: Provide global utility and context in the top navigation bar.
+Primary User: All Authenticated Users
+Entry Point: Persistent UI Header
+```
+
 ### PROFILE ARCHITECTURE
 TECHNICIAN APPLICATION
 └── HEADER
@@ -363,6 +408,13 @@ TECHNICIAN APPLICATION
 
 ---
 ### HEADER MODULE: Shift
+```text
+Screen Name: Shift
+Purpose: Provide global utility and context in the top navigation bar.
+Primary User: All Authenticated Users
+Entry Point: Persistent UI Header
+```
+
 ### 1. SHIFT ARCHITECTURE
 TECHNICIAN APPLICATION
 └── HEADER
@@ -1777,6 +1829,13 @@ SHIFT — PART 10 (FINAL)
 
 ---
 ### HEADER MODULE: Notification
+```text
+Screen Name: Notification
+Purpose: Provide global utility and context in the top navigation bar.
+Primary User: All Authenticated Users
+Entry Point: Persistent UI Header
+```
+
 ### 13. NOTIFICATION SYSTEM ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -2058,6 +2117,13 @@ NOTIFICATION SYSTEM MODULE COMPLETE (100%)
 
 ---
 ### HEADER MODULE: Search
+```text
+Screen Name: Search
+Purpose: Provide global utility and context in the top navigation bar.
+Primary User: All Authenticated Users
+Entry Point: Persistent UI Header
+```
+
 ### SEARCH ARCHITECTURE
 TECHNICIAN APPLICATION
 └── HEADER
@@ -2341,6 +2407,13 @@ TECHNICIAN APPLICATION
 
 ---
 ### HEADER MODULE: QR Scanner
+```text
+Screen Name: QR Scanner
+Purpose: Provide global utility and context in the top navigation bar.
+Primary User: All Authenticated Users
+Entry Point: Persistent UI Header
+```
+
 ### QR SCANNER ARCHITECTURE
 TECHNICIAN APPLICATION
 └── HEADER
@@ -2792,13 +2865,40 @@ TECHNICIAN APPLICATION
 
 ---
 
-## VOLUME 2 — SIDEBAR
+## 5. VOLUME 2 — SIDEBAR & MODULE ARCHITECTURE
 
 ## SIDEBAR MODULE: Module 1 - Dashboard
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Login | **NEXT PAGE**: Repair Queue
+### SCREEN DEFINITION
+- **Screen Name**: Dashboard System
+- **Purpose**: 100% Detailed Enterprise Architecture for Dashboard operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Dashboard workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Repair Queue, Job Order, Diagnosis, Reports
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Login
+- **Current Screen**: Dashboard
+- **Next Possible Screens**: Repair Queue, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Login ↓ Dashboard ↓ Repair Queue
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Dashboard records with search, filter, and sorting.
+- **Modals**: Create Dashboard, Edit Dashboard, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 TECHNICIAN APPLICATION
 └── SIDEBAR
     └── DASHBOARD SYSTEM
@@ -3153,9 +3253,36 @@ TECHNICIAN APPLICATION
 ---
 ## SIDEBAR MODULE: Module 2 - Repair Queue
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Dashboard | **NEXT PAGE**: Job Order
+### SCREEN DEFINITION
+- **Screen Name**: Repair Queue System
+- **Purpose**: 100% Detailed Enterprise Architecture for Repair Queue operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Repair Queue workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Job Order, Dashboard
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Dashboard
+- **Current Screen**: Repair Queue
+- **Next Possible Screens**: Job Order, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Dashboard ↓ Repair Queue ↓ Job Order
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Repair Queue records with search, filter, and sorting.
+- **Modals**: Create Repair Queue, Edit Repair Queue, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 # REPAIR QUEUE SYSTEM
 
 TECHNICIAN APPLICATION
@@ -3487,9 +3614,36 @@ TECHNICIAN APPLICATION
 ---
 ## SIDEBAR MODULE: Module 3 - Job Order
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Repair Queue | **NEXT PAGE**: Diagnosis
+### SCREEN DEFINITION
+- **Screen Name**: Job Order System
+- **Purpose**: 100% Detailed Enterprise Architecture for Job Order operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Job Order workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Diagnosis, Repair Queue
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Repair Queue
+- **Current Screen**: Job Order
+- **Next Possible Screens**: Diagnosis, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Repair Queue ↓ Job Order ↓ Diagnosis
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Job Order records with search, filter, and sorting.
+- **Modals**: Create Job Order, Edit Job Order, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 ### 4. JOB ORDERS ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -4046,9 +4200,36 @@ TECHNICIAN APPLICATION └── SIDEBAR └── JOB ORDERS │ ├── 13. 
 ---
 ## SIDEBAR MODULE: Module 4 - Diagnosis
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Job Order | **NEXT PAGE**: Quotation
+### SCREEN DEFINITION
+- **Screen Name**: Diagnosis System
+- **Purpose**: 100% Detailed Enterprise Architecture for Diagnosis operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Diagnosis workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Quotation, Job Order
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Job Order
+- **Current Screen**: Diagnosis
+- **Next Possible Screens**: Quotation, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Job Order ↓ Diagnosis ↓ Quotation
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Diagnosis records with search, filter, and sorting.
+- **Modals**: Create Diagnosis, Edit Diagnosis, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 # DIAGNOSIS SYSTEM
 
 TECHNICIAN APPLICATION
@@ -4403,9 +4584,36 @@ TECHNICIAN APPLICATION
 ---
 ## SIDEBAR MODULE: Module 5 - Quotation
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Diagnosis | **NEXT PAGE**: Repair
+### SCREEN DEFINITION
+- **Screen Name**: Quotation System
+- **Purpose**: 100% Detailed Enterprise Architecture for Quotation operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Quotation workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Repair, Diagnosis
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Diagnosis
+- **Current Screen**: Quotation
+- **Next Possible Screens**: Repair, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Diagnosis ↓ Quotation ↓ Repair
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Quotation records with search, filter, and sorting.
+- **Modals**: Create Quotation, Edit Quotation, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 # QUOTATION SYSTEM
 
 TECHNICIAN APPLICATION
@@ -4760,9 +4968,36 @@ TECHNICIAN APPLICATION
 ---
 ## SIDEBAR MODULE: Module 6 - Repair
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Quotation | **NEXT PAGE**: Parts
+### SCREEN DEFINITION
+- **Screen Name**: Repair System
+- **Purpose**: 100% Detailed Enterprise Architecture for Repair operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Repair workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Testing, Quotation
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Quotation
+- **Current Screen**: Repair
+- **Next Possible Screens**: Parts, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Quotation ↓ Repair ↓ Parts
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Repair records with search, filter, and sorting.
+- **Modals**: Create Repair, Edit Repair, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 # REPAIR SYSTEM
 
 TECHNICIAN APPLICATION
@@ -5117,9 +5352,36 @@ TECHNICIAN APPLICATION
 ---
 ## SIDEBAR MODULE: Module 7 - Parts
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Repair | **NEXT PAGE**: Testing
+### SCREEN DEFINITION
+- **Screen Name**: Parts System
+- **Purpose**: 100% Detailed Enterprise Architecture for Parts operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Parts workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Repair, Reports
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Repair
+- **Current Screen**: Parts
+- **Next Possible Screens**: Testing, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Repair ↓ Parts ↓ Testing
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Parts records with search, filter, and sorting.
+- **Modals**: Create Parts, Edit Parts, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 ### 8. PARTS ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -5747,9 +6009,36 @@ PARTS MODULE COMPLETE (100%)
 ---
 ## SIDEBAR MODULE: Module 8 - Testing
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Parts | **NEXT PAGE**: Completed
+### SCREEN DEFINITION
+- **Screen Name**: Testing System
+- **Purpose**: 100% Detailed Enterprise Architecture for Testing operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Testing workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Completed, Repair (Rework)
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Parts
+- **Current Screen**: Testing
+- **Next Possible Screens**: Completed, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Parts ↓ Testing ↓ Completed
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Testing records with search, filter, and sorting.
+- **Modals**: Create Testing, Edit Testing, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 ### 9. TESTING ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -6315,9 +6604,36 @@ TESTING MODULE COMPLETE (100%)
 ---
 ## SIDEBAR MODULE: Module 9 - Completed
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Testing | **NEXT PAGE**: Reports
+### SCREEN DEFINITION
+- **Screen Name**: Completed System
+- **Purpose**: 100% Detailed Enterprise Architecture for Completed operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Completed workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Reports, Dashboard
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Testing
+- **Current Screen**: Completed
+- **Next Possible Screens**: Reports, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Testing ↓ Completed ↓ Reports
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Completed records with search, filter, and sorting.
+- **Modals**: Create Completed, Edit Completed, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 ### 10. COMPLETED ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -6807,9 +7123,36 @@ COMPLETED MODULE COMPLETE (100%)
 ---
 ## SIDEBAR MODULE: Module 10 - Reports
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Completed | **NEXT PAGE**: Notification
+### SCREEN DEFINITION
+- **Screen Name**: Reports System
+- **Purpose**: 100% Detailed Enterprise Architecture for Reports operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Reports workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Dashboard, Sidebar Nav
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Completed
+- **Current Screen**: Reports
+- **Next Possible Screens**: Notification, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Completed ↓ Reports ↓ Notification
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Reports records with search, filter, and sorting.
+- **Modals**: Create Reports, Edit Reports, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 ### 11. REPORTS ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -7145,9 +7488,36 @@ REPORTS MODULE COMPLETE (100%)
 ---
 ## SIDEBAR MODULE: Module 11 - Notification
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Reports | **NEXT PAGE**: Profile
+### SCREEN DEFINITION
+- **Screen Name**: Notification System
+- **Purpose**: 100% Detailed Enterprise Architecture for Notification operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Notification workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Sidebar Navigation
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Reports
+- **Current Screen**: Notification
+- **Next Possible Screens**: Profile, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Reports ↓ Notification ↓ Profile
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Notification records with search, filter, and sorting.
+- **Modals**: Create Notification, Edit Notification, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 ### 13. NOTIFICATION SYSTEM ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -7430,9 +7800,36 @@ NOTIFICATION SYSTEM MODULE COMPLETE (100%)
 ---
 ## SIDEBAR MODULE: Module 12 - Profile
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Notification | **NEXT PAGE**: Logout
+### SCREEN DEFINITION
+- **Screen Name**: Profile System
+- **Purpose**: 100% Detailed Enterprise Architecture for Profile operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Profile workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Sidebar Navigation
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Notification
+- **Current Screen**: Profile
+- **Next Possible Screens**: Logout, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Notification ↓ Profile ↓ Logout
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Profile records with search, filter, and sorting.
+- **Modals**: Create Profile, Edit Profile, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 ### 14. PROFILE SYSTEM ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -7755,9 +8152,36 @@ TECHNICIAN APPLICATION
 ---
 ## SIDEBAR MODULE: Module 13 - Logout
 
-**ENTRY POINT**: Sidebar Navigation
-**PREVIOUS PAGE**: Profile | **NEXT PAGE**: Login
+### SCREEN DEFINITION
+- **Screen Name**: Logout System
+- **Purpose**: 100% Detailed Enterprise Architecture for Logout operations.
+- **Primary User**: Technician / Supervisor
+- **Primary Goal**: Management and execution of Logout workflows.
+- **Entry Point**: Sidebar Navigation
+- **Exit Points**: Sidebar Navigation
 
+### SCREEN RELATIONSHIPS
+- **Previous Screen**: Profile
+- **Current Screen**: Logout
+- **Next Possible Screens**: Login, Sidebar Nav, Header Utilities
+- **Navigation Flow**: Profile ↓ Logout ↓ Login
+- **Return Navigation**: Breadcrumb / Back Action
+
+### UI COMPONENT MAPPING
+This page uses the following Volume 3 Workspace components:
+- **Structure**: Header, Sidebar, Dynamic Content Area, Breadcrumb, Page Header, Footer
+- **Actions**: Action Toolbar, Filter Bar, Search Result
+- **Display**: Cards, Data Table, Timeline
+- **Overlays**: Modal, Drawer, Toast Notifications
+- **States**: Loading State, Empty State, Error State
+
+### ENTERPRISE USAGE
+- **Data Table**: Used for listing Logout records with search, filter, and sorting.
+- **Modals**: Create Logout, Edit Logout, Delete Confirmation, Bulk Actions.
+- **Drawers**: Quick view of details, Timeline exploration, Filter panel.
+- **Workspace Flow**: Loading → (Data | Empty | Error) → Search/Filter → Action → Overlay → Toast.
+
+### ARCHITECTURE TREE
 ### 17. LOGOUT SYSTEM ARCHITECTURE
 TECHNICIAN APPLICATION
 └── SIDEBAR
@@ -7871,9 +8295,15 @@ TECHNICIAN APPLICATION
 
 ---
 
-## VOLUME 3 — MAIN WORKSPACE COMPONENTS
+## 6. VOLUME 3 — MAIN WORKSPACE COMPONENT DEFINITIONS
 
 ### WORKSPACE COMPONENT: Dynamic Content Area
+```text
+Component Name: Dynamic Content Area
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 1. Dynamic Content Area
 
 TECHNICIAN APPLICATION
@@ -7947,6 +8377,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Breadcrumb
+```text
+Component Name: Breadcrumb
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 2. Breadcrumb System
 
 TECHNICIAN APPLICATION
@@ -8007,6 +8443,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Page Header
+```text
+Component Name: Page Header
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 3. Page Header
 
 TECHNICIAN APPLICATION
@@ -8082,6 +8524,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Action Toolbar
+```text
+Component Name: Action Toolbar
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 4. Action Toolbar
 
 TECHNICIAN APPLICATION
@@ -8166,6 +8614,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Filter Bar
+```text
+Component Name: Filter Bar
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 5. Filter Bar
 
 TECHNICIAN APPLICATION
@@ -8256,6 +8710,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Search Result
+```text
+Component Name: Search Result
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 6. Search Result
 
 TECHNICIAN APPLICATION
@@ -8342,6 +8802,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Data Table
+```text
+Component Name: Data Table
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 7. Data Table
 
 TECHNICIAN APPLICATION
@@ -8631,6 +9097,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Cards
+```text
+Component Name: Cards
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 8. Cards
 
 TECHNICIAN APPLICATION
@@ -8769,6 +9241,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Timeline
+```text
+Component Name: Timeline
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 9. Timeline
 
 TECHNICIAN APPLICATION
@@ -8900,6 +9378,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Forms
+```text
+Component Name: Forms
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 10. Forms
 
 TECHNICIAN APPLICATION
@@ -9055,6 +9539,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Modal
+```text
+Component Name: Modal
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 11. Modal
 
 TECHNICIAN APPLICATION
@@ -9191,6 +9681,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Drawer
+```text
+Component Name: Drawer
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 12. Drawer
 
 TECHNICIAN APPLICATION
@@ -9332,6 +9828,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Toast Notifications
+```text
+Component Name: Toast Notifications
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 13. Toast Notifications
 
 TECHNICIAN APPLICATION
@@ -9563,6 +10065,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Pagination
+```text
+Component Name: Pagination
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 14. Pagination
 
 TECHNICIAN APPLICATION
@@ -9676,6 +10184,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Loading State
+```text
+Component Name: Loading State
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 15. Loading State
 
 TECHNICIAN APPLICATION
@@ -9795,6 +10309,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Empty State
+```text
+Component Name: Empty State
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 16. Empty State
 
 TECHNICIAN APPLICATION
@@ -9910,6 +10430,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Error State
+```text
+Component Name: Error State
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 17. Error State
 
 TECHNICIAN APPLICATION
@@ -10042,6 +10568,12 @@ TECHNICIAN APPLICATION
 
 ---
 ### WORKSPACE COMPONENT: Footer
+```text
+Component Name: Footer
+Purpose: Reusable enterprise UI component for the Main Workspace.
+Lifecycle: Triggered by user action or data state change.
+```
+
 # 18. Footer
 
 TECHNICIAN APPLICATION
@@ -10160,16 +10692,3 @@ TECHNICIAN APPLICATION
         └── Footer Audit Logs
 
 ---
-
-## END-TO-END USER JOURNEY
-1. **Login**: User authenticates.
-2. **Dashboard**: User views KPI summary and active workspace.
-3. **Repair Queue**: User views assigned and available jobs.
-4. **Job Order**: User creates or manages detailed repair records.
-5. **Diagnosis**: Technician performs device inspection and fault identification.
-6. **Quotation**: System generates costs for parts and labor for customer approval.
-7. **Repair**: Technician executes the repair procedure and installs parts.
-8. **Parts**: Inventory is updated and managed.
-9. **Testing**: Final functional tests are performed before release.
-10. **Completed**: Device is prepared for pickup, payment is verified, and warranty activated.
-11. **Reports**: Management reviews productivity and revenue analytics.
