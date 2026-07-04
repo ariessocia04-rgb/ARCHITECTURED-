@@ -1,18 +1,25 @@
-# TECHNICIAN REPAIR SAAS ARCHITECTURE — MASTER INDEX (100% COMPLETE)
+# ENTERPRISE REPAIR OPERATING SYSTEM (ROS) — MASTER INDEX
 
-## APPLICATIONS
+## 1. MASTER ARCHITECTURE
+- **[Repair Operating System (ROS) Master Plan](Repair%20Operating%20System%20(ROS)/ros_master_architecture.md)**
 
-### 1. TECHNICIAN APPLICATION
+## 2. CORE PLATFORM (Designing)
+- [Authentication Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Authentication%20Engine/)
+- [Permission Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Permission%20Engine/)
+- [Workspace Router](Repair%20Operating%20System%20(ROS)/Core%20Platform/Workspace%20Router/)
+- *(See Master Plan for full engine list)*
+
+## 3. SHARED BUSINESS MODULES (Technician Active)
 - **[Technician Application Master Index](Applications/Technician%20Application/INDEX.md)**
 
-#### VOLUME 1 — HEADER
+### VOLUME 1 — HEADER
 - [Profile](Applications/Technician%20Application/Volume%201%20-%20Header/Profile/profile.md)
 - [Shift](Applications/Technician%20Application/Volume%201%20-%20Header/Shift/shift.md)
 - [Notification](Applications/Technician%20Application/Volume%201%20-%20Header/Notification/notification.md)
 - [Search](Applications/Technician%20Application/Volume%201%20-%20Header/Search/search.md)
 - [QR Scanner](Applications/Technician%20Application/Volume%201%20-%20Header/QR%20Scanner/qr_scanner.md)
 
-#### VOLUME 2 — SIDEBAR
+### VOLUME 2 — SIDEBAR
 - [Module 1 - Dashboard](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%201%20-%20Dashboard/dashboard.md)
 - [Module 2 - Repair Queue](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%202%20-%20Repair%20Queue/repair_queue.md)
 - [Module 3 - Job Order](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%203%20-%20Job%20Order/job_order.md)
@@ -27,33 +34,37 @@
 - [Module 12 - Profile](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
 - [Module 13 - Logout](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2013%20-%20Logout/logout.md)
 
-#### VOLUME 3 — MAIN WORKSPACE
-- [1. Dynamic Content Area](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Dynamic%20Content%20Area/dynamic_content_area.md)
-- [2. Breadcrumb System](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Breadcrumb/breadcrumb.md)
-- [3. Page Header](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Page%20Header/page_header.md)
-- [4. Action Toolbar](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Action%20Toolbar/action_toolbar.md)
-- [5. Filter Bar](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Filter%20Bar/filter_bar.md)
-- [6. Search Result](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Search%20Result/search_result.md)
-- [7. Data Table](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Data%20Table/data_table.md)
-- [8. Cards](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Cards/cards.md)
-- [9. Timeline](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Timeline/timeline.md)
-- [10. Forms](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Forms/forms.md)
-- [11. Modal](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Modal/modal.md)
-- [12. Drawer](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Drawer/drawer.md)
-- [13. Toast Notifications](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Toast%20Notifications/toast_notifications.md)
-- [14. Pagination](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Pagination/pagination.md)
-- [15. Loading State](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Loading%20State/loading_state.md)
-- [16. Empty State](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Empty%20State/empty_state.md)
-- [17. Error State](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Error%20State/error_state.md)
-- [18. Footer](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Footer/footer.md)
+### VOLUME 3 — MAIN WORKSPACE
+- [Dynamic Content Area](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Dynamic%20Content%20Area/dynamic_content_area.md)
+- [Breadcrumb System](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Breadcrumb/breadcrumb.md)
+- [Page Header](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Page%20Header/page_header.md)
+- [Action Toolbar](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Action%20Toolbar/action_toolbar.md)
+- [Filter Bar](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Filter%20Bar/filter_bar.md)
+- [Search Result](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Search%20Result/search_result.md)
+- [Data Table](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Data%20Table/data_table.md)
+- [Cards](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Cards/cards.md)
+- [Timeline](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Timeline/timeline.md)
+- [Forms](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Forms/forms.md)
+- [Modal](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Modal/modal.md)
+- [Drawer](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Drawer/drawer.md)
+- [Toast Notifications](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Toast%20Notifications/toast_notifications.md)
+- [Pagination](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Pagination/pagination.md)
+- [Loading State](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Loading%20State/loading_state.md)
+- [Empty State](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Empty%20State/empty_state.md)
+- [Error State](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Error%20State/error_state.md)
+- [Footer](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Footer/footer.md)
 
 ---
 
-### 2. FRONT DESK APPLICATION
-- [Reserved](Applications/Front%20Desk%20Application/README.md)
+## 4. WORKSPACES
+- [Owner Workspace (Proposed)](Repair%20Operating%20System%20(ROS)/Workspaces/Owner%20Workspace/)
+- [Technician Workspace (Active)](Repair%20Operating%20System%20(ROS)/Workspaces/Technician%20Workspace/)
+- [Front Desk Workspace (Reserved)](Repair%20Operating%20System%20(ROS)/Workspaces/Front%20Desk%20Workspace/)
+- [Customer Portal (Reserved)](Repair%20Operating%20System%20(ROS)/Workspaces/Customer%20Portal/)
 
-### 3. OWNER APPLICATION
-- [Reserved](Applications/Owner%20Application/README.md)
+---
 
-### 4. CUSTOMER PORTAL
-- [Reserved](Applications/Customer%20Portal/README.md)
+## 5. REPORTS & VALIDATION
+- [Master Architecture Audit](MASTER_AUDIT.md)
+- [Final Content Audit](FINAL_ARCHITECTURE_VERIFICATION.md)
+- [Baseline UI Plan](PLAN.md)

@@ -1,4 +1,9 @@
-# TECHNICIAN APPLICATION — MASTER INDEX
+# TECHNICIAN APPLICATION — MASTER INDEX (FROZEN BASELINE)
+
+## ROLE IN ROS
+This application now serves as the **Shared Business Module Baseline** for the Repair Operating System (ROS). It provides the core features for all workspaces.
+
+---
 
 ## VOLUME 1 — HEADER
 - [Profile](Volume%201%20-%20Header/Profile/profile.md)
