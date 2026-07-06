@@ -2,7 +2,7 @@
 
 ## 1. MASTER ARCHITECTURE
 - **[Repair Operating System (ROS) Master Plan](Repair%20Operating%20System%20(ROS)/ros_master_architecture.md)**
-- **[Official Master Project Plan (1PLAN)](1PLAN.md)**
+- **[Official Master Architecture Workflow Plan (1PLAN)](1PLAN.md)**
 
 ## 2. CORE PLATFORM (Designing)
 - [Authentication Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Authentication%20Engine/)
