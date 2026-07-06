@@ -2,12 +2,24 @@
 
 ## 1. MASTER ARCHITECTURE
 - **[Repair Operating System (ROS) Master Plan](Repair%20Operating%20System%20(ROS)/ros_master_architecture.md)**
+- **[Official Master Project Plan (1PLAN)](1PLAN.md)**
 
 ## 2. CORE PLATFORM (Designing)
 - [Authentication Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Authentication%20Engine/)
+- [Authorization Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Authorization%20Engine/)
 - [Permission Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Permission%20Engine/)
+- [Role Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Role%20Engine/)
 - [Workspace Router](Repair%20Operating%20System%20(ROS)/Core%20Platform/Workspace%20Router/)
-- *(See Master Plan for full engine list)*
+- [Navigation Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Navigation%20Engine/)
+- [Module Registry](Repair%20Operating%20System%20(ROS)/Core%20Platform/Module%20Registry/)
+- [Component Registry](Repair%20Operating%20System%20(ROS)/Core%20Platform/Component%20Registry/)
+- [Workflow Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Workflow%20Engine/)
+- [Notification Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Notification%20Engine/)
+- [Audit Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Audit%20Engine/)
+- [Analytics Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Analytics%20Engine/)
+- [Integration Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Integration%20Engine/)
+- [Security Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Security%20Engine/)
+- [Configuration Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Configuration%20Engine/)
 
 ## 3. SHARED BUSINESS MODULES (Technician Active)
 - **[Technician Application Master Index](Applications/Technician%20Application/INDEX.md)**
@@ -64,8 +76,9 @@
 
 ---
 
-## 5. REPORTS & VALIDATION
-- [Master Architecture Audit](MASTER_AUDIT.md)
-- [Final Content Audit](FINAL_ARCHITECTURE_VERIFICATION.md)
-- [Baseline UI Plan](PLAN.md)
-- [Official Master Plan (ROS)](1PLAN.md)
+## 5. GOVERNANCE & AUDIT
+- **[Project Governance (README.md)](README.md)**
+- **[Architecture Audit & Duplicate Report (duplicate.md)](duplicate.md)**
+- [Master Architecture Audit (MASTER_AUDIT.md)](MASTER_AUDIT.md)
+- [Final Content Audit (FINAL_ARCHITECTURE_VERIFICATION.md)](FINAL_ARCHITECTURE_VERIFICATION.md)
+- [Baseline UI Plan (PLAN.md)](PLAN.md)

@@ -38,12 +38,29 @@ This project is maintained by four AI contributors:
 
 ---
 
-## 5. OWNERSHIP RULE
+## 5. AUTHORITY HIERARCHY
+1. **User**: Supreme Authority. Final decision-maker on all architecture and project goals.
+2. **ChatGPT**: Master Architect. Responsible for designing the enterprise architecture.
+3. **TBC (Team Brave Lead)**: Reviewer and Approval Authority for all AI contributions.
+4. **TBJ (Team Brave Jules)**: Repository Manager. Guardian of architectural integrity and repository structure.
+5. **TEC/TEJ (Team Edge)**: Implementation contributors.
+
+---
+
+## 6. TECHNICIAN GOLD STANDARD
+- **Modular Isolation**: Every module must reside in its own folder with zero cross-leakage of logic.
+- **Shared Baseline**: The Technician Application architecture is the frozen baseline for all ROS modules.
+- **Zero Duplication**: Shared business modules are designed once and shared via the Core Platform.
+- **Volume 3 Consistency**: All Main Workspace interactions must use standardized Volume 3 components.
+
+---
+
+## 7. OWNERSHIP RULE
 Each AI owns its assigned work. **Never edit another AI's work.** Only edit your own assigned task.
 
 ---
 
-## 6. LOGGING SYSTEM
+## 8. LOGGING SYSTEM
 All activities must be recorded in the **/logs** folder. There are four log files:
 - `logs/TBC_LOG.md`
 - `logs/TBJ_LOG.md`
@@ -54,7 +71,7 @@ Only the owner updates their own log.
 
 ---
 
-## 7. LOG FORMAT
+## 9. LOG FORMAT
 Contributors must use the following official formats. **Newest log entries must always be placed at the top.**
 
 ### New Work
@@ -76,7 +93,7 @@ Contributors must use the following official formats. **Newest log entries must 
 
 ---
 
-## 8. REVISION WORKFLOW
+## 10. REVISION WORKFLOW
 If an AI discovers a problem:
 1. **Never fix another AI's work.**
 2. Record the issue in **REVISE.md**.
@@ -86,7 +103,7 @@ If an AI discovers a problem:
 
 ---
 
-## 9. REVIEW WORKFLOW (TBC ONLY)
+## 11. REVIEW WORKFLOW (TBC ONLY)
 1. Read README.md
 2. Read TBC_LOG.md
 3. Read REVISE.md
@@ -102,12 +119,12 @@ If an AI discovers a problem:
 
 ---
 
-## 10. INDEX RULE
+## 12. INDEX RULE
 Every completed task must update **INDEX.md**. Keep updates short. Never duplicate entries.
 
 ---
 
-## 11. CONTINUOUS WORKFLOW
+## 13. CONTINUOUS WORKFLOW
 Read README.md
 ↓
 Read Your Log
@@ -126,12 +143,12 @@ Continue Next Task
 
 ---
 
-## 12. GITHUB RULE
+## 14. GITHUB RULE
 The GitHub repository is the permanent project memory. Never rely on chat history. Never rely on conversation memory. Always inspect the repository before beginning work.
 
 ---
 
-## 13. FINAL RULES
+## 15. FINAL RULES
 - Repository is the source of truth.
 - README.md is the project entry point.
 - Respect ownership.

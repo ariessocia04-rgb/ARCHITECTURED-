@@ -14,15 +14,6 @@ The Repair Operating System (ROS) is architected to be the world's most comprehe
 - Design and validate the 15 Core Engines (Auth, Permission, Router, Workflow, Audit, etc.).
 - Establish the Shared Business Module baseline using the frozen Technician Application architecture.
 
-### Phase 2: Owner Workspace & Role Inheritance
-- Implementation of the "Owner" Super Role.
-- Enablement of dynamic workspace switching and role inheritance logic.
-- Integration of global organization-level analytics.
-
-### Phase 3: Front Desk Application & Customer Portal
-- Specialized intake, billing, and status tracking for Front Desk operations.
-- Self-service tracking and communication interface for the Customer Portal.
-
 ### Phase 4: Enterprise Vertical Expansion
 - Integration of specialized modules: Warehouse, Finance, HR, CRM, Marketing, and AI-driven diagnostics.
 - Launch of Supplier and Vendor Portals.
@@ -61,22 +52,13 @@ Centralized database schema and unified API Gateway managed by the Core Platform
 ### Future Expansion Strategy
 The system supports plug-and-play modules (e.g., AI, CRM) that connect to the Core Engines without modifying existing code.
 
-## 8. TEAM RESPONSIBILITIES
-- **TBC (Team Brave)**: Team Lead & Master Architect. High-level oversight and log approval authority.
-- **TBJ (Team Brave)**: Architecture Repository Manager. Ensures repository integrity and 1:1 architectural mapping.
-- **TEC (Team Edge)**: Development & Implementation Contributor.
-- **TEJ (Team Edge)**: Development & Implementation Contributor.
+## 8. PROJECT GOVERNANCE
+For team structure, authority hierarchy, ownership rules, and workflows, see **README.md**.
 
-## 9. PROJECT GOVERNANCE
-- **GitHub**: The absolute Single Source of Truth.
-- **README.md**: The primary entry point for all contributors.
-- **Task Ownership**: AIs only edit their assigned work.
-- **Logging**: Mandatory logging in `/logs` with entries at the top.
-
-## 10. FUTURE-PROOF REQUIREMENTS
+## 9. FUTURE-PROOF REQUIREMENTS
 Adding Warehouse, Accounting, HR, CRM, AI, or Mobile App modules must never require rebuilding or modifying the frozen Technician baseline. The ROS router and permission engines handle all new integrations dynamically.
 
-## 11. SUCCESS CRITERIA
+## 10. SUCCESS CRITERIA
 - 100% Architectural Completeness across all phases.
 - Zero Business Logic or UI Component Duplication.
 - Successful implementation of the Owner Super Role and Role Inheritance.
