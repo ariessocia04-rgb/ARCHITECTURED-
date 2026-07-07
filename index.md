@@ -1,8 +1,8 @@
 # ENTERPRISE REPAIR OPERATING SYSTEM (ROS) — MASTER INDEX
 
 ## 1. MASTER ARCHITECTURE
+- **[Official Master Constitution (1PLAN)](1PLAN.md)**
 - **[Repair Operating System (ROS) Master Plan](Repair%20Operating%20System%20(ROS)/ros_master_architecture.md)**
-- **[Official Master Architecture Workflow Plan (1PLAN)](1PLAN.md)**
 
 ## 2. CORE PLATFORM (Designing)
 - [Authentication Engine](Repair%20Operating%20System%20(ROS)/Core%20Platform/Authentication%20Engine/)
@@ -79,6 +79,3 @@
 ## 5. GOVERNANCE & AUDIT
 - **[Project Governance (README.md)](README.md)**
 - **[Architecture Audit & Duplicate Report (duplicate.md)](duplicate.md)**
-- [Master Architecture Audit (MASTER_AUDIT.md)](MASTER_AUDIT.md)
-- [Final Content Audit (FINAL_ARCHITECTURE_VERIFICATION.md)](FINAL_ARCHITECTURE_VERIFICATION.md)
-- [Baseline UI Plan (PLAN.md)](PLAN.md)
