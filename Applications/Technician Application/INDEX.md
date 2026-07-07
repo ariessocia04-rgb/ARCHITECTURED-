@@ -1,18 +1,11 @@
-# TECHNICIAN APPLICATION — MASTER INDEX (FROZEN BASELINE)
-
-## ROLE IN ROS
-This application now serves as the **Shared Business Module Baseline** for the Repair Operating System (ROS). It provides the core features for all workspaces.
-
----
+# TECHNICIAN APPLICATION MASTER INDEX
 
 ## VOLUME 1 — HEADER
-- [Profile](Volume%201%20-%20Header/Profile/profile.md)
-- [Shift](Volume%201%20-%20Header/Shift/shift.md)
-- [Notification](Volume%201%20-%20Header/Notification/notification.md)
-- [Search](Volume%201%20-%20Header/Search/search.md)
-- [QR Scanner](Volume%201%20-%20Header/QR%20Scanner/qr_scanner.md)
-
----
+- [1. Shift Architecture](Volume%201%20-%20Header/Shift/shift.md)
+- [2. Profile Architecture](Volume%201%20-%20Header/Profile/profile.md)
+- [3. Notification System](Volume%201%20-%20Header/Notification/notification.md)
+- [4. Global Search](Volume%201%20-%20Header/Search/search.md)
+- [5. QR Scanner](Volume%201%20-%20Header/QR%20Scanner/qr_scanner.md)
 
 ## VOLUME 2 — SIDEBAR
 - [Module 1 - Dashboard](Volume%202%20-%20Sidebar/Module%201%20-%20Dashboard/dashboard.md)
@@ -26,10 +19,9 @@ This application now serves as the **Shared Business Module Baseline** for the R
 - [Module 9 - Completed](Volume%202%20-%20Sidebar/Module%209%20-%20Completed/completed.md)
 - [Module 10 - Reports](Volume%202%20-%20Sidebar/Module%2010%20-%20Reports/reports.md)
 - [Module 11 - Notification](Volume%202%20-%20Sidebar/Module%2011%20-%20Notification/notification.md)
-- [Module 12 - Profile](Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
-- [Module 13 - Logout](Volume%202%20-%20Sidebar/Module%2013%20-%20Logout/logout.md)
-
----
+- [Module 12 - Inventory](Volume%202%20-%20Sidebar/Module%2012%20-%20Inventory/inventory.md)
+- [Module 13 - Profile](Volume%202%20-%20Sidebar/Module%2013%20-%20Profile/profile.md)
+- [Module 14 - Logout](Volume%202%20-%20Sidebar/Module%2014%20-%20Logout/logout.md)
 
 ## VOLUME 3 — MAIN WORKSPACE
 - [1. Dynamic Content Area](Volume%203%20-%20Main%20Workspace/Dynamic%20Content%20Area/dynamic_content_area.md)

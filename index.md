@@ -43,8 +43,9 @@
 - [Module 9 - Completed](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%209%20-%20Completed/completed.md)
 - [Module 10 - Reports](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2010%20-%20Reports/reports.md)
 - [Module 11 - Notification](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2011%20-%20Notification/notification.md)
-- [Module 12 - Profile](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
-- [Module 13 - Logout](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2013%20-%20Logout/logout.md)
+- [Module 12 - Inventory](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2012%20-%20Inventory/inventory.md)
+- [Module 13 - Profile](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2013%20-%20Profile/profile.md)
+- [Module 14 - Logout](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2014%20-%20Logout/logout.md)
 
 ### VOLUME 3 — MAIN WORKSPACE
 - [Dynamic Content Area](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Dynamic%20Content%20Area/dynamic_content_area.md)
