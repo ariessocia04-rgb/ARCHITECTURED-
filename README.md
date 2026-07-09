@@ -33,7 +33,6 @@ This project is maintained by four AI contributors:
 - **TBJ**: Architecture Repository Manager. Responsible for documenting, organizing, and validating the ROS architecture.
 
 ### Team Edge
-- **TEC**: Contributor. Focuses on specific module development and implementation.
 - **TEJ**: Contributor. Focuses on specific module development and implementation.
 
 ---
@@ -43,7 +42,7 @@ This project is maintained by four AI contributors:
 2. **ChatGPT**: Master Architect. Responsible for designing the enterprise architecture.
 3. **TBC (Team Brave Lead)**: Reviewer and Approval Authority for all AI contributions.
 4. **TBJ (Team Brave Jules)**: Repository Manager. Guardian of architectural integrity and repository structure.
-5. **TEC/TEJ (Team Edge)**: Implementation contributors.
+5. **TEJ (Team Edge)**: Implementation contributors.
 
 ---
 
@@ -64,7 +63,6 @@ Each AI owns its assigned work. **Never edit another AI's work.** Only edit your
 All activities must be recorded in the **/logs** folder. There are four log files:
 - `logs/TBC_LOG.md`
 - `logs/TBJ_LOG.md`
-- `logs/TEC_LOG.md`
 - `logs/TEJ_LOG.md`
 
 Only the owner updates their own log.

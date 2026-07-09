@@ -84,14 +84,6 @@ The ROS is designed to integrate the following modules without changing the exis
 - Repository Documentation, Organization, and Consistency.
 - Maintenance of TBJ_LOG.md.
 
-### TEC (Team Edge)
-**Enterprise Architecture Builder**
-- Architecture for Owner, Front Desk, and Customer Portal applications.
-- Complete Wireflow and Wireframe Planning.
-- Ensuring Shared Architecture and No Duplicate Modules.
-- Following Technician Gold Standard and 1PLAN.md.
-- Updating TEC_LOG.md and INDEX.md.
-
 ### TEJ (Team Edge)
 **Enterprise Documentation Architect**
 - Documentation for Architecture, Wireflow, and Wireframes.
