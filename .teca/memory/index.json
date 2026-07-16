@@ -62,10 +62,33 @@
       "reuse_count": 0,
       "status": "active",
       "governance": "standard"
+    },
+    {
+      "memory_id": "mem_1784187086628",
+      "title": "TECA Builder — Validation and Publishing Failure Patterns",
+      "category": "FailurePatterns",
+      "project_id": "TECA Builder",
+      "tags": [
+        "failure-patterns",
+        "validation",
+        "repository",
+        "requirements",
+        "artifact-missing",
+        "crewai"
+      ],
+      "importance": 10,
+      "source_stage": "",
+      "created_at": "2026-07-16T07:31:26.628887+00:00",
+      "updated_at": "2026-07-16T07:31:26.628887+00:00",
+      "file_path": ".teca/memory/FailurePatterns/mem_1784187086628.json",
+      "version": 1,
+      "reuse_count": 0,
+      "status": "active",
+      "governance": "standard"
     }
   ],
-  "total_count": 3,
-  "last_updated": "2026-07-16T06:23:46.128598+00:00",
+  "total_count": 4,
+  "last_updated": "2026-07-16T07:31:26.628887+00:00",
   "categories": [
     "LessonsLearned",
     "FailurePatterns",
