@@ -49,23 +49,23 @@
       "category": "ProjectKnowledge",
       "project_id": "TECA Builder",
       "tags": [
-        "CrewAI",
-        "failed-run",
-        "organizational-knowledge"
+        "run summary",
+        "failure",
+        "process improvement"
       ],
       "importance": 3,
       "source_stage": "",
       "created_at": "2026-07-16T05:43:33.040620+00:00",
-      "updated_at": "2026-07-16T06:01:23.450581+00:00",
+      "updated_at": "2026-07-16T06:08:25.439464+00:00",
       "file_path": ".teca/memory/ProjectKnowledge/mem_1784180613040.json",
-      "version": 2,
+      "version": 3,
       "reuse_count": 0,
       "status": "active",
       "governance": "standard"
     }
   ],
   "total_count": 3,
-  "last_updated": "2026-07-16T06:01:23.450581+00:00",
+  "last_updated": "2026-07-16T06:08:25.439464+00:00",
   "categories": [
     "LessonsLearned",
     "FailurePatterns",
