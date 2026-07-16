@@ -86,10 +86,32 @@
       "reuse_count": 0,
       "status": "active",
       "governance": "standard"
+    },
+    {
+      "memory_id": "mem_1784236443508",
+      "title": "TECA Architecture Freeze Audit — Run Summary",
+      "category": "ProjectKnowledge",
+      "project_id": "TECA Architecture Freeze Audit",
+      "tags": [
+        "TECA",
+        "architecture freeze",
+        "audit",
+        "pipeline failure",
+        "organizational learning"
+      ],
+      "importance": 3,
+      "source_stage": "",
+      "created_at": "2026-07-16T21:14:03.508318+00:00",
+      "updated_at": "2026-07-16T21:14:03.508318+00:00",
+      "file_path": ".teca/memory/ProjectKnowledge/mem_1784236443508.json",
+      "version": 1,
+      "reuse_count": 0,
+      "status": "active",
+      "governance": "standard"
     }
   ],
-  "total_count": 4,
-  "last_updated": "2026-07-16T07:31:35.420007+00:00",
+  "total_count": 5,
+  "last_updated": "2026-07-16T21:14:03.508318+00:00",
   "categories": [
     "LessonsLearned",
     "FailurePatterns",
