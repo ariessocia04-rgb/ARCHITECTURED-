@@ -1,0 +1,27 @@
+{
+  "memory_id": "mem_1784236443508",
+  "project_id": "TECA Architecture Freeze Audit",
+  "execution_id": "",
+  "category": "ProjectKnowledge",
+  "title": "TECA Architecture Freeze Audit — Run Summary",
+  "summary": "This run of the TECA Architecture Freeze Audit failed due to missing required artifacts in the upstream pipeline. The Parse Requirements Task failed t",
+  "content": "This run of the TECA Architecture Freeze Audit failed due to missing required artifacts in the upstream pipeline. The Parse Requirements Task failed to produce Parsed Requirements, which prevented Generate Components and Organize Project tasks from running, resulting in no agents, tasks, crew, or scripts being generated. Both validation and repository publishing were thus blocked. Key learning: Upstream requirement parsing is a single point of failure for the entire pipeline. Ensure Parsed Requirements are always generated successfully before proceeding to downstream tasks.",
+  "tags": [
+    "TECA",
+    "architecture freeze",
+    "audit",
+    "pipeline failure",
+    "organizational learning"
+  ],
+  "importance": 3,
+  "confidence": 0.9,
+  "source_stage": "",
+  "author_agent": "",
+  "created_at": "2026-07-16T21:14:03.508318+00:00",
+  "updated_at": "2026-07-16T21:14:03.508318+00:00",
+  "version": 1,
+  "reuse_count": 0,
+  "status": "active",
+  "governance": "standard",
+  "file_path": ".teca/memory/ProjectKnowledge/mem_1784236443508.json"
+}
