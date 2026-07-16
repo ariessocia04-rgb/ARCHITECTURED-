@@ -1,158 +1,73 @@
-# PROJECT GOVERNANCE — REPAIR OPERATING SYSTEM (ROS)
+# TECA — ARCHITECTURED REPAIR OPERATING SYSTEM (ROS)
 
 ## 1. PROJECT OVERVIEW
-The ARCHITECTURED Repair Operating System (ROS) is an enterprise-grade platform designed to centralize business logic, permissions, and routing into a single Core Platform.
+TECA (Technical Engineering & Crew AI) is a unified engineering organization responsible for the complete software engineering lifecycle of the ARCHITECTURED Repair Operating System (ROS). ROS is an enterprise-grade platform designed to centralize business logic, permissions, and routing into a single, scalable Core Platform.
 
-**Single Source of Truth**: The GitHub repository is the permanent project memory. Never rely on chat history or conversation memory. Always inspect the repository before beginning work.
-
----
-
-## 2. GOLDEN RULE
-**Every AI MUST read README.md first.**
-README.md controls the entire project workflow. If README.md cannot be found: **STOP. Do not continue.**
+**Single Source of Truth**: The GitHub repository is the permanent project memory. Every engineering decision, specification, and validation result is stored here.
 
 ---
 
-## 3. DOCUMENT READING ORDER
-README.md determines what documents must be read. The order is:
-1. **README.md**
-2. **Your Own Log** (in /logs folder)
-3. **REVISE.md**
-4. **INDEX.md**
-5. **Assigned files only**
+## 2. THE TECA ORGANIZATION
+TECA is a unified organization that plans, builds, validates, and maintains the project. It handles all responsibilities previously divided among multiple teams, ensuring 100% consistency and architectural integrity.
 
-Never read unnecessary files. Never skip README.md.
-
----
-
-## 4. TEAM STRUCTURE
-This project is maintained by four AI contributors:
-
-### Team Brave
-- **TBC**: Team Lead / Reviewer. Responsible for oversight, architecture review, and log approvals.
-- **TBJ**: Architecture Repository Manager. Responsible for documenting, organizing, and validating the ROS architecture.
-
-### Team Edge
-- **TEJ**: Contributor. Focuses on specific module development and implementation.
+### Core Responsibilities:
+- **Repository Discovery**: Deep analysis of existing code, structure, and specifications.
+- **Requirements Engineering**: Gathering, normalizing, and generating precise specifications.
+- **Architecture Preservation**: 100% adherence to the approved ARCHITECTURED design.
+- **Component Generation**: Automated generation of agents, tasks, code, and configurations based only on validated requirements.
+- **Project Organization**: Maintaining a modular, scalable, and consistent repository structure.
+- **Validation**: Strict enforcement of CrewAI compliance and project integrity.
+- **Repository Management**: Managing branches, commits, PRs, and governance.
+- **Long-Term AI Memory**: Managing organizational intelligence and continuous learning.
 
 ---
 
-## 5. AUTHORITY HIERARCHY
-1. **User**: Supreme Authority. Final decision-maker on all architecture and project goals.
-2. **ChatGPT**: Master Architect. Responsible for designing the enterprise architecture.
-3. **TBC (Team Brave Lead)**: Reviewer and Approval Authority for all AI contributions.
-4. **TBJ (Team Brave Jules)**: Repository Manager. Guardian of architectural integrity and repository structure.
-5. **TEJ (Team Edge)**: Implementation contributors.
+## 3. ENGINEERING WORKFLOW
+TECA operates through a strictly defined execution pipeline:
+
+1. **Discovery**: Inspect repository and baseline architecture.
+2. **Planning**: Update 1PLAN.md and requirements.
+3. **Execution**: Generate components and implementation logic.
+4. **Validation**: Pass the "Validation Gate" (CrewAI, YAML, and Architecture compliance).
+5. **Memory Retrieval/Storage**: Utilize and enrich the Long-Term Memory system.
+6. **Publishing**: Commit to the repository via the Repository Provider.
 
 ---
 
-## 6. TECHNICIAN GOLD STANDARD
-- **Modular Isolation**: Every module must reside in its own folder with zero cross-leakage of logic.
-- **Shared Baseline**: The Technician Application architecture is the frozen baseline for all ROS modules.
-- **Zero Duplication**: Shared business modules are designed once and shared via the Core Platform.
-- **Volume 3 Consistency**: All Main Workspace interactions must use standardized Volume 3 components.
+## 4. AI LONG-TERM MEMORY (.teca/memory/)
+TECA utilizes a repository-backed Long-Term Memory system to maintain organizational intelligence across multiple executions. This is **NOT** conversation history; it is persistent knowledge stored in the repository.
+
+### Memory Categories:
+- Architecture, Specifications, Validation, FailurePatterns, SuccessPatterns, LessonsLearned, Repository, Governance, Requirements, ReusableComponents, ProjectKnowledge, Implementation.
+
+### Memory Lifecycle:
+- **Retrieve**: Access previous knowledge before starting a task.
+- **Enrich**: Use accumulated intelligence to improve future generations.
+- **Store**: Save new lessons, successes, and failure patterns to prevent repeating mistakes.
 
 ---
 
-## 7. OWNERSHIP RULE
-Each AI owns its assigned work. **Never edit another AI's work.** Only edit your own assigned task.
+## 5. VALIDATION GATE (BLOCKING)
+All contributions must pass the Validation Gate. Publishing to the repository is strictly blocked if any of the following fail:
+- CrewAI compliance
+- Architecture compliance (Technician Gold Standard)
+- YAML correctness
+- Task wiring and context chain integrity
+- Project-wide naming consistency
 
 ---
 
-## 8. LOGGING SYSTEM
-All activities must be recorded in the **/logs** folder. There are four log files:
-- `logs/TBC_LOG.md`
-- `logs/TBJ_LOG.md`
-- `logs/TEJ_LOG.md`
-
-Only the owner updates their own log.
+## 6. PROJECT GOVERNANCE
+- **1PLAN.md**: The supreme Constitution of the project.
+- **Technician Gold Standard**: The official structural and quality benchmark.
+- **No Redesign Rule**: TECA may improve implementation but is forbidden from redesigning the approved architecture.
+- **Cleanliness**: No duplicate files, obsolete plans, or alternative versions.
 
 ---
 
-## 9. LOG FORMAT
-Contributors must use the following official formats. **Newest log entries must always be placed at the top.**
-
-### New Work
-**Task**: Completed Module ...
-**Date**: YYYY-MM-DD HH:MM AM/PM
-
-### Edited Work
-**Task**: Edited Module ...
-**Date**: YYYY-MM-DD HH:MM AM/PM
-**Review**: [TBC]
-
-### Approved Work
-**Review**: [TBC] ✓ PROCEED TO NEXT
-**Approved**: YYYY-MM-DD HH:MM AM/PM
-
-### Revision Required
-**Review**: [TBC] ✗ CHECK REVISE.md
-**Reviewed**: YYYY-MM-DD HH:MM AM/PM
-
----
-
-## 10. REVISION WORKFLOW
-If an AI discovers a problem:
-1. **Never fix another AI's work.**
-2. Record the issue in **REVISE.md**.
-3. Only the assigned owner may fix it.
-4. After fixing: Update own log and INDEX.md.
-5. Add `Review: [TBC]` and continue working. **Do NOT stop.**
-
----
-
-## 11. REVIEW WORKFLOW (TBC ONLY)
-1. Read README.md
-2. Read TBC_LOG.md
-3. Read REVISE.md
-4. Read INDEX.md
-5. Read all AI logs
-6. Inspect latest uploads
-7. Review architecture
-8. Update contributor logs
-9. Update REVISE.md
-10. Update INDEX.md if required
-11. Update TBC_LOG.md
-12. Continue reviewing
-
----
-
-## 12. INDEX RULE
-Every completed task must update **INDEX.md**. Keep updates short. Never duplicate entries.
-
----
-
-## 13. CONTINUOUS WORKFLOW
-Read README.md
-↓
-Read Your Log
-↓
-Read REVISE.md
-↓
-Read INDEX.md
-↓
-Work
-↓
-Update Own Log
-↓
-Update INDEX.md
-↓
-Continue Next Task
-
----
-
-## 14. GITHUB RULE
-The GitHub repository is the permanent project memory. Never rely on chat history. Never rely on conversation memory. Always inspect the repository before beginning work.
-
----
-
-## 15. FINAL RULES
-- Repository is the source of truth.
-- README.md is the project entry point.
-- Respect ownership.
-- Never duplicate work.
-- Never overwrite another AI's work.
-- Always maintain your own log.
-- Always update INDEX.md.
-- Always follow 1PLAN.md.
-- Always follow the approved architecture.
+## 7. GETTING STARTED
+New contributors should:
+1. Read **README.md** (Governance & Workflow).
+2. Read **1PLAN.md** (Execution Blueprint).
+3. Review the **Technician Gold Standard** (Quality Baseline).
+4. Inspect **.teca/memory/** (Organizational Intelligence).

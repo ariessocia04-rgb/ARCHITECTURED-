@@ -80,3 +80,5 @@
 ## 5. GOVERNANCE & AUDIT
 - **[Project Governance (README.md)](README.md)**
 - **[Architecture Audit & Duplicate Report (duplicate.md)](duplicate.md)**
+- **[TECA Activity Log (logs/TECA_LOG.md)](logs/TECA_LOG.md)**
+- **[TBJ Activity Log (logs/TBJ_LOG.md)](logs/TBJ_LOG.md)**

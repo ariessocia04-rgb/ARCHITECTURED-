@@ -23,7 +23,7 @@ The following files violate the "No Duplicate Documents" and "Single Source of T
 - **Workflow Update**: 1PLAN.md has been updated with the master architecture workflow plan.
 - **Unified Master Index**: index.md correctly maps the entire ROS ecosystem, including the Technician baseline.
 
-## 6. RECOMMENDED ACTIONS (Awaiting TBC Approval)
+## 6. RECOMMENDED ACTIONS (Awaiting TECA Approval)
 - **DELETE**: `PLAN.md` (Redundant Planning)
 - **DELETE**: `MASTER_AUDIT.md` (Redundant Audit)
 - **DELETE**: `FINAL_ARCHITECTURE_VERIFICATION.md` (Redundant Audit)
