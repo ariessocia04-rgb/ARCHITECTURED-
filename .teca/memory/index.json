@@ -49,16 +49,17 @@
       "category": "ProjectKnowledge",
       "project_id": "TECA Builder",
       "tags": [
-        "run_summary",
-        "project_failure",
-        "crewai"
+        "run-summary",
+        "crewai",
+        "pipeline-failure",
+        "artifact-checks"
       ],
       "importance": 3,
       "source_stage": "",
       "created_at": "2026-07-16T05:43:33.040620+00:00",
-      "updated_at": "2026-07-16T06:23:46.128598+00:00",
+      "updated_at": "2026-07-16T07:31:35.420007+00:00",
       "file_path": ".teca/memory/ProjectKnowledge/mem_1784180613040.json",
-      "version": 4,
+      "version": 5,
       "reuse_count": 0,
       "status": "active",
       "governance": "standard"
@@ -88,7 +89,7 @@
     }
   ],
   "total_count": 4,
-  "last_updated": "2026-07-16T07:31:30.608740+00:00",
+  "last_updated": "2026-07-16T07:31:35.420007+00:00",
   "categories": [
     "LessonsLearned",
     "FailurePatterns",
