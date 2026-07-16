@@ -1,0 +1,26 @@
+{
+  "memory_id": "mem_1784180613040",
+  "project_id": "TECA Builder",
+  "execution_id": "",
+  "category": "ProjectKnowledge",
+  "title": "TECA Builder — Run Summary",
+  "summary": "Run attempted a multi-stage project build and publish using CrewAI pipeline. Validation and publish stages both failed/aborted due to missing outputs ",
+  "content": "Run attempted a multi-stage project build and publish using CrewAI pipeline. Validation and publish stages both failed/aborted due to missing outputs from intermediate steps. No code or component artifacts reached validation or repository publishing. Main learning: Strict artifact dependency enforcement is necessary for end-to-end reliability.",
+  "tags": [
+    "run-summary",
+    "teca-builder",
+    "failure",
+    "process"
+  ],
+  "importance": 3,
+  "confidence": 0.9,
+  "source_stage": "",
+  "author_agent": "",
+  "created_at": "2026-07-16T05:43:33.040620+00:00",
+  "updated_at": "2026-07-16T05:43:33.040620+00:00",
+  "version": 1,
+  "reuse_count": 0,
+  "status": "active",
+  "governance": "standard",
+  "file_path": ".teca/memory/ProjectKnowledge/mem_1784180613040.json"
+}
