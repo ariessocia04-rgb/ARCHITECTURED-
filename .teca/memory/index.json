@@ -7,17 +7,18 @@
       "category": "LessonsLearned",
       "project_id": "TECA Builder",
       "tags": [
+        "CrewAI",
         "lessons learned",
-        "validation",
-        "artifact dependencies",
-        "best practices"
+        "pipeline design",
+        "artifact dependency",
+        "validation failures"
       ],
       "importance": 8,
       "source_stage": "",
       "created_at": "2026-07-16T05:11:13.151127+00:00",
-      "updated_at": "2026-07-16T05:11:13.151127+00:00",
+      "updated_at": "2026-07-16T05:50:57.599026+00:00",
       "file_path": ".teca/memory/LessonsLearned/mem_1784178673151.json",
-      "version": 1,
+      "version": 3,
       "reuse_count": 0,
       "status": "active",
       "governance": "standard"
@@ -65,7 +66,7 @@
     }
   ],
   "total_count": 3,
-  "last_updated": "2026-07-16T05:43:33.040620+00:00",
+  "last_updated": "2026-07-16T05:50:57.599026+00:00",
   "categories": [
     "LessonsLearned",
     "FailurePatterns",
