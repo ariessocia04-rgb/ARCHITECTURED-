@@ -18,8 +18,9 @@
   "created_at": "2026-07-16T05:31:48.210558+00:00",
   "updated_at": "2026-07-16T05:31:48.210558+00:00",
   "version": 1,
-  "reuse_count": 0,
+  "reuse_count": 1,
   "status": "active",
   "governance": "standard",
-  "file_path": ".teca/memory/FailurePatterns/mem_1784179908210.json"
+  "file_path": ".teca/memory/FailurePatterns/mem_1784179908210.json",
+  "last_accessed": "2026-07-17T10:52:52.899686+00:00"
 }
