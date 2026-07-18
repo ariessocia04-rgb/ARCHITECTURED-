@@ -4,8 +4,12 @@
 
 - `1plan.md` remains master authority: PASS.
 - `TECA/IMPLEMENTATION_BUILD_PLAN.md` remains global build authority: PASS.
-- Latest `main` and open PRs checked before branch creation: PASS.
+- Latest `main` and open PRs checked before branch creation and PR: PASS.
 - Work isolated on `release-1-mvp-implementation-planning`: PASS.
+- Pull request: `#9 — Add Release 1 MVP implementation planning`.
+- PR mergeability, status-check, and review-thread checks: PASS.
+- Merge commit: `44f92b716e7384563bd6aa31ffb8ac24e3624536`.
+- Completion evidence commit: `a91c82418f997962b6fd8459cf72b6aa7f0c3a56`.
 - Existing architecture deleted, renamed, or replaced: 0.
 - Application code or migration added: 0.
 - `implementation_authorized=true`: NOT SET.
@@ -125,14 +129,17 @@ CODEX MANIFEST/TEMPLATE: PRESENT
 RISK/TEST/ROLLOUT/ROLLBACK: PRESENT
 COMPLETION RECORD: PRESENT
 MASTER-PLAN EXTENSION: PRESENT
-AUDIT: PRESENT
+AUDIT/REVISION/VALIDATION: PRESENT
+ROOT README/INDEX/TECA NAVIGATION: SYNCHRONIZED
 ```
 
-## Truthful final state before merge
+## Truthful final state
 
 ```text
-RELEASE-1 MVP IMPLEMENTATION PLANNING: 100% COMPLETE AS DOCUMENTED PLAN
+RELEASE-1 MVP IMPLEMENTATION PLANNING: COMPLETE_MERGED_TO_MAIN
 RELEASE BOUNDARY/STACK/PRINTER/DESIGN/CODEX/QUALITY PLANS: COMPLETE
+PULL REQUEST: #9 MERGED
+MERGE COMMIT: 44f92b716e7384563bd6aa31ffb8ac24e3624536
 HIGH-FIDELITY ARTIFACTS: NOT CREATED
 APPLICATION/PRINT-AGENT CODE: NOT CREATED
 MIGRATIONS: NOT CREATED
@@ -141,4 +148,4 @@ DEPLOYMENT/PILOT: NOT PERFORMED
 CODING AUTHORIZATION: NO
 ```
 
-Final repository state becomes `COMPLETE_MERGED_TO_MAIN` only after PR merge, main read-back, and completion-evidence update.
+**FINAL RELEASE-1 IMPLEMENTATION-PLANNING VERIFICATION: PASS FOR THE DOCUMENTED CONTROLLED-PILOT PLAN.**
