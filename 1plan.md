@@ -161,7 +161,8 @@ Canonical architecture:
 
 `Applications/Owner Application/README.md`
 
-- Organization, branches, users, roles, workflows, operations, workforce, inventory, finance, quality, analytics, subscription, integrations, security, and recovery: COMPLETE.
+- Organization, branches, users, roles, workflows, operations, workforce, inventory, finance, quality, analytics, subscription, integrations, security, and recovery: COMPLETE for the current core Repair SaaS baseline.
+- High-level inclusion of an expansion domain does not mean that the full expansion is architecturally complete.
 
 ### Customer Portal
 
@@ -204,8 +205,8 @@ Master design index:
 
 Completed canonical documents:
 
-1. `Design/WIREFRAME_ARCHITECTURE.md` — COMPLETE.
-2. `Design/WIREFLOW_ARCHITECTURE.md` — COMPLETE.
+1. `Design/WIREFRAME_ARCHITECTURE.md` — COMPLETE for the current core Repair SaaS baseline.
+2. `Design/WIREFLOW_ARCHITECTURE.md` — COMPLETE for the current core Repair SaaS baseline.
 3. `Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md` — COMPLETE.
 
 Design rules:
@@ -216,7 +217,80 @@ Design rules:
 - High-fidelity design may improve presentation but cannot bypass or change completed workflows.
 - Desktop, tablet, mobile, keyboard, touch, assistive technology, offline, error, empty, conflict, permission, and subscription-restriction states are required.
 
-Design documents complete: 3 of 3.
+Current core design documents complete: 3 of 3.
+
+## 8A. MANDATORY FULL-ARCHITECTURE STANDARD FOR EVERY EXPANSION
+
+ARCHITECTURED is intended to expand beyond the current core Repair SaaS baseline. Every approved expansion must be fully architected and fully designed before implementation. Mentioning a domain in an Owner dashboard, navigation list, feature summary, or high-level module is not sufficient evidence of completion.
+
+### Required expansion domains
+
+The expansion registry must include every approved business and platform domain, including when applicable:
+
+- Human Resources and workforce management
+- Recruitment, applicant tracking, hiring, onboarding, probation, transfer, promotion, disciplinary action, separation, offboarding, and alumni records
+- Attendance, shifts, scheduling, timesheets, overtime, leave, holidays, training, certifications, targets, and performance reviews
+- Payroll, compensation, allowances, deductions, benefits, reimbursements, taxes, loans, advances, payslips, and payroll approvals
+- Finance, accounting, budgeting, expenses, receivables, payables, cash management, reconciliation, taxation, and financial reporting
+- Inventory, procurement, suppliers, purchase orders, receiving, warehouses, stock movement, forecasting, costing, and asset management
+- Sales, CRM, customer accounts, quotations, contracts, marketing, campaigns, loyalty, and business development
+- Quality, compliance, risk, safety, incidents, legal controls, document retention, and audit
+- Multi-branch, franchise, territory, department, team, contractor, vendor, and partner operations
+- Subscription, billing, entitlement, usage, tenant lifecycle, platform administration, and support operations
+- Analytics, forecasting, dashboards, reports, exports, artificial intelligence, agent automation, integrations, APIs, webhooks, and scheduled jobs
+- Mobile, tablet, desktop, offline, synchronization, accessibility, localization, and low-connectivity operation
+- Any future application, role, module, workflow, business engine, shared service, or platform capability added to the product scope
+
+The list above is a mandatory baseline and does not limit future expansion. Newly approved expansion domains must be added to the canonical expansion registry before architecture work begins.
+
+### Required architecture package for each expansion
+
+Every expansion must have one canonical, traceable package containing all of the following:
+
+1. Purpose, business outcome, scope, boundaries, assumptions, dependencies, exclusions, MVP boundary, and later-release boundary.
+2. Complete application and module architecture with canonical folder and file locations.
+3. Users, personas, responsibilities, roles, permissions, approval authority, field-level access, segregation of duties, and branch or tenant scope.
+4. Complete feature inventory, screen inventory, navigation model, information architecture, and search/filter/report requirements.
+5. End-to-end lifecycle, statuses, substatuses, transitions, eligibility rules, state ownership, and prohibited status jumps.
+6. Happy paths, alternate paths, rejection paths, exception paths, cancellation, retry, resume, rollback, correction, conflict, recovery, and offline behavior.
+7. Cross-application handoffs with source, destination, readiness check, data transferred, receiving responsibility, success result, failure result, escalation, and audit evidence.
+8. Canonical entities, fields, relationships, ownership, retention, history, attachments, calculations, numbering, validation, deduplication, and immutable records.
+9. Exact API, event, webhook, real-time, import, export, notification, integration, idempotency, and synchronization contracts.
+10. Authentication, authorization, tenant isolation, privacy, security, compliance, legal, audit, backup, recovery, incident, and support-access controls.
+11. Business rules, formulas, configurable policies, approvals, thresholds, limits, entitlements, pricing or cost logic, and reporting definitions.
+12. Non-functional targets for performance, availability, capacity, scalability, accessibility, recovery, retention, observability, support, and cost.
+13. Risks, tradeoffs, open decisions, rejected alternatives, migration impact, backward compatibility, and rollout dependencies.
+14. Acceptance criteria, validation evidence, traceability matrix, quality gates, owner approval, and completion status.
+
+### Required UI/UX and design package for each expansion
+
+Every expansion must also include:
+
+1. User journeys and task models for every authorized persona.
+2. Complete low-fidelity wireframes for every required page, modal, drawer, wizard step, dashboard, list, detail view, form, approval view, report, setting, and administrative screen.
+3. Complete wireflows covering navigation, decisions, permissions, approvals, handoffs, exceptions, validation failures, empty states, loading states, conflicts, offline states, retry, resume, cancellation, and recovery.
+4. Desktop, tablet, and mobile behavior with keyboard, touch, screen-reader, low-vision, limited-dexterity, and low-connectivity requirements.
+5. Plain-language labels, guidance, help, confirmations, warnings, error messages, retained user input, and visible next actions for non-technical users.
+6. High-fidelity UI screens and an interactive prototype traced to the approved low-fidelity wireframes and wireflows.
+7. Design tokens, components, states, variants, responsive rules, accessibility specifications, content rules, and reusable interaction patterns.
+8. Screen-to-requirement, screen-to-role, screen-to-permission, screen-to-state, and screen-to-wireflow traceability.
+
+### Expansion completion gate
+
+An expansion may be marked `COMPLETE` only when:
+
+- every required architecture and design artifact exists in its canonical location;
+- no required module, screen, workflow, role, permission, state, exception, data entity, contract, or UI state is missing;
+- architecture, UI/UX, wireframe, wireflow, data, security, audit, and integration documents agree with one another;
+- duplicate and conflicting definitions are removed or formally superseded;
+- validation, read-back, synchronization, audit, and owner approval are complete;
+- the completion claim includes traceable evidence and no unresolved blocking item.
+
+If any required item is absent, the correct status is `PARTIAL`, `PLANNED`, or `BLOCKED`—never `COMPLETE`.
+
+### No-code expansion gate
+
+No expansion may enter implementation, autonomous code generation, database migration, API construction, or production configuration until its complete architecture package and complete UI/UX design package have passed the expansion completion gate and the owner explicitly sets `implementation_authorized=true` for that expansion.
 
 ## 9. TECA AUTOMATION GOVERNANCE STATUS
 
@@ -303,6 +377,7 @@ Supported exception states:
 - Dragging always has a non-drag alternative.
 - Help appears consistently.
 - No completed workflow may be changed by a new visual design without an approved architecture revision.
+- No expansion may be declared complete from a high-level feature list alone; every expansion must pass Section 8A.
 
 ## 12. TECA REQUIRED PIPELINE
 
@@ -336,18 +411,23 @@ Required TECA repository read order:
 → .teca/memory/index.json and relevant memories
 ```
 
+TECA must enforce Section 8A during specification, planning, validation, publishing, diagnostics, and completion reporting. It must reject or downgrade any unsupported `COMPLETE` claim for an expansion that lacks the required architecture and design evidence.
+
 ## 13. COMPLETION MATRIX
 
 | Area | Status | Canonical Source |
 |---|---|---|
-| Technician Application | COMPLETE | `Applications/Technician Application/INDEX.md` |
-| Front Desk Application | COMPLETE | `Applications/Front Desk Application/README.md` |
-| Owner Application | COMPLETE | `Applications/Owner Application/README.md` |
-| Customer Portal | COMPLETE | `Applications/Customer Portal/README.md` |
+| Core Technician Application | COMPLETE | `Applications/Technician Application/INDEX.md` |
+| Core Front Desk Application | COMPLETE | `Applications/Front Desk Application/README.md` |
+| Core Owner Application | COMPLETE | `Applications/Owner Application/README.md` |
+| Core Customer Portal | COMPLETE | `Applications/Customer Portal/README.md` |
 | Shared SaaS Contracts | COMPLETE | `SaaS Platform/README.md` |
-| Wireframes | COMPLETE | `Design/WIREFRAME_ARCHITECTURE.md` |
-| Wireflows | COMPLETE | `Design/WIREFLOW_ARCHITECTURE.md` |
+| Core Repair SaaS Wireframes | COMPLETE | `Design/WIREFRAME_ARCHITECTURE.md` |
+| Core Repair SaaS Wireflows | COMPLETE | `Design/WIREFLOW_ARCHITECTURE.md` |
 | Non-Technical UI Design | COMPLETE | `Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md` |
+| Full HR and Workforce Expansion | PLANNED — FULL ARCHITECTURE REQUIRED | Future canonical expansion package under Section 8A |
+| Payroll, Compensation, and Benefits Expansion | PLANNED — FULL ARCHITECTURE REQUIRED | Future canonical expansion package under Section 8A |
+| Other Future Business and Platform Expansions | PLANNED — EACH REQUIRES FULL ARCHITECTURE | Canonical expansion registry and packages under Section 8A |
 | TECA Agent Assignments | COMPLETE | `TECA/AGENT_JOB_ASSIGNMENTS.md` |
 | TECA Pipeline Plan | COMPLETE | `TECA/PIPELINE_EXECUTION_PLAN.md` |
 | TECA Studio Update Handoff | COMPLETE | `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md` |
@@ -357,40 +437,49 @@ Required TECA repository read order:
 
 ## 14. NEXT CONTROLLED PHASE — IMPLEMENTATION PLANNING
 
-Architecture and design are ready for controlled implementation planning, not uncontrolled coding.
+The current core Repair SaaS architecture and design are ready for controlled implementation planning, not uncontrolled coding. Future expansions are not automatically complete and must first pass Section 8A.
 
 Required planning gates:
 
-1. Approve MVP and later release boundaries.
-2. Create implementation release and dependency map.
-3. Select technology stack and supported versions.
-4. Select hosting, environments, regions, and deployment strategy.
-5. Convert logical data architecture into an approved physical schema and ER diagram.
-6. Define exact API, event, and webhook schemas.
-7. Create high-fidelity UI screens and interactive prototype traced to the canonical wireframes and wireflows.
-8. Create design tokens and component specifications.
-9. Select authentication, payment, file, message, monitoring, and integration providers.
-10. Approve measurable availability, performance, capacity, recovery, retention, accessibility, security, support, and cost targets.
-11. Approve threat model, privacy review, test plan, migration plan, release plan, rollback plan, and operations plan.
-12. Create implementation tasks with acceptance criteria, owners, review gates, and release boundaries.
-13. Apply and verify the TECA live Studio configuration update before assigning autonomous repository implementation work.
+1. Create the canonical expansion registry listing every current and future expansion domain, owner, dependencies, priority, release target, canonical artifact paths, and truthful status.
+2. Approve MVP and later release boundaries for the core product and for each selected expansion.
+3. Create implementation release and dependency maps.
+4. Select technology stack and supported versions.
+5. Select hosting, environments, regions, and deployment strategy.
+6. Convert logical data architecture into approved physical schemas and ER diagrams.
+7. Define exact API, event, webhook, real-time, import, export, and integration schemas.
+8. Complete the architecture package required by Section 8A for every expansion selected for a release.
+9. Complete the low-fidelity wireframes and wireflows required by Section 8A for every selected expansion.
+10. Create high-fidelity UI screens and interactive prototypes traced to the canonical wireframes and wireflows.
+11. Create design tokens and component specifications.
+12. Select authentication, payment, file, message, monitoring, payroll, accounting, HR, analytics, and integration providers where applicable.
+13. Approve measurable availability, performance, capacity, recovery, retention, accessibility, security, support, and cost targets.
+14. Approve threat model, privacy review, test plan, migration plan, release plan, rollback plan, and operations plan.
+15. Create implementation tasks with acceptance criteria, owners, review gates, dependencies, and release boundaries.
+16. Validate every completion claim against Section 8A and update the completion matrix with evidence.
+17. Apply and verify the TECA live Studio configuration update before assigning autonomous repository implementation work.
 
 ## 15. FINAL MASTER STATUS
 
 ```text
-APPLICATION ARCHITECTURE: COMPLETE
-SHARED SAAS CONTRACTS: COMPLETE
-WIREFRAME ARCHITECTURE: COMPLETE
-WIREFLOW ARCHITECTURE: COMPLETE
+CORE REPAIR SAAS APPLICATION ARCHITECTURE: COMPLETE
+CORE SHARED SAAS CONTRACTS: COMPLETE
+CORE REPAIR SAAS WIREFRAME ARCHITECTURE: COMPLETE
+CORE REPAIR SAAS WIREFLOW ARCHITECTURE: COMPLETE
 NON-TECHNICAL UI DESIGN SYSTEM: COMPLETE
+MANDATORY FULL-ARCHITECTURE EXPANSION STANDARD: DEFINED
+FULL HR AND WORKFORCE EXPANSION: PLANNED — NOT YET COMPLETE
+FULL PAYROLL, COMPENSATION, AND BENEFITS EXPANSION: PLANNED — NOT YET COMPLETE
+OTHER FUTURE EXPANSIONS: MUST PASS SECTION 8A INDIVIDUALLY
 TECA REPOSITORY JOB ASSIGNMENTS: COMPLETE
 TECA PIPELINE EXECUTION PLAN: COMPLETE
 TECA STUDIO UPDATE HANDOFF: COMPLETE
 LIVE TECA STUDIO ALIGNMENT: PENDING LIVE READ-BACK
 ACCIDENTAL DUPLICATES: 0
-CURRENT REPOSITORY DOCUMENTATION UPLOAD: 100%
-READY FOR CONTROLLED IMPLEMENTATION PLANNING: YES
+CURRENT CORE REPOSITORY DOCUMENTATION UPLOAD: 100%
+READY FOR CONTROLLED CORE IMPLEMENTATION PLANNING: YES
+EXPANSION IMPLEMENTATION AUTHORIZED: NO
 UNCONTROLLED CODING AUTHORIZED: NO
 ```
 
-**TECHNICIAN REPAIR SAAS ARCHITECTURE, WIREFRAME, WIREFLOW, UI DESIGN, AND TECA REPOSITORY GOVERNANCE COMPLETE (100%)**
+**THE CURRENT CORE TECHNICIAN REPAIR SAAS BASELINE IS ARCHITECTED AND DESIGNED. EVERY HR, PAYROLL, WORKFORCE, FINANCE, INVENTORY, SALES, ANALYTICS, AUTOMATION, OR OTHER FUTURE EXPANSION MUST BE FULLY ARCHITECTED WITH COMPLETE UI/UX, WIREFRAMES, WIREFLOWS, DATA, SECURITY, INTEGRATION, VALIDATION, AND TRACEABILITY BEFORE IT MAY BE CALLED COMPLETE OR ENTER IMPLEMENTATION.**
