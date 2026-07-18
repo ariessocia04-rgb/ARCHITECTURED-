@@ -1,15 +1,23 @@
 # TECHNICIAN APPLICATION — MASTER INDEX
 
+## CANONICAL SURFACE RULE
+
+The Header provides quick access to Profile and Notifications, but their full canonical architectures are the Sidebar modules. The Header must not keep separate copies of those same systems.
+
 ## VOLUME 1 — HEADER
-- [Profile](Volume%201%20-%20Header/Profile/profile.md)
+
+- [Profile Quick Access — canonical Profile module](Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
 - [Shift](Volume%201%20-%20Header/Shift/shift.md)
-- [Notification](Volume%201%20-%20Header/Notification/notification.md)
+- [Notification Quick Access — canonical Notification module](Volume%202%20-%20Sidebar/Module%2011%20-%20Notification/notification.md)
 - [Search](Volume%201%20-%20Header/Search/search.md)
 - [QR Scanner](Volume%201%20-%20Header/QR%20Scanner/qr_scanner.md)
+
+The two quick-access links above are logical Header surfaces, not separate canonical architecture files.
 
 ---
 
 ## VOLUME 2 — SIDEBAR
+
 - [Module 1 - Dashboard](Volume%202%20-%20Sidebar/Module%201%20-%20Dashboard/dashboard.md)
 - [Module 2 - Repair Queue](Volume%202%20-%20Sidebar/Module%202%20-%20Repair%20Queue/repair_queue.md)
 - [Module 3 - Job Order](Volume%202%20-%20Sidebar/Module%203%20-%20Job%20Order/job_order.md)
@@ -20,13 +28,14 @@
 - [Module 8 - Testing](Volume%202%20-%20Sidebar/Module%208%20-%20Testing/testing.md)
 - [Module 9 - Completed](Volume%202%20-%20Sidebar/Module%209%20-%20Completed/completed.md)
 - [Module 10 - Reports](Volume%202%20-%20Sidebar/Module%2010%20-%20Reports/reports.md)
-- [Module 11 - Notification](Volume%202%20-%20Sidebar/Module%2011%20-%20Notification/notification.md)
-- [Module 12 - Profile](Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
+- [Module 11 - Notification — canonical](Volume%202%20-%20Sidebar/Module%2011%20-%20Notification/notification.md)
+- [Module 12 - Profile — canonical](Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
 - [Module 13 - Logout](Volume%202%20-%20Sidebar/Module%2013%20-%20Logout/logout.md)
 
 ---
 
 ## VOLUME 3 — MAIN WORKSPACE
+
 - [1. Dynamic Content Area](Volume%203%20-%20Main%20Workspace/Dynamic%20Content%20Area/dynamic_content_area.md)
 - [2. Breadcrumb System](Volume%203%20-%20Main%20Workspace/Breadcrumb/breadcrumb.md)
 - [3. Page Header](Volume%203%20-%20Main%20Workspace/Page%20Header/page_header.md)
@@ -45,3 +54,10 @@
 - [16. Empty State](Volume%203%20-%20Main%20Workspace/Empty%20State/empty_state.md)
 - [17. Error State](Volume%203%20-%20Main%20Workspace/Error%20State/error_state.md)
 - [18. Footer](Volume%203%20-%20Main%20Workspace/Footer/footer.md)
+
+## STATUS
+
+- Logical Technician surfaces: 36.
+- Canonical detailed files: 34.
+- Header quick-access surfaces referencing Sidebar canonical modules: 2.
+- Duplicate Profile or Notification architecture files permitted: 0.
