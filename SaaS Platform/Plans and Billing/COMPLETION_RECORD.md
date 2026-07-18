@@ -5,10 +5,12 @@
 - `source_path`: `1plan.md` plus canonical `SaaS Platform/`, `Design/`, and `TECA/` sources.
 - `source_section_or_requirement_id`: Governance Sections 1A/1B/1C, Section 8A full-architecture standard, shared SaaS subscription and financial contracts, wireframe/wireflow rules, NFRs, and implementation gates.
 - `canonical_target_path`: `SaaS Platform/Plans and Billing/`.
-- `active_owner_or_handoff_state`: `COMPLETE_ON_ISOLATED_BRANCH_PENDING_MERGE_VALIDATION`.
+- `active_owner_or_handoff_state`: `COMPLETE_MERGED_TO_MAIN`.
 - `last_verified_base_commit`: `a18077d6a2b83a21634c324ff7ecab9600dabdea`.
-- `branch`: `saas-free-pro-premium-architecture`.
-- `validation_evidence`: repository read-back, official-source research, canonical package indexes, screen/flow traceability, branch comparison, PR mergeability, and final main-branch read-back.
+- `source_branch`: `saas-free-pro-premium-architecture`.
+- `pull_request`: `#7 — Add complete Free Pro Premium SaaS plans and billing architecture`.
+- `merge_commit`: `7331d7830dc6e1cae668249153324716d14cea5b`.
+- `validation_evidence`: repository read-back, official-source research, canonical package indexes, screen/flow traceability, branch comparison, GitHub mergeability, successful squash merge, and final main-branch read-back.
 
 ## Reused canonical architecture
 
@@ -109,6 +111,8 @@ LOW-FIDELITY WIREFRAMES: COMPLETE AS SCREEN SPECIFICATIONS
 WIREFLOW LOGIC AND FAILURE PATHS: COMPLETE
 TRACEABILITY: COMPLETE
 SECURITY / NFR / TEST / RELEASE / ROLLBACK PLAN: COMPLETE
+PULL REQUEST: #7 MERGED
+MERGE COMMIT: 7331d7830dc6e1cae668249153324716d14cea5b
 IMPLEMENTATION AUTHORIZED: NO
 HIGH-FIDELITY DESIGN / PROTOTYPE / CODE / EXECUTED TESTS / DEPLOYMENT: SEPARATE STATUS
 ```
