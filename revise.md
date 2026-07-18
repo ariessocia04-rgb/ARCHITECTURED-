@@ -91,7 +91,8 @@
 
 ### REV-011 — Applications Folder Starting-Point and Index Alignment
 
-- Status: COMPLETE IN REPOSITORY, PENDING FINAL MASTER-PLAN READ-BACK IN THIS BATCH.
+- Status: COMPLETE IN REPOSITORY.
+- Master source: `1plan.md`, Section 1B.
 - Reference pattern inspected: `Applications/Technician Application/`.
 - Added files:
   - `Applications/README.md`
@@ -99,10 +100,15 @@
   - `Applications/Owner Application/INDEX.md`
   - `Applications/Customer Portal/INDEX.md`
 - Synchronized files:
+  - `1plan.md`
+  - `README.md`
   - `index.md`
+  - `TECA/README.md`
+  - `TECA/PIPELINE_EXECUTION_PLAN.md`
+  - `MASTER_AUDIT.md`
+  - `FINAL_ARCHITECTURE_VERIFICATION.md`
   - `duplicate.md`
   - `revise.md`
-  - `1plan.md` after final alignment
 - Result:
   1. Defined `Applications/README.md` as the application-folder starting point under `1plan.md` authority.
   2. Preserved the Technician Application decomposed volume/module/folder structure as the approved reference pattern.
@@ -111,9 +117,29 @@
   5. Kept existing Front Desk, Owner, and Customer architecture files in place and unchanged.
   6. Prohibited empty appearance-only folders and duplicate module files.
   7. Required every joiner to start at `1plan.md`, continue through `Applications/README.md`, and enter the selected application through its `INDEX.md`.
-  8. Required future module decomposition to have plan-assigned paths, traceability, link synchronization, no-content-loss validation, and owner approval.
+  8. Required future module decomposition to have plan-assigned paths, traceability, link synchronization, no-content-loss validation, duplicate validation, and owner approval.
   9. Existing completed application content deleted, moved, renamed, or split in this batch: NO.
   10. Open PR #4 was inspected as `STALE_REVIEW_REQUIRED`; its files were not used as authority and no active implementation work was overwritten.
+- Read-back evidence:
+  - `Applications/README.md`: VERIFIED.
+  - Front Desk `INDEX.md`: VERIFIED.
+  - Owner `INDEX.md`: VERIFIED.
+  - Customer Portal `INDEX.md`: VERIFIED.
+  - `1plan.md` Section 1B: VERIFIED.
+  - `README.md`, `index.md`, TECA operational index, pipeline plan, duplicate validation, master audit, and final verification: SYNCHRONIZED.
+- Key commits:
+  - `3f7de7209fb718d7ecfb0d4fdf2a1a5bfd673920` — Applications master starting point.
+  - `1c4ae817fee8242e68a9bf7dbd29efe97fec46e7` — Front Desk entry index.
+  - `d99732e15dcda051fe86de551525c02b1a7b8341` — Owner entry index.
+  - `bb76ca39951aa96eb091be5642987b97db40c2a0` — Customer Portal entry index.
+  - `baa6e8148fa59f991a46395e3aff3c856f4505bb` — master plan Section 1B alignment.
+  - `23d8e401fe3d0fb33e163d0aca0813e2be5c9656` — root index alignment.
+  - `0a0b64b99a460b25a6a8501fd497eafc6716a999` — project README alignment.
+  - `21f00ac9f83a143d48ee7fe595d3f6292361c7d4` — TECA operational alignment.
+  - `f2c9f32aed86488715ee356210dff8e791b8d938` — pipeline application-entry alignment.
+  - `afe184e50d30214e2bb951a1fd1a18958d38465e` — duplicate and placement validation.
+  - `4729b16a6cff9433a09d5334d529111d8ccdce67` — master audit synchronization.
+  - `b579d655dc2078a59ef88472c425904f4ff53a23` — final verification synchronization.
 
 ## CURRENT OPEN REVISION
 
@@ -122,14 +148,16 @@
 - Status: PENDING LIVE EXECUTION AND READ-BACK.
 - Source instruction: `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md`
 - Master worker authority: `1plan.md`, Section 1A.
-- Application starting authority: `Applications/README.md` under `1plan.md`.
+- Application folder and starting authority: `1plan.md`, Section 1B.
+- Application navigation implementation: `Applications/README.md`.
 - Required result:
   1. Apply the canonical role, goal, backstory, task, phase-gate, repository-read-order, no-duplicate, finish-current-task, skip-complete, validation, publishing, memory, diagnostic, and summary rules in CrewAI Studio.
   2. Add the `1plan.md` Section 1A active-work notification, continue-current-work, no-racing, save-before-transfer, source-provenance, gap-fill, and unsupported-conflict handling behavior without changing approved stage ownership.
   3. Use `Applications/README.md` and each application `INDEX.md` as the mandatory entry path for application work.
-  4. Preserve the existing 9 agents, 11 tasks, exact stage order, IDs, contexts, tools, models, and sequential process unless an explicitly approved correction is required.
-  5. Ensure implementation requests are governed by `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
-  6. Return live read-back evidence for every changed agent and task.
+  4. Enforce the selected application arrangement mode and canonical detail source.
+  5. Preserve the existing 9 agents, 11 tasks, exact stage order, IDs, contexts, tools, models, and sequential process unless an explicitly approved correction is required.
+  6. Ensure implementation requests are governed by `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
+  7. Return live read-back evidence for every changed agent and task.
 - Completion evidence: CrewAI Studio response classified as `TECA_LIVE_CONFIGURATION_ALIGNED` with actual stored read-back.
 - Repository documentation alone is not sufficient evidence of live Studio alignment.
 
@@ -153,7 +181,7 @@ Required sequence:
 10. Provider selection.
 11. Measurable non-functional targets.
 12. Security, privacy, test, migration, deployment, rollback, monitoring, support, incident, and operations plans.
-13. Release-specific and module-specific implementation slices with requirement IDs, source paths, application index paths, canonical save targets, handoff states, file targets, dependencies, tests, owners, acceptance criteria, and review gates.
+13. Release-specific and module-specific implementation slices with requirement IDs, source paths, application index paths, canonical save targets, arrangement modes, handoff states, file targets, dependencies, tests, owners, acceptance criteria, and review gates.
 14. Exact scoped `implementation_authorized=true` approval before source-code work.
 
 ## NOT AUTHORIZED
@@ -179,8 +207,10 @@ Required sequence:
 ```text
 MASTER ARCHITECTURE PLAN: COMPLETE AS GOVERNING PLAN
 MASTER WORKER CONTINUITY AND SOURCE-OF-TRUTH COMMAND: COMPLETE IN 1PLAN SECTION 1A
+APPLICATION FOLDER ARRANGEMENT AND JOINER STARTING COMMAND: COMPLETE IN 1PLAN SECTION 1B
 APPLICATIONS MASTER STARTING POINT: COMPLETE IN REPOSITORY
 APPLICATION ENTRY INDEXES: 4 OF 4 AVAILABLE
+REV-011 APPLICATION FOLDER ALIGNMENT: COMPLETE
 EXISTING APPLICATION ARCHITECTURE MOVED OR DELETED: NO
 CORE WIREFRAME ARCHITECTURE: COMPLETE
 CORE WIREFLOW ARCHITECTURE: COMPLETE
