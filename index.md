@@ -7,6 +7,9 @@
 - [Applications Master Starting Point](Applications/README.md)
 - [Shared SaaS Platform Architecture Index](SaaS%20Platform/README.md)
 - [Free, Pro, and Premium Plans and Billing Architecture](SaaS%20Platform/Plans%20and%20Billing/INDEX.md)
+- [Printing and Peripheral Operations Architecture](SaaS%20Platform/Printing%20and%20Peripheral%20Operations/INDEX.md)
+- [Cross-Department Operating Fabric](SaaS%20Platform/Cross-Department%20Operating%20Fabric/INDEX.md)
+- [IT and Cross-Department Role Extension](SaaS%20Platform/IT_AND_CROSS_DEPARTMENT_ROLE_EXTENSION.md)
 - [Design Architecture Index](Design/README.md)
 - [TECA Repository Operational Index](TECA/README.md)
 - [Canonical Implementation Build Playbook](TECA/IMPLEMENTATION_BUILD_PLAN.md)
@@ -25,9 +28,10 @@ Every contributor entering application work must follow:
 → selected application INDEX.md
 → selected canonical application or module file
 → relevant shared contracts and design artifacts
+→ Cross-Department Operating Fabric when work crosses applications/departments
 ```
 
-The Technician Application uses decomposed module folders. Front Desk, Owner, and Customer Portal currently use a consolidated canonical `README.md` plus an additive navigation `INDEX.md`. Do not create duplicate module files merely to match visual folder depth.
+The Technician Application uses decomposed module folders. Front Desk, Owner, and Customer Portal currently use a consolidated canonical `README.md` plus an additive navigation `INDEX.md`. IT Operations uses decomposed application architecture. Do not create duplicate module files merely to match visual folder depth.
 
 ## APPLICATIONS
 
@@ -102,8 +106,6 @@ Current arrangement: consolidated canonical architecture with additive index nav
 
 Current arrangement: consolidated core-baseline architecture with additive index navigation.
 
-Future HR, payroll, finance, sales, franchise, analytics, automation, and other expansions require their own complete Section 8A packages before implementation.
-
 ### 4. CUSTOMER PORTAL — COMPLETE (100%)
 
 - [Customer Portal Entry Index](Applications/Customer%20Portal/INDEX.md)
@@ -111,10 +113,25 @@ Future HR, payroll, finance, sales, franchise, analytics, automation, and other 
 
 Current arrangement: consolidated canonical architecture with additive index navigation.
 
-## SHARED SAAS PLATFORM — COMPLETE (100%)
+### 5. IT OPERATIONS APPLICATION — COMPLETE AS ARCHITECTURE SPECIFICATION
+
+- [IT Operations Application Master Index](Applications/IT%20Operations%20Application/INDEX.md)
+- [IT Operations Completion Record](Applications/IT%20Operations%20Application/COMPLETION_RECORD.md)
+
+Current arrangement: decomposed application architecture with scope/governance, functional experience, data/integration, wireframe/wireflow/traceability, and security/quality/delivery volumes.
+
+### 6. ARCHITECTURED ROS AND FUTURE MODULES
+
+- [ROS Master Index](Applications/ARCHITECTURED%20REPAIR%20OPERATING%20SYSTEM%20(ROS)/INDEX.md)
+- [Future Modules Master Index](Applications/ARCHITECTURED%20REPAIR%20OPERATING%20SYSTEM%20(ROS)/9.%20FUTURE%20MODULES/INDEX.md)
+
+Future modules are connected through the Cross-Department Operating Fabric while retaining their own four-volume domain architecture.
+
+## SHARED SAAS PLATFORM — CORE CONTRACTS AND DECOMPOSED DETAIL PACKAGES
 
 - [Shared SaaS Platform Master Index](SaaS%20Platform/README.md)
 - [User, Role, and Workflow Architecture](SaaS%20Platform/USER_ROLE_AND_WORKFLOW_ARCHITECTURE.md)
+- [IT and Cross-Department Role Extension](SaaS%20Platform/IT_AND_CROSS_DEPARTMENT_ROLE_EXTENSION.md)
 - [Global System Contract Layer](SaaS%20Platform/GLOBAL_SYSTEM_CONTRACT_LAYER.md)
 - [Multi-Tenant Data and Entity Architecture](SaaS%20Platform/MULTI_TENANT_DATA_AND_ENTITY_ARCHITECTURE.md)
 - [Database Relationship and Ownership Model](SaaS%20Platform/DATABASE_RELATIONSHIP_AND_OWNERSHIP_MODEL.md)
@@ -125,22 +142,27 @@ Current arrangement: consolidated canonical architecture with additive index nav
 - [Notification and Communication Contract](SaaS%20Platform/NOTIFICATION_AND_COMMUNICATION_CONTRACT.md)
 - [Payment, Invoice, Refund, and Financial Control Contract](SaaS%20Platform/PAYMENT_INVOICE_REFUND_AND_FINANCIAL_CONTROL_CONTRACT.md)
 - [File, Media, Document, QR, and Barcode Contract](SaaS%20Platform/FILE_MEDIA_DOCUMENT_QR_AND_BARCODE_CONTRACT.md)
+- [Printing and Peripheral Operations Detail Package](SaaS%20Platform/Printing%20and%20Peripheral%20Operations/INDEX.md)
 - [Audit, Retention, Backup, Recovery, and Incident Contract](SaaS%20Platform/AUDIT_RETENTION_BACKUP_RECOVERY_AND_INCIDENT_CONTRACT.md)
 - [Cross-Application Workflow and Handoff Matrix](SaaS%20Platform/CROSS_APPLICATION_WORKFLOW_AND_HANDOFF_MATRIX.md)
+- [Cross-Department Operating Fabric Detail Package](SaaS%20Platform/Cross-Department%20Operating%20Fabric/INDEX.md)
 - [Non-Functional Requirements](SaaS%20Platform/NON_FUNCTIONAL_REQUIREMENTS.md)
 - [Development Readiness Audit](SaaS%20Platform/DEVELOPMENT_READINESS_AUDIT.md)
 
-The Plans and Billing package specializes the existing subscription contract; it does not increase or duplicate the 14 shared-contract count.
+The Plans and Billing, Printing, and Cross-Department packages specialize existing shared contracts; they do not replace or duplicate the core-contract authority.
 
-## DESIGN ARCHITECTURE — CORE BASELINE COMPLETE (100%)
+## DESIGN ARCHITECTURE — CORE BASELINE COMPLETE
 
 - [Design Architecture Master Index](Design/README.md)
 - [Wireframe Architecture](Design/WIREFRAME_ARCHITECTURE.md)
 - [Wireflow Architecture](Design/WIREFLOW_ARCHITECTURE.md)
 - [Non-Technical User UI Design System](Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md)
-- [Plans and Billing Domain-Specific Wireframes, Wireflows, and Traceability](SaaS%20Platform/Plans%20and%20Billing/04.%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
+- [Plans and Billing Domain Wireframes/Wireflows](SaaS%20Platform/Plans%20and%20Billing/04.%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
+- [Printing Domain Wireframes/Wireflows](SaaS%20Platform/Printing%20and%20Peripheral%20Operations/06.%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
+- [IT Operations Wireframes/Wireflows](Applications/IT%20Operations%20Application/Volume%204%20-%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
+- [Cross-Department Wireframes/Wireflows](SaaS%20Platform/Cross-Department%20Operating%20Fabric/04.%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
 
-## TECA GOVERNANCE AND BUILD-ORDER PLANS — COMPLETE IN REPOSITORY
+## TECA GOVERNANCE AND BUILD-ORDER PLANS
 
 - [TECA Repository Operational Index](TECA/README.md)
 - [TECA Agent Job Assignments](TECA/AGENT_JOB_ASSIGNMENTS.md)
@@ -148,33 +170,24 @@ The Plans and Billing package specializes the existing subscription contract; it
 - [TECA CrewAI Studio Configuration Update](TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
 - [TECA Canonical Implementation Build Plan](TECA/IMPLEMENTATION_BUILD_PLAN.md)
 - [Plans and Billing Exact Implementation Sequence](SaaS%20Platform/Plans%20and%20Billing/05.%20Security%20Quality%20and%20Delivery/IMPLEMENTATION_SEQUENCE.md)
-
-Canonical authority mapping:
-
-- Project scope, priority, co-worker continuation, active-work notification, no-racing, save-before-transfer, handoff, source provenance, gap filling, unsupported-conflict removal, folder assignment, duplicate classification, and completion rules: [`1plan.md`](1plan.md).
-- Application folder starting point and arrangement modes: [`Applications/README.md`](Applications/README.md), under `1plan.md` authority.
-- Full expansion architecture and UI/UX gate: [`1plan.md`, Section 8A](1plan.md).
-- Operational TECA behavior and comparable-product research procedure: [`TECA/README.md`](TECA/README.md), under `1plan.md` authority.
-- Exact global implementation build sequence: [`TECA/IMPLEMENTATION_BUILD_PLAN.md`](TECA/IMPLEMENTATION_BUILD_PLAN.md), after the applicable `1plan.md` gates pass.
-- Exact Free/Pro/Premium implementation sequence: [`SaaS Platform/Plans and Billing/05. Security Quality and Delivery/IMPLEMENTATION_SEQUENCE.md`](SaaS%20Platform/Plans%20and%20Billing/05.%20Security%20Quality%20and%20Delivery/IMPLEMENTATION_SEQUENCE.md).
+- [Printing Exact Implementation Sequence](SaaS%20Platform/Printing%20and%20Peripheral%20Operations/07.%20Quality%20and%20Delivery/IMPLEMENTATION_SEQUENCE.md)
+- [IT Operations Exact Implementation Sequence](Applications/IT%20Operations%20Application/Volume%205%20-%20Security%20Quality%20and%20Delivery/security_quality_delivery.md)
+- [Cross-Department Exact Implementation Sequence](SaaS%20Platform/Cross-Department%20Operating%20Fabric/05.%20Traceability%20Security%20and%20Delivery/TRACEABILITY_SECURITY_QUALITY_AND_DELIVERY.md)
 
 ## CURRENT STATUS
 
 - Core application architecture: COMPLETE.
-- Technician logical surfaces: 36.
-- Technician canonical detailed files: 34.
-- Consolidated duplicate Header Profile and Notification files: 2 removed/superseded by canonical Sidebar modules.
-- Root aggregate `PLAN.md`: superseded because it copied modular architecture; `1plan.md` remains the master plan.
-- Shared SaaS platform documents: 14 of 14 complete.
-- Free, Pro, Premium Plans and Billing architecture specification package: COMPLETE.
-- Plans and Billing low-fidelity screens: 24 of 24 complete as specification.
-- Plans and Billing detailed wireflows: 20 of 20 complete.
-- Core design architecture documents: 3 of 3 complete.
-- TECA repository governance and build-order documents: complete.
-- Future expansions: each requires full architecture and design.
-- Active accidental duplicate canonical documents after this audit: 0.
-- Live TECA Studio alignment: pending Studio execution and read-back.
-- Live price publication, payment-provider selection, high-fidelity visual design, actual coding, executed testing, deployment, and release: separate gated statuses.
+- Technician logical surfaces: 36; canonical detailed files: 34.
+- Front Desk, Owner, and Customer Portal core architecture: COMPLETE.
+- IT Operations architecture: COMPLETE AS SPECIFICATION with 26 screens and 20 flows.
+- ROS Future Module architecture packages: 17 of 17 complete as specifications.
+- Shared SaaS core contracts: 14 of 14 complete.
+- Free/Pro/Premium Plans and Billing architecture: COMPLETE with 24 screens and 20 flows.
+- Printing and Peripheral Operations architecture: COMPLETE with 20 screens and 16 flows.
+- Cross-Department Operating Fabric: COMPLETE with 12 end-to-end process families, 20 screens, and 16 flows.
+- All departments/applications are connected through shared process instances, linked tasks, handoffs, approvals, timeline, notifications, blockers, documents, data/API/events, and audit while domain ownership remains separate.
+- Active accidental duplicate canonical documents created by these packages: 0 after placement/duplicate validation.
+- High-fidelity visual design, interactive prototypes, application/local-agent code, executed hardware/system tests, deployment, and production support evidence remain separate gated statuses.
 - Uncontrolled coding authorized: NO.
 
-**`1plan.md` IS THE MASTER SOURCE OF TRUTH. FREE / PRO / PREMIUM WORK STARTS AT `SaaS Platform/Plans and Billing/INDEX.md`.**
+**`1plan.md` REMAINS THE MASTER SOURCE OF TRUTH. CROSS-DEPARTMENT WORK ENTERS THROUGH `SaaS Platform/Cross-Department Operating Fabric/INDEX.md`; PRINTING THROUGH `SaaS Platform/Printing and Peripheral Operations/INDEX.md`; IT THROUGH `Applications/IT Operations Application/INDEX.md`.**
