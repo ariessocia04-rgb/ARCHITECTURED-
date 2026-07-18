@@ -138,6 +138,27 @@
 - Active accidental duplicate canonical documents: 0.
 - Domain-specific modules deleted only because of shared structure: 0.
 
+### REV-013 — Free, Pro, and Premium Plans and Billing Architecture
+
+- Status: COMPLETE AS A FULL ARCHITECTURE SPECIFICATION PACKAGE.
+- Canonical entry: `SaaS Platform/Plans and Billing/INDEX.md`.
+- Parent authority: `SaaS Platform/SUBSCRIPTION_ENTITLEMENT_USAGE_AND_TENANT_LIFECYCLE_CONTRACT.md`.
+- Result:
+  - Free, Pro, and Premium plan/version, feature, limit, price-book, trial, add-on, grandfathering, and migration mechanics defined.
+  - Subscription/access state, upgrade, downgrade remediation, renewal, past due, grace, suspension, reactivation, cancellation, export, archive, and closure defined.
+  - Physical schema, APIs, events, webhooks, provider adapter, usage metering, reconciliation, audit, and provider-failure behavior defined.
+  - 24 of 24 low-fidelity subscription/billing screens documented.
+  - 20 of 20 normal/failure/retry/recovery wireflows documented.
+  - Complete screen-role-entitlement-data-API-event-test traceability created.
+  - Security, privacy, NFR targets, threat model, test matrix, release, rollout, rollback, and exact Codex implementation sequence defined.
+  - Existing 14 shared contracts and three global Design documents preserved as parent authorities; no competing duplicate created.
+- Truthful non-completions:
+  - recommended launch prices require owner approval before live publication;
+  - exact payment provider and technology versions remain gated decisions;
+  - high-fidelity visual design and interactive prototype are not created by this architecture task;
+  - source code, executed tests, deployment, and production evidence are not created;
+  - `implementation_authorized=true` remains absent.
+
 ## CURRENT OPEN REVISION
 
 ### REV-008 — Live TECA CrewAI Studio Alignment
@@ -158,18 +179,18 @@
 
 ### Release-Specific Controlled Implementation Planning
 
-1. Expansion registry and truthful status.
-2. MVP and later-release boundaries.
-3. Technology and version decisions.
-4. Repository, hosting, environment, region, and deployment strategy.
-5. Physical database schema, migrations, tenant isolation, backup, restore, and ER diagram.
-6. API, event, webhook, real-time, import/export, integration, idempotency, and synchronization schemas.
-7. High-fidelity UI and interactive prototype.
-8. Design tokens and components.
-9. Providers and measurable non-functional targets.
-10. Security, privacy, testing, migration, deployment, rollback, monitoring, support, incident, and operations plans.
-11. Release/module implementation slices with ownership, paths, dependencies, tests, acceptance criteria, and review gates.
-12. Exact scoped `implementation_authorized=true` approval before source-code work.
+1. Approve the exact Free/Pro/Premium release slice and market.
+2. Approve or revise the draft launch prices, limits, trial, retention, and support policies.
+3. Lock technology and supported versions.
+4. Select the payment/billing provider and approved provider capabilities.
+5. Approve environments, hosting, region, deployment, and Premium isolation policy.
+6. Convert the physical schema specification into reviewed migrations and ER diagrams.
+7. Lock generated API/event/webhook schemas and provider mappings.
+8. Create high-fidelity UI and an interactive prototype from the 24 screens and 20 flows.
+9. Create design tokens/components without changing workflow rules.
+10. Approve measurable targets and operational provider assumptions.
+11. Create exact implementation tasks with source paths, IDs, tests, acceptance, and review gates.
+12. Set exact scoped `implementation_authorized=true` before source-code work.
 
 ## NOT AUTHORIZED
 
@@ -179,6 +200,7 @@
 - Treating chat, memory, old branches, local drafts, or copied files as canonical truth.
 - Creating duplicate architecture, design, TECA, plan, or memory records.
 - Deleting domain-specific modules merely because they share a standard structure.
+- Publishing draft prices or choosing a provider without owner approval.
 - Claiming live TECA alignment before read-back.
 - Claiming deployment or production readiness from repository documentation alone.
 
@@ -189,12 +211,17 @@ MASTER ARCHITECTURE PLAN: COMPLETE AS GOVERNING PLAN
 APPLICATIONS STARTING POINT: COMPLETE
 DUPLICATE CLASSIFICATION RULE: COMPLETE IN 1PLAN SECTION 1C
 REV-012 DUPLICATE AUDIT AND CLEANUP: COMPLETE
+REV-013 FREE / PRO / PREMIUM ARCHITECTURE PACKAGE: COMPLETE AS SPECIFICATION
+PLANS AND BILLING SCREENS: 24 OF 24
+PLANS AND BILLING WIREFLOWS: 20 OF 20
 REMOVED OR SUPERSEDED DUPLICATE FILES: 6
 ACTIVE ACCIDENTAL DUPLICATE CANONICAL DOCUMENTS: 0
 TECHNICIAN LOGICAL SURFACES: 36
 TECHNICIAN CANONICAL DETAILED FILES: 34
 DURABLE TECA MEMORIES: 2
 LIVE TECA STUDIO ALIGNMENT: PENDING
-RELEASE-SPECIFIC IMPLEMENTATION PLANNING: INCOMPLETE
+HIGH-FIDELITY PLANS/BILLING DESIGN: NOT CREATED
+LIVE PLAN/PRICE PUBLICATION AND PROVIDER SELECTION: NOT APPROVED
+SOURCE CODE / EXECUTED TESTS / DEPLOYMENT: NOT CREATED
 GLOBAL CODING AUTHORIZATION: NO
 ```
