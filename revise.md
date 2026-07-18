@@ -2,13 +2,13 @@
 
 ## RULE
 
-- Read this file after `1plan.md`, `README.md`, and `Applications/README.md` when application work is requested.
-- `1plan.md` is the master source of truth for scope, priority, worker coordination, handoff, provenance, canonical targets, folder assignments, and completion rules.
-- Complete the current related task accurately before moving to a later related task.
-- Validate and skip items already complete.
-- Do not create duplicate canonical files.
-- Do not mark an item complete without repository or live-system evidence.
-- A completed governing plan does not prove that coding, testing, deployment, or release is complete.
+- Read after `1plan.md` and `README.md`.
+- `1plan.md` is the master authority for scope, priority, worker coordination, handoff, provenance, canonical targets, duplicate classification, folder assignments, and completion rules.
+- Complete the current related task before moving to a later related task.
+- Validate and skip work already complete.
+- Do not create duplicate canonical files or memories.
+- Do not mark work complete without repository or live-system evidence.
+- A governing plan does not prove coding, testing, deployment, or release completion.
 
 ## COMPLETED CONTROLLED REVISIONS
 
@@ -16,210 +16,185 @@
 
 - Status: COMPLETE.
 - File: `Design/WIREFRAME_ARCHITECTURE.md`
-- Result: Global, Technician, Front Desk, Owner, Customer Portal, Platform, responsive, and exception-state wireframes documented for the current core Repair SaaS baseline.
 
 ### REV-002 — Canonical Wireflow Architecture
 
 - Status: COMPLETE.
 - File: `Design/WIREFLOW_ARCHITECTURE.md`
-- Result: End-to-end navigation, decisions, handoffs, exceptions, recovery, and offline synchronization documented for the current core Repair SaaS baseline.
 
 ### REV-003 — Non-Technical User UI Design System
 
 - Status: COMPLETE.
 - File: `Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md`
-- Result: Plain-language, guided-task, form, validation, confirmation, responsive, accessibility, help, and usability rules documented without changing completed flows.
 
 ### REV-004 — TECA Agent Repository Job Assignments
 
 - Status: COMPLETE.
 - File: `TECA/AGENT_JOB_ASSIGNMENTS.md`
-- Result: 9 agents and 11 stages assigned exact repository jobs, goals, outputs, boundaries, and prohibited actions.
 
 ### REV-005 — TECA Sequential Pipeline Execution Plan
 
 - Status: COMPLETE.
 - File: `TECA/PIPELINE_EXECUTION_PLAN.md`
-- Result: Read order, no-jump rule, finish-current-task rule, skip-complete rule, phase gates, implementation authorization, deployment gate, and evidence rules documented.
 
 ### REV-006 — TECA CrewAI Studio Update Handoff
 
 - Status: COMPLETE IN REPOSITORY.
 - File: `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md`
-- Result: Self-contained configuration instruction prepared for the live TECA Builder automation.
 
-### REV-007 — Prior Master Document Synchronization
+### REV-007 — Architecture, Design, and TECA Master Synchronization
 
-- Status: COMPLETE FOR THE PRIOR CONTROLLED BATCH.
-- Result: Architecture, design, and TECA governance statuses were synchronized before the implementation-build-playbook addition.
+- Status: COMPLETE.
+- Result: Master plan, README, index, audits, verification, duplicate register, revision register, and folder indexes synchronized for the architecture/design phase.
 
 ### REV-009 — Canonical Implementation Build Playbook
 
 - Status: COMPLETE AS A GOVERNING PLAN.
 - File: `TECA/IMPLEMENTATION_BUILD_PLAN.md`
-- Result:
-  1. Foundation-first and dependency-ordered vertical-slice implementation method defined.
-  2. Exact repository, CI, security, configuration, observability, and design-system foundation order defined.
-  3. Exact physical database and migration order defined.
-  4. Exact identity, tenant, role, permission, shared backend, and shared frontend order defined.
-  5. Exact CORE-01 through CORE-16 module order defined.
-  6. Per-module database → backend → API/events → frontend → tests → validation → publish sequence defined.
-  7. Unit, contract, integration, E2E, security, accessibility, performance, resilience, recovery, and release-test gates defined.
-  8. Local → CI → preview → development → staging → production promotion defined.
-  9. Deployment, migration, monitoring, rollback, and post-deployment verification defined.
-  10. The playbook explicitly remains separate from actual implementation status and does not grant coding authorization.
+- Result: Foundation, database, backend, frontend, vertical-slice, testing, deployment, rollback, and release order defined without granting coding authorization.
 
-### REV-010 — Master Worker Continuity, Handoff, and Source-of-Truth Alignment
+### REV-010 — Worker Continuity, Handoff, and Source Provenance
 
 - Status: COMPLETE IN REPOSITORY.
-- Master source: `1plan.md`, Section 1A.
-- Synchronized operational files:
-  - `TECA/README.md`
-  - `index.md`
-  - `revise.md`
-- Result:
-  1. Added the exact factual notification command for recent or active co-workers.
-  2. Required active workers to continue their valid current task under the new rules unless the owner explicitly reassigns them.
-  3. Required other workers to move to another unclaimed incomplete plan item instead of racing or duplicating active work.
-  4. Added safe checkpoint and save-before-transfer requirements before reassignment.
-  5. Required exact handoff paths, completed and missing work, dependencies, tests, blockers, and latest commit or SHA evidence.
-  6. Made `1plan.md` the master source for project-wide worker coordination, provenance, canonical save targets, and conflict-removal authority.
-  7. Required detailed work to be saved in the canonical target assigned by `1plan.md` and synchronized back to the plan when required.
-  8. Classified unsupported conflicting or duplicate content for controlled removal or supersession while preserving Git and revision evidence.
-  9. Removed the competing claim that `TECA/README.md` itself was the master source of worker rules; it is now the operational index under `1plan.md` authority.
-  10. No application implementation file or active co-worker implementation was changed.
+- Authority: `1plan.md`, Section 1A.
+- Result: continue-current-work, no-racing, save-before-transfer, handoff, gap-fill, source provenance, and unsupported-conflict rules established.
 
-### REV-011 — Applications Folder Starting-Point and Index Alignment
+### REV-011 — Applications Starting Point and Index Alignment
 
 - Status: COMPLETE IN REPOSITORY.
-- Master source: `1plan.md`, Section 1B.
-- Reference pattern inspected: `Applications/Technician Application/`.
-- Added files:
-  - `Applications/README.md`
-  - `Applications/Front Desk Application/INDEX.md`
-  - `Applications/Owner Application/INDEX.md`
-  - `Applications/Customer Portal/INDEX.md`
-- Synchronized files:
-  - `1plan.md`
-  - `README.md`
-  - `index.md`
-  - `TECA/README.md`
-  - `TECA/PIPELINE_EXECUTION_PLAN.md`
-  - `MASTER_AUDIT.md`
-  - `FINAL_ARCHITECTURE_VERIFICATION.md`
-  - `duplicate.md`
-  - `revise.md`
+- Authority: `1plan.md`, Section 1B.
 - Result:
-  1. Defined `Applications/README.md` as the application-folder starting point under `1plan.md` authority.
-  2. Preserved the Technician Application decomposed volume/module/folder structure as the approved reference pattern.
-  3. Defined two valid arrangement modes: `DECOMPOSED_MODULE_MODE` and `CONSOLIDATED_ARCHITECTURE_MODE`.
-  4. Added entry indexes for Front Desk, Owner, and Customer Portal without copying their canonical `README.md` architecture.
-  5. Kept existing Front Desk, Owner, and Customer architecture files in place and unchanged.
-  6. Prohibited empty appearance-only folders and duplicate module files.
-  7. Required every joiner to start at `1plan.md`, continue through `Applications/README.md`, and enter the selected application through its `INDEX.md`.
-  8. Required future module decomposition to have plan-assigned paths, traceability, link synchronization, no-content-loss validation, duplicate validation, and owner approval.
-  9. Existing completed application content deleted, moved, renamed, or split in this batch: NO.
-  10. Open PR #4 was inspected as `STALE_REVIEW_REQUIRED`; its files were not used as authority and no active implementation work was overwritten.
-- Read-back evidence:
-  - `Applications/README.md`: VERIFIED.
-  - Front Desk `INDEX.md`: VERIFIED.
-  - Owner `INDEX.md`: VERIFIED.
-  - Customer Portal `INDEX.md`: VERIFIED.
-  - `1plan.md` Section 1B: VERIFIED.
-  - `README.md`, `index.md`, TECA operational index, pipeline plan, duplicate validation, master audit, and final verification: SYNCHRONIZED.
-- Key commits:
-  - `3f7de7209fb718d7ecfb0d4fdf2a1a5bfd673920` — Applications master starting point.
-  - `1c4ae817fee8242e68a9bf7dbd29efe97fec46e7` — Front Desk entry index.
-  - `d99732e15dcda051fe86de551525c02b1a7b8341` — Owner entry index.
-  - `bb76ca39951aa96eb091be5642987b97db40c2a0` — Customer Portal entry index.
-  - `baa6e8148fa59f991a46395e3aff3c856f4505bb` — master plan Section 1B alignment.
-  - `23d8e401fe3d0fb33e163d0aca0813e2be5c9656` — root index alignment.
-  - `0a0b64b99a460b25a6a8501fd497eafc6716a999` — project README alignment.
-  - `21f00ac9f83a143d48ee7fe595d3f6292361c7d4` — TECA operational alignment.
-  - `f2c9f32aed86488715ee356210dff8e791b8d938` — pipeline application-entry alignment.
-  - `afe184e50d30214e2bb951a1fd1a18958d38465e` — duplicate and placement validation.
-  - `4729b16a6cff9433a09d5334d529111d8ccdce67` — master audit synchronization.
-  - `b579d655dc2078a59ef88472c425904f4ff53a23` — final verification synchronization.
+  - `Applications/README.md` established as application starting point.
+  - Four application indexes available.
+  - Technician uses decomposed module mode.
+  - Front Desk, Owner core, and Customer Portal use consolidated README mode with navigation indexes.
+  - Existing architecture preserved during alignment.
+
+### REV-012 — Evidence-Based Repository Duplicate Audit and Cleanup
+
+- Status: COMPLETE.
+- Authority: `1plan.md`, Section 1C.
+- Scope: active repository files, application architecture, shared contracts, design, TECA plans, root documents, and `.teca/memory/`.
+
+#### Removed or superseded
+
+1. `Applications/Technician Application/Volume 1 - Header/Notification/notification.md`
+   - Classification: `EXACT_DUPLICATE`.
+   - Evidence: same blob SHA as Sidebar Module 11 Notification.
+   - Canonical replacement: `Applications/Technician Application/Volume 2 - Sidebar/Module 11 - Notification/notification.md`.
+   - Delete commit: `dd0eb3680be321a54487477287d7b73247d1a3fc`.
+
+2. `Applications/Technician Application/Volume 1 - Header/Profile/profile.md`
+   - Classification: `NEAR_DUPLICATE_SAME_AUTHORITY` / `SUBSET_DUPLICATE`.
+   - Canonical replacement: `Applications/Technician Application/Volume 2 - Sidebar/Module 12 - Profile/profile.md`.
+   - Delete commit: `622d19bc539277f9e0a89b484aef46d4e47b634a`.
+
+3. `PLAN.md`
+   - Classification: `AGGREGATE_COPY`.
+   - Evidence: creation history identified it as a compilation of the 36 Technician modules for Google Stitch.
+   - Canonical replacements: `1plan.md`, application indexes, module files, and `Design/`.
+   - Delete commit: `a4b838045b65299b7a81b908c6a86eb76e10867e`.
+
+4. `.teca/memory/FailurePatterns/mem_1784179908210.json`
+   - Classification: superseded failure pattern.
+   - Canonical replacement: `.teca/memory/FailurePatterns/mem_1784187086628.json`.
+   - Delete commit: `9779ab5bd7f1a5701c3afdfe489026b585033d3e`.
+
+5. `.teca/memory/ProjectKnowledge/mem_1784180613040.json`
+   - Classification: duplicate transient run summary.
+   - Delete commit: `135d656a3d66c009d17dfcbe169ecb78fd6b6c44`.
+
+6. `.teca/memory/ProjectKnowledge/mem_1784236443508.json`
+   - Classification: duplicate transient run summary.
+   - Delete commit: `8badd008a2f45cef9f0d9cc5b7ff58e18b24a209`.
+
+#### Preserved intentionally
+
+- Front Desk, Owner, and Customer Portal INDEX/README pairs because navigation and canonical architecture have different purposes.
+- Shared SaaS contracts because each governs a distinct cross-application concern.
+- Technician domain modules using a common enterprise template because their domain content and responsibility differ.
+- Main Workspace component documents because each defines a separate reusable UI concern.
+- Design wireflow and shared handoff matrix because one defines user navigation and the other defines operational ownership.
+- TECA pipeline and implementation build plans because one governs automation phases and the other detailed build order.
+
+#### Synchronized
+
+- `Applications/Technician Application/INDEX.md`
+- `index.md`
+- `1plan.md`
+- `README.md`
+- `duplicate.md`
+- `.teca/memory/index.json`
+- `revise.md`
+
+#### Result
+
+- Technician logical surfaces: 36.
+- Technician canonical detailed files: 34.
+- Header quick-access references: 2.
+- Memories before cleanup: 5.
+- Durable memories after cleanup: 2.
+- Removed/superseded duplicate files: 6.
+- Active accidental duplicate canonical documents: 0.
+- Domain-specific modules deleted only because of shared structure: 0.
 
 ## CURRENT OPEN REVISION
 
 ### REV-008 — Live TECA CrewAI Studio Alignment
 
 - Status: PENDING LIVE EXECUTION AND READ-BACK.
-- Source instruction: `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md`
-- Master worker authority: `1plan.md`, Section 1A.
-- Application folder and starting authority: `1plan.md`, Section 1B.
-- Application navigation implementation: `Applications/README.md`.
-- Required result:
-  1. Apply the canonical role, goal, backstory, task, phase-gate, repository-read-order, no-duplicate, finish-current-task, skip-complete, validation, publishing, memory, diagnostic, and summary rules in CrewAI Studio.
-  2. Add the `1plan.md` Section 1A active-work notification, continue-current-work, no-racing, save-before-transfer, source-provenance, gap-fill, and unsupported-conflict handling behavior without changing approved stage ownership.
-  3. Use `Applications/README.md` and each application `INDEX.md` as the mandatory entry path for application work.
-  4. Enforce the selected application arrangement mode and canonical detail source.
-  5. Preserve the existing 9 agents, 11 tasks, exact stage order, IDs, contexts, tools, models, and sequential process unless an explicitly approved correction is required.
-  6. Ensure implementation requests are governed by `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
-  7. Return live read-back evidence for every changed agent and task.
-- Completion evidence: CrewAI Studio response classified as `TECA_LIVE_CONFIGURATION_ALIGNED` with actual stored read-back.
-- Repository documentation alone is not sufficient evidence of live Studio alignment.
+- Source instruction: `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md`.
+- Required additions:
+  - enforce `1plan.md` Sections 1A, 1B, 1C, and 8A;
+  - use current application entry paths;
+  - search before creating;
+  - skip completed work;
+  - apply duplicate classifications before create/update/publish;
+  - preserve 9 agents, 11 tasks, exact order, IDs, contexts, tools, and sequential process unless an approved correction is required;
+  - return live stored read-back.
+- Completion evidence: `TECA_LIVE_CONFIGURATION_ALIGNED` with actual Studio configuration read-back.
 
 ## NEXT CONTROLLED PHASE AFTER REV-008
 
 ### Release-Specific Controlled Implementation Planning
 
-Use `1plan.md` for scope, priorities, source mapping, assignments, folder paths, and worker coordination. Use `Applications/README.md` for application entry and arrangement. Use `TECA/IMPLEMENTATION_BUILD_PLAN.md` for the exact authorized build order.
-
-Required sequence:
-
-1. Expansion registry and truthful scope status.
-2. MVP, release, and exclusion boundaries.
-3. Release and dependency maps.
-4. Technology stack and supported versions.
-5. Repository, hosting, environment, region, and deployment strategy.
-6. Physical database schema, migrations, indexes, tenant isolation, backup, restore, and ER diagram.
-7. Exact API, event, webhook, realtime, import, export, integration, idempotency, and synchronization schemas.
-8. High-fidelity UI screens and interactive prototype traced to canonical wireframes and wireflows.
-9. Design tokens and component specifications.
-10. Provider selection.
-11. Measurable non-functional targets.
-12. Security, privacy, test, migration, deployment, rollback, monitoring, support, incident, and operations plans.
-13. Release-specific and module-specific implementation slices with requirement IDs, source paths, application index paths, canonical save targets, arrangement modes, handoff states, file targets, dependencies, tests, owners, acceptance criteria, and review gates.
-14. Exact scoped `implementation_authorized=true` approval before source-code work.
+1. Expansion registry and truthful status.
+2. MVP and later-release boundaries.
+3. Technology and version decisions.
+4. Repository, hosting, environment, region, and deployment strategy.
+5. Physical database schema, migrations, tenant isolation, backup, restore, and ER diagram.
+6. API, event, webhook, real-time, import/export, integration, idempotency, and synchronization schemas.
+7. High-fidelity UI and interactive prototype.
+8. Design tokens and components.
+9. Providers and measurable non-functional targets.
+10. Security, privacy, testing, migration, deployment, rollback, monitoring, support, incident, and operations plans.
+11. Release/module implementation slices with ownership, paths, dependencies, tests, acceptance criteria, and review gates.
+12. Exact scoped `implementation_authorized=true` approval before source-code work.
 
 ## NOT AUTHORIZED
 
-- Uncontrolled application coding.
-- Global coding authorization inferred from the existence of the build playbook.
+- Uncontrolled coding.
 - Phase or module jumping.
-- Beginning a later related task before the current related task is safely completed or handed off.
-- Racing, shadowing, or overwriting active co-worker work.
-- Leaving reassigned work only in chat, memory, an uncommitted workspace, or an unknown location.
-- Treating a local draft, old branch, prompt, memory, or copied file as source of truth without canonical validation and publishing.
-- Starting application work from a random module while bypassing `Applications/README.md` and the application `INDEX.md`.
-- Creating empty folders or duplicate module files only to imitate visual hierarchy.
-- Moving or deleting consolidated application architecture before approved decomposition, link synchronization, validation, and owner approval.
-- Future expansion implementation before Section 8A completion.
-- Duplicate architecture, design, implementation-plan, worker-rule, or shared business-logic documents.
+- Racing or overwriting active work.
+- Treating chat, memory, old branches, local drafts, or copied files as canonical truth.
+- Creating duplicate architecture, design, TECA, plan, or memory records.
+- Deleting domain-specific modules merely because they share a standard structure.
 - Claiming live TECA alignment before read-back.
-- Claiming deployment or production readiness from repository changes alone.
-- Production, security, performance, availability, accessibility, privacy, recovery, or compliance claims without approved targets and test evidence.
+- Claiming deployment or production readiness from repository documentation alone.
 
 ## CURRENT STATUS
 
 ```text
 MASTER ARCHITECTURE PLAN: COMPLETE AS GOVERNING PLAN
-MASTER WORKER CONTINUITY AND SOURCE-OF-TRUTH COMMAND: COMPLETE IN 1PLAN SECTION 1A
-APPLICATION FOLDER ARRANGEMENT AND JOINER STARTING COMMAND: COMPLETE IN 1PLAN SECTION 1B
-APPLICATIONS MASTER STARTING POINT: COMPLETE IN REPOSITORY
-APPLICATION ENTRY INDEXES: 4 OF 4 AVAILABLE
-REV-011 APPLICATION FOLDER ALIGNMENT: COMPLETE
-EXISTING APPLICATION ARCHITECTURE MOVED OR DELETED: NO
-CORE WIREFRAME ARCHITECTURE: COMPLETE
-CORE WIREFLOW ARCHITECTURE: COMPLETE
-NON-TECHNICAL UI DESIGN: COMPLETE
-TECA REPOSITORY OPERATIONAL GOVERNANCE: COMPLETE IN REPOSITORY
-CANONICAL IMPLEMENTATION BUILD PLAYBOOK: COMPLETE AS GOVERNING PLAN
+APPLICATIONS STARTING POINT: COMPLETE
+DUPLICATE CLASSIFICATION RULE: COMPLETE IN 1PLAN SECTION 1C
+REV-012 DUPLICATE AUDIT AND CLEANUP: COMPLETE
+REMOVED OR SUPERSEDED DUPLICATE FILES: 6
+ACTIVE ACCIDENTAL DUPLICATE CANONICAL DOCUMENTS: 0
+TECHNICIAN LOGICAL SURFACES: 36
+TECHNICIAN CANONICAL DETAILED FILES: 34
+DURABLE TECA MEMORIES: 2
 LIVE TECA STUDIO ALIGNMENT: PENDING
 RELEASE-SPECIFIC IMPLEMENTATION PLANNING: INCOMPLETE
-GLOBAL APPLICATION CODING AUTHORIZATION: NO
-ACTUAL CODING / TESTING / DEPLOYMENT / RELEASE: SEPARATE STATUS
-NEXT PHASE: LIVE ALIGNMENT AND RELEASE-SPECIFIC CONTROLLED IMPLEMENTATION PLANNING
+GLOBAL CODING AUTHORIZATION: NO
 ```
