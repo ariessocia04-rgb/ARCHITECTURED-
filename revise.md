@@ -3,6 +3,7 @@
 ## RULE
 
 - Read this file after `1plan.md` and `README.md` and before starting repository work.
+- `1plan.md` is the master source of truth for scope, priority, worker coordination, handoff, provenance, canonical targets, and completion rules.
 - Complete the current related task accurately before moving to a later related task.
 - Validate and skip items already complete.
 - Do not create duplicate canonical files.
@@ -68,17 +69,39 @@
   9. Deployment, migration, monitoring, rollback, and post-deployment verification defined.
   10. The playbook explicitly remains separate from actual implementation status and does not grant coding authorization.
 
+### REV-010 — Master Worker Continuity, Handoff, and Source-of-Truth Alignment
+
+- Status: COMPLETE IN REPOSITORY.
+- Master source: `1plan.md`, Section 1A.
+- Synchronized operational files:
+  - `TECA/README.md`
+  - `index.md`
+  - `revise.md`
+- Result:
+  1. Added the exact factual notification command for recent or active co-workers.
+  2. Required active workers to continue their valid current task under the new rules unless the owner explicitly reassigns them.
+  3. Required other workers to move to another unclaimed incomplete plan item instead of racing or duplicating active work.
+  4. Added safe checkpoint and save-before-transfer requirements before reassignment.
+  5. Required exact handoff paths, completed and missing work, dependencies, tests, blockers, and latest commit or SHA evidence.
+  6. Made `1plan.md` the master source for project-wide worker coordination, provenance, canonical save targets, and conflict-removal authority.
+  7. Required detailed work to be saved in the canonical target assigned by `1plan.md` and synchronized back to the plan when required.
+  8. Classified unsupported conflicting or duplicate content for controlled removal or supersession while preserving Git and revision evidence.
+  9. Removed the competing claim that `TECA/README.md` itself was the master source of worker rules; it is now the operational index under `1plan.md` authority.
+  10. No application implementation file or active co-worker implementation was changed.
+
 ## CURRENT OPEN REVISION
 
 ### REV-008 — Live TECA CrewAI Studio Alignment
 
 - Status: PENDING LIVE EXECUTION AND READ-BACK.
 - Source instruction: `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md`
+- Master worker authority: `1plan.md`, Section 1A.
 - Required result:
   1. Apply the canonical role, goal, backstory, task, phase-gate, repository-read-order, no-duplicate, finish-current-task, skip-complete, validation, publishing, memory, diagnostic, and summary rules in CrewAI Studio.
-  2. Preserve the existing 9 agents, 11 tasks, exact stage order, IDs, contexts, tools, models, and sequential process unless an explicitly approved correction is required.
-  3. Ensure implementation requests are governed by `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
-  4. Return live read-back evidence for every changed agent and task.
+  2. Add the `1plan.md` Section 1A active-work notification, continue-current-work, no-racing, save-before-transfer, source-provenance, gap-fill, and unsupported-conflict handling behavior without changing approved stage ownership.
+  3. Preserve the existing 9 agents, 11 tasks, exact stage order, IDs, contexts, tools, models, and sequential process unless an explicitly approved correction is required.
+  4. Ensure implementation requests are governed by `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
+  5. Return live read-back evidence for every changed agent and task.
 - Completion evidence: CrewAI Studio response classified as `TECA_LIVE_CONFIGURATION_ALIGNED` with actual stored read-back.
 - Repository documentation alone is not sufficient evidence of live Studio alignment.
 
@@ -86,7 +109,7 @@
 
 ### Release-Specific Controlled Implementation Planning
 
-Use `TECA/IMPLEMENTATION_BUILD_PLAN.md` as the canonical build-order source.
+Use `1plan.md` for scope, priorities, source mapping, assignments, and worker coordination. Use `TECA/IMPLEMENTATION_BUILD_PLAN.md` for the exact authorized build order.
 
 Required sequence:
 
@@ -102,7 +125,7 @@ Required sequence:
 10. Provider selection.
 11. Measurable non-functional targets.
 12. Security, privacy, test, migration, deployment, rollback, monitoring, support, incident, and operations plans.
-13. Release-specific and module-specific implementation slices with requirement IDs, file targets, dependencies, tests, owners, acceptance criteria, and review gates.
+13. Release-specific and module-specific implementation slices with requirement IDs, source paths, canonical save targets, handoff states, file targets, dependencies, tests, owners, acceptance criteria, and review gates.
 14. Exact scoped `implementation_authorized=true` approval before source-code work.
 
 ## NOT AUTHORIZED
@@ -110,9 +133,12 @@ Required sequence:
 - Uncontrolled application coding.
 - Global coding authorization inferred from the existence of the build playbook.
 - Phase or module jumping.
-- Beginning a later related task before the current related task is complete.
+- Beginning a later related task before the current related task is safely completed or handed off.
+- Racing, shadowing, or overwriting active co-worker work.
+- Leaving reassigned work only in chat, memory, an uncommitted workspace, or an unknown location.
+- Treating a local draft, old branch, prompt, memory, or copied file as source of truth without canonical validation and publishing.
 - Future expansion implementation before Section 8A completion.
-- Duplicate architecture, design, implementation-plan, or shared business-logic documents.
+- Duplicate architecture, design, implementation-plan, worker-rule, or shared business-logic documents.
 - Claiming live TECA alignment before read-back.
 - Claiming deployment or production readiness from repository changes alone.
 - Production, security, performance, availability, accessibility, privacy, recovery, or compliance claims without approved targets and test evidence.
@@ -121,10 +147,11 @@ Required sequence:
 
 ```text
 MASTER ARCHITECTURE PLAN: COMPLETE AS GOVERNING PLAN
+MASTER WORKER CONTINUITY AND SOURCE-OF-TRUTH COMMAND: COMPLETE IN 1PLAN SECTION 1A
 CORE WIREFRAME ARCHITECTURE: COMPLETE
 CORE WIREFLOW ARCHITECTURE: COMPLETE
 NON-TECHNICAL UI DESIGN: COMPLETE
-TECA REPOSITORY GOVERNANCE: COMPLETE
+TECA REPOSITORY OPERATIONAL GOVERNANCE: COMPLETE IN REPOSITORY
 CANONICAL IMPLEMENTATION BUILD PLAYBOOK: COMPLETE AS GOVERNING PLAN
 LIVE TECA STUDIO ALIGNMENT: PENDING
 RELEASE-SPECIFIC IMPLEMENTATION PLANNING: INCOMPLETE
