@@ -14,7 +14,7 @@ This document is the master workflow, progress tracker, architecture authority, 
 ## 1. GOVERNANCE RULES
 
 - GitHub is the single source of truth.
-- `1plan.md` is the master source of truth for project scope, priority, phase order, worker coordination, source ownership, completion rules, and canonical-path assignments.
+- `1plan.md` is the master source of truth for project scope, priority, phase order, worker coordination, source ownership, completion rules, canonical-path assignments, and repository folder-entry assignments.
 - Architecture and controlled implementation planning are completed before coding.
 - Current repository work is documentation and planning only unless `implementation_authorized=true` is explicitly approved.
 - Every module, shared concern, design concern, plan, and registry has one canonical repository file.
@@ -140,6 +140,123 @@ When valid partial work is available and no co-worker is actively editing it:
 
 Cosmetic preference, personal ownership, or a different writing or coding style is not permission to replace correct current work.
 
+## 1B. APPLICATION FOLDER ARRANGEMENT AND JOINER STARTING COMMAND
+
+This section is the canonical project-wide assignment for entering, organizing, and extending work under `Applications/`. `Applications/README.md` implements this assignment as the application-folder starting index, but it does not replace this master authority.
+
+### Mandatory application starting order
+
+Every contributor, agent, designer, reviewer, or implementation worker assigned to application work must read in this order:
+
+```text
+1plan.md
+→ Applications/README.md
+→ selected application INDEX.md
+→ selected application's canonical README.md or module file
+→ relevant SaaS Platform shared contracts
+→ relevant Design artifacts
+→ relevant TECA execution or implementation plan
+→ current branches, pull requests, commits, checks, and active-work evidence
+```
+
+No worker may begin from a random module, copied prompt, stale chat response, memory entry, old branch, or unverified local draft.
+
+### Canonical application entry assignments
+
+- Applications master starting point: `Applications/README.md`.
+- Technician Application entry: `Applications/Technician Application/INDEX.md`.
+- Front Desk Application entry: `Applications/Front Desk Application/INDEX.md`.
+- Front Desk canonical architecture: `Applications/Front Desk Application/README.md`.
+- Owner Application entry: `Applications/Owner Application/INDEX.md`.
+- Owner core-baseline canonical architecture: `Applications/Owner Application/README.md`.
+- Customer Portal entry: `Applications/Customer Portal/INDEX.md`.
+- Customer Portal canonical architecture: `Applications/Customer Portal/README.md`.
+
+### Approved arrangement modes
+
+#### Decomposed module mode
+
+Use when approved module-by-module canonical files already exist.
+
+```text
+Application Name/
+├── INDEX.md
+├── Volume or Domain Group/
+│   └── Module or Feature Folder/
+│       └── canonical_file.md
+└── additional approved groups
+```
+
+The Technician Application is the current reference for this mode: application index → logical volume → feature or numbered module folder → one canonical file.
+
+#### Consolidated architecture mode
+
+Use when a complete application architecture currently exists in one canonical `README.md`.
+
+```text
+Application Name/
+├── INDEX.md
+└── README.md
+```
+
+The `INDEX.md` supplies navigation, dependencies, starting guidance, status, and decomposition restrictions. It must not copy the full architecture from `README.md`.
+
+Front Desk, Owner core baseline, and Customer Portal currently use this mode.
+
+### Add-only alignment rule
+
+1. Existing valid application architecture remains unchanged during entry-index alignment.
+2. Existing canonical paths remain valid.
+3. Existing completed modules must not be moved, renamed, split, or deleted merely to make all folder depths look identical.
+4. New entry indexes may link to existing canonical sections without becoming duplicate architecture.
+5. Empty folders, appearance-only placeholders, and copied module files are prohibited.
+6. A future decomposition must be an approved task with exact source paths, target paths, module grouping, numbering, active owner, dependencies, acceptance criteria, and owner approval.
+7. Before superseding a consolidated source, the decomposition must preserve all valid content, synchronize all links, prove no content loss, pass duplicate validation, and record source-to-target traceability.
+8. Until that gate passes, the existing application `README.md` remains canonical.
+
+### New application, expansion, volume, or module folder rule
+
+A worker must not invent a hierarchy. Before creating a new folder, `1plan.md` or an approved plan-assigned canonical package must define:
+
+- approved scope and phase;
+- application or expansion name;
+- canonical application folder;
+- canonical index path;
+- canonical architecture or module-file path;
+- grouping and numbering method;
+- source requirement and dependencies;
+- active owner or handoff state;
+- acceptance criteria;
+- truthful status.
+
+A folder must contain a real approved artifact. Git does not use empty folders as architecture evidence.
+
+### Joiner application-work record
+
+Every joining worker must record:
+
+- `source_path`;
+- `source_section_or_requirement_id`;
+- `applications_start_path`;
+- `application_index_path`;
+- `canonical_target_path`;
+- `arrangement_mode`;
+- `active_owner_or_handoff_state`;
+- `dependency_paths`;
+- `last_verified_commit_or_sha`;
+- `validation_evidence`.
+
+When the selected target is active, Section 1A applies: the active worker continues, and the joining worker selects another unclaimed incomplete item instead of racing or duplicating it.
+
+### Current application arrangement status
+
+| Application | Entry Index | Canonical Detail Source | Arrangement Mode | Status |
+|---|---|---|---|---|
+| Technician Application | `Applications/Technician Application/INDEX.md` | Individual linked module files | DECOMPOSED MODULE MODE | COMPLETE FOR CORE BASELINE |
+| Front Desk Application | `Applications/Front Desk Application/INDEX.md` | `Applications/Front Desk Application/README.md` | CONSOLIDATED ARCHITECTURE MODE | COMPLETE FOR CORE BASELINE |
+| Owner Application | `Applications/Owner Application/INDEX.md` | `Applications/Owner Application/README.md` | CONSOLIDATED ARCHITECTURE MODE | CORE BASELINE COMPLETE; EXPANSIONS SEPARATE |
+| Customer Portal | `Applications/Customer Portal/INDEX.md` | `Applications/Customer Portal/README.md` | CONSOLIDATED ARCHITECTURE MODE | COMPLETE FOR CORE BASELINE |
+
 ## 2. PRODUCT TARGET
 
 A multi-tenant Technician Repair SaaS for repair businesses with:
@@ -254,12 +371,17 @@ Required usability participants also include non-technical staff, low-digital-co
 
 ## 6. APPLICATION ARCHITECTURE STATUS
 
+Master application starting point:
+
+`Applications/README.md`
+
 ### Technician Application
 
-Canonical index:
+Canonical entry index:
 
 `Applications/Technician Application/INDEX.md`
 
+- Arrangement mode: DECOMPOSED MODULE MODE.
 - Volume 1 — Header: COMPLETE.
 - Volume 2 — Sidebar: COMPLETE.
 - Volume 3 — Main Workspace: COMPLETE.
@@ -268,30 +390,48 @@ Canonical index:
 
 ### Front Desk Application
 
+Canonical entry index:
+
+`Applications/Front Desk Application/INDEX.md`
+
 Canonical architecture:
 
 `Applications/Front Desk Application/README.md`
 
+- Arrangement mode: CONSOLIDATED ARCHITECTURE MODE.
 - Customer and device intake: COMPLETE.
 - Job-order creation, queue, and dispatch: COMPLETE.
 - Quotation, payment, release, warranty, reports, security, and audit: COMPLETE.
+- Dedicated module folders are not yet canonical and must not duplicate `README.md`.
 
 ### Owner Application
 
-Canonical architecture:
+Canonical entry index:
+
+`Applications/Owner Application/INDEX.md`
+
+Canonical core-baseline architecture:
 
 `Applications/Owner Application/README.md`
 
+- Arrangement mode: CONSOLIDATED ARCHITECTURE MODE.
 - Organization, branches, users, roles, workflows, operations, workforce, inventory, finance, quality, analytics, subscription, integrations, security, and recovery: COMPLETE for the current core Repair SaaS baseline.
 - High-level inclusion of an expansion domain does not mean that the full expansion is architecturally complete.
+- Future expansion folders and packages require Section 8A approval and exact canonical path assignments.
 
 ### Customer Portal
+
+Canonical entry index:
+
+`Applications/Customer Portal/INDEX.md`
 
 Canonical architecture:
 
 `Applications/Customer Portal/README.md`
 
+- Arrangement mode: CONSOLIDATED ARCHITECTURE MODE.
 - Identity, service requests, devices, tracking, quotation, payment, documents, release, warranty, support, messaging, privacy, and settings: COMPLETE.
+- Dedicated module folders are not yet canonical and must not duplicate `README.md`.
 
 ## 7. SHARED SAAS PLATFORM STATUS
 
@@ -438,6 +578,7 @@ TECA repository assignment status:
 - Active-work no-racing and continue-current-work authority: canonical in Section 1A of this plan.
 - Save-before-transfer and co-worker handoff authority: canonical in Section 1A of this plan.
 - Source-of-truth provenance and unsupported-conflict removal authority: canonical in Section 1A of this plan.
+- Application folder starting order and arrangement authority: canonical in Section 1B of this plan.
 - Exact implementation build order: `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
 
 Live CrewAI Studio status:
@@ -505,6 +646,7 @@ Supported exception states:
 - No completed workflow may be changed by a new visual design without an approved architecture revision.
 - No expansion may be declared complete from a high-level feature list alone; every expansion must pass Section 8A.
 - No worker may override Section 1A with a competing collaboration, handoff, source-of-truth, deletion, or task-routing rule.
+- No worker may bypass Section 1B by starting application work from a random file, creating appearance-only folders, or duplicating consolidated architecture.
 
 ## 12. TECA REQUIRED PIPELINE
 
@@ -529,17 +671,23 @@ Required TECA repository read order:
 → README.md
 → revise.md
 → index.md
-→ SaaS Platform/README.md
-→ Design/README.md
+→ Applications/README.md when application work is requested
+→ selected application INDEX.md
+→ selected canonical application README.md or module file
+→ SaaS Platform/README.md and relevant shared contracts
+→ Design/README.md and relevant design artifacts
 → TECA/README.md
 → TECA/AGENT_JOB_ASSIGNMENTS.md
 → TECA/PIPELINE_EXECUTION_PLAN.md
 → TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation planning, coding, testing, deployment, or release work is requested
-→ relevant canonical files assigned by this plan
+→ other relevant canonical files assigned by this plan
+→ current branches, pull requests, commits, checks, migrations, and active-work evidence
 → .teca/memory/index.json and relevant memories
 ```
 
 TECA must enforce Section 1A during task selection, active-work detection, worker notification, reassignment, handoff, gap filling, source verification, conflict resolution, deletion or supersession, publishing, diagnostics, and completion reporting.
+
+TECA must enforce Section 1B during application entry, application-folder creation, module decomposition, index maintenance, source selection, path assignment, placement validation, and new-worker handoff.
 
 TECA must enforce Section 8A during specification, planning, validation, publishing, diagnostics, and completion reporting. It must reject or downgrade any unsupported `COMPLETE` claim for an expansion that lacks the required architecture and design evidence.
 
@@ -548,10 +696,12 @@ TECA must enforce Section 8A during specification, planning, validation, publish
 | Area | Status | Canonical Source |
 |---|---|---|
 | Master worker coordination, handoff, and source provenance | DEFINED | `1plan.md` Section 1A |
-| Core Technician Application | COMPLETE | `Applications/Technician Application/INDEX.md` |
-| Core Front Desk Application | COMPLETE | `Applications/Front Desk Application/README.md` |
-| Core Owner Application | COMPLETE | `Applications/Owner Application/README.md` |
-| Core Customer Portal | COMPLETE | `Applications/Customer Portal/README.md` |
+| Application folder arrangement and joiner starting command | DEFINED | `1plan.md` Section 1B |
+| Applications master starting point | COMPLETE IN REPOSITORY | `Applications/README.md` |
+| Core Technician Application | COMPLETE | `Applications/Technician Application/INDEX.md` → linked module files |
+| Core Front Desk Application | COMPLETE | `Applications/Front Desk Application/INDEX.md` → `README.md` |
+| Core Owner Application | COMPLETE | `Applications/Owner Application/INDEX.md` → `README.md` |
+| Core Customer Portal | COMPLETE | `Applications/Customer Portal/INDEX.md` → `README.md` |
 | Shared SaaS Contracts | COMPLETE | `SaaS Platform/README.md` |
 | Core Repair SaaS Wireframes | COMPLETE | `Design/WIREFRAME_ARCHITECTURE.md` |
 | Core Repair SaaS Wireflows | COMPLETE | `Design/WIREFLOW_ARCHITECTURE.md` |
@@ -587,14 +737,19 @@ Required planning gates:
 12. Select authentication, payment, file, message, monitoring, payroll, accounting, HR, analytics, and integration providers where applicable.
 13. Approve measurable availability, performance, capacity, recovery, retention, accessibility, security, support, and cost targets.
 14. Approve threat model, privacy review, test plan, migration plan, release plan, rollback plan, and operations plan.
-15. Create implementation tasks with acceptance criteria, owners, review gates, dependencies, release boundaries, canonical source paths, canonical save targets, and handoff states.
-16. Validate every completion claim against Sections 1A and 8A and update the completion matrix with evidence.
+15. Create implementation tasks with acceptance criteria, owners, review gates, dependencies, release boundaries, canonical source paths, application index paths, canonical save targets, arrangement modes, and handoff states.
+16. Validate every completion claim against Sections 1A, 1B, and 8A and update the completion matrix with evidence.
 17. Apply and verify the TECA live Studio configuration update before assigning autonomous repository implementation work.
 
 ## 15. FINAL MASTER STATUS
 
 ```text
 CORE REPAIR SAAS APPLICATION ARCHITECTURE: COMPLETE
+APPLICATIONS MASTER STARTING POINT: COMPLETE IN REPOSITORY
+APPLICATION ENTRY INDEXES: 4 OF 4 AVAILABLE
+TECHNICIAN APPLICATION ARRANGEMENT: DECOMPOSED MODULE MODE
+FRONT DESK / OWNER CORE / CUSTOMER ARRANGEMENT: CONSOLIDATED ARCHITECTURE MODE WITH ENTRY INDEXES
+EXISTING APPLICATION ARCHITECTURE MOVED OR DELETED DURING ALIGNMENT: NO
 CORE SHARED SAAS CONTRACTS: COMPLETE
 CORE REPAIR SAAS WIREFRAME ARCHITECTURE: COMPLETE
 CORE REPAIR SAAS WIREFLOW ARCHITECTURE: COMPLETE
@@ -602,6 +757,7 @@ NON-TECHNICAL UI DESIGN SYSTEM: COMPLETE
 MASTER CO-WORKER CONTINUITY AND NO-RACING COMMAND: DEFINED IN 1PLAN SECTION 1A
 SAVE-BEFORE-TRANSFER AND HANDOFF COMMAND: DEFINED IN 1PLAN SECTION 1A
 SOURCE-OF-TRUTH PROVENANCE AND CONFLICT-REMOVAL RULE: DEFINED IN 1PLAN SECTION 1A
+APPLICATION FOLDER ARRANGEMENT AND JOINER STARTING COMMAND: DEFINED IN 1PLAN SECTION 1B
 MANDATORY FULL-ARCHITECTURE EXPANSION STANDARD: DEFINED
 FULL HR AND WORKFORCE EXPANSION: PLANNED — NOT YET COMPLETE
 FULL PAYROLL, COMPENSATION, AND BENEFITS EXPANSION: PLANNED — NOT YET COMPLETE
@@ -623,4 +779,4 @@ UNCONTROLLED CODING AUTHORIZED: NO
 
 **THE CURRENT CORE TECHNICIAN REPAIR SAAS BASELINE IS ARCHITECTED AND DESIGNED. EVERY HR, PAYROLL, WORKFORCE, FINANCE, INVENTORY, SALES, ANALYTICS, AUTOMATION, OR OTHER FUTURE EXPANSION MUST BE FULLY ARCHITECTED WITH COMPLETE UI/UX, WIREFRAMES, WIREFLOWS, DATA, SECURITY, INTEGRATION, VALIDATION, AND TRACEABILITY BEFORE IT MAY BE CALLED COMPLETE OR ENTER IMPLEMENTATION.**
 
-**STATUS NOTE: THIS DOCUMENT IS THE 100% MASTER ARCHITECTURE PLAN AND THE CANONICAL SOURCE FOR CO-WORKER CONTINUITY, HANDOFF, SOURCE PROVENANCE, AND CONFLICT-REMOVAL RULES. IT IS A PLAN AND GOVERNING BLUEPRINT ONLY. THE ACTUAL APPLICATION IS BEING BUILT SEPARATELY AND ITS IMPLEMENTATION, TESTING, AND DEPLOYMENT PROGRESS MUST NEVER BE REPORTED AS COMPLETE SOLELY BECAUSE THE ARCHITECTURE PLAN IS COMPLETE.**
+**STATUS NOTE: THIS DOCUMENT IS THE 100% MASTER ARCHITECTURE PLAN AND THE CANONICAL SOURCE FOR CO-WORKER CONTINUITY, HANDOFF, SOURCE PROVENANCE, CONFLICT REMOVAL, APPLICATION FOLDER ARRANGEMENT, AND JOINER STARTING RULES. IT IS A PLAN AND GOVERNING BLUEPRINT ONLY. THE ACTUAL APPLICATION IS BEING BUILT SEPARATELY AND ITS IMPLEMENTATION, TESTING, AND DEPLOYMENT PROGRESS MUST NEVER BE REPORTED AS COMPLETE SOLELY BECAUSE THE ARCHITECTURE PLAN IS COMPLETE.**
