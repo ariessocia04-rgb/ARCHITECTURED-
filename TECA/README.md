@@ -4,12 +4,14 @@
 
 This folder contains the operational instructions for the TECA CrewAI automation assigned to the ARCHITECTURED Technician Repair SaaS.
 
-`1plan.md` is the master source of truth. TECA documents implement and explain the approved plan but must not create competing project scope, worker-coordination, handoff, provenance, deletion, priority, or completion rules.
+`1plan.md` is the master source of truth. TECA documents implement and explain the approved plan but must not create competing project scope, worker-coordination, handoff, provenance, deletion, priority, folder-assignment, or completion rules.
 
-Canonical worker authority:
+Canonical worker and folder authority:
 
 - `1plan.md`, Section 1A — co-worker continuity, active-work detection, factual worker notification, continue-current-work behavior, save-before-transfer, source-of-truth provenance, unsupported-conflict removal, and gap-fill-only rules.
+- `1plan.md`, Section 1B — application folder arrangement, application starting order, application index assignments, approved arrangement modes, and joiner records.
 - `1plan.md`, Section 8A — full-architecture and UI/UX gate for every expansion.
+- `Applications/README.md` — application-folder navigation under Section 1B.
 - `TECA/IMPLEMENTATION_BUILD_PLAN.md` — exact implementation build sequence after the applicable `1plan.md` authorization gates pass.
 
 ## CANONICAL TECA DOCUMENTS
@@ -33,16 +35,40 @@ Canonical worker authority:
 → README.md
 → revise.md
 → index.md
-→ SaaS Platform/README.md
-→ Design/README.md
+→ Applications/README.md when application work is requested
+→ selected application INDEX.md
+→ selected canonical application README.md or module file
+→ SaaS Platform/README.md and relevant shared contracts
+→ Design/README.md and relevant design artifacts
 → TECA/README.md
 → TECA/AGENT_JOB_ASSIGNMENTS.md
 → TECA/PIPELINE_EXECUTION_PLAN.md
 → TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation planning, coding, testing, deployment, or release is requested
-→ exact canonical files assigned by 1plan.md
+→ other exact canonical files assigned by 1plan.md
 → current branches, pull requests, commits, checks, migrations, assignments, and active-work evidence
 → .teca/memory/index.json and relevant memories
 ```
+
+## APPLICATION ENTRY EXECUTION
+
+For application work, TECA must use `1plan.md` Section 1B and `Applications/README.md` before opening a module.
+
+Operational sequence:
+
+1. Open the selected application through its `INDEX.md`.
+2. Identify `DECOMPOSED_MODULE_MODE` or `CONSOLIDATED_ARCHITECTURE_MODE`.
+3. Open the exact canonical detail source linked by the index.
+4. Check active ownership and repository evidence.
+5. Preserve valid existing work and fill only approved gaps.
+6. Reject empty appearance-only folders and duplicate module copies.
+7. Do not move or supersede consolidated architecture without approved decomposition, synchronized links, validation, and owner approval.
+
+Application entries:
+
+- Technician: `Applications/Technician Application/INDEX.md`.
+- Front Desk: `Applications/Front Desk Application/INDEX.md`.
+- Owner: `Applications/Owner Application/INDEX.md`.
+- Customer Portal: `Applications/Customer Portal/INDEX.md`.
 
 ## REQUIRED LIVE PIPELINE
 
@@ -84,7 +110,10 @@ Every TECA specification, requirement package, artifact, validation report, publ
 
 - `source_path`;
 - `source_section_or_requirement_id`;
+- `applications_start_path` when application work is involved;
+- `application_index_path` when application work is involved;
 - `canonical_target_path`;
+- `arrangement_mode` when application work is involved;
 - `active_owner_or_handoff_state`;
 - `dependency_paths`;
 - `last_verified_commit_or_sha`;
@@ -145,6 +174,7 @@ Approved Requirement
 ### Complete in repository
 
 - Core Technician, Front Desk, Owner-baseline, and Customer Portal architecture.
+- Applications master starting point and four application entry indexes.
 - Shared SaaS contract architecture.
 - Core wireframe and wireflow architecture.
 - Non-technical-user UI design system.
@@ -152,6 +182,7 @@ Approved Requirement
 - TECA live Studio configuration handoff.
 - TECA canonical implementation build playbook.
 - Master co-worker, handoff, provenance, and conflict-removal authority in `1plan.md`, Section 1A.
+- Master application folder and joiner starting authority in `1plan.md`, Section 1B.
 
 ### Next controlled work
 
@@ -162,12 +193,17 @@ Approved Requirement
 
 - Uncontrolled application coding.
 - Coding outside an exact approved release or slice.
+- Starting application work while bypassing `Applications/README.md` and the selected application `INDEX.md`.
+- Empty appearance-only folders or duplicate module files.
+- Moving or deleting consolidated application architecture without approved decomposition and validation.
 - Expansion implementation before its Section 8A gate passes.
 - Production claims without approved targets and test evidence.
 
 ## STATUS
 
 - Master worker-coordination and source-of-truth authority: `1plan.md` Section 1A — DEFINED.
+- Master application-folder and starting authority: `1plan.md` Section 1B — DEFINED.
+- Applications starting point and application indexes: COMPLETE IN REPOSITORY.
 - Canonical TECA repository documents: 4 of 4 complete.
 - Agent job assignments: COMPLETE.
 - Pipeline and phase plan: COMPLETE.
@@ -176,6 +212,6 @@ Approved Requirement
 - Comparable-product research procedure: DEFINED UNDER `1plan.md` AUTHORITY.
 - Live Studio alignment: PENDING LIVE EXECUTION AND READ-BACK.
 - Actual application implementation: SEPARATE EVIDENCE-BASED STATUS.
-- Accidental competing worker-rule definitions in this file: REMOVED.
+- Accidental competing worker or folder-rule definitions in this file: 0.
 
-**TECA MUST TAKE PROJECT SCOPE, TASK PRIORITY, ACTIVE-WORK ROUTING, HANDOFF, SOURCE PROVENANCE, AND CONFLICT-REMOVAL AUTHORITY FROM `1plan.md`. THIS FILE IS THE OPERATIONAL INDEX, NOT A COMPETING MASTER PLAN.**
+**TECA MUST TAKE PROJECT SCOPE, TASK PRIORITY, ACTIVE-WORK ROUTING, HANDOFF, SOURCE PROVENANCE, APPLICATION ENTRY, FOLDER ASSIGNMENT, AND CONFLICT-REMOVAL AUTHORITY FROM `1plan.md`.**
