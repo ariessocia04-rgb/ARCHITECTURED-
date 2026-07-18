@@ -24,6 +24,10 @@ open_pr_check: ""
 source_paths:
   - 1plan.md
   - Implementation Planning/Release 1 MVP/INDEX.md
+  - Codex Code/README.md
+  - Codex Code/ARMORED_CODEX_MASTER_PROMPT.md
+  - Codex Code/TASK_STORAGE_AND_HANDOFF_RULES.md
+  - Codex Code/Tasks/<task-id>/TASK_RECORD.md
 source_sections_or_requirement_ids: []
 dependency_task_ids: []
 dependency_completion_evidence: []
@@ -38,6 +42,7 @@ forbidden_paths:
   - 1plan.md
   - canonical architecture files unless the task explicitly authorizes documentation synchronization only
   - unrelated modules
+  - duplicate copies of application source under Codex Code/
 
 required_entities_or_tables: []
 required_migration_ids: []
@@ -85,8 +90,17 @@ stop_conditions:
   - task requires changing approved workflow, role, permission, price, limit, or release boundary
   - tests cannot be run or fail
   - requested file is outside allowed paths
+  - proposed creation duplicates existing canonical implementation
+  - task attempts to copy application source code into Codex Code/
 
-completion_report_path: docs/evidence/<task-id>.md
+task_record_path: Codex Code/Tasks/<task-id>/TASK_RECORD.md
+task_contract_path: Codex Code/Tasks/<task-id>/TASK_CONTRACT.md
+changed_files_manifest_path: Codex Code/Tasks/<task-id>/CHANGED_FILES.md
+test_evidence_path: Codex Code/Tasks/<task-id>/TEST_EVIDENCE.md
+security_review_path: Codex Code/Tasks/<task-id>/SECURITY_AND_SCOPE_REVIEW.md
+completion_report_path: Codex Code/Tasks/<task-id>/COMPLETION_REPORT.md
+review_result_path: Codex Code/Tasks/<task-id>/REVIEW_RESULT.md
+merge_record_path: Codex Code/Tasks/<task-id>/MERGE_RECORD.md
 ```
 
 ## Required execution behavior
@@ -97,7 +111,8 @@ completion_report_path: docs/evidence/<task-id>.md
 2. Verify the exact authorization statement.
 3. Verify latest `main`, open PRs, branch, checks, migrations, and active worker.
 4. Inspect existing implementation and tests.
-5. Return one factual state:
+5. Search and classify existing work before creating anything.
+6. Return one factual state:
 
 ```text
 NOT_AUTHORIZED
@@ -118,6 +133,8 @@ READY
 - Add migration and rollback/forward-recovery evidence where applicable.
 - Do not weaken RLS, authorization, audit, validation, idempotency, accessibility, or error handling to make a test pass.
 - Do not commit secrets or real customer data.
+- Store actual source code only in canonical implementation paths.
+- Use `Codex Code/Tasks/<task-id>/` for contracts, manifests, evidence, review, and merge records only.
 - Stop when the task acceptance criteria are met; do not begin the next manifest task.
 
 ### Before publishing
@@ -128,9 +145,10 @@ READY
 4. Review migration from empty and previous supported state.
 5. Review UI against assigned screen IDs/states.
 6. Confirm no unrelated files changed.
-7. Create the completion report.
-8. Commit intentionally and open a draft PR unless explicitly approved otherwise.
-9. Read back the PR files/checks.
+7. Confirm every changed canonical path appears in `CHANGED_FILES.md`.
+8. Create the completion and evidence records under the task folder.
+9. Commit intentionally and open a draft PR unless explicitly approved otherwise.
+10. Read back the PR files/checks.
 
 ## Mandatory completion report
 
@@ -149,7 +167,8 @@ READY
 - path / section / requirement
 
 ## Changes
-- path: purpose
+- canonical path: purpose
+- changed-files manifest: `Codex Code/Tasks/<TASK-ID>/CHANGED_FILES.md`
 
 ## Contracts and migrations
 - migration IDs
@@ -160,6 +179,7 @@ READY
 - exact command
 - result
 - artifact/log reference
+- task evidence path
 
 ## Security and scope
 - tenant isolation
@@ -186,7 +206,7 @@ READY
 
 ## Error handling
 
-Codex must report the exact blocker, file, command, error, and required decision. It must not guess architecture, silently skip a test, or broaden scope to solve an unrelated problem.
+Codex must report the exact blocker, file, command, error, and required decision. It must not guess architecture, silently skip a test, broaden scope to solve an unrelated problem, or create a parallel implementation.
 
 ## Approval rule
 
@@ -195,7 +215,9 @@ A task becomes `APPROVED_COMPLETE` only after repository review verifies:
 - scope and architecture compliance;
 - required checks passing;
 - no unauthorized files/features;
+- no duplicated canonical implementation or copied source tree;
 - correct migration/data/security behavior;
 - required UI/UX and accessibility evidence;
 - rollback/recovery documentation;
-- factual completion report and read-back.
+- factual completion report and read-back;
+- task review and merge records stored under `Codex Code/Tasks/<task-id>/`.
