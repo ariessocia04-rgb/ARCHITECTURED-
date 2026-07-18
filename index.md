@@ -30,17 +30,19 @@ The Technician Application uses decomposed module folders. Front Desk, Owner, an
 
 ## APPLICATIONS
 
-### 1. TECHNICIAN APPLICATION — COMPLETE (100%)
+### 1. TECHNICIAN APPLICATION — CORE BASELINE COMPLETE
 
 - **[Technician Application Master Index](Applications/Technician%20Application/INDEX.md)**
 
 #### VOLUME 1 — HEADER
 
-- [Profile](Applications/Technician%20Application/Volume%201%20-%20Header/Profile/profile.md)
+- [Profile Quick Access — canonical Sidebar Profile](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
 - [Shift](Applications/Technician%20Application/Volume%201%20-%20Header/Shift/shift.md)
-- [Notification](Applications/Technician%20Application/Volume%201%20-%20Header/Notification/notification.md)
+- [Notification Quick Access — canonical Sidebar Notification](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2011%20-%20Notification/notification.md)
 - [Search](Applications/Technician%20Application/Volume%201%20-%20Header/Search/search.md)
 - [QR Scanner](Applications/Technician%20Application/Volume%201%20-%20Header/QR%20Scanner/qr_scanner.md)
+
+Profile and Notification remain logical Header quick-access surfaces, but their full architecture is stored only once in the canonical Sidebar modules.
 
 #### VOLUME 2 — SIDEBAR
 
@@ -54,8 +56,8 @@ The Technician Application uses decomposed module folders. Front Desk, Owner, an
 - [Module 8 - Testing](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%208%20-%20Testing/testing.md)
 - [Module 9 - Completed](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%209%20-%20Completed/completed.md)
 - [Module 10 - Reports](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2010%20-%20Reports/reports.md)
-- [Module 11 - Notification](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2011%20-%20Notification/notification.md)
-- [Module 12 - Profile](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
+- [Module 11 - Notification — canonical](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2011%20-%20Notification/notification.md)
+- [Module 12 - Profile — canonical](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2012%20-%20Profile/profile.md)
 - [Module 13 - Logout](Applications/Technician%20Application/Volume%202%20-%20Sidebar/Module%2013%20-%20Logout/logout.md)
 
 #### VOLUME 3 — MAIN WORKSPACE
@@ -78,6 +80,12 @@ The Technician Application uses decomposed module folders. Front Desk, Owner, an
 - [16. Empty State](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Empty%20State/empty_state.md)
 - [17. Error State](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Error%20State/error_state.md)
 - [18. Footer](Applications/Technician%20Application/Volume%203%20-%20Main%20Workspace/Footer/footer.md)
+
+Technician inventory after duplicate consolidation:
+
+- Logical surfaces: 36.
+- Canonical detailed files: 34.
+- Header quick-access references to Sidebar canonical modules: 2.
 
 ### 2. FRONT DESK APPLICATION — COMPLETE (100%)
 
@@ -137,7 +145,7 @@ Current arrangement: consolidated canonical architecture with additive index nav
 
 Canonical authority mapping:
 
-- Project scope, priority, co-worker continuation, active-work notification, no-racing, save-before-transfer, handoff, source provenance, gap filling, unsupported-conflict removal, folder assignment, and completion rules: [`1plan.md`](1plan.md).
+- Project scope, priority, co-worker continuation, active-work notification, no-racing, save-before-transfer, handoff, source provenance, gap filling, unsupported-conflict removal, folder assignment, duplicate classification, and completion rules: [`1plan.md`](1plan.md).
 - Application folder starting point and arrangement modes: [`Applications/README.md`](Applications/README.md), under `1plan.md` authority.
 - Full expansion architecture and UI/UX gate: [`1plan.md`, Section 8A](1plan.md).
 - Operational TECA behavior and comparable-product research procedure: [`TECA/README.md`](TECA/README.md), under `1plan.md` authority.
@@ -145,20 +153,16 @@ Canonical authority mapping:
 
 ## CURRENT STATUS
 
-- Core application architecture: COMPLETE (100%).
-- Applications master starting point: DEFINED.
-- Application entry indexes: 4 of 4 available.
-- Technician arrangement: DECOMPOSED MODULE MODE.
-- Front Desk, Owner core baseline, and Customer Portal arrangement: CONSOLIDATED ARCHITECTURE MODE WITH ENTRY INDEXES.
-- Existing completed application content moved or deleted in this alignment: NO.
+- Core application architecture: COMPLETE.
+- Technician logical surfaces: 36.
+- Technician canonical detailed files: 34.
+- Consolidated duplicate Header Profile and Notification files: 2 removed/superseded by canonical Sidebar modules.
+- Root aggregate `PLAN.md`: superseded because it copied modular architecture; `1plan.md` remains the master plan.
 - Shared SaaS platform documents: 14 of 14 complete.
 - Core design architecture documents: 3 of 3 complete.
 - TECA repository governance and build-order documents: 4 of 4 complete.
-- Master co-worker, handoff, source-provenance, and conflict-removal rules: DEFINED IN `1plan.md`, SECTION 1A.
-- Canonical implementation build playbook: COMPLETE AS A GOVERNING PLAN.
-- Comparable-product official research procedure: DEFINED IN `TECA/README.md` UNDER `1plan.md` AUTHORITY.
 - Future expansions: PLANNED; each requires full architecture and design.
-- Accidental duplicate canonical documents: 0.
+- Active accidental duplicate canonical documents after this audit: 0.
 - Live TECA Studio alignment: pending Studio execution and read-back.
 - Actual coding, testing, deployment, and release: separate evidence-based statuses.
 - Uncontrolled coding authorized: NO.
