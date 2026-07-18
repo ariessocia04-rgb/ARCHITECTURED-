@@ -15,18 +15,22 @@ Read `1plan.md` first, then this index, then the selected numbered domain index.
 - [8. API LAYER](8.%20API%20LAYER/INDEX.md) — 13 concern folders
 - [9. FUTURE MODULES](9.%20FUTURE%20MODULES/INDEX.md) — 17 complete folderized architecture/design specification packages
 - [10. DEVELOPMENT PIPELINE](10.%20DEVELOPMENT%20PIPELINE/INDEX.md) — 11 concern folders
-- [11. FUTURE INTEGRATION ARCHITECTURE](11.%20FUTURE%20INTEGRATION%20ARCHITECTURE/INDEX.md) — co-worker-owned integration compatibility architecture
+- [11. FUTURE INTEGRATION ARCHITECTURE](11.%20FUTURE%20INTEGRATION%20ARCHITECTURE/INDEX.md) — 10 of 10 required future integrations architected
+- [12. BUSINESS OPERATING MODES AND DEPARTMENT TEAMS](12.%20BUSINESS%20OPERATING%20MODES%20AND%20DEPARTMENT%20TEAMS/INDEX.md) — solo, small-team, departmental, multi-branch, and multi-company staffing architecture
 
 ## Current physical accounting
 
 - Original numbered ROS domains: **11** (`0` through `10`).
-- Additional integration domain: **1** (`11`).
+- Additional architecture domains: **2** (`11` and `12`).
 - Original concern folders: **197**.
 - Future Modules expansion roots: **17**.
 - Future Modules canonical volume folders: **68**.
 - Future Modules entry indexes: **17**.
 - Future Modules canonical volume files: **68**.
+- Future integration targets architected: **10 of 10**.
+- Business operating modes architected: **5**.
+- Department team groups architected: **13**.
 
 ## Authority rule
 
-ROS folders provide physical navigation and canonical package locations. `1plan.md` remains the project-wide master authority. Summaries and indexes must not duplicate the four canonical volume files inside each completed Future Module package.
+ROS folders provide physical navigation and canonical package locations. `1plan.md` remains the project-wide master authority. Summaries and indexes must not duplicate canonical architecture files. Existing modules are extended through approved contracts, roles, departments, and activation rules rather than destructive rewrites.
