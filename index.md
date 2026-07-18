@@ -4,6 +4,7 @@
 
 - [Project README](README.md)
 - [Master Architecture Plan](1plan.md)
+- [Applications Master Starting Point](Applications/README.md)
 - [Shared SaaS Platform Architecture Index](SaaS%20Platform/README.md)
 - [Design Architecture Index](Design/README.md)
 - [TECA Repository Operational Index](TECA/README.md)
@@ -12,6 +13,20 @@
 - [Final Architecture Verification](FINAL_ARCHITECTURE_VERIFICATION.md)
 - [Duplicate and Placement Validation](duplicate.md)
 - [Revision Queue](revise.md)
+
+## APPLICATION STARTING RULE
+
+Every contributor entering application work must follow:
+
+```text
+1plan.md
+→ Applications/README.md
+→ selected application INDEX.md
+→ selected canonical application or module file
+→ relevant shared contracts and design artifacts
+```
+
+The Technician Application uses decomposed module folders. Front Desk, Owner, and Customer Portal currently use a consolidated canonical `README.md` plus an additive navigation `INDEX.md`. Do not create duplicate module files merely to match visual folder depth.
 
 ## APPLICATIONS
 
@@ -66,17 +81,26 @@
 
 ### 2. FRONT DESK APPLICATION — COMPLETE (100%)
 
-- [Front Desk Application Architecture](Applications/Front%20Desk%20Application/README.md)
+- [Front Desk Application Entry Index](Applications/Front%20Desk%20Application/INDEX.md)
+- [Front Desk Application Canonical Architecture](Applications/Front%20Desk%20Application/README.md)
+
+Current arrangement: consolidated canonical architecture with additive index navigation.
 
 ### 3. OWNER APPLICATION — CORE BASELINE COMPLETE (100%)
 
-- [Owner Application Architecture](Applications/Owner%20Application/README.md)
+- [Owner Application Entry Index](Applications/Owner%20Application/INDEX.md)
+- [Owner Application Canonical Architecture](Applications/Owner%20Application/README.md)
+
+Current arrangement: consolidated core-baseline architecture with additive index navigation.
 
 Future HR, payroll, finance, sales, franchise, analytics, automation, and other expansions require their own complete Section 8A packages before implementation.
 
 ### 4. CUSTOMER PORTAL — COMPLETE (100%)
 
-- [Customer Portal Architecture](Applications/Customer%20Portal/README.md)
+- [Customer Portal Entry Index](Applications/Customer%20Portal/INDEX.md)
+- [Customer Portal Canonical Architecture](Applications/Customer%20Portal/README.md)
+
+Current arrangement: consolidated canonical architecture with additive index navigation.
 
 ## SHARED SAAS PLATFORM — COMPLETE (100%)
 
@@ -113,7 +137,8 @@ Future HR, payroll, finance, sales, franchise, analytics, automation, and other 
 
 Canonical authority mapping:
 
-- Project scope, priority, co-worker continuation, active-work notification, no-racing, save-before-transfer, handoff, source provenance, gap filling, unsupported-conflict removal, and completion rules: [`1plan.md`, Section 1A](1plan.md).
+- Project scope, priority, co-worker continuation, active-work notification, no-racing, save-before-transfer, handoff, source provenance, gap filling, unsupported-conflict removal, folder assignment, and completion rules: [`1plan.md`](1plan.md).
+- Application folder starting point and arrangement modes: [`Applications/README.md`](Applications/README.md), under `1plan.md` authority.
 - Full expansion architecture and UI/UX gate: [`1plan.md`, Section 8A](1plan.md).
 - Operational TECA behavior and comparable-product research procedure: [`TECA/README.md`](TECA/README.md), under `1plan.md` authority.
 - Exact implementation build sequence: [`TECA/IMPLEMENTATION_BUILD_PLAN.md`](TECA/IMPLEMENTATION_BUILD_PLAN.md), after the applicable `1plan.md` gates pass.
@@ -121,6 +146,11 @@ Canonical authority mapping:
 ## CURRENT STATUS
 
 - Core application architecture: COMPLETE (100%).
+- Applications master starting point: DEFINED.
+- Application entry indexes: 4 of 4 available.
+- Technician arrangement: DECOMPOSED MODULE MODE.
+- Front Desk, Owner core baseline, and Customer Portal arrangement: CONSOLIDATED ARCHITECTURE MODE WITH ENTRY INDEXES.
+- Existing completed application content moved or deleted in this alignment: NO.
 - Shared SaaS platform documents: 14 of 14 complete.
 - Core design architecture documents: 3 of 3 complete.
 - TECA repository governance and build-order documents: 4 of 4 complete.
@@ -134,4 +164,4 @@ Canonical authority mapping:
 - Uncontrolled coding authorized: NO.
 - Next controlled phase: complete release-specific implementation planning and live TECA alignment.
 
-**`1plan.md` IS THE MASTER SOURCE OF TRUTH. INDEXES AND TECA DOCUMENTS MUST REFERENCE IT AND MUST NOT CREATE A COMPETING PROJECT OR WORKER-COORDINATION AUTHORITY.**
+**`1plan.md` IS THE MASTER SOURCE OF TRUTH. APPLICATION WORK STARTS AT `Applications/README.md` AND THEN ENTERS THE SELECTED APPLICATION THROUGH ITS `INDEX.md`.**
