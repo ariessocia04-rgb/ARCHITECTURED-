@@ -1,161 +1,211 @@
-# ARCHITECTURE, DESIGN, TECA, AND IMPLEMENTATION-PLAN DUPLICATE AND PLACEMENT VALIDATION
+# ARCHITECTURE, DESIGN, TECA, MEMORY, AND IMPLEMENTATION-PLAN DUPLICATE VALIDATION
 
-## RULE
+## AUTHORITY
 
-- Every application module, shared concern, design concern, TECA concern, plan, registry, and implementation-planning artifact has one canonical file.
-- Indexes, README files, plans, audits, revision logs, and verification documents may summarize and link to canonical files but must not copy their full definitions.
-- Existing canonical documents are updated instead of creating competing copies.
-- Work already complete is validated and marked `SKIPPED_ALREADY_COMPLETE` instead of recreated.
-- Shared business logic must not be copied separately into Owner, Front Desk, Technician, Customer, or Platform applications.
-- A navigation `INDEX.md` is not a duplicate when it points to an existing canonical architecture file and does not repeat the full architecture.
+`1plan.md`, especially Section 1C, is the master duplicate-classification and deletion authority.
+
+## DUPLICATE RULE
+
+Every application module, shared concern, design concern, TECA concern, implementation plan, and durable memory has one canonical source.
+
+Allowed supporting documents:
+
+- navigation indexes
+- root and folder READMEs
+- audits
+- verification reports
+- revision registers
+- traceability matrices
+
+These are not duplicates when they summarize, link, validate, or govern without copying the full canonical definition.
+
+## CLASSIFICATIONS
+
+- `EXACT_DUPLICATE` — byte-identical, same blob SHA, or normalized equivalent.
+- `NEAR_DUPLICATE_SAME_AUTHORITY` — substantially the same responsibility, fields, flow, and architecture.
+- `SUBSET_DUPLICATE` — reduced copy of another canonical source.
+- `AGGREGATE_COPY` — concatenated or republished canonical module content.
+- `INTENTIONAL_SUMMARY_OR_INDEX` — distinct navigation or governance responsibility.
+- `SHARED_TEMPLATE_NOT_DUPLICATE` — same structural template but different domain responsibility and content.
+
+Deletion requires high overlap and the same purpose or authority. Shared structure alone is not enough.
 
 ## CANONICAL STRUCTURE
 
-- Applications master starting point: `Applications/README.md`
-- Technician Application entry: `Applications/Technician Application/INDEX.md`
-- Technician Application module details: individual files linked from its `INDEX.md`
-- Front Desk Application entry: `Applications/Front Desk Application/INDEX.md`
-- Front Desk Application canonical architecture: `Applications/Front Desk Application/README.md`
-- Owner Application entry: `Applications/Owner Application/INDEX.md`
-- Owner Application canonical core-baseline architecture: `Applications/Owner Application/README.md`
-- Customer Portal entry: `Applications/Customer Portal/INDEX.md`
-- Customer Portal canonical architecture: `Applications/Customer Portal/README.md`
-- Shared SaaS Platform: `SaaS Platform/README.md`
-- Design Architecture: `Design/README.md`
-- TECA Repository Governance: `TECA/README.md`
-- TECA Agent Assignments: `TECA/AGENT_JOB_ASSIGNMENTS.md`
-- TECA Pipeline Plan: `TECA/PIPELINE_EXECUTION_PLAN.md`
-- TECA Live Studio Handoff: `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md`
-- Canonical Implementation Build Playbook: `TECA/IMPLEMENTATION_BUILD_PLAN.md`
-- Master Plan: `1plan.md`
-- Root Project Guide: `README.md`
-- Master Index: `index.md`
-- Revision Queue: `revise.md`
+- Master plan: `1plan.md`
+- Root guide: `README.md`
+- Master index: `index.md`
+- Applications starting point: `Applications/README.md`
+- Technician entry: `Applications/Technician Application/INDEX.md`
+- Front Desk entry/canonical detail: `INDEX.md` → `README.md`
+- Owner entry/canonical core detail: `INDEX.md` → `README.md`
+- Customer Portal entry/canonical detail: `INDEX.md` → `README.md`
+- Shared platform: `SaaS Platform/README.md`
+- Design: `Design/README.md`
+- TECA: `TECA/README.md`
+- Memory index: `.teca/memory/index.json`
 
-## APPLICATION ARRANGEMENT VALIDATION
+## COMPLETED DUPLICATE REMOVALS
 
-Approved application arrangement modes:
+### 1. Header Notification
 
-1. `DECOMPOSED_MODULE_MODE`
-   - one application index;
-   - approved volume, surface, domain, module, or feature folders;
-   - one canonical detail file per concern.
+Removed:
 
-2. `CONSOLIDATED_ARCHITECTURE_MODE`
-   - one application entry `INDEX.md`;
-   - one canonical consolidated `README.md`;
-   - module navigation links point to sections inside the canonical file;
-   - no copied module files until controlled decomposition is approved.
+`Applications/Technician Application/Volume 1 - Header/Notification/notification.md`
 
-Current validation:
+Classification: `EXACT_DUPLICATE`.
 
-- Technician Application uses decomposed module mode: YES.
-- Front Desk Application uses consolidated architecture mode: YES.
-- Owner core-baseline Application uses consolidated architecture mode: YES.
-- Customer Portal uses consolidated architecture mode: YES.
-- `Applications/README.md` defines the shared starting order without copying full application architecture: YES.
-- New Front Desk, Owner, and Customer indexes contain navigation and guardrails only: YES.
-- Existing canonical application architecture moved or deleted during alignment: NO.
-- Empty module folders created only for appearance: NO.
-- Competing module architecture created by the new indexes: NO.
+Evidence:
 
-## INTENTIONAL SEPARATE SURFACES
+- It had the same blob SHA as Sidebar Module 11 Notification.
+- Its content declared the Sidebar Notification system even though it was stored under Header.
 
-The following names appear in separate Technician Application locations because their purpose and interaction context differ:
+Canonical replacement:
 
-1. Profile
-   - Header Profile
-   - Sidebar Profile
+`Applications/Technician Application/Volume 2 - Sidebar/Module 11 - Notification/notification.md`
 
-2. Notification
-   - Header Notification
-   - Sidebar Notification
+Header Notification remains a quick-access link in the Technician index.
 
-These are intentional application surfaces, not accidental duplicate documents.
+### 2. Header Profile
 
-## REPAIR QUEUE VALIDATION
+Removed:
 
-Canonical file:
+`Applications/Technician Application/Volume 1 - Header/Profile/profile.md`
 
-`Applications/Technician Application/Volume 2 - Sidebar/Module 2 - Repair Queue/repair_queue.md`
+Classification: `NEAR_DUPLICATE_SAME_AUTHORITY` and `SUBSET_DUPLICATE`.
 
-- Existing canonical Repair Queue retained: YES.
-- Second Repair Queue document created: NO.
-- Logical architecture status: COMPLETE for the current core baseline.
+Evidence:
 
-## SHARED CONTRACT VALIDATION
+- It defined a full Profile system rather than only Header quick access.
+- It substantially overlapped Sidebar Module 12 Profile in personal, professional, account, security, preference, and audit responsibilities.
 
-Shared user, role, permission, workflow, data, API, security, subscription, communication, finance, file, audit, handoff, non-functional, and readiness concerns are stored in canonical documents under `SaaS Platform/`.
+Canonical replacement:
 
-Application, design, and implementation-planning documents reference shared contracts rather than duplicating them.
+`Applications/Technician Application/Volume 2 - Sidebar/Module 12 - Profile/profile.md`
 
-## DESIGN VALIDATION
+Header Profile remains a quick-access link in the Technician index.
 
-Canonical design files:
+### 3. Root PLAN.md
 
-- `Design/WIREFRAME_ARCHITECTURE.md`
-- `Design/WIREFLOW_ARCHITECTURE.md`
-- `Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md`
+Removed:
 
-Validation:
+`PLAN.md`
 
-- One canonical core wireframe document: YES.
-- One canonical core wireflow document: YES.
-- One canonical non-technical-user UI design document: YES.
-- Duplicate page-specific core wireframe files created: NO.
-- Duplicate core workflow definitions created: NO.
-- Completed application flows replaced by design copies: NO.
-- Future expansion design packages remain separate and must pass Section 8A: YES.
+Classification: `AGGREGATE_COPY`.
 
-## TECA GOVERNANCE AND BUILD-PLAN VALIDATION
+Evidence:
 
-Canonical TECA files:
+- Its creation history described it as a compiled document containing all 36 Technician modules for Google Stitch.
+- It copied canonical module architecture into a second large active document.
 
-- `TECA/AGENT_JOB_ASSIGNMENTS.md`
-- `TECA/PIPELINE_EXECUTION_PLAN.md`
-- `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md`
-- `TECA/IMPLEMENTATION_BUILD_PLAN.md`
+Canonical replacements:
 
-Validation:
+- `1plan.md`
+- `Applications/Technician Application/INDEX.md`
+- linked canonical module files
+- `Design/` documents
 
-- One canonical agent-assignment document: YES.
-- One canonical pipeline execution and phase plan: YES.
-- One canonical live Studio update handoff: YES.
-- One canonical implementation build-order playbook: YES.
-- The pipeline plan controls phases and points to the build playbook: YES.
-- The build playbook owns detailed database, backend, frontend, module, test, deployment, and rollback order: YES.
-- Competing implementation build playbook created elsewhere: NO.
-- Duplicate agent registries created: NO.
-- Duplicate stage-order plans created: NO.
-- Repository documentation falsely claiming live Studio persistence: NO.
-- Repository documentation falsely claiming application completion from plan completion: NO.
+Temporary exports may be generated later outside the active canonical architecture set when required by an approved tool workflow.
 
-## PLACEMENT VALIDATION
+### 4. Older TECA Failure Pattern
 
-- Application entry and navigation files remain under `Applications/`.
-- Technician modules remain under `Applications/Technician Application/`.
-- Front Desk, Owner, and Customer canonical architecture documents remain in their existing application folders.
-- Shared contracts remain under `SaaS Platform/`.
-- Wireframe, wireflow, and UI design documents remain under `Design/`.
-- TECA assignments, pipeline plan, Studio update instruction, and implementation build playbook remain under `TECA/`.
-- Root files remain project-wide planning, indexing, audit, revision, duplicate validation, and verification documents.
-- Future framework-specific implementation files must follow the approved repository structure in the build playbook and must not be created before stack and scoped authorization gates.
+Removed:
 
-## CURRENT VALIDATION RESULT
+`.teca/memory/FailurePatterns/mem_1784179908210.json`
 
-- Applications master starting point files: 1.
-- Application entry indexes available: 4 of 4.
-- Accidental duplicate application architecture documents: 0.
-- Accidental duplicate shared contract documents: 0.
-- Accidental duplicate design documents: 0.
-- Accidental duplicate TECA governance documents: 0.
-- Accidental duplicate implementation build plans: 0.
-- Wrongly placed current documents: 0.
-- Empty appearance-only application folders added: 0.
-- Existing application architecture files deleted or moved: 0.
-- Missing planned shared architecture documents: 0.
-- Missing planned core design documents: 0.
-- Missing planned TECA governance/build-order documents in the current package: 0.
-- Actual application source-code completion claimed by these documents: NO.
+Classification: superseded duplicate memory.
 
-**NO-DUPLICATE AND PLACEMENT VALIDATION: PASS. APPLICATION INDEXES ARE NAVIGATION LAYERS; EXISTING `README.md` FILES REMAIN CANONICAL UNTIL AN APPROVED DECOMPOSITION SUPERSEDES THEM.**
+Canonical replacement:
+
+`.teca/memory/FailurePatterns/mem_1784187086628.json`
+
+The retained record contains the same root cause with a more complete validation and publishing failure pattern.
+
+### 5. TECA Run Summary
+
+Removed:
+
+`.teca/memory/ProjectKnowledge/mem_1784180613040.json`
+
+Classification: duplicate transient run summary.
+
+Canonical replacements:
+
+- retained durable Lesson
+- retained comprehensive Failure Pattern
+
+### 6. Architecture Freeze Run Summary
+
+Removed:
+
+`.teca/memory/ProjectKnowledge/mem_1784236443508.json`
+
+Classification: duplicate transient run summary.
+
+Canonical replacements:
+
+- retained durable Lesson
+- retained comprehensive Failure Pattern
+
+## RETAINED INTENTIONALLY
+
+### Application INDEX and README pairs
+
+Front Desk, Owner, and Customer Portal indexes are navigation and guardrail files. Their READMEs are canonical architecture files. The responsibilities differ, so both are retained.
+
+### Shared SaaS contracts
+
+The shared contracts use coordinated formatting but govern different cross-application responsibilities, including identity, data, API, subscription, communication, finance, files, audit, handoffs, non-functional requirements, and readiness.
+
+### Technician domain modules
+
+Dashboard, Repair Queue, Job Order, Diagnosis, Quotation, Repair, Parts, Testing, Completed, Reports, Notification, Profile, and Logout may use common headings such as dashboard, workflow, search, analytics, integration, security, and audit. Their domain entities, actions, lifecycle responsibilities, and rules differ. This is intentional structural consistency, not duplicate content.
+
+### Main Workspace components
+
+Breadcrumb, Page Header, Toolbar, Filter Bar, Search Result, Data Table, Cards, Timeline, Forms, Modal, Drawer, Toast, Pagination, Loading, Empty, Error, and Footer are separate reusable UI concerns.
+
+### Wireflow and handoff matrix
+
+- `Design/WIREFLOW_ARCHITECTURE.md` governs user navigation and screen decisions.
+- `SaaS Platform/CROSS_APPLICATION_WORKFLOW_AND_HANDOFF_MATRIX.md` governs application/service ownership and operational handoffs.
+
+They are related but not duplicate authorities.
+
+### TECA pipeline and implementation plans
+
+- `TECA/PIPELINE_EXECUTION_PLAN.md` governs TECA phases and stage gates.
+- `TECA/IMPLEMENTATION_BUILD_PLAN.md` governs the detailed dependency-ordered build, test, deployment, and rollback sequence.
+
+They have separate responsibilities.
+
+## TECHNICIAN RESULT
+
+- Logical user-facing surfaces: 36.
+- Canonical detailed architecture files: 34.
+- Header quick-access references to Sidebar canonical modules: 2.
+- Duplicate full Profile/Notification architecture files: 0.
+- Canonical Repair Queue copies: 1.
+
+## MEMORY RESULT
+
+- Memories before cleanup: 5.
+- Duplicate/superseded memories removed: 3.
+- Durable active memories after cleanup: 2.
+- Current categories: LessonsLearned and FailurePatterns.
+- Memory index synchronized: YES.
+
+## FINAL VALIDATION RESULT
+
+- Removed or superseded duplicate files: 6.
+- Active accidental duplicate application architecture files: 0.
+- Active accidental duplicate shared-contract files: 0.
+- Active accidental duplicate design files: 0.
+- Active accidental duplicate TECA-governance files: 0.
+- Active accidental duplicate implementation plans: 0.
+- Active duplicate memories: 0.
+- Broken Header Profile/Notification index links after consolidation: 0.
+- Wrongly placed active canonical documents: 0.
+- Existing domain-specific modules deleted only because they shared a template: 0.
+
+**NO-DUPLICATE AND PLACEMENT VALIDATION: PASS AFTER EVIDENCE-BASED CONSOLIDATION.**
