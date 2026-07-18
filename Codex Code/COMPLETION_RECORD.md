@@ -7,6 +7,10 @@
 - Work branch: `codex-code-control-center`
 - Existing overlapping open PR at start: none
 - Existing `Codex Code/` canonical folder at start: none
+- Pull request: `#10 — Add Codex Code control center`
+- Pull request validation: mergeable, no configured status checks, no unresolved review threads
+- Merge commit: `04a04e16539f39653d3defe030186fdb69fd107e`
+- Current state: `COMPLETE_MERGED_TO_MAIN`
 
 ## Delivered
 
@@ -45,7 +49,9 @@ TASK STORAGE RULES: PRESENT
 EVIDENCE/REVIEW RULES: PRESENT
 DUPLICATE SOURCE TREE CREATED: NO
 APPLICATION CODE CREATED: NO
+MIGRATIONS CREATED: NO
+EXISTING FILES DELETED: NO
 IMPLEMENTATION AUTHORIZATION CHANGED: NO
+PULL REQUEST: #10 MERGED
+MERGE COMMIT: 04a04e16539f39653d3defe030186fdb69fd107e
 ```
-
-Final PR and merge evidence are added after repository validation and merge.
