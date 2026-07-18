@@ -10,6 +10,8 @@
 - Pull request: `#10 — Add Codex Code control center`
 - Pull request validation: mergeable, no configured status checks, no unresolved review threads
 - Merge commit: `04a04e16539f39653d3defe030186fdb69fd107e`
+- Post-merge evidence commit: `b7273554a78661ca896e149fdea3f4d6c281870c`
+- Codex task-contract synchronization commit: `f8fd74482455d667ad38be83c5ac32cd74b9a646`
 - Current state: `COMPLETE_MERGED_TO_MAIN`
 
 ## Delivered
@@ -38,6 +40,7 @@ Codex Code/
 - `Codex Code/` stores prompts, contracts, task records, changed-file manifests, tests/evidence, review, and merge records.
 - Complete application source copies inside `Codex Code/` are prohibited.
 - The folder does not grant coding authorization.
+- The Release 1 Codex task-contract template now routes task records, manifests, evidence, reviews, and merge records to `Codex Code/Tasks/<task-id>/`.
 
 ## Validation
 
@@ -47,6 +50,7 @@ ARMORED MASTER PROMPT: PRESENT
 CX-R1-000 PROMPT/RECORD: PRESENT
 TASK STORAGE RULES: PRESENT
 EVIDENCE/REVIEW RULES: PRESENT
+TASK CONTRACT STORAGE PATHS: SYNCHRONIZED
 DUPLICATE SOURCE TREE CREATED: NO
 APPLICATION CODE CREATED: NO
 MIGRATIONS CREATED: NO
