@@ -13,7 +13,9 @@ Canonical authority:
 - `1plan.md` Section 1C — exact duplicate, near duplicate, subset, aggregate-copy, intentional-index, shared-template, deletion, and memory-deduplication rules.
 - `1plan.md` Section 8A — full architecture and UI/UX gate for each expansion.
 - `Applications/README.md` — application navigation under Section 1B.
-- `TECA/IMPLEMENTATION_BUILD_PLAN.md` — detailed build order after applicable authorization gates.
+- `Implementation Planning/README.md` — release-specific planning entry.
+- `Implementation Planning/Release 1 MVP/INDEX.md` — controlled Release 1 boundary, stack, printer, design, Codex, and quality plan.
+- `TECA/IMPLEMENTATION_BUILD_PLAN.md` — detailed global build order after applicable authorization gates.
 
 ## CANONICAL TECA DOCUMENTS
 
@@ -29,7 +31,7 @@ These files have separate responsibilities and must not be merged merely because
 ```text
 1plan.md
 → README.md
-→ revise.md
+→ revise.md and applicable additive revision record
 → index.md
 → Applications/README.md when application work is requested
 → selected application INDEX.md
@@ -40,9 +42,20 @@ These files have separate responsibilities and must not be merged merely because
 → TECA/AGENT_JOB_ASSIGNMENTS.md
 → TECA/PIPELINE_EXECUTION_PLAN.md
 → TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation work is requested
+→ Implementation Planning/README.md
+→ selected release INDEX.md and exact task contract
 → other canonical files assigned by 1plan.md
 → current branches, pull requests, commits, checks, migrations, assignments, and active-work evidence
 → .teca/memory/index.json and relevant durable memories
+```
+
+Release 1 implementation begins only through:
+
+```text
+Implementation Planning/Release 1 MVP/INDEX.md
+→ 05. Codex Execution/CODEX_TASK_MANIFEST.md
+→ 05. Codex Execution/CODEX_TASK_CONTRACT_TEMPLATE.md
+→ exact authorized CX-R1 task
 ```
 
 ## REQUIRED LIVE PIPELINE
@@ -77,6 +90,8 @@ Application entries:
 - Front Desk: `Applications/Front Desk Application/INDEX.md`
 - Owner: `Applications/Owner Application/INDEX.md`
 - Customer Portal: `Applications/Customer Portal/INDEX.md`
+- IT Operations: `Applications/IT Operations Application/INDEX.md`
+- ROS Future Modules: `Applications/ARCHITECTURED REPAIR OPERATING SYSTEM (ROS)/9. FUTURE MODULES/INDEX.md`
 
 ## DUPLICATE-CONTROL EXECUTION
 
@@ -101,7 +116,7 @@ TECA must:
 8. Update `.teca/memory/index.json` after memory changes.
 9. Record removal path, replacement, evidence, and commit.
 
-Current verified repository result:
+Current verified repository result before Release 1 implementation:
 
 - Technician logical surfaces: 36.
 - Technician canonical detailed files: 34.
@@ -123,33 +138,38 @@ TECA must use Section 1A exactly:
 - skip complete work;
 - block conflicts rather than silently overwrite.
 
+For Codex tasks, tightly coupled schema, contract, design-system, and shared service paths must have one active worker/task group at a time.
+
 ## SOURCE AND SAVE TARGET
 
 Every TECA artifact and handoff records:
 
-- source path and requirement ID
-- application starting/index path when applicable
-- canonical target path
-- arrangement mode
-- active owner/handoff state
-- dependencies
-- last verified commit/SHA
-- validation evidence
+- source path and requirement ID;
+- application or release starting/index path when applicable;
+- canonical target path;
+- arrangement mode;
+- active owner/handoff state;
+- dependencies;
+- last verified commit/SHA;
+- validation evidence.
 
 Chat, prompts, local drafts, old branches, and memory are not canonical truth until validated and published to the assigned repository source.
 
-## COMPARABLE-PRODUCT RESEARCH
+## COMPARABLE-PRODUCT AND TECHNOLOGY RESEARCH
 
-External systems are references only. Use official sources first; compare at least three relevant products for material decisions when possible; record the adapted pattern and rejected behavior; do not copy proprietary code, branding, assets, layouts, or confidential behavior.
+External systems are references only. Use official sources first; compare relevant products/standards for material decisions; record the adapted pattern and rejected behavior; do not copy proprietary code, branding, assets, layouts, or confidential behavior.
 
-Approved initial reference set includes RepairDesk, Odoo Repairs, Microsoft Dynamics 365 Field Service, ServiceNow Field Service Management, and Zoho FSM.
+Approved initial reference set includes RepairDesk, Odoo Repairs, Microsoft Dynamics 365 Field Service, ServiceNow Field Service Management, Zoho FSM, official platform/framework documentation, and official printer standards.
+
+Technology versions are time-sensitive. Before authorized bootstrap, verify changelogs/security advisories, pin exact versions, commit lockfiles, and update the release lock through a reviewed decision—not through an unreviewed `latest` upgrade.
 
 ## IMPLEMENTATION CONTROL
 
-The build playbook defines how approved work must be built. It does not grant coding authorization or prove code/test/deployment completion.
+The global build playbook defines how approved work must be built. The selected release package defines what that release includes and the exact task order. Neither grants coding authorization.
 
 ```text
-Approved Requirement
+Approved Release Requirement
+→ Exact CX-R1 Task Contract
 → Data and State Contract
 → Database Migration
 → Domain and Backend
@@ -162,42 +182,78 @@ Approved Requirement
 → Publish and Read-Back
 → Master Synchronization
 → Memory / Diagnostic / Summary
+→ STOP
 ```
+
+Codex must stop after the authorized task. Completion of one task does not authorize the next task.
+
+## RELEASE 1 CONTROL
+
+Canonical entry: `Implementation Planning/Release 1 MVP/INDEX.md`.
+
+```text
+RELEASE ID: ROS-R1-MVP-2026-01
+RELEASE CLASS: CONTROLLED PILOT MVP
+REQUIREMENT FAMILIES: 24
+HIGH-FIDELITY SCREEN DEFINITIONS: 70
+CODEX TASKS: 36
+PRIORITY RISKS: 24
+IMPLEMENTATION AUTHORIZED: NO
+```
+
+Release 1 uses a modular monolith with Next.js/React/TypeScript, Supabase/PostgreSQL platform services, and a separate Tauri/Rust Windows local print agent. It includes one complete repair workflow, essential staff/customer/IT connections, Free and Pro Trial behavior, A4/Letter page printing, and one exact certified 80 mm printer path.
+
+Public production, live paid SaaS checkout, Premium sales, advanced future modules, universal printer support, high-fidelity completion, code, tests, hardware certification, and deployment remain separate evidence-based gates.
 
 ## CURRENT STATE
 
 Complete in repository:
 
-- core application architecture
-- application starting point and indexes
-- shared contracts
-- wireframes, wireflows, and UI design
-- agent assignments and pipeline plan
-- Studio handoff
-- implementation build playbook
-- duplicate audit and memory cleanup
-- Sections 1A, 1B, 1C, and 8A governance
+- core application architecture;
+- application starting point and indexes;
+- shared contracts;
+- low-fidelity wireframes, wireflows, and UI design rules;
+- Plans/Billing architecture;
+- Printing and Peripheral Operations architecture;
+- IT Operations Application architecture;
+- Cross-Department Operating Fabric;
+- ROS Future Module architecture packages;
+- agent assignments and pipeline plan;
+- Studio handoff;
+- global implementation build playbook;
+- duplicate audit and memory cleanup;
+- Sections 1A, 1B, 1C, and 8A governance;
+- Release 1 MVP implementation planning package.
 
-Next controlled work:
+Next controlled work after planning merge and Owner review:
 
-- apply and verify live TECA Studio alignment;
-- complete release-specific implementation planning.
+1. apply and verify live TECA Studio alignment when autonomous TECA implementation will be used;
+2. produce and approve Release 1 high-fidelity critical-path designs/prototype;
+3. approve exact pilot provider/hosting/hardware choices;
+4. authorize only `CX-R1-001` or an explicitly bounded task batch;
+5. execute the Codex task contract and review evidence.
 
 Not authorized globally:
 
-- uncontrolled coding
-- bypassing application entry
-- duplicate creation
-- deleting domain modules because of template similarity
-- expansion implementation before Section 8A
-- production claims without approved targets and evidence
+- uncontrolled coding;
+- starting a Codex task without exact authorization;
+- automatically continuing to the next task;
+- bypassing application/release entry;
+- duplicate creation;
+- deleting domain modules because of template similarity;
+- expansion implementation before Section 8A;
+- production claims without approved targets and evidence;
+- hardware support claims without certification;
+- public production or live billing provider activation under Release 1.
 
 ## STATUS
 
 - Canonical TECA documents: 4 of 4 complete.
 - Duplicate-control authority: DEFINED IN `1plan.md` Section 1C.
 - Duplicate repository audit: COMPLETE.
+- Release 1 implementation planning: COMPLETE AS PLAN.
 - Live Studio alignment: PENDING LIVE EXECUTION AND READ-BACK.
-- Actual implementation: separate evidence-based status.
+- High-fidelity rendered design/prototype: NOT CREATED.
+- Actual implementation: NOT AUTHORIZED / separate evidence-based status.
 
-**TECA MUST TAKE SCOPE, TASK PRIORITY, WORKER ROUTING, HANDOFF, PROVENANCE, APPLICATION ENTRY, FOLDER ASSIGNMENT, DUPLICATE CLASSIFICATION, AND CONFLICT-REMOVAL AUTHORITY FROM `1plan.md`.**
+**TECA MUST TAKE SCOPE, TASK PRIORITY, WORKER ROUTING, HANDOFF, PROVENANCE, APPLICATION/RELEASE ENTRY, FOLDER ASSIGNMENT, DUPLICATE CLASSIFICATION, AND CONFLICT-REMOVAL AUTHORITY FROM `1plan.md` AND THE SELECTED CANONICAL RELEASE PACKAGE.**

@@ -11,12 +11,17 @@
 - [Cross-Department Operating Fabric](SaaS%20Platform/Cross-Department%20Operating%20Fabric/INDEX.md)
 - [IT and Cross-Department Role Extension](SaaS%20Platform/IT_AND_CROSS_DEPARTMENT_ROLE_EXTENSION.md)
 - [Design Architecture Index](Design/README.md)
+- [Implementation Planning Master Index](Implementation%20Planning/README.md)
+- [Release 1 MVP Implementation Planning](Implementation%20Planning/Release%201%20MVP/INDEX.md)
 - [TECA Repository Operational Index](TECA/README.md)
 - [Canonical Implementation Build Playbook](TECA/IMPLEMENTATION_BUILD_PLAN.md)
 - [Master Architecture Audit](MASTER_AUDIT.md)
 - [Final Architecture Verification](FINAL_ARCHITECTURE_VERIFICATION.md)
+- [Release 1 Implementation Planning Audit](IMPLEMENTATION_PLANNING_AUDIT_RELEASE_1_MVP.md)
+- [Release 1 Final Planning Verification](FINAL_IMPLEMENTATION_PLANNING_VERIFICATION_RELEASE_1_MVP.md)
 - [Duplicate and Placement Validation](duplicate.md)
 - [Revision Queue](revise.md)
+- [Release 1 Revision Record](revise-RELEASE_1_MVP.md)
 
 ## APPLICATION STARTING RULE
 
@@ -161,6 +166,18 @@ The Plans and Billing, Printing, and Cross-Department packages specialize existi
 - [Printing Domain Wireframes/Wireflows](SaaS%20Platform/Printing%20and%20Peripheral%20Operations/06.%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
 - [IT Operations Wireframes/Wireflows](Applications/IT%20Operations%20Application/Volume%204%20-%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
 - [Cross-Department Wireframes/Wireflows](SaaS%20Platform/Cross-Department%20Operating%20Fabric/04.%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
+- [Release 1 High-Fidelity UI Execution Plan](Implementation%20Planning/Release%201%20MVP/04.%20High-Fidelity%20Design/HIGH_FIDELITY_UI_EXECUTION_PLAN.md)
+- [Release 1 Screen Delivery Matrix](Implementation%20Planning/Release%201%20MVP/04.%20High-Fidelity%20Design/SCREEN_DELIVERY_MATRIX.md)
+
+## IMPLEMENTATION PLANNING — RELEASE 1
+
+- [Implementation Planning Master Index](Implementation%20Planning/README.md)
+- [Release 1 MVP Index](Implementation%20Planning/Release%201%20MVP/INDEX.md)
+- [Release Manifest](Implementation%20Planning/Release%201%20MVP/01.%20Release%20Boundary/RELEASE_MANIFEST.md)
+- [Technology Stack and Version Lock](Implementation%20Planning/Release%201%20MVP/02.%20Technology%20and%20Topology/TECHNOLOGY_STACK_AND_VERSION_LOCK.md)
+- [Printer Support and Certification Matrix](Implementation%20Planning/Release%201%20MVP/03.%20Printer%20Certification/PRINTER_SUPPORT_AND_CERTIFICATION_MATRIX.md)
+- [Codex Task Manifest](Implementation%20Planning/Release%201%20MVP/05.%20Codex%20Execution/CODEX_TASK_MANIFEST.md)
+- [Risk, Test, Rollout, and Rollback](Implementation%20Planning/Release%201%20MVP/06.%20Security%20Quality%20and%20Release/RISK_TEST_ROLLOUT_ROLLBACK.md)
 
 ## TECA GOVERNANCE AND BUILD-ORDER PLANS
 
@@ -173,6 +190,7 @@ The Plans and Billing, Printing, and Cross-Department packages specialize existi
 - [Printing Exact Implementation Sequence](SaaS%20Platform/Printing%20and%20Peripheral%20Operations/07.%20Quality%20and%20Delivery/IMPLEMENTATION_SEQUENCE.md)
 - [IT Operations Exact Implementation Sequence](Applications/IT%20Operations%20Application/Volume%205%20-%20Security%20Quality%20and%20Delivery/security_quality_delivery.md)
 - [Cross-Department Exact Implementation Sequence](SaaS%20Platform/Cross-Department%20Operating%20Fabric/05.%20Traceability%20Security%20and%20Delivery/TRACEABILITY_SECURITY_QUALITY_AND_DELIVERY.md)
+- [Release 1 Codex Task Manifest](Implementation%20Planning/Release%201%20MVP/05.%20Codex%20Execution/CODEX_TASK_MANIFEST.md)
 
 ## CURRENT STATUS
 
@@ -186,8 +204,10 @@ The Plans and Billing, Printing, and Cross-Department packages specialize existi
 - Printing and Peripheral Operations architecture: COMPLETE with 20 screens and 16 flows.
 - Cross-Department Operating Fabric: COMPLETE with 12 end-to-end process families, 20 screens, and 16 flows.
 - All departments/applications are connected through shared process instances, linked tasks, handoffs, approvals, timeline, notifications, blockers, documents, data/API/events, and audit while domain ownership remains separate.
+- Release 1 MVP implementation planning: COMPLETE AS PLAN with 24 requirement families, 70 high-fidelity screen definitions, 36 Codex tasks, and 24 priority risks.
+- Release 1 architecture style: modular monolith with Supabase/PostgreSQL and a separate Tauri/Rust local print agent.
 - Active accidental duplicate canonical documents created by these packages: 0 after placement/duplicate validation.
-- High-fidelity visual design, interactive prototypes, application/local-agent code, executed hardware/system tests, deployment, and production support evidence remain separate gated statuses.
+- High-fidelity visual screens, interactive prototype, application/local-agent code, executed hardware/system tests, deployment, and production support evidence remain separate gated statuses.
 - Uncontrolled coding authorized: NO.
 
-**`1plan.md` REMAINS THE MASTER SOURCE OF TRUTH. CROSS-DEPARTMENT WORK ENTERS THROUGH `SaaS Platform/Cross-Department Operating Fabric/INDEX.md`; PRINTING THROUGH `SaaS Platform/Printing and Peripheral Operations/INDEX.md`; IT THROUGH `Applications/IT Operations Application/INDEX.md`.**
+**`1plan.md` REMAINS THE MASTER SOURCE OF TRUTH. RELEASE-SPECIFIC IMPLEMENTATION WORK ENTERS THROUGH `Implementation Planning/Release 1 MVP/INDEX.md`; CODEX MAY START ONLY AN EXACT AUTHORIZED TASK.**

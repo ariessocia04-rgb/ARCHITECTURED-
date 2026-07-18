@@ -2,36 +2,40 @@
 
 ## PROJECT PURPOSE
 
-ARCHITECTURED is the documentation-first source of truth for a multi-tenant Technician Repair SaaS. It defines applications, users, roles, permissions, workflows, data ownership, shared contracts, wireframes, wireflows, UI behavior, security, audit, recovery, implementation gates, and TECA responsibilities before coding begins.
+ARCHITECTURED is the documentation-first source of truth for a multi-tenant Technician Repair SaaS. It defines applications, users, roles, permissions, workflows, data ownership, shared contracts, wireframes, wireflows, UI behavior, security, audit, recovery, implementation gates, release-specific planning, and TECA responsibilities before coding begins.
 
 ## REQUIRED STARTING ORDER
 
 ```text
 1plan.md
 → README.md
-→ revise.md
+→ revise.md and applicable additive revision record
 → index.md
 → Applications/README.md when application work is requested
 → selected application INDEX.md
 → selected canonical application README.md or module file
-→ relevant shared contracts, design artifacts, and TECA plans
+→ relevant shared contracts and design artifacts
+→ TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation is requested
+→ Implementation Planning/README.md
+→ selected release INDEX.md and exact task contract
 → current repository and active-work evidence
 ```
 
-Do not begin application work from a random module, stale prompt, chat copy, memory entry, old branch, or unverified draft.
+Do not begin application or implementation work from a random module, stale prompt, chat copy, memory entry, old branch, or unverified draft.
 
 ## CORE RULES
 
 - GitHub is the single source of truth.
 - `1plan.md` is the master authority.
-- One canonical source per module, shared concern, design concern, plan, TECA rule, and durable memory.
+- One canonical source per module, shared concern, design concern, plan, TECA rule, release, and durable memory.
 - Search and read before creating.
 - Validate and skip completed work.
 - Do not duplicate, aggregate-copy, or casually rewrite canonical architecture.
 - Do not create empty appearance-only folders.
 - Structural similarity alone is not a duplicate when separate modules have different domain responsibility and content.
 - Do not advance to a new phase until current work is validated, published, read back, synchronized, diagnosed, and summarized.
-- Application code requires explicit, scoped `implementation_authorized=true` approval after applicable planning gates.
+- Application code requires explicit, scoped `implementation_authorized=true` approval after applicable release-planning gates.
+- Completion of one Codex task does not authorize the next task.
 - Shared definitions are referenced rather than copied.
 - No secret values may be stored in documentation, logs, prompts, source-control memory, or reports.
 
@@ -44,11 +48,15 @@ SAAS PLATFORM
     ├── Front Desk Application
     ├── Technician Application
     ├── Customer Portal
+    ├── IT Operations Application
     ├── Branches, Departments, Workstations, and Warehouses
     ├── Users, Roles, Permissions, and Approvals
     ├── Subscription and Feature Entitlements
+    ├── Printing and Peripheral Operations
+    ├── Cross-Department Operating Fabric
     ├── Shared Workflows, Contracts, and Integrations
     ├── Wireframes, Wireflows, and UI Design
+    ├── Release-Specific Implementation Planning
     └── Security, Audit, Backup, Recovery, and Reporting
 ```
 
@@ -81,12 +89,16 @@ Quality Review and Approval
 ↓
 Invoice and Payment Completion
 ↓
+Receipt / Document Printing or Digital Delivery
+↓
 Device Release / Delivery
 ↓
 Warranty Activation
 ↓
 Feedback, Follow-Up, and Closure
 ```
+
+IT incidents, printer failures, and integration blockers connect to the same end-to-end process without allowing IT to rewrite another department's authoritative business record.
 
 ## APPLICATIONS
 
@@ -127,7 +139,7 @@ Arrangement: `CONSOLIDATED_ARCHITECTURE_MODE`.
 
 Arrangement: `CONSOLIDATED_ARCHITECTURE_MODE`.
 
-Future HR, payroll, expanded finance, sales, franchise, advanced analytics, automation, and other expansions require complete Section 8A packages in `1plan.md`.
+Future HR, payroll, expanded finance, sales, franchise, advanced analytics, automation, and other expansions require complete Section 8A packages in `1plan.md` and a later approved release.
 
 ### Customer Portal — COMPLETE
 
@@ -136,12 +148,20 @@ Future HR, payroll, expanded finance, sales, franchise, advanced analytics, auto
 
 Arrangement: `CONSOLIDATED_ARCHITECTURE_MODE`.
 
+### IT Operations Application — COMPLETE AS ARCHITECTURE SPECIFICATION
+
+- [Entry Index](Applications/IT%20Operations%20Application/INDEX.md)
+- [Completion Record](Applications/IT%20Operations%20Application/COMPLETION_RECORD.md)
+
+Arrangement: `DECOMPOSED_APPLICATION_ARCHITECTURE_MODE`.
+
 ## APPLICATION FOLDER ARRANGEMENT
 
-Two modes are approved:
+Approved modes include:
 
 1. **Decomposed module mode** — an index links to approved module folders and one canonical detail file per concern.
 2. **Consolidated architecture mode** — an index provides navigation while one README remains the canonical application architecture.
+3. **Decomposed application/expansion package mode** — indexed volumes contain separate scope, functional, data/integration, design, and quality/delivery authorities.
 
 Folder depth alone is not completeness evidence. A future decomposition must preserve valid content, synchronize links, prove no content loss, pass duplicate validation, and receive owner approval.
 
@@ -149,34 +169,57 @@ Folder depth alone is not completeness evidence. A future decomposition must pre
 
 [Open Shared SaaS Platform Master Index](SaaS%20Platform/README.md)
 
-Fourteen canonical documents cover:
+Fourteen canonical core documents cover:
 
-- users, roles, permissions, and workflow
-- global system contracts
-- multi-tenant data and ownership
-- database relationships
-- APIs, events, webhooks, and real-time updates
-- authentication, authorization, and sessions
-- subscription, entitlement, usage, and tenant lifecycle
-- notification and communication
-- payment, invoice, refund, and financial controls
-- files, media, documents, QR, and barcode
-- audit, retention, backup, recovery, and incidents
-- cross-application handoffs
-- non-functional requirements
-- development readiness
+- users, roles, permissions, and workflow;
+- global system contracts;
+- multi-tenant data and ownership;
+- database relationships;
+- APIs, events, webhooks, and real-time updates;
+- authentication, authorization, and sessions;
+- subscription, entitlement, usage, and tenant lifecycle;
+- notification and communication;
+- payment, invoice, refund, and financial controls;
+- files, media, documents, QR, and barcode;
+- audit, retention, backup, recovery, and incidents;
+- cross-application handoffs;
+- non-functional requirements;
+- development readiness.
+
+Decomposed detail packages specialize the core contracts:
+
+- [Free, Pro, and Premium Plans and Billing](SaaS%20Platform/Plans%20and%20Billing/INDEX.md)
+- [Printing and Peripheral Operations](SaaS%20Platform/Printing%20and%20Peripheral%20Operations/INDEX.md)
+- [Cross-Department Operating Fabric](SaaS%20Platform/Cross-Department%20Operating%20Fabric/INDEX.md)
 
 These files are structurally coordinated but have separate responsibilities and are not duplicates.
 
-## DESIGN ARCHITECTURE — COMPLETE
+## DESIGN ARCHITECTURE — COMPLETE AS SPECIFICATION
 
 [Open Design Architecture Master Index](Design/README.md)
 
 - [Wireframe Architecture](Design/WIREFRAME_ARCHITECTURE.md)
 - [Wireflow Architecture](Design/WIREFLOW_ARCHITECTURE.md)
 - [Non-Technical User UI Design System](Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md)
+- [Release 1 High-Fidelity UI Execution Plan](Implementation%20Planning/Release%201%20MVP/04.%20High-Fidelity%20Design/HIGH_FIDELITY_UI_EXECUTION_PLAN.md)
+- [Release 1 Screen Delivery Matrix](Implementation%20Planning/Release%201%20MVP/04.%20High-Fidelity%20Design/SCREEN_DELIVERY_MATRIX.md)
 
-Wireflow defines user navigation and decisions. The shared cross-application handoff matrix defines service ownership and operational handoffs. They are related but distinct canonical concerns.
+Wireflow defines user navigation and decisions. The shared cross-application handoff matrix and Cross-Department Operating Fabric define service ownership and operational handoffs. They are related but distinct canonical concerns.
+
+Release 1 currently has 70 high-fidelity screen definitions, but the visual screens and interactive prototype have not yet been rendered or approved.
+
+## IMPLEMENTATION PLANNING — RELEASE 1 COMPLETE AS PLAN
+
+- [Implementation Planning Master Index](Implementation%20Planning/README.md)
+- [Release 1 MVP Index](Implementation%20Planning/Release%201%20MVP/INDEX.md)
+- [Release Manifest](Implementation%20Planning/Release%201%20MVP/01.%20Release%20Boundary/RELEASE_MANIFEST.md)
+- [Technology Stack and Version Lock](Implementation%20Planning/Release%201%20MVP/02.%20Technology%20and%20Topology/TECHNOLOGY_STACK_AND_VERSION_LOCK.md)
+- [Printer Support and Certification Matrix](Implementation%20Planning/Release%201%20MVP/03.%20Printer%20Certification/PRINTER_SUPPORT_AND_CERTIFICATION_MATRIX.md)
+- [Codex Task Manifest](Implementation%20Planning/Release%201%20MVP/05.%20Codex%20Execution/CODEX_TASK_MANIFEST.md)
+
+Release 1 (`ROS-R1-MVP-2026-01`) is a controlled one-company/one-branch pilot. It locks a modular monolith using Next.js/React/TypeScript, Supabase/PostgreSQL, and a separate Tauri/Rust local print agent. It defines 24 requirement families, 70 screen definitions, 36 Codex tasks, and 24 priority risks.
+
+Application coding remains disabled until the Owner explicitly sets `implementation_authorized=true` for an exact task such as `CX-R1-001`.
 
 ## TECA GOVERNANCE — COMPLETE IN REPOSITORY
 
@@ -187,7 +230,7 @@ Wireflow defines user navigation and decisions. The shared cross-application han
 - [CrewAI Studio Configuration Update](TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
 - [Canonical Implementation Build Plan](TECA/IMPLEMENTATION_BUILD_PLAN.md)
 
-The Pipeline Execution Plan governs TECA stages and phase control. The Implementation Build Plan governs the detailed dependency-ordered build process. They are not duplicate plans.
+The Pipeline Execution Plan governs TECA stages and phase control. The Implementation Build Plan governs the detailed global build process. The selected release package governs exact release boundaries and task order. They are not duplicate plans.
 
 Live CrewAI Studio alignment remains pending until actual Studio configuration read-back is available.
 
@@ -211,6 +254,7 @@ Current result:
 - Active accidental duplicate canonical documents: 0.
 - Wrongly placed active canonical documents: 0.
 - Durable TECA memories after deduplication: 2.
+- Release 1 package conflicts with global architecture/build authorities: 0 after responsibility review.
 
 ## REQUIRED USERS
 
@@ -227,6 +271,8 @@ Current result:
 - Quality Control Supervisor
 - Inventory and Purchasing Officer
 - Finance / Cashier / Accountant
+- Tenant IT Manager / IT Administrator
+- Service Desk / Endpoint / Printer Administrator
 - Customer
 - Business Account Representative
 - External Contractor / Vendor
@@ -238,7 +284,7 @@ The operating flow was compared with Microsoft Dynamics 365 Field Service, Servi
 
 The UI architecture uses WCAG 2.2 and service-design patterns for focused tasks, guided journeys, reused information, validation, review, confirmation, consistent navigation, and help.
 
-These are external references, not project authority. Approved adaptations are stored in canonical repository files.
+Release 1 technology and printer decisions use official framework/platform/standards documentation and are recorded in the research registry. External references are not project authority until adapted and published in the repository.
 
 ## CURRENT COMPLETION
 
@@ -248,49 +294,20 @@ These are external references, not project authority. Approved adaptations are s
 - Front Desk core architecture: complete.
 - Owner core architecture: complete; expansions separate.
 - Customer Portal core architecture: complete.
+- IT Operations architecture: complete as specification.
 - Shared SaaS contracts: 14 of 14 complete.
-- Core wireframes: complete.
-- Core wireflows: complete.
-- Non-technical UI design system: complete.
+- Plans/Billing, Printing, and Cross-Department detail packages: complete as specifications.
+- Core wireframes/wireflows/UI design system: complete as specifications.
+- Release 1 implementation planning: complete as plan.
+- Release 1 high-fidelity screen definitions: 70.
+- Release 1 Codex tasks: 36.
+- Release 1 priority risks: 24.
 - Duplicate audit: complete.
 - Removed or superseded duplicate files: 6.
 - Active accidental duplicate canonical documents: 0.
 - TECA repository governance and build plans: complete as governing documents.
 - Live TECA Studio alignment: pending live read-back.
-- Application implementation, testing, deployment, and release: separate evidence-based statuses.
-- Application code included by this documentation audit: no.
+- High-fidelity rendered design/prototype, application/local-agent implementation, testing, hardware certification, pilot deployment, and public production release: separate evidence-based statuses.
+- Global coding authorization: NO.
 
-## NEXT CONTROLLED PHASE
-
-Controlled implementation planning must approve:
-
-- MVP and later release boundaries
-- technology stack and supported versions
-- physical schema and ER diagram
-- API, event, webhook, real-time, and integration schemas
-- high-fidelity UI and interactive prototype
-- design tokens and components
-- provider selections
-- measurable non-functional targets
-- security, privacy, test, migration, deployment, rollback, support, and operations plans
-- implementation tasks, owners, canonical paths, dependencies, acceptance criteria, and review gates
-- live TECA Studio alignment before autonomous TECA implementation
-
-## MASTER PLAN
-
-Read [`1plan.md`](1plan.md) before changing architecture, applications, design, TECA, memory, implementation planning, or repository structure.
-
-```text
-MASTER ARCHITECTURE PLAN: COMPLETE AS GOVERNING PLAN
-CORE APPLICATION ARCHITECTURE: COMPLETE
-TECHNICIAN LOGICAL SURFACES: 36
-TECHNICIAN CANONICAL DETAILED FILES: 34
-SHARED CONTRACTS: 14 OF 14 COMPLETE
-DESIGN ARCHITECTURE: COMPLETE
-DUPLICATE AUDIT: COMPLETE
-ACTIVE ACCIDENTAL DUPLICATES: 0
-TECA REPOSITORY GOVERNANCE: COMPLETE AS DOCUMENTATION
-LIVE TECA STUDIO ALIGNMENT: PENDING READ-BACK
-READY FOR CONTROLLED IMPLEMENTATION PLANNING: YES
-UNCONTROLLED CODING AUTHORIZED: NO
-```
+**THE NEXT CODING ENTRY IS NOT A CHAT PROMPT. IT IS AN OWNER-AUTHORIZED EXACT TASK UNDER `Implementation Planning/Release 1 MVP/05. Codex Execution/`.**
