@@ -5,10 +5,12 @@
 - `source_path`: `1plan.md`
 - `source_section_or_requirement_id`: Sections 1A, 1B, 1C, and 8A
 - `canonical_target_path`: `Applications/ARCHITECTURED REPAIR OPERATING SYSTEM (ROS)/9. FUTURE MODULES/`
-- `active_owner_or_handoff_state`: `COMPLETE_ON_ISOLATED_BRANCH_PENDING_MERGE_VALIDATION`
+- `active_owner_or_handoff_state`: `COMPLETE_MERGED_TO_MAIN`
 - `dependency_paths`: ROS master index, SaaS Platform contracts, Design sources, TECA implementation build plan, and co-worker integration architecture
 - `last_verified_base_commit`: `a0e8ba7a2d02cedabc2ea8f9c024c21a26074c2b`
-- `validation_evidence`: branch compare, physical-file read-back, module indexes, and canonical volume files
+- `pull_request`: `#6 — Complete folderized ROS Future Modules architecture packages`
+- `merge_commit`: `66a48bad8ccac976525758b13cf38a16d13516fa`
+- `validation_evidence`: branch comparison, GitHub mergeability check, successful squash merge, main-branch physical-file read-back, module indexes, and canonical volume files
 
 ## Co-worker preservation result
 
@@ -88,6 +90,8 @@ MODULE INDEXES: 17 OF 17 COMPLETE
 CANONICAL VOLUME FOLDERS: 68 OF 68 COMPLETE
 CANONICAL VOLUME FILES: 68 OF 68 COMPLETE
 ARCHITECTURE/DESIGN SPECIFICATIONS: 17 OF 17 COMPLETE
+PULL REQUEST: #6 MERGED
+MERGE COMMIT: 66a48bad8ccac976525758b13cf38a16d13516fa
 RENDERED HIGH-FIDELITY DESIGNS: NOT CREATED
 EXECUTABLE PROTOTYPES: NOT CREATED
 APPLICATION CODE: NOT CREATED BY THIS TASK
