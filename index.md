@@ -6,7 +6,7 @@
 - [Master Architecture Plan](1plan.md)
 - [Shared SaaS Platform Architecture Index](SaaS%20Platform/README.md)
 - [Design Architecture Index](Design/README.md)
-- [TECA Repository Governance Index](TECA/README.md)
+- [TECA Repository Operational Index](TECA/README.md)
 - [Canonical Implementation Build Playbook](TECA/IMPLEMENTATION_BUILD_PLAN.md)
 - [Master Architecture Audit](MASTER_AUDIT.md)
 - [Final Architecture Verification](FINAL_ARCHITECTURE_VERIFICATION.md)
@@ -105,13 +105,18 @@ Future HR, payroll, finance, sales, franchise, analytics, automation, and other 
 
 ## TECA GOVERNANCE AND BUILD-ORDER PLANS — COMPLETE IN REPOSITORY
 
-- [TECA Repository Governance Master Index](TECA/README.md)
+- [TECA Repository Operational Index](TECA/README.md)
 - [TECA Agent Job Assignments](TECA/AGENT_JOB_ASSIGNMENTS.md)
 - [TECA Pipeline Execution Plan](TECA/PIPELINE_EXECUTION_PLAN.md)
 - [TECA CrewAI Studio Configuration Update](TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
 - [TECA Canonical Implementation Build Plan](TECA/IMPLEMENTATION_BUILD_PLAN.md)
 
-The TECA governance index is also the canonical source for active-work ownership, no-racing, gap-fill-only, co-worker handoff, and current official comparable-product research rules. These rules are summarized here but not duplicated.
+Canonical authority mapping:
+
+- Project scope, priority, co-worker continuation, active-work notification, no-racing, save-before-transfer, handoff, source provenance, gap filling, unsupported-conflict removal, and completion rules: [`1plan.md`, Section 1A](1plan.md).
+- Full expansion architecture and UI/UX gate: [`1plan.md`, Section 8A](1plan.md).
+- Operational TECA behavior and comparable-product research procedure: [`TECA/README.md`](TECA/README.md), under `1plan.md` authority.
+- Exact implementation build sequence: [`TECA/IMPLEMENTATION_BUILD_PLAN.md`](TECA/IMPLEMENTATION_BUILD_PLAN.md), after the applicable `1plan.md` gates pass.
 
 ## CURRENT STATUS
 
@@ -119,9 +124,9 @@ The TECA governance index is also the canonical source for active-work ownership
 - Shared SaaS platform documents: 14 of 14 complete.
 - Core design architecture documents: 3 of 3 complete.
 - TECA repository governance and build-order documents: 4 of 4 complete.
+- Master co-worker, handoff, source-provenance, and conflict-removal rules: DEFINED IN `1plan.md`, SECTION 1A.
 - Canonical implementation build playbook: COMPLETE AS A GOVERNING PLAN.
-- Co-worker active-work ownership, no-racing, and gap-fill-only rules: DEFINED IN `TECA/README.md`.
-- Comparable-product official research rule and initial benchmark baseline: DEFINED IN `TECA/README.md`.
+- Comparable-product official research procedure: DEFINED IN `TECA/README.md` UNDER `1plan.md` AUTHORITY.
 - Future expansions: PLANNED; each requires full architecture and design.
 - Accidental duplicate canonical documents: 0.
 - Live TECA Studio alignment: pending Studio execution and read-back.
@@ -129,4 +134,4 @@ The TECA governance index is also the canonical source for active-work ownership
 - Uncontrolled coding authorized: NO.
 - Next controlled phase: complete release-specific implementation planning and live TECA alignment.
 
-**THE ARCHITECTURE PLAN, CORE DESIGN BASELINE, TECA GOVERNANCE, CO-WORKER COLLABORATION RULES, REFERENCE-RESEARCH RULES, AND CANONICAL IMPLEMENTATION BUILD ORDER ARE DOCUMENTED. THIS DOES NOT MEAN THE WORKING APPLICATION IS COMPLETE.**
+**`1plan.md` IS THE MASTER SOURCE OF TRUTH. INDEXES AND TECA DOCUMENTS MUST REFERENCE IT AND MUST NOT CREATE A COMPETING PROJECT OR WORKER-COORDINATION AUTHORITY.**
