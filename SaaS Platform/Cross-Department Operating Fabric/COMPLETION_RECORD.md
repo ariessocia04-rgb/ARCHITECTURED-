@@ -4,8 +4,10 @@
 
 - `source_path`: `1plan.md`, all application/future-module indexes, shared contracts, IT Operations, Printing, Design, TECA, and official business-process/service-model references.
 - `canonical_target_path`: `SaaS Platform/Cross-Department Operating Fabric/`.
-- `active_owner_or_handoff_state`: `COMPLETE_ON_ISOLATED_BRANCH_PENDING_MERGE_VALIDATION`.
+- `active_owner_or_handoff_state`: `COMPLETE_MERGED_TO_MAIN`.
 - `source_branch`: `printer-it-operations-architecture`.
+- `pull_request`: `#8 — Add printing, IT operations, and cross-department architecture`.
+- `merge_commit`: `014fb36839ae1bd97eb2f97a9139c24c2decf8f1`.
 - `last_verified_base_commit`: `528c80f51bf37d57b239ae65ffa2ad248bce8292`.
 
 ## Physical package
@@ -73,5 +75,7 @@ DOMAIN OWNERSHIP PRESERVED: YES
 SHARED WORK/HANDOFF/APPROVAL/TIMELINE/EVENT/NOTIFICATION: COMPLETE
 IT AND PRINTING CONNECTED TO ALL AFFECTED PROCESSES: COMPLETE
 OWNER CROSS-DEPARTMENT OVERSIGHT: COMPLETE
+PULL REQUEST: #8 MERGED
+MERGE COMMIT: 014fb36839ae1bd97eb2f97a9139c24c2decf8f1
 IMPLEMENTATION AUTHORIZED: NO
 ```
