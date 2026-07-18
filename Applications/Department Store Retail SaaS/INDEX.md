@@ -14,6 +14,11 @@
 4. [Wireframe and Wireflow Architecture](Volume%204%20-%20Wireframe%20and%20Wireflow/ARCHITECTURE.md)
 5. [Security, Quality, Offline, Recovery, and Delivery Architecture](Volume%205%20-%20Security%20Quality%20and%20Delivery/ARCHITECTURE.md)
 
+## Supporting canonical records
+
+- [Research Baseline](RESEARCH_BASELINE.md)
+- [Completion Record](COMPLETION_RECORD.md)
+
 ## Operating modes
 
 - Solo Seller / Owner-Cashier
@@ -27,6 +32,7 @@
 ## Status
 
 - Complete architecture volumes: 5 of 5.
+- Research baseline: COMPLETE.
 - Full department teams: COMPLETE.
 - Friendly non-technical user flows: COMPLETE.
 - Offline and low-connectivity design: COMPLETE.
