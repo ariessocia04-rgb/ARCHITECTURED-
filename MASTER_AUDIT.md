@@ -1,112 +1,103 @@
 # MASTER ARCHITECTURE AUDIT — TECHNICIAN REPAIR SAAS
 
-## A. APPLICATIONS MASTER ENTRY AND ARRANGEMENT
+## A. APPLICATION ENTRY AND ARRANGEMENT
 
-Canonical application starting point:
+Canonical starting point: `Applications/README.md`
 
-`Applications/README.md`
-
-Validation:
-
-- ✅ Application work starts at `1plan.md` Section 1B.
-- ✅ `Applications/README.md` defines the shared application entry path.
 - ✅ Every application has an `INDEX.md`.
-- ✅ Every application index identifies its canonical detail source.
-- ✅ Technician Application uses `DECOMPOSED_MODULE_MODE`.
-- ✅ Front Desk, Owner core baseline, and Customer Portal use `CONSOLIDATED_ARCHITECTURE_MODE`.
-- ✅ Consolidated application indexes navigate to existing `README.md` sections without copying the full architecture.
-- ✅ Existing valid application architecture was not moved, renamed, split, or deleted during alignment.
-- ✅ Empty appearance-only folders were not created.
-- ✅ Future decomposition requires `1plan.md` path assignment, active-owner checking, link synchronization, no-content-loss validation, duplicate validation, and owner approval.
+- ✅ Every index identifies its canonical detail source.
+- ✅ Technician uses decomposed module mode.
+- ✅ Front Desk, Owner core, and Customer Portal use consolidated README mode with navigation indexes.
+- ✅ Indexes navigate and govern without copying full application architecture.
+- ✅ Empty appearance-only folders are prohibited.
+- ✅ Future decomposition requires plan-assigned paths, traceability, link synchronization, no-content-loss validation, duplicate validation, and owner approval.
 
-Application entry indexes verified: **4 of 4 available.**
+Application entry indexes: **4 of 4 available.**
 
 ## B. TECHNICIAN APPLICATION
 
-Canonical entry:
+Canonical entry: `Applications/Technician Application/INDEX.md`
 
-`Applications/Technician Application/INDEX.md`
+### Volume 1 — Header
 
-### VOLUME 1 — HEADER
+Logical surfaces:
 
-- ✅ Profile
-- ✅ Shift
-- ✅ Notification
-- ✅ Search
-- ✅ QR Scanner
+- ✅ Profile Quick Access → canonical Sidebar Profile
+- ✅ Shift → dedicated Header architecture
+- ✅ Notification Quick Access → canonical Sidebar Notification
+- ✅ Search → dedicated Header architecture
+- ✅ QR Scanner → dedicated Header architecture
 
-### VOLUME 2 — SIDEBAR
+### Volume 2 — Sidebar
 
-- ✅ Module 1 - Dashboard
-- ✅ Module 2 - Repair Queue
-- ✅ Module 3 - Job Order
-- ✅ Module 4 - Diagnosis
-- ✅ Module 5 - Quotation
-- ✅ Module 6 - Repair
-- ✅ Module 7 - Parts
-- ✅ Module 8 - Testing
-- ✅ Module 9 - Completed
-- ✅ Module 10 - Reports
-- ✅ Module 11 - Notification
-- ✅ Module 12 - Profile
-- ✅ Module 13 - Logout
+- ✅ Dashboard
+- ✅ Repair Queue
+- ✅ Job Order
+- ✅ Diagnosis
+- ✅ Quotation
+- ✅ Repair
+- ✅ Parts
+- ✅ Testing
+- ✅ Completed
+- ✅ Reports
+- ✅ Notification — canonical full definition
+- ✅ Profile — canonical full definition
+- ✅ Logout
 
-### VOLUME 3 — MAIN WORKSPACE
+### Volume 3 — Main Workspace
 
-- ✅ 1. Dynamic Content Area
-- ✅ 2. Breadcrumb System
-- ✅ 3. Page Header
-- ✅ 4. Action Toolbar
-- ✅ 5. Filter Bar
-- ✅ 6. Search Result
-- ✅ 7. Data Table
-- ✅ 8. Cards
-- ✅ 9. Timeline
-- ✅ 10. Forms
-- ✅ 11. Modal
-- ✅ 12. Drawer
-- ✅ 13. Toast Notifications
-- ✅ 14. Pagination
-- ✅ 15. Loading State
-- ✅ 16. Empty State
-- ✅ 17. Error State
-- ✅ 18. Footer
+- ✅ Dynamic Content Area
+- ✅ Breadcrumb
+- ✅ Page Header
+- ✅ Action Toolbar
+- ✅ Filter Bar
+- ✅ Search Result
+- ✅ Data Table
+- ✅ Cards
+- ✅ Timeline
+- ✅ Forms
+- ✅ Modal
+- ✅ Drawer
+- ✅ Toast Notifications
+- ✅ Pagination
+- ✅ Loading State
+- ✅ Empty State
+- ✅ Error State
+- ✅ Footer
 
-Technician detailed modules: **36 complete, 0 partial, 0 missing.**
+Technician result:
+
+- Logical surfaces: **36**.
+- Canonical detailed files: **34**.
+- Header quick-access references: **2**.
+- Partial canonical files: **0**.
+- Missing planned core files: **0**.
+- Duplicate full Profile/Notification architecture files: **0**.
 
 ## C. ADDITIONAL APPLICATIONS
 
-### Front Desk Application
+### Front Desk
 
-- Entry index: `Applications/Front Desk Application/INDEX.md` — ✅ VERIFIED.
-- Canonical architecture: `Applications/Front Desk Application/README.md` — ✅ PRESERVED.
-- Arrangement mode: `CONSOLIDATED_ARCHITECTURE_MODE`.
-- Architecture status: COMPLETE for the core baseline.
+- Entry index: ✅ VERIFIED.
+- Canonical README architecture: ✅ PRESERVED.
+- Core baseline: COMPLETE.
 
-### Owner Application
+### Owner
 
-- Entry index: `Applications/Owner Application/INDEX.md` — ✅ VERIFIED.
-- Canonical core-baseline architecture: `Applications/Owner Application/README.md` — ✅ PRESERVED.
-- Arrangement mode: `CONSOLIDATED_ARCHITECTURE_MODE`.
-- Core-baseline architecture status: COMPLETE.
-- Future HR, payroll, finance, sales, franchise, analytics, automation, and other expansions: separate Section 8A packages required.
+- Entry index: ✅ VERIFIED.
+- Canonical core README: ✅ PRESERVED.
+- Core baseline: COMPLETE.
+- Future expansions: separate Section 8A packages required.
 
 ### Customer Portal
 
-- Entry index: `Applications/Customer Portal/INDEX.md` — ✅ VERIFIED.
-- Canonical architecture: `Applications/Customer Portal/README.md` — ✅ PRESERVED.
-- Arrangement mode: `CONSOLIDATED_ARCHITECTURE_MODE`.
-- Architecture status: COMPLETE for the core baseline.
-
-Placeholder or appearance-only application folders added: **0**.
+- Entry index: ✅ VERIFIED.
+- Canonical README architecture: ✅ PRESERVED.
+- Core baseline: COMPLETE.
 
 ## D. SHARED SAAS PLATFORM
 
-Master index:
-
-`SaaS Platform/README.md`
-
-Canonical shared documents:
+Master index: `SaaS Platform/README.md`
 
 1. ✅ User, Role, and Workflow Architecture
 2. ✅ Global System Contract Layer
@@ -123,167 +114,144 @@ Canonical shared documents:
 13. ✅ Non-Functional Requirements
 14. ✅ Development Readiness Audit
 
-Shared architecture documents: **14 of 14 complete.**
+Shared documents: **14 of 14 complete.**
+
+All 14 have distinct blob SHAs and distinct cross-application responsibilities. Their common contract formatting is intentional structural consistency, not duplicate content.
 
 ## E. DESIGN ARCHITECTURE
 
-Master index:
+Master index: `Design/README.md`
 
-`Design/README.md`
+- ✅ Wireframe Architecture
+- ✅ Wireflow Architecture
+- ✅ Non-Technical User UI Design System
 
-Canonical design documents:
+Distinct responsibilities:
 
-1. ✅ Wireframe Architecture
-2. ✅ Wireflow Architecture
-3. ✅ Non-Technical User UI Design System
+- Wireframes define page and information structure.
+- Wireflows define user navigation, decisions, and recovery.
+- UI design defines content, interaction, responsive, accessibility, and usability rules.
+- Shared cross-application handoff contracts define operational ownership rather than screen navigation.
 
-Validation results:
+Design files: **3 of 3 complete and distinct.**
 
-- ✅ Technician, Front Desk, Owner, Customer Portal, and Platform core wireframes are defined.
-- ✅ Entry, intake, queue, assignment, diagnosis, quotation, parts, repair, testing, quality, payment, release, warranty, subscription, support, error, and offline wireflows are defined.
-- ✅ Plain-language, guided-task, form, validation, review, confirmation, responsive, accessibility, and help rules are defined.
-- ✅ Completed application workflows are preserved.
-- ✅ Customer-visible and internal-only information remain separated.
-- ✅ Drag-only and color-only operation is prohibited.
-- ✅ Future expansion design packages remain subject to `1plan.md` Section 8A.
+## F. TECA GOVERNANCE AND BUILD ORDER
 
-Design architecture documents: **3 of 3 complete for the current core baseline.**
+Master index: `TECA/README.md`
 
-## F. TECA REPOSITORY GOVERNANCE AND BUILD ORDER
+- ✅ Agent Job Assignments
+- ✅ Pipeline Execution Plan
+- ✅ CrewAI Studio Configuration Update
+- ✅ Implementation Build Plan
 
-Master operational index:
+Distinct responsibilities:
 
-`TECA/README.md`
+- Agent Assignments define roles, jobs, outputs, and prohibited actions.
+- Pipeline Plan defines stages and phase gates.
+- Studio Update defines live configuration changes and read-back requirements.
+- Build Plan defines implementation dependency order, testing, deployment, and rollback.
 
-Canonical TECA documents:
+Repository-side TECA plans: **4 of 4 complete and distinct.**
 
-1. ✅ Agent Job Assignments
-2. ✅ Pipeline Execution Plan
-3. ✅ CrewAI Studio Configuration Update
-4. ✅ Canonical Implementation Build Plan
+Live Studio persistence remains pending actual Studio read-back.
 
-Validation results:
+## G. EVIDENCE-BASED DUPLICATE AUDIT
 
-- ✅ 9 agent jobs documented.
-- ✅ 11 sequential stages documented.
-- ✅ Exact repository and application read order documented.
-- ✅ `Applications/README.md` and selected application `INDEX.md` required before application detail work.
-- ✅ No-jump, finish-current-task, and skip-already-complete rules documented.
-- ✅ No-racing, safe handoff, source-provenance, no-duplicate, and canonical-placement rules documented.
-- ✅ Empty appearance-only folder and duplicate-module prevention documented.
-- ✅ Architecture/design-mode no-code gate documented.
-- ✅ Exact database, backend, frontend, module, test, deployment, and rollback sequence documented.
-- ✅ Validation, publishing, read-back, memory, diagnostic, and summary contracts documented.
-- ✅ Live Studio update instruction is self-contained in the repository.
-- ⚠️ Live CrewAI Studio persistence remains pending until the Studio Assistant applies the update and returns live read-back.
+Authority: `1plan.md`, Section 1C and `duplicate.md`.
 
-TECA repository governance/build-order documents: **4 of 4 complete as governing documents.**
+### Removed or superseded
 
-## G. GOVERNANCE SYNCHRONIZATION
+1. Header Notification duplicate — exact same blob SHA as Sidebar Notification.
+2. Header Profile duplicate — near-duplicate/subset of Sidebar Profile.
+3. Root `PLAN.md` — aggregate copy of modular Technician architecture.
+4. Older validation failure memory — superseded by a more complete Failure Pattern.
+5. Duplicate TECA run summary memory.
+6. Duplicate Architecture Freeze run summary memory.
 
-- ✅ `1plan.md` synchronized with Section 1B.
-- ✅ `README.md` synchronized with application starting order.
-- ✅ `index.md` synchronized with application indexes.
-- ✅ `Applications/README.md` created and read back.
-- ✅ Technician Application `INDEX.md` preserved.
-- ✅ Front Desk Application `INDEX.md` created and read back.
-- ✅ Owner Application `INDEX.md` created and read back.
-- ✅ Customer Portal `INDEX.md` created and read back.
-- ✅ `TECA/README.md` synchronized.
-- ✅ `TECA/PIPELINE_EXECUTION_PLAN.md` synchronized.
-- ✅ `duplicate.md` synchronized.
-- ✅ `revise.md` synchronized.
-- ✅ Documentation-only scope preserved.
-- ✅ No application source code added.
+### Preserved intentionally
 
-## H. DUPLICATE CONTENT
+- Application INDEX/README pairs.
+- Shared SaaS contracts.
+- Technician domain modules with common headings but distinct business content.
+- Main Workspace components.
+- Design wireflow and shared handoff matrix.
+- TECA pipeline and implementation plans.
 
-Intentional separate Technician surfaces:
+### Duplicate audit result
 
-1. Profile — Header and Sidebar.
-2. Notification — Header and Sidebar.
+- Removed/superseded duplicate files: **6**.
+- Active duplicate application architecture files: **0**.
+- Active duplicate shared-contract files: **0**.
+- Active duplicate design files: **0**.
+- Active duplicate TECA-governance/build-plan files: **0**.
+- Active duplicate memories: **0**.
+- Domain-specific modules deleted only because they use a shared template: **0**.
 
-These have different navigation and interaction responsibilities.
+## H. MEMORY AUDIT
 
-Canonical shared definitions are stored under `SaaS Platform/` and referenced by application documents.
+- Memories before cleanup: 5.
+- Superseded/duplicate memories removed: 3.
+- Durable active memories after cleanup: 2.
+- Retained categories: LessonsLearned and FailurePatterns.
+- `.teca/memory/index.json` synchronized: ✅ YES.
 
-Canonical design definitions are stored under `Design/` and referenced by master documents.
+## I. PLACEMENT AND LINKS
 
-Canonical TECA assignments and execution rules are stored under `TECA/` and referenced by master documents.
+- ✅ Application navigation remains under `Applications/`.
+- ✅ Technician modules remain under the Technician Application.
+- ✅ Shared contracts remain under `SaaS Platform/`.
+- ✅ Design remains under `Design/`.
+- ✅ TECA plans remain under `TECA/`.
+- ✅ Root files remain project-wide planning, indexing, audit, revision, duplicate validation, and verification.
+- ✅ Header Profile and Notification links now resolve to their Sidebar canonical modules.
+- ✅ Root and Technician indexes were updated before duplicate file deletion.
+- Wrongly placed active canonical documents: **0**.
 
-Application `INDEX.md` files provide navigation and starting guidance. They do not replace or copy canonical `README.md` or module architecture.
+## J. MASTER SYNCHRONIZATION
 
-The Repair Queue remains in its existing canonical Technician Application file.
+- ✅ `1plan.md`
+- ✅ `README.md`
+- ✅ `index.md`
+- ✅ `Applications/Technician Application/INDEX.md`
+- ✅ `duplicate.md`
+- ✅ `revise.md`
+- ✅ `.teca/memory/index.json`
+- ✅ `MASTER_AUDIT.md`
+- ⏳ `FINAL_ARCHITECTURE_VERIFICATION.md` synchronized in the next write of this same controlled batch.
 
-- Accidental duplicate application architecture documents: **0**.
-- Accidental duplicate shared contract documents: **0**.
-- Accidental duplicate design documents: **0**.
-- Accidental duplicate TECA governance/build-order documents: **0**.
+No application source code was added by this audit.
 
-## I. PLACEMENT AND HIERARCHY
+## K. CONSISTENCY CHECK
 
-- ✅ `Applications/README.md` is the application-folder entry point.
-- ✅ Technician modules follow approved volume, numbering, and hierarchy.
-- ✅ Front Desk, Owner, and Customer canonical architecture remains in existing application folders.
-- ✅ Front Desk, Owner, and Customer entry indexes are located in their own application folders.
-- ✅ Shared contracts remain in `SaaS Platform/`.
-- ✅ Design documents remain in `Design/`.
-- ✅ TECA governance and build-order documents remain in `TECA/`.
-- ✅ Root files remain project-wide planning, indexing, revision, audit, and verification documents.
-- ✅ Existing completed application files moved, renamed, or deleted during alignment: NO.
-- Wrongly placed current documents: **0**.
-
-## J. CONSISTENCY CHECK
-
-- ✅ `1plan.md` remains the master source of truth.
-- ✅ Application work has one mandatory starting order.
-- ✅ Every application has one clear entry index.
-- ✅ Every index identifies one canonical detail source.
-- ✅ Folder arrangement does not create duplicate architecture.
-- ✅ Tenant isolation is required at every data and communication layer.
-- ✅ Branch, role, record, and field scope are consistently defined.
-- ✅ Application responsibilities and handoffs are separated.
-- ✅ Work-order lifecycle is canonical and history-preserving.
-- ✅ Financial and inventory records use controlled adjustments and immutable history.
-- ✅ Idempotency is required for retry-sensitive operations.
-- ✅ Customer-visible and internal-only data are separated.
-- ✅ Security, accessibility, recovery, and operational quality gates are defined.
-- ✅ Wireframes and wireflows preserve approved status and approval gates.
-- ✅ UI rules prioritize non-technical users without weakening completed flows.
-- ✅ TECA agents must validate and skip completed work instead of duplicating it.
-- ✅ Application code remains blocked until controlled implementation-planning gates are approved.
+- ✅ One canonical source per concern.
+- ✅ Shared formatting is not mistaken for duplicate domain architecture.
+- ✅ Tenant, branch, role, record, and field boundaries remain defined.
+- ✅ Lifecycle and history remain preserved.
+- ✅ Financial and inventory corrections remain controlled.
+- ✅ Customer-visible and internal information remain separated.
+- ✅ Wireframes and wireflows preserve approved gates.
+- ✅ Non-technical UI rules remain intact.
+- ✅ TECA must validate and skip completed work.
+- ✅ Application code remains blocked until scoped planning and authorization gates pass.
 
 ## FINAL SUMMARY
 
-- Applications master starting point complete: 1.
-- Application entry indexes available: 4 of 4.
-- Technician detailed modules complete: 36.
-- Additional core application architectures complete: 3.
-- Shared canonical architecture documents complete: 14.
-- Canonical design documents complete: 3.
-- Canonical TECA governance/build-order documents complete: 4.
-- Existing completed application architecture moved or deleted: 0.
-- Empty appearance-only folders added: 0.
-- Accidental duplicates: 0.
-- Placement issues: 0.
-- Current repository documentation alignment: COMPLETE.
-- Coding added: 0% by instruction.
-- Live TECA Studio alignment: pending live execution and read-back.
-
 ```text
-APPLICATIONS MASTER STARTING POINT: COMPLETE
-APPLICATION ENTRY INDEXES: 4 OF 4 AVAILABLE
-TECHNICIAN ARRANGEMENT: DECOMPOSED MODULE MODE
-FRONT DESK / OWNER CORE / CUSTOMER ARRANGEMENT: CONSOLIDATED ARCHITECTURE MODE
-EXISTING APPLICATION ARCHITECTURE MOVED OR DELETED: NO
-GLOBAL CONTRACT FOUNDATION: COMPLETE
-WIREFRAME ARCHITECTURE: COMPLETE FOR CORE BASELINE
-WIREFLOW ARCHITECTURE: COMPLETE FOR CORE BASELINE
-NON-TECHNICAL UI DESIGN SYSTEM: COMPLETE
-TECA REPOSITORY GOVERNANCE AND BUILD ORDER: COMPLETE AS GOVERNING DOCUMENTS
+APPLICATION ENTRY INDEXES: 4 OF 4
+TECHNICIAN LOGICAL SURFACES: 36
+TECHNICIAN CANONICAL DETAILED FILES: 34
+ADDITIONAL CORE APPLICATIONS: 3 COMPLETE
+SHARED CONTRACTS: 14 OF 14 COMPLETE
+DESIGN FILES: 3 OF 3 COMPLETE
+TECA GOVERNANCE/BUILD PLANS: 4 OF 4 COMPLETE
+DUPLICATE FILES REMOVED OR SUPERSEDED: 6
+ACTIVE ACCIDENTAL DUPLICATE CANONICAL DOCUMENTS: 0
+ACTIVE DURABLE MEMORIES: 2
+PLACEMENT ISSUES: 0
+APPLICATION CODE ADDED BY THIS AUDIT: 0
 LIVE TECA STUDIO ALIGNMENT: PENDING READ-BACK
 READY FOR CONTROLLED IMPLEMENTATION PLANNING: YES
 UNCONTROLLED CODING AUTHORIZED: NO
 ```
 
-**MASTER ARCHITECTURE AND APPLICATION-FOLDER ALIGNMENT AUDIT: PASS.**
+**MASTER ARCHITECTURE AND DUPLICATE AUDIT: PASS AFTER EVIDENCE-BASED CONSOLIDATION.**
