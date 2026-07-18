@@ -1,9 +1,10 @@
 # 9. FUTURE MODULES — MASTER INDEX
 
-## Authority and starting order
+## Authority and evidence
 
 - Master authority: `1plan.md`, especially Sections 1A, 1B, 1C, and 8A.
 - ROS entry: `Applications/ARCHITECTURED REPAIR OPERATING SYSTEM (ROS)/INDEX.md`.
+- [Completion and Master-Plan Alignment Record](COMPLETION_RECORD.md)
 - Required order: `1plan.md` → ROS master index → this index → selected module `INDEX.md` → assigned volume → shared contracts/design sources → active-work evidence.
 
 ## Folderized expansion packages
