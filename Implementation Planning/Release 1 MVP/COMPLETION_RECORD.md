@@ -9,7 +9,9 @@
 - Base commit: `666bf98e0c12aa6cd373121a457d9e63409488a7`.
 - Work branch: `release-1-mvp-implementation-planning`.
 - Initial active-work check: no newer co-worker commit and no open PR.
-- Current state: `COMPLETE_ON_ISOLATED_BRANCH_PENDING_VALIDATION_AND_MERGE`.
+- Pull request: `#9 — Add Release 1 MVP implementation planning`.
+- Merge commit: `44f92b716e7384563bd6aa31ffb8ac24e3624536`.
+- Current state: `COMPLETE_MERGED_TO_MAIN`.
 
 ## Delivered package
 
@@ -104,6 +106,8 @@ PRINTER SUPPORT/CERTIFICATION PLAN: LOCKED
 HIGH-FIDELITY EXECUTION PLAN: COMPLETE
 CODEX TASK BREAKDOWN: COMPLETE
 RISK/TEST/ROLLOUT/ROLLBACK: COMPLETE AS PLAN
+PULL REQUEST: #9 MERGED
+MERGE COMMIT: 44f92b716e7384563bd6aa31ffb8ac24e3624536
 CODING AUTHORIZATION: NOT GRANTED
 ```
 
