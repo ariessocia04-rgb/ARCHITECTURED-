@@ -7,6 +7,7 @@
 - [Shared SaaS Platform Architecture Index](SaaS%20Platform/README.md)
 - [Design Architecture Index](Design/README.md)
 - [TECA Repository Governance Index](TECA/README.md)
+- [Canonical Implementation Build Playbook](TECA/IMPLEMENTATION_BUILD_PLAN.md)
 - [Master Architecture Audit](MASTER_AUDIT.md)
 - [Final Architecture Verification](FINAL_ARCHITECTURE_VERIFICATION.md)
 - [Duplicate and Placement Validation](duplicate.md)
@@ -67,9 +68,11 @@
 
 - [Front Desk Application Architecture](Applications/Front%20Desk%20Application/README.md)
 
-### 3. OWNER APPLICATION — COMPLETE (100%)
+### 3. OWNER APPLICATION — CORE BASELINE COMPLETE (100%)
 
 - [Owner Application Architecture](Applications/Owner%20Application/README.md)
+
+Future HR, payroll, finance, sales, franchise, analytics, automation, and other expansions require their own complete Section 8A packages before implementation.
 
 ### 4. CUSTOMER PORTAL — COMPLETE (100%)
 
@@ -93,32 +96,33 @@
 - [Non-Functional Requirements](SaaS%20Platform/NON_FUNCTIONAL_REQUIREMENTS.md)
 - [Development Readiness Audit](SaaS%20Platform/DEVELOPMENT_READINESS_AUDIT.md)
 
-## DESIGN ARCHITECTURE — COMPLETE (100%)
+## DESIGN ARCHITECTURE — CORE BASELINE COMPLETE (100%)
 
 - [Design Architecture Master Index](Design/README.md)
 - [Wireframe Architecture](Design/WIREFRAME_ARCHITECTURE.md)
 - [Wireflow Architecture](Design/WIREFLOW_ARCHITECTURE.md)
 - [Non-Technical User UI Design System](Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md)
 
-## TECA REPOSITORY GOVERNANCE — COMPLETE (100%)
+## TECA GOVERNANCE AND BUILD-ORDER PLANS — COMPLETE IN REPOSITORY
 
 - [TECA Repository Governance Master Index](TECA/README.md)
 - [TECA Agent Job Assignments](TECA/AGENT_JOB_ASSIGNMENTS.md)
 - [TECA Pipeline Execution Plan](TECA/PIPELINE_EXECUTION_PLAN.md)
 - [TECA CrewAI Studio Configuration Update](TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
+- [TECA Canonical Implementation Build Plan](TECA/IMPLEMENTATION_BUILD_PLAN.md)
 
 ## CURRENT STATUS
 
-- Application architecture: COMPLETE (100%).
+- Core application architecture: COMPLETE (100%).
 - Shared SaaS platform documents: 14 of 14 complete.
-- Design architecture documents: 3 of 3 complete.
-- TECA repository governance documents: 3 of 3 complete.
-- Partial planned repository documents: 0.
-- Missing planned repository documents: 0.
+- Core design architecture documents: 3 of 3 complete.
+- TECA repository governance and build-order documents: 4 of 4 complete.
+- Canonical implementation build playbook: COMPLETE AS A GOVERNING PLAN.
+- Future expansions: PLANNED; each requires full architecture and design.
 - Accidental duplicate canonical documents: 0.
-- Current repository documentation upload: 100%.
 - Live TECA Studio alignment: pending Studio execution and read-back.
-- Coding included: NO.
-- Next controlled phase: IMPLEMENTATION PLANNING.
+- Actual coding, testing, deployment, and release: separate evidence-based statuses.
+- Uncontrolled coding authorized: NO.
+- Next controlled phase: complete release-specific implementation planning and live TECA alignment.
 
-**TECHNICIAN REPAIR SAAS ARCHITECTURE, DESIGN, AND TECA REPOSITORY GOVERNANCE COMPLETE (100%)**
+**THE ARCHITECTURE PLAN, CORE DESIGN BASELINE, TECA GOVERNANCE, AND CANONICAL IMPLEMENTATION BUILD ORDER ARE DOCUMENTED. THIS DOES NOT MEAN THE WORKING APPLICATION IS COMPLETE.**
