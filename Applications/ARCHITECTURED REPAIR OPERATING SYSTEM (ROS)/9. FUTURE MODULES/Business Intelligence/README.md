@@ -1,7 +1,12 @@
 # Business Intelligence
 
-- ROS domain: `9. FUTURE MODULES`
-- Canonical reference: 1plan.md Section 8A expansion gate
-- Status: `PHYSICAL_FOLDER_CREATED`
+Folderized expansion package for governed metrics, semantic models, dashboards, reports, drill-down, alerts, exports, freshness, data quality, lineage, and forecasting inputs.
 
-Approved artifacts for **Business Intelligence** must be saved in this folder or an approved child folder. Do not copy an existing canonical architecture into this location.
+Start here: [Business Intelligence Architecture Index](INDEX.md)
+
+- Master authority: `1plan.md` Section 8A.
+- Arrangement: `DECOMPOSED EXPANSION PACKAGE`.
+- Architecture/design specification: `COMPLETE`.
+- Pipelines, executed tests, deployment, and production readiness: separately gated.
+
+This README is an entry summary only; the four volume files are canonical.

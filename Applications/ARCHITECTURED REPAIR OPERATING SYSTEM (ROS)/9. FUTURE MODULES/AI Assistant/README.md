@@ -1,7 +1,12 @@
 # AI Assistant
 
-- ROS domain: `9. FUTURE MODULES`
-- Canonical reference: 1plan.md Section 8A expansion gate
-- Status: `PHYSICAL_FOLDER_CREATED`
+Folderized expansion package for governed AI search, summaries, drafts, recommendations, knowledge retrieval, tool proposals, human review, evaluations, safety, cost, and incidents.
 
-Approved artifacts for **AI Assistant** must be saved in this folder or an approved child folder. Do not copy an existing canonical architecture into this location.
+Start here: [AI Assistant Architecture Index](INDEX.md)
+
+- Master authority: `1plan.md` Section 8A.
+- Arrangement: `DECOMPOSED EXPANSION PACKAGE`.
+- Architecture/design specification: `COMPLETE`.
+- Models, code, executed evaluations/tests, deployment, and production readiness: separately gated.
+
+This README is an entry summary only; the four volume files are canonical.
