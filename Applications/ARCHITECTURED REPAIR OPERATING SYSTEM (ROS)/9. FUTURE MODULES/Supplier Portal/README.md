@@ -1,7 +1,12 @@
 # Supplier Portal
 
-- ROS domain: `9. FUTURE MODULES`
-- Canonical reference: 1plan.md Section 8A expansion gate
-- Status: `PHYSICAL_FOLDER_CREATED`
+Folderized expansion package for supplier onboarding, catalogs, RFQs, quotations, purchase-order acknowledgement, shipments, invoices, returns, disputes, and scorecards.
 
-Approved artifacts for **Supplier Portal** must be saved in this folder or an approved child folder. Do not copy an existing canonical architecture into this location.
+Start here: [Supplier Portal Architecture Index](INDEX.md)
+
+- Master authority: `1plan.md` Section 8A.
+- Arrangement: `DECOMPOSED EXPANSION PACKAGE`.
+- Architecture/design specification: `COMPLETE`.
+- Code, executed tests, deployment, and production readiness: separately gated.
+
+This README is an entry summary only; the four volume files are canonical.
