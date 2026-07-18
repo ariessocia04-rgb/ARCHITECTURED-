@@ -2,33 +2,29 @@
 
 ## PURPOSE AND AUTHORITY
 
-This folder contains the operational instructions for the TECA CrewAI automation assigned to the ARCHITECTURED Technician Repair SaaS.
+This folder contains operational instructions for the TECA CrewAI automation assigned to ARCHITECTURED.
 
-`1plan.md` is the master source of truth. TECA documents implement and explain the approved plan but must not create competing project scope, worker-coordination, handoff, provenance, deletion, priority, folder-assignment, or completion rules.
+`1plan.md` is the master source of truth. TECA documents implement it and must not create competing scope, worker, handoff, provenance, duplicate, priority, folder, or completion rules.
 
-Canonical worker and folder authority:
+Canonical authority:
 
-- `1plan.md`, Section 1A — co-worker continuity, active-work detection, factual worker notification, continue-current-work behavior, save-before-transfer, source-of-truth provenance, unsupported-conflict removal, and gap-fill-only rules.
-- `1plan.md`, Section 1B — application folder arrangement, application starting order, application index assignments, approved arrangement modes, and joiner records.
-- `1plan.md`, Section 8A — full-architecture and UI/UX gate for every expansion.
-- `Applications/README.md` — application-folder navigation under Section 1B.
-- `TECA/IMPLEMENTATION_BUILD_PLAN.md` — exact implementation build sequence after the applicable `1plan.md` authorization gates pass.
+- `1plan.md` Section 1A — co-worker continuity, active-work detection, no-racing, save-before-transfer, provenance, unsupported-conflict removal, and gap filling.
+- `1plan.md` Section 1B — application entry, folder arrangement, indexes, canonical detail sources, and decomposition gates.
+- `1plan.md` Section 1C — exact duplicate, near duplicate, subset, aggregate-copy, intentional-index, shared-template, deletion, and memory-deduplication rules.
+- `1plan.md` Section 8A — full architecture and UI/UX gate for each expansion.
+- `Applications/README.md` — application navigation under Section 1B.
+- `TECA/IMPLEMENTATION_BUILD_PLAN.md` — detailed build order after applicable authorization gates.
 
 ## CANONICAL TECA DOCUMENTS
 
 1. [Agent Job Assignments](AGENT_JOB_ASSIGNMENTS.md)
-   - Exact jobs, goals, boundaries, inputs, outputs, prohibited actions, IDs, stages, and repository responsibilities for all 9 agents and 11 tasks.
-
 2. [Pipeline Execution Plan](PIPELINE_EXECUTION_PLAN.md)
-   - Required read order, phase control, no-jump behavior, implementation gates, synchronization, validation, publishing, memory, diagnostics, and reporting.
-
 3. [CrewAI Studio Configuration Update](CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
-   - Copy-ready instruction for aligning the live TECA Builder while preserving approved IDs, task order, contexts, tools, models, and sequential execution.
-
 4. [Canonical Implementation Build Plan](IMPLEMENTATION_BUILD_PLAN.md)
-   - Exact order for authorization, release locking, technology selection, repository foundation, CI, design system, physical database, permissions, shared services, modules, tests, deployment, rollback, and production-readiness evidence.
 
-## REQUIRED REPOSITORY READ ORDER
+These files have separate responsibilities and must not be merged merely because they share TECA terminology.
+
+## REQUIRED READ ORDER
 
 ```text
 1plan.md
@@ -38,37 +34,16 @@ Canonical worker and folder authority:
 → Applications/README.md when application work is requested
 → selected application INDEX.md
 → selected canonical application README.md or module file
-→ SaaS Platform/README.md and relevant shared contracts
-→ Design/README.md and relevant design artifacts
+→ SaaS Platform/README.md and relevant contracts
+→ Design/README.md and relevant design files
 → TECA/README.md
 → TECA/AGENT_JOB_ASSIGNMENTS.md
 → TECA/PIPELINE_EXECUTION_PLAN.md
-→ TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation planning, coding, testing, deployment, or release is requested
-→ other exact canonical files assigned by 1plan.md
+→ TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation work is requested
+→ other canonical files assigned by 1plan.md
 → current branches, pull requests, commits, checks, migrations, assignments, and active-work evidence
-→ .teca/memory/index.json and relevant memories
+→ .teca/memory/index.json and relevant durable memories
 ```
-
-## APPLICATION ENTRY EXECUTION
-
-For application work, TECA must use `1plan.md` Section 1B and `Applications/README.md` before opening a module.
-
-Operational sequence:
-
-1. Open the selected application through its `INDEX.md`.
-2. Identify `DECOMPOSED_MODULE_MODE` or `CONSOLIDATED_ARCHITECTURE_MODE`.
-3. Open the exact canonical detail source linked by the index.
-4. Check active ownership and repository evidence.
-5. Preserve valid existing work and fill only approved gaps.
-6. Reject empty appearance-only folders and duplicate module copies.
-7. Do not move or supersede consolidated architecture without approved decomposition, synchronized links, validation, and owner approval.
-
-Application entries:
-
-- Technician: `Applications/Technician Application/INDEX.md`.
-- Front Desk: `Applications/Front Desk Application/INDEX.md`.
-- Owner: `Applications/Owner Application/INDEX.md`.
-- Customer Portal: `Applications/Customer Portal/INDEX.md`.
 
 ## REQUIRED LIVE PIPELINE
 
@@ -86,72 +61,92 @@ STG-0 Memory Retrieval
 → STG-10 Self-Diagnostic Summary
 ```
 
-## WORKER-COORDINATION EXECUTION
+## APPLICATION ENTRY EXECUTION
 
-TECA must use the exact command and classifications in `1plan.md`, Section 1A.
+1. Open the application through its `INDEX.md`.
+2. Identify decomposed or consolidated mode.
+3. Open the exact canonical detail source.
+4. Check active ownership and repository evidence.
+5. Preserve valid work and fill only approved gaps.
+6. Reject empty folders and duplicate copies.
+7. Do not supersede a consolidated README before approved decomposition and validation.
 
-Operational behavior:
+Application entries:
 
-1. Inspect the latest repository evidence before selecting work.
-2. When recent or active work is detected, send the factual `NEW CANONICAL GOVERNANCE RULE — CONTINUE CURRENT WORK` notice from `1plan.md`, Section 1A.
-3. The active worker continues the current valid task unless the owner explicitly stops, cancels, replaces, revises, or reassigns it.
-4. Other workers move to another unclaimed incomplete item instead of racing or duplicating the active task.
-5. A reassigned worker must save a safe checkpoint and exact handoff before moving.
-6. Partial available work is preserved and only exact missing gaps are filled.
-7. Complete work is validated and returned as `SKIPPED_ALREADY_COMPLETE`.
-8. Conflicted work is returned as `BLOCKED`; it is never silently overwritten.
-9. Unsupported conflicting or duplicate content is removed or formally superseded only according to `1plan.md`, Section 1A, with Git and revision evidence.
+- Technician: `Applications/Technician Application/INDEX.md`
+- Front Desk: `Applications/Front Desk Application/INDEX.md`
+- Owner: `Applications/Owner Application/INDEX.md`
+- Customer Portal: `Applications/Customer Portal/INDEX.md`
 
-The full definitions are intentionally not copied here. `1plan.md`, Section 1A remains authoritative.
+## DUPLICATE-CONTROL EXECUTION
 
-## SOURCE-OF-TRUTH AND SAVE-TARGET EXECUTION
+Before every create, update, move, decomposition, memory write, or publish action, TECA must classify overlap using Section 1C:
 
-Every TECA specification, requirement package, artifact, validation report, publish action, and handoff must record:
+- `EXACT_DUPLICATE`
+- `NEAR_DUPLICATE_SAME_AUTHORITY`
+- `SUBSET_DUPLICATE`
+- `AGGREGATE_COPY`
+- `INTENTIONAL_SUMMARY_OR_INDEX`
+- `SHARED_TEMPLATE_NOT_DUPLICATE`
 
-- `source_path`;
-- `source_section_or_requirement_id`;
-- `applications_start_path` when application work is involved;
-- `application_index_path` when application work is involved;
-- `canonical_target_path`;
-- `arrangement_mode` when application work is involved;
-- `active_owner_or_handoff_state`;
-- `dependency_paths`;
-- `last_verified_commit_or_sha`;
-- `validation_evidence`.
+TECA must:
 
-A project-wide rule must be approved in `1plan.md`. Detailed module work must be saved to the canonical target assigned by `1plan.md`, and the plan status or mapping must be synchronized when required.
+1. Compare exact path, blob SHA/content, purpose, responsibility, entities, workflow, and authority.
+2. Keep the correctly located richer canonical source.
+3. Preserve unique valid content before removing a near duplicate.
+4. Replace Header or navigation subsets with links rather than full copied definitions.
+5. Reject aggregate canonical copies; approved exports are temporary derived artifacts.
+6. Keep domain modules when shared structure is intentional but content/responsibility differs.
+7. Deduplicate memory by root cause and durable retrieval purpose.
+8. Update `.teca/memory/index.json` after memory changes.
+9. Record removal path, replacement, evidence, and commit.
 
-Chat responses, local drafts, prompts, memories, old branches, generated files, and copied documents are not project truth until validated and published to the assigned canonical repository location.
+Current verified repository result:
 
-## COMPARABLE-PRODUCT RESEARCH PROCEDURE
+- Technician logical surfaces: 36.
+- Technician canonical detailed files: 34.
+- Header quick-access references: 2.
+- Removed/superseded duplicate files: 6.
+- Active accidental duplicate canonical documents: 0.
+- Durable active memories: 2.
 
-External systems are research references only. They do not override `1plan.md` or the canonical ARCHITECTURED files.
+## WORKER COORDINATION
 
-When external comparison materially improves a missing module, workflow, UI/UX pattern, business rule, report, mobile flow, automation, or implementation decision:
+TECA must use Section 1A exactly:
 
-1. Use current official vendor pages and official documentation first.
-2. Compare at least three relevant products when the decision is material and multiple comparable systems exist.
-3. Record the vendor, official source, access date, feature reviewed, useful pattern, ARCHITECTURED adaptation, and rejected or unsuitable behavior.
-4. Compare the finding against `1plan.md` and the assigned canonical application, contract, design, or implementation source.
-5. Do not copy proprietary source code, exact layouts, branding, text, icons, images, paid assets, database structures, or confidential behavior.
-6. An adapted finding becomes ARCHITECTURED truth only after it is approved and saved in the correct canonical repository source assigned by `1plan.md`.
-7. Store concise conclusions only; do not duplicate full vendor documentation.
+- inspect current evidence;
+- notify an active worker factually;
+- let active valid work continue;
+- avoid racing;
+- save before reassignment;
+- preserve partial work;
+- skip complete work;
+- block conflicts rather than silently overwrite.
 
-Approved initial official references include:
+## SOURCE AND SAVE TARGET
 
-- RepairDesk — `https://www.repairdesk.co/features/`
-- Odoo Repairs — `https://www.odoo.com/documentation/19.0/applications/inventory_and_mrp/repairs/repair_orders.html`
-- Microsoft Dynamics 365 Field Service — `https://learn.microsoft.com/en-us/dynamics365/field-service/`
-- ServiceNow Field Service Management — `https://www.servicenow.com/docs/r/field-service-management/fsm-application-landing-page.html`
-- Zoho FSM — `https://www.zoho.com/fsm/features.html`
+Every TECA artifact and handoff records:
 
-Initial baseline reviewed: `2026-07-18`.
+- source path and requirement ID
+- application starting/index path when applicable
+- canonical target path
+- arrangement mode
+- active owner/handoff state
+- dependencies
+- last verified commit/SHA
+- validation evidence
+
+Chat, prompts, local drafts, old branches, and memory are not canonical truth until validated and published to the assigned repository source.
+
+## COMPARABLE-PRODUCT RESEARCH
+
+External systems are references only. Use official sources first; compare at least three relevant products for material decisions when possible; record the adapted pattern and rejected behavior; do not copy proprietary code, branding, assets, layouts, or confidential behavior.
+
+Approved initial reference set includes RepairDesk, Odoo Repairs, Microsoft Dynamics 365 Field Service, ServiceNow Field Service Management, and Zoho FSM.
 
 ## IMPLEMENTATION CONTROL
 
-The implementation build playbook defines how approved work must be built. It does not set `implementation_authorized=true` and does not prove that source code, tests, deployment, or production readiness are complete.
-
-Each implementation slice follows:
+The build playbook defines how approved work must be built. It does not grant coding authorization or prove code/test/deployment completion.
 
 ```text
 Approved Requirement
@@ -169,49 +164,40 @@ Approved Requirement
 → Memory / Diagnostic / Summary
 ```
 
-## CURRENT WORK STATE
+## CURRENT STATE
 
-### Complete in repository
+Complete in repository:
 
-- Core Technician, Front Desk, Owner-baseline, and Customer Portal architecture.
-- Applications master starting point and four application entry indexes.
-- Shared SaaS contract architecture.
-- Core wireframe and wireflow architecture.
-- Non-technical-user UI design system.
-- TECA agent assignments and sequential pipeline plan.
-- TECA live Studio configuration handoff.
-- TECA canonical implementation build playbook.
-- Master co-worker, handoff, provenance, and conflict-removal authority in `1plan.md`, Section 1A.
-- Master application folder and joiner starting authority in `1plan.md`, Section 1B.
+- core application architecture
+- application starting point and indexes
+- shared contracts
+- wireframes, wireflows, and UI design
+- agent assignments and pipeline plan
+- Studio handoff
+- implementation build playbook
+- duplicate audit and memory cleanup
+- Sections 1A, 1B, 1C, and 8A governance
 
-### Next controlled work
+Next controlled work:
 
-- Complete the remaining release-specific implementation-planning artifacts required by `1plan.md` and `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
-- Align and verify the live TECA Studio automation before autonomous TECA implementation work.
+- apply and verify live TECA Studio alignment;
+- complete release-specific implementation planning.
 
-### Not authorized globally
+Not authorized globally:
 
-- Uncontrolled application coding.
-- Coding outside an exact approved release or slice.
-- Starting application work while bypassing `Applications/README.md` and the selected application `INDEX.md`.
-- Empty appearance-only folders or duplicate module files.
-- Moving or deleting consolidated application architecture without approved decomposition and validation.
-- Expansion implementation before its Section 8A gate passes.
-- Production claims without approved targets and test evidence.
+- uncontrolled coding
+- bypassing application entry
+- duplicate creation
+- deleting domain modules because of template similarity
+- expansion implementation before Section 8A
+- production claims without approved targets and evidence
 
 ## STATUS
 
-- Master worker-coordination and source-of-truth authority: `1plan.md` Section 1A — DEFINED.
-- Master application-folder and starting authority: `1plan.md` Section 1B — DEFINED.
-- Applications starting point and application indexes: COMPLETE IN REPOSITORY.
-- Canonical TECA repository documents: 4 of 4 complete.
-- Agent job assignments: COMPLETE.
-- Pipeline and phase plan: COMPLETE.
-- Live Studio handoff: COMPLETE IN REPOSITORY.
-- Canonical implementation build playbook: COMPLETE AS A GOVERNING PLAN.
-- Comparable-product research procedure: DEFINED UNDER `1plan.md` AUTHORITY.
+- Canonical TECA documents: 4 of 4 complete.
+- Duplicate-control authority: DEFINED IN `1plan.md` Section 1C.
+- Duplicate repository audit: COMPLETE.
 - Live Studio alignment: PENDING LIVE EXECUTION AND READ-BACK.
-- Actual application implementation: SEPARATE EVIDENCE-BASED STATUS.
-- Accidental competing worker or folder-rule definitions in this file: 0.
+- Actual implementation: separate evidence-based status.
 
-**TECA MUST TAKE PROJECT SCOPE, TASK PRIORITY, ACTIVE-WORK ROUTING, HANDOFF, SOURCE PROVENANCE, APPLICATION ENTRY, FOLDER ASSIGNMENT, AND CONFLICT-REMOVAL AUTHORITY FROM `1plan.md`.**
+**TECA MUST TAKE SCOPE, TASK PRIORITY, WORKER ROUTING, HANDOFF, PROVENANCE, APPLICATION ENTRY, FOLDER ASSIGNMENT, DUPLICATE CLASSIFICATION, AND CONFLICT-REMOVAL AUTHORITY FROM `1plan.md`.**
