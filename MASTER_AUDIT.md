@@ -138,10 +138,12 @@ TECA repository governance documents: **3 of 3 complete.**
 - ✅ `index.md` synchronized.
 - ✅ `Design/README.md` synchronized.
 - ✅ `TECA/README.md` synchronized.
+- ✅ `duplicate.md` synchronized.
+- ✅ `revise.md` synchronized.
+- ✅ `FINAL_ARCHITECTURE_VERIFICATION.md` synchronized.
 - ✅ One canonical file per module, shared concern, design concern, and TECA concern.
 - ✅ Documentation-only scope preserved.
 - ✅ No application source code added.
-- ⏳ `duplicate.md`, `revise.md`, and `FINAL_ARCHITECTURE_VERIFICATION.md` require synchronization in the same controlled update batch.
 
 ## G. DUPLICATE CONTENT
 
