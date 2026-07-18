@@ -120,7 +120,10 @@ Application Name/
 └── Volume 5 - Security Quality and Delivery/
 ```
 
-Current example: `IT Operations Application/`.
+Current examples:
+
+- `IT Operations Application/`
+- `Department Store Retail SaaS/`
 
 ## APPLICATION AND ROS ENTRY POINTS
 
@@ -131,8 +134,28 @@ Current example: `IT Operations Application/`.
 | Owner Application | [Owner Application Index](Owner%20Application/INDEX.md) | [Owner Architecture](Owner%20Application/README.md) | CONSOLIDATED ARCHITECTURE MODE |
 | Customer Portal | [Customer Portal Index](Customer%20Portal/INDEX.md) | [Customer Portal Architecture](Customer%20Portal/README.md) | CONSOLIDATED ARCHITECTURE MODE |
 | IT Operations Application | [IT Operations Index](IT%20Operations%20Application/INDEX.md) | Five linked architecture/design/delivery volumes | DECOMPOSED APPLICATION ARCHITECTURE MODE |
+| Department Store Retail SaaS | [Department Store Retail SaaS Index](Department%20Store%20Retail%20SaaS/INDEX.md) | Five linked architecture/design/delivery volumes | DECOMPOSED APPLICATION ARCHITECTURE MODE |
 | ARCHITECTURED ROS | [ROS Master Index](ARCHITECTURED%20REPAIR%20OPERATING%20SYSTEM%20(ROS)/INDEX.md) | Numbered domain indexes and canonical concern files | NUMBERED OPERATING-SYSTEM MODE |
 | ROS Future Modules | [Future Modules Master Index](ARCHITECTURED%20REPAIR%20OPERATING%20SYSTEM%20(ROS)/9.%20FUTURE%20MODULES/INDEX.md) | 17 module indexes and 68 canonical volume files | DECOMPOSED EXPANSION PACKAGE MODE |
+| ROS Future Integration Architecture | [Future Integration Index](ARCHITECTURED%20REPAIR%20OPERATING%20SYSTEM%20(ROS)/11.%20FUTURE%20INTEGRATION%20ARCHITECTURE/INDEX.md) | Compatibility contract, 10 integration architectures, and matrix | NUMBERED OPERATING-SYSTEM MODE |
+| ROS Business Operating Modes and Department Teams | [Operating Modes and Teams Index](ARCHITECTURED%20REPAIR%20OPERATING%20SYSTEM%20(ROS)/12.%20BUSINESS%20OPERATING%20MODES%20AND%20DEPARTMENT%20TEAMS/INDEX.md) | Solo-to-enterprise staffing, handoff, and activation architecture | NUMBERED OPERATING-SYSTEM MODE |
+
+## BUSINESS-SIZE AND STAFFING RULE
+
+The Repair SaaS and approved vertical applications must support:
+
+- solo owner or solo technician-owner;
+- owner with a small team;
+- medium business with several departments;
+- large multi-department operation;
+- multi-branch enterprise;
+- multi-company group.
+
+Every department may have a complete team, but a small business must not be forced to create fake staff. Role compression allows one person to hold several scoped capabilities while preserving action attribution, permissions, approval context, audit, and later delegation.
+
+The canonical staffing and operating-mode architecture is:
+
+`ARCHITECTURED REPAIR OPERATING SYSTEM (ROS)/12. BUSINESS OPERATING MODES AND DEPARTMENT TEAMS/INDEX.md`
 
 ## CROSS-DEPARTMENT CONNECTION RULE
 
@@ -225,10 +248,14 @@ When another co-worker is active on the selected target, follow `1plan.md` Secti
 APPLICATIONS MASTER STARTING POINT: DEFINED
 CORE APPLICATION ENTRY INDEXES: 4 OF 4 AVAILABLE
 IT OPERATIONS APPLICATION INDEX/VOLUMES: COMPLETE AS SPECIFICATION
+DEPARTMENT STORE RETAIL SAAS INDEX/VOLUMES: COMPLETE AS SPECIFICATION
 ROS MASTER INDEX: AVAILABLE
 ROS FUTURE MODULE ROOTS: 17 OF 17 AVAILABLE
 ROS FUTURE MODULE INDEXES: 17 OF 17 COMPLETE
 ROS FUTURE MODULE CANONICAL VOLUME FILES: 68 OF 68 COMPLETE
+ROS FUTURE INTEGRATION TARGETS: 10 OF 10 COMPLETE
+ROS BUSINESS OPERATING MODES: COMPLETE
+ROS FULL DEPARTMENT TEAM ARCHITECTURE: COMPLETE
 CROSS-DEPARTMENT OPERATING FABRIC: COMPLETE AS SPECIFICATION
 PRINTING AND PERIPHERAL OPERATIONS: COMPLETE AS SPECIFICATION
 EXISTING CORE APPLICATION ARCHITECTURE DELETED OR MOVED: NO
