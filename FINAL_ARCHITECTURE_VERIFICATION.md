@@ -3,14 +3,34 @@
 ## 1. REPOSITORY GOVERNANCE
 
 - GitHub single source of truth: ✅ PASS
+- `1plan.md` master authority: ✅ PASS
 - Architecture-before-coding rule: ✅ PASS
 - One canonical file per module, shared concern, design concern, and TECA concern: ✅ PASS
 - Search-before-create and skip-already-complete rules: ✅ PASS
+- Current-worker continuation, no-racing, and safe-handoff rules: ✅ PASS
 - No-duplicate rule: ✅ PASS
-- Root planning, index, audit, revision, and verification files synchronized: ✅ PASS after this controlled batch
-- Application code added during architecture and design completion: ❌ NONE
+- Application folder arrangement authority defined in `1plan.md` Section 1B: ✅ PASS
+- Root planning, index, audit, revision, and verification files synchronized: ✅ PASS
+- Application code added during folder alignment: ❌ NONE
 
-## 2. TECHNICIAN APPLICATION
+## 2. APPLICATION MASTER ENTRY AND FOLDER ARRANGEMENT
+
+- Applications master starting point exists: ✅ `Applications/README.md`
+- Mandatory application starting order defined: ✅ PASS
+- Application entry indexes available: ✅ 4 of 4
+- Technician entry index: ✅ PASS
+- Front Desk entry index: ✅ PASS
+- Owner entry index: ✅ PASS
+- Customer Portal entry index: ✅ PASS
+- Every entry index identifies its canonical detail source: ✅ PASS
+- `DECOMPOSED_MODULE_MODE` defined and used by Technician: ✅ PASS
+- `CONSOLIDATED_ARCHITECTURE_MODE` defined and used by Front Desk, Owner core baseline, and Customer Portal: ✅ PASS
+- New indexes copy full architecture from consolidated `README.md` files: ❌ NO
+- Empty appearance-only folders added: ❌ NONE
+- Existing application architecture moved, renamed, split, or deleted: ❌ NONE
+- Future decomposition requires plan assignment, traceability, link synchronization, no-content-loss validation, duplicate validation, and owner approval: ✅ PASS
+
+## 3. TECHNICIAN APPLICATION
 
 ### VOLUME 1 — HEADER
 
@@ -59,8 +79,12 @@
 
 Technician modules verified: **36 complete, 0 partial, 0 missing.**
 
-## 3. FRONT DESK APPLICATION
+Technician folder arrangement: **DECOMPOSED MODULE MODE — VERIFIED.**
 
+## 4. FRONT DESK APPLICATION
+
+- Entry index points to canonical `README.md`: ✅ PASS
+- Consolidated architecture mode: ✅ PASS
 - Users and access: ✅ PASS
 - Customer and device intake: ✅ PASS
 - Job-order creation: ✅ PASS
@@ -70,11 +94,14 @@ Technician modules verified: **36 complete, 0 partial, 0 missing.**
 - Release and handover: ✅ PASS
 - Warranty, follow-up, and communication: ✅ PASS
 - Reports, security, and audit: ✅ PASS
+- Separate copied module files created during alignment: ❌ NO
 
-**Front Desk Application: COMPLETE (100%)**
+**Front Desk Application core baseline: COMPLETE (100%)**
 
-## 4. OWNER APPLICATION
+## 5. OWNER APPLICATION
 
+- Entry index points to canonical core-baseline `README.md`: ✅ PASS
+- Consolidated architecture mode: ✅ PASS
 - Organization and branch management: ✅ PASS
 - Users, roles, permissions, and approvals: ✅ PASS
 - Service catalog and workflow configuration: ✅ PASS
@@ -86,11 +113,15 @@ Technician modules verified: **36 complete, 0 partial, 0 missing.**
 - Reports, analytics, and forecasting: ✅ PASS
 - Subscription, usage, and feature control: ✅ PASS
 - Integrations, security, backup, and recovery: ✅ PASS
+- Owner high-level sections falsely treated as complete future expansions: ❌ NO
+- Future HR, payroll, finance, sales, franchise, analytics, automation, and other expansions remain subject to Section 8A: ✅ PASS
 
-**Owner Application: COMPLETE (100%)**
+**Owner Application core baseline: COMPLETE (100%)**
 
-## 5. CUSTOMER PORTAL
+## 6. CUSTOMER PORTAL
 
+- Entry index points to canonical `README.md`: ✅ PASS
+- Consolidated architecture mode: ✅ PASS
 - Registration, login, and identity: ✅ PASS
 - Customer and business profile: ✅ PASS
 - Device registry: ✅ PASS
@@ -101,10 +132,11 @@ Technician modules verified: **36 complete, 0 partial, 0 missing.**
 - Release, pickup, and delivery: ✅ PASS
 - Warranty, return, and support: ✅ PASS
 - Messages, feedback, privacy, security, and settings: ✅ PASS
+- Separate copied module files created during alignment: ❌ NO
 
-**Customer Portal: COMPLETE (100%)**
+**Customer Portal core baseline: COMPLETE (100%)**
 
-## 6. SHARED SAAS PLATFORM
+## 7. SHARED SAAS PLATFORM
 
 - User, Role, and Workflow Architecture: ✅ PASS
 - Global System Contract Layer: ✅ PASS
@@ -123,14 +155,14 @@ Technician modules verified: **36 complete, 0 partial, 0 missing.**
 
 Shared canonical documents verified: **14 of 14 complete.**
 
-## 7. DESIGN ARCHITECTURE
+## 8. DESIGN ARCHITECTURE
 
 ### Wireframe Architecture
 
 - Global shell and shared page patterns: ✅ PASS
 - Technician Application wireframes: ✅ PASS
 - Front Desk Application wireframes: ✅ PASS
-- Owner Application wireframes: ✅ PASS
+- Owner Application core wireframes: ✅ PASS
 - Customer Portal wireframes: ✅ PASS
 - Platform Administration wireframe: ✅ PASS
 - Desktop, tablet, and mobile behavior: ✅ PASS
@@ -162,27 +194,31 @@ Shared canonical documents verified: **14 of 14 complete.**
 - Consistent help and error recovery: ✅ PASS
 - Completed workflow preservation: ✅ PASS
 
-Design canonical documents verified: **3 of 3 complete.**
+Design canonical documents verified: **3 of 3 complete for the current core baseline.**
 
-## 8. TECA REPOSITORY GOVERNANCE
+## 9. TECA REPOSITORY GOVERNANCE AND BUILD ORDER
 
 - Agent Job Assignments: ✅ PASS
 - Pipeline Execution Plan: ✅ PASS
-- CrewAI Studio Configuration Update: ✅ PASS
+- CrewAI Studio Configuration Update: ✅ PASS IN REPOSITORY
+- Canonical Implementation Build Plan: ✅ PASS
 - 9 agent identities and jobs documented: ✅ PASS
 - 11 sequential stages documented: ✅ PASS
 - Repository read order documented: ✅ PASS
+- Applications starting point and application index order documented: ✅ PASS
 - No-jump and skip-already-complete rules documented: ✅ PASS
-- No-duplicate and canonical-placement rules documented: ✅ PASS
+- No-racing, safe-handoff, source-provenance, no-duplicate, and canonical-placement rules documented: ✅ PASS
+- Empty appearance-only folder prevention documented: ✅ PASS
 - Architecture/design-mode no-code gate documented: ✅ PASS
+- Database, backend, frontend, module, test, deployment, and rollback order documented: ✅ PASS
 - Validation, publishing, read-back, memory, diagnostic, and summary rules documented: ✅ PASS
 - Live CrewAI Studio configuration changed and read back: ⚠ NOT VERIFIED
 
-Repository-side TECA governance verified: **3 of 3 complete.**
+Repository-side TECA governance/build-order documents verified: **4 of 4 complete as governing documents.**
 
 The live CrewAI Studio automation requires the canonical update instruction to be executed and read back before live alignment can be claimed.
 
-## 9. SYSTEM CONSISTENCY
+## 10. SYSTEM CONSISTENCY
 
 - Multi-tenant isolation across data, cache, search, files, events, exports, analytics, backups, and integrations: ✅ PASS
 - Branch, role, record, and field-level access model: ✅ PASS
@@ -197,19 +233,23 @@ The live CrewAI Studio automation requires the canonical update instruction to b
 - Audit, retention, legal hold, backup, restore, incident, and continuity: ✅ PASS
 - Security, privacy, accessibility, performance, reliability, and testing requirements: ✅ PASS
 - Wireframe, wireflow, and UI rules preserve approved application workflow: ✅ PASS
+- Application entry indexes preserve canonical architecture ownership: ✅ PASS
 
-## 10. DUPLICATE AND PLACEMENT VERIFICATION
+## 11. DUPLICATE AND PLACEMENT VERIFICATION
 
 - Duplicate Repair Queue document created: ❌ NO
+- Duplicate application architecture created by entry indexes: ❌ NO
 - Accidental duplicate application documents: 0
 - Accidental duplicate shared architecture documents: 0
 - Accidental duplicate design documents: 0
-- Accidental duplicate TECA governance documents: 0
+- Accidental duplicate TECA governance/build-order documents: 0
+- Empty appearance-only application folders: 0
+- Existing application architecture moved or deleted: 0
 - Placeholder applications remaining: 0
 - Wrongly placed current documents: 0
-- Missing planned repository documents: 0
+- Missing application entry indexes: 0
 
-## 11. RESEARCH AND QUALITY BASELINE
+## 12. RESEARCH AND QUALITY BASELINE
 
 - Field-service work-order and role patterns reviewed: ✅ PASS
 - Repair intake, quotation, parts, invoice, return, and customer tracking flow reviewed: ✅ PASS
@@ -217,13 +257,17 @@ The live CrewAI Studio automation requires the canonical update instruction to b
 - WCAG 2.2 interaction and accessibility requirements recorded: ✅ PASS
 - Vendor-specific design copied as project architecture: ❌ NO
 
-## 12. IMPLEMENTATION ENTRY VERIFICATION
+## 13. IMPLEMENTATION ENTRY VERIFICATION
 
 - Architecture complete enough for implementation planning: ✅ YES
-- Canonical wireframes complete: ✅ YES
-- Canonical wireflows complete: ✅ YES
+- Applications starting point available: ✅ YES
+- Application entry indexes available: ✅ 4 OF 4
+- Canonical source path identifiable for every current application: ✅ YES
+- Canonical wireframes complete for core baseline: ✅ YES
+- Canonical wireflows complete for core baseline: ✅ YES
 - Non-technical-user UI design system complete: ✅ YES
 - TECA repository job assignments complete: ✅ YES
+- Canonical implementation build-order playbook complete as a plan: ✅ YES
 - Live TECA Studio alignment verified: ⚠ REQUIRED BEFORE AUTONOMOUS TECA IMPLEMENTATION WORK
 - MVP and release boundaries approved: ⚠ REQUIRED BEFORE CODING
 - Technology stack selected: ⚠ REQUIRED BEFORE CODING
@@ -232,36 +276,41 @@ The live CrewAI Studio automation requires the canonical update instruction to b
 - Measurable non-functional targets approved: ⚠ REQUIRED BEFORE PRODUCTION CLAIMS
 - Security, privacy, test, deployment, rollback, support, and operations plans approved: ⚠ REQUIRED BEFORE CODING/RELEASE
 
-These are implementation-planning gates, not missing architecture or design documents.
+These are implementation-planning gates, not missing core architecture or application-entry documents.
 
 ## FINAL SUMMARY
 
+- Applications master starting point: 1 complete.
+- Application entry indexes: 4 of 4 available.
 - Technician detailed modules: 36 complete.
-- Additional application architectures: 3 complete.
+- Additional core application architectures: 3 complete.
 - Shared SaaS architecture documents: 14 complete.
-- Design architecture documents: 3 complete.
-- TECA repository governance documents: 3 complete.
-- Partial planned repository documents: 0.
-- Missing planned repository documents: 0.
+- Design architecture documents: 3 complete for core baseline.
+- TECA repository governance/build-order documents: 4 complete as plans.
+- Existing application architecture moved or deleted: 0.
+- Empty appearance-only folders added: 0.
 - Accidental duplicates: 0.
-- Current repository documentation upload: 100%.
+- Current repository documentation alignment: complete.
 - Coding added: 0% by instruction.
 - Live TECA Studio alignment: pending live execution and read-back.
 
 ```text
-ARCHITECTURE DOCUMENTATION COMPLETE: YES
-MULTI-APPLICATION SAAS ARCHITECTURE COMPLETE: YES
+APPLICATIONS MASTER STARTING POINT COMPLETE: YES
+APPLICATION ENTRY INDEXES COMPLETE: 4 OF 4
+TECHNICIAN DECOMPOSED FOLDER ARRANGEMENT VERIFIED: YES
+FRONT DESK / OWNER CORE / CUSTOMER CONSOLIDATED ARRANGEMENT VERIFIED: YES
+EXISTING APPLICATION ARCHITECTURE MOVED OR DELETED: NO
+MULTI-APPLICATION SAAS CORE ARCHITECTURE COMPLETE: YES
 GLOBAL CONTRACT FOUNDATION COMPLETE: YES
-WIREFRAME ARCHITECTURE COMPLETE: YES
-WIREFLOW ARCHITECTURE COMPLETE: YES
+WIREFRAME ARCHITECTURE COMPLETE FOR CORE BASELINE: YES
+WIREFLOW ARCHITECTURE COMPLETE FOR CORE BASELINE: YES
 NON-TECHNICAL UI DESIGN SYSTEM COMPLETE: YES
-TECA REPOSITORY GOVERNANCE COMPLETE: YES
-REPOSITORY DOCUMENTATION UPLOAD: 100%
+TECA REPOSITORY GOVERNANCE AND BUILD ORDER COMPLETE AS PLANS: YES
 LIVE TECA STUDIO ALIGNMENT VERIFIED: NO
 READY FOR CONTROLLED IMPLEMENTATION PLANNING: YES
 READY FOR UNCONTROLLED CODING: NO
 ```
 
-**FINAL ARCHITECTURE AND DESIGN VERIFICATION: PASS (100% REPOSITORY DOCUMENTATION)**
+**FINAL ARCHITECTURE, APPLICATION-FOLDER, AND DESIGN VERIFICATION: PASS.**
 
-**NEXT CONTROLLED PHASE: LIVE TECA STUDIO ALIGNMENT, THEN IMPLEMENTATION PLANNING — NOT CODING.**
+**NEXT CONTROLLED PHASE: LIVE TECA STUDIO ALIGNMENT AND RELEASE-SPECIFIC IMPLEMENTATION PLANNING — NOT UNCONTROLLED CODING.**
