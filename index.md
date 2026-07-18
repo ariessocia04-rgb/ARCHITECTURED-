@@ -6,6 +6,7 @@
 - [Master Architecture Plan](1plan.md)
 - [Applications Master Starting Point](Applications/README.md)
 - [Shared SaaS Platform Architecture Index](SaaS%20Platform/README.md)
+- [Free, Pro, and Premium Plans and Billing Architecture](SaaS%20Platform/Plans%20and%20Billing/INDEX.md)
 - [Design Architecture Index](Design/README.md)
 - [TECA Repository Operational Index](TECA/README.md)
 - [Canonical Implementation Build Playbook](TECA/IMPLEMENTATION_BUILD_PLAN.md)
@@ -120,6 +121,7 @@ Current arrangement: consolidated canonical architecture with additive index nav
 - [API, Event, Webhook, and Real-Time Contract](SaaS%20Platform/API_EVENT_WEBHOOK_AND_REALTIME_CONTRACT.md)
 - [Authentication, Authorization, and Session Contract](SaaS%20Platform/AUTHENTICATION_AUTHORIZATION_AND_SESSION_CONTRACT.md)
 - [Subscription, Entitlement, Usage, and Tenant Lifecycle Contract](SaaS%20Platform/SUBSCRIPTION_ENTITLEMENT_USAGE_AND_TENANT_LIFECYCLE_CONTRACT.md)
+- [Free, Pro, and Premium Plans and Billing Detail Package](SaaS%20Platform/Plans%20and%20Billing/INDEX.md)
 - [Notification and Communication Contract](SaaS%20Platform/NOTIFICATION_AND_COMMUNICATION_CONTRACT.md)
 - [Payment, Invoice, Refund, and Financial Control Contract](SaaS%20Platform/PAYMENT_INVOICE_REFUND_AND_FINANCIAL_CONTROL_CONTRACT.md)
 - [File, Media, Document, QR, and Barcode Contract](SaaS%20Platform/FILE_MEDIA_DOCUMENT_QR_AND_BARCODE_CONTRACT.md)
@@ -128,12 +130,15 @@ Current arrangement: consolidated canonical architecture with additive index nav
 - [Non-Functional Requirements](SaaS%20Platform/NON_FUNCTIONAL_REQUIREMENTS.md)
 - [Development Readiness Audit](SaaS%20Platform/DEVELOPMENT_READINESS_AUDIT.md)
 
+The Plans and Billing package specializes the existing subscription contract; it does not increase or duplicate the 14 shared-contract count.
+
 ## DESIGN ARCHITECTURE — CORE BASELINE COMPLETE (100%)
 
 - [Design Architecture Master Index](Design/README.md)
 - [Wireframe Architecture](Design/WIREFRAME_ARCHITECTURE.md)
 - [Wireflow Architecture](Design/WIREFLOW_ARCHITECTURE.md)
 - [Non-Technical User UI Design System](Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md)
+- [Plans and Billing Domain-Specific Wireframes, Wireflows, and Traceability](SaaS%20Platform/Plans%20and%20Billing/04.%20Wireframe%20and%20Wireflow/WIREFRAME_ARCHITECTURE.md)
 
 ## TECA GOVERNANCE AND BUILD-ORDER PLANS — COMPLETE IN REPOSITORY
 
@@ -142,6 +147,7 @@ Current arrangement: consolidated canonical architecture with additive index nav
 - [TECA Pipeline Execution Plan](TECA/PIPELINE_EXECUTION_PLAN.md)
 - [TECA CrewAI Studio Configuration Update](TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
 - [TECA Canonical Implementation Build Plan](TECA/IMPLEMENTATION_BUILD_PLAN.md)
+- [Plans and Billing Exact Implementation Sequence](SaaS%20Platform/Plans%20and%20Billing/05.%20Security%20Quality%20and%20Delivery/IMPLEMENTATION_SEQUENCE.md)
 
 Canonical authority mapping:
 
@@ -149,7 +155,8 @@ Canonical authority mapping:
 - Application folder starting point and arrangement modes: [`Applications/README.md`](Applications/README.md), under `1plan.md` authority.
 - Full expansion architecture and UI/UX gate: [`1plan.md`, Section 8A](1plan.md).
 - Operational TECA behavior and comparable-product research procedure: [`TECA/README.md`](TECA/README.md), under `1plan.md` authority.
-- Exact implementation build sequence: [`TECA/IMPLEMENTATION_BUILD_PLAN.md`](TECA/IMPLEMENTATION_BUILD_PLAN.md), after the applicable `1plan.md` gates pass.
+- Exact global implementation build sequence: [`TECA/IMPLEMENTATION_BUILD_PLAN.md`](TECA/IMPLEMENTATION_BUILD_PLAN.md), after the applicable `1plan.md` gates pass.
+- Exact Free/Pro/Premium implementation sequence: [`SaaS Platform/Plans and Billing/05. Security Quality and Delivery/IMPLEMENTATION_SEQUENCE.md`](SaaS%20Platform/Plans%20and%20Billing/05.%20Security%20Quality%20and%20Delivery/IMPLEMENTATION_SEQUENCE.md).
 
 ## CURRENT STATUS
 
@@ -159,13 +166,15 @@ Canonical authority mapping:
 - Consolidated duplicate Header Profile and Notification files: 2 removed/superseded by canonical Sidebar modules.
 - Root aggregate `PLAN.md`: superseded because it copied modular architecture; `1plan.md` remains the master plan.
 - Shared SaaS platform documents: 14 of 14 complete.
+- Free, Pro, Premium Plans and Billing architecture specification package: COMPLETE.
+- Plans and Billing low-fidelity screens: 24 of 24 complete as specification.
+- Plans and Billing detailed wireflows: 20 of 20 complete.
 - Core design architecture documents: 3 of 3 complete.
-- TECA repository governance and build-order documents: 4 of 4 complete.
-- Future expansions: PLANNED; each requires full architecture and design.
+- TECA repository governance and build-order documents: complete.
+- Future expansions: each requires full architecture and design.
 - Active accidental duplicate canonical documents after this audit: 0.
 - Live TECA Studio alignment: pending Studio execution and read-back.
-- Actual coding, testing, deployment, and release: separate evidence-based statuses.
+- Live price publication, payment-provider selection, high-fidelity visual design, actual coding, executed testing, deployment, and release: separate gated statuses.
 - Uncontrolled coding authorized: NO.
-- Next controlled phase: complete release-specific implementation planning and live TECA alignment.
 
-**`1plan.md` IS THE MASTER SOURCE OF TRUTH. APPLICATION WORK STARTS AT `Applications/README.md` AND THEN ENTERS THE SELECTED APPLICATION THROUGH ITS `INDEX.md`.**
+**`1plan.md` IS THE MASTER SOURCE OF TRUTH. FREE / PRO / PREMIUM WORK STARTS AT `SaaS Platform/Plans and Billing/INDEX.md`.**
