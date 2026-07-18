@@ -5,11 +5,13 @@
 - `source_path`: `1plan.md`, shared SaaS contracts, application architectures, Design sources, TECA build plan, and official printing/IT operations references.
 - `source_section_or_requirement_id`: Sections 1A/1B/1C/8A, document/finance/API/NFR contracts, and user request for complete printer and IT operations architecture.
 - `canonical_target_path`: `SaaS Platform/Printing and Peripheral Operations/`.
-- `active_owner_or_handoff_state`: `COMPLETE_ON_ISOLATED_BRANCH_PENDING_MERGE_VALIDATION`.
+- `active_owner_or_handoff_state`: `COMPLETE_MERGED_TO_MAIN`.
 - `source_branch`: `printer-it-operations-architecture`.
+- `pull_request`: `#8 — Add printing, IT operations, and cross-department architecture`.
+- `merge_commit`: `014fb36839ae1bd97eb2f97a9139c24c2decf8f1`.
 - `last_verified_base_commit`: `528c80f51bf37d57b239ae65ffa2ad248bce8292`.
 - `dependency_paths`: parent shared contracts, IT Operations Application, affected application architecture, Design, and TECA.
-- `validation_evidence`: official-source research, file read-back, traceability, branch comparison, duplicate/placement validation, PR mergeability, and final main read-back.
+- `validation_evidence`: official-source research, file read-back, traceability, branch comparison, duplicate/placement validation, GitHub mergeability, successful squash merge, and final main read-back.
 
 ## Physical package
 
@@ -75,6 +77,8 @@ LABEL WORKFLOW: COMPLETE AS SPECIFICATION
 STAFF/OWNER/IT UX LOGIC: COMPLETE AS LOW-FIDELITY SPECIFICATION
 LOCAL PRINT AGENT: COMPLETE AS ARCHITECTURE
 ANY-PRINTER CLAIM: NOT USED — SUPPORT IS CAPABILITY/ADAPTER/TEST DRIVEN
+PULL REQUEST: #8 MERGED
+MERGE COMMIT: 014fb36839ae1bd97eb2f97a9139c24c2decf8f1
 IMPLEMENTATION AUTHORIZED: NO
 ```
 
