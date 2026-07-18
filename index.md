@@ -111,6 +111,8 @@ Future HR, payroll, finance, sales, franchise, analytics, automation, and other 
 - [TECA CrewAI Studio Configuration Update](TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
 - [TECA Canonical Implementation Build Plan](TECA/IMPLEMENTATION_BUILD_PLAN.md)
 
+The TECA governance index is also the canonical source for active-work ownership, no-racing, gap-fill-only, co-worker handoff, and current official comparable-product research rules. These rules are summarized here but not duplicated.
+
 ## CURRENT STATUS
 
 - Core application architecture: COMPLETE (100%).
@@ -118,6 +120,8 @@ Future HR, payroll, finance, sales, franchise, analytics, automation, and other 
 - Core design architecture documents: 3 of 3 complete.
 - TECA repository governance and build-order documents: 4 of 4 complete.
 - Canonical implementation build playbook: COMPLETE AS A GOVERNING PLAN.
+- Co-worker active-work ownership, no-racing, and gap-fill-only rules: DEFINED IN `TECA/README.md`.
+- Comparable-product official research rule and initial benchmark baseline: DEFINED IN `TECA/README.md`.
 - Future expansions: PLANNED; each requires full architecture and design.
 - Accidental duplicate canonical documents: 0.
 - Live TECA Studio alignment: pending Studio execution and read-back.
@@ -125,4 +129,4 @@ Future HR, payroll, finance, sales, franchise, analytics, automation, and other 
 - Uncontrolled coding authorized: NO.
 - Next controlled phase: complete release-specific implementation planning and live TECA alignment.
 
-**THE ARCHITECTURE PLAN, CORE DESIGN BASELINE, TECA GOVERNANCE, AND CANONICAL IMPLEMENTATION BUILD ORDER ARE DOCUMENTED. THIS DOES NOT MEAN THE WORKING APPLICATION IS COMPLETE.**
+**THE ARCHITECTURE PLAN, CORE DESIGN BASELINE, TECA GOVERNANCE, CO-WORKER COLLABORATION RULES, REFERENCE-RESEARCH RULES, AND CANONICAL IMPLEMENTATION BUILD ORDER ARE DOCUMENTED. THIS DOES NOT MEAN THE WORKING APPLICATION IS COMPLETE.**
