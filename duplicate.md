@@ -7,13 +7,19 @@
 - Existing canonical documents are updated instead of creating competing copies.
 - Work already complete is validated and marked `SKIPPED_ALREADY_COMPLETE` instead of recreated.
 - Shared business logic must not be copied separately into Owner, Front Desk, Technician, Customer, or Platform applications.
+- A navigation `INDEX.md` is not a duplicate when it points to an existing canonical architecture file and does not repeat the full architecture.
 
 ## CANONICAL STRUCTURE
 
-- Technician Application: `Applications/Technician Application/`
-- Front Desk Application: `Applications/Front Desk Application/README.md`
-- Owner Application: `Applications/Owner Application/README.md`
-- Customer Portal: `Applications/Customer Portal/README.md`
+- Applications master starting point: `Applications/README.md`
+- Technician Application entry: `Applications/Technician Application/INDEX.md`
+- Technician Application module details: individual files linked from its `INDEX.md`
+- Front Desk Application entry: `Applications/Front Desk Application/INDEX.md`
+- Front Desk Application canonical architecture: `Applications/Front Desk Application/README.md`
+- Owner Application entry: `Applications/Owner Application/INDEX.md`
+- Owner Application canonical core-baseline architecture: `Applications/Owner Application/README.md`
+- Customer Portal entry: `Applications/Customer Portal/INDEX.md`
+- Customer Portal canonical architecture: `Applications/Customer Portal/README.md`
 - Shared SaaS Platform: `SaaS Platform/README.md`
 - Design Architecture: `Design/README.md`
 - TECA Repository Governance: `TECA/README.md`
@@ -25,6 +31,33 @@
 - Root Project Guide: `README.md`
 - Master Index: `index.md`
 - Revision Queue: `revise.md`
+
+## APPLICATION ARRANGEMENT VALIDATION
+
+Approved application arrangement modes:
+
+1. `DECOMPOSED_MODULE_MODE`
+   - one application index;
+   - approved volume, surface, domain, module, or feature folders;
+   - one canonical detail file per concern.
+
+2. `CONSOLIDATED_ARCHITECTURE_MODE`
+   - one application entry `INDEX.md`;
+   - one canonical consolidated `README.md`;
+   - module navigation links point to sections inside the canonical file;
+   - no copied module files until controlled decomposition is approved.
+
+Current validation:
+
+- Technician Application uses decomposed module mode: YES.
+- Front Desk Application uses consolidated architecture mode: YES.
+- Owner core-baseline Application uses consolidated architecture mode: YES.
+- Customer Portal uses consolidated architecture mode: YES.
+- `Applications/README.md` defines the shared starting order without copying full application architecture: YES.
+- New Front Desk, Owner, and Customer indexes contain navigation and guardrails only: YES.
+- Existing canonical application architecture moved or deleted during alignment: NO.
+- Empty module folders created only for appearance: NO.
+- Competing module architecture created by the new indexes: NO.
 
 ## INTENTIONAL SEPARATE SURFACES
 
@@ -99,8 +132,9 @@ Validation:
 
 ## PLACEMENT VALIDATION
 
+- Application entry and navigation files remain under `Applications/`.
 - Technician modules remain under `Applications/Technician Application/`.
-- Front Desk, Owner, and Customer documents remain in their application folders.
+- Front Desk, Owner, and Customer canonical architecture documents remain in their existing application folders.
 - Shared contracts remain under `SaaS Platform/`.
 - Wireframe, wireflow, and UI design documents remain under `Design/`.
 - TECA assignments, pipeline plan, Studio update instruction, and implementation build playbook remain under `TECA/`.
@@ -109,16 +143,19 @@ Validation:
 
 ## CURRENT VALIDATION RESULT
 
-- Accidental duplicate application documents: 0.
+- Applications master starting point files: 1.
+- Application entry indexes available: 4 of 4.
+- Accidental duplicate application architecture documents: 0.
 - Accidental duplicate shared contract documents: 0.
 - Accidental duplicate design documents: 0.
 - Accidental duplicate TECA governance documents: 0.
 - Accidental duplicate implementation build plans: 0.
 - Wrongly placed current documents: 0.
-- Placeholder application documents remaining: 0.
+- Empty appearance-only application folders added: 0.
+- Existing application architecture files deleted or moved: 0.
 - Missing planned shared architecture documents: 0.
 - Missing planned core design documents: 0.
 - Missing planned TECA governance/build-order documents in the current package: 0.
 - Actual application source-code completion claimed by these documents: NO.
 
-**NO-DUPLICATE AND PLACEMENT VALIDATION: PASS. `TECA/IMPLEMENTATION_BUILD_PLAN.md` IS THE SINGLE CANONICAL IMPLEMENTATION BUILD-ORDER PLAYBOOK.**
+**NO-DUPLICATE AND PLACEMENT VALIDATION: PASS. APPLICATION INDEXES ARE NAVIGATION LAYERS; EXISTING `README.md` FILES REMAIN CANONICAL UNTIL AN APPROVED DECOMPOSITION SUPERSEDES THEM.**
