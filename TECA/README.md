@@ -4,7 +4,7 @@
 
 This folder contains the canonical repository instructions for the TECA CrewAI automation assigned to the ARCHITECTURED Technician Repair SaaS.
 
-TECA must use these documents to understand its agents, jobs, stage order, completed work, incomplete work, rules, publishing behavior, implementation build order, validation gates, memory behavior, deployment controls, and live Studio alignment requirements.
+TECA must use these documents to understand its agents, jobs, stage order, completed work, incomplete work, rules, publishing behavior, implementation build order, validation gates, memory behavior, deployment controls, co-worker handoffs, and live Studio alignment requirements.
 
 ## CANONICAL DOCUMENTS
 
@@ -103,10 +103,31 @@ Requirement
 → Memory / Diagnostic / Summary
 ```
 
+## CO-WORKER AND SHARED-REPOSITORY COLLABORATION RULE
+
+TECA, ChatGPT, assigned builders, and other agents are co-workers contributing to the same repository and master plan.
+
+Before creating or changing any plan, module, architecture section, implementation slice, test, or repository artifact, the assigned worker must:
+
+1. Fetch and read the latest repository state, target file, revision register, related commits, branches, pull requests, and existing work.
+2. Check whether another co-worker already completed, partially completed, or changed the requested item.
+3. Never assume that an earlier local or chat copy is still the latest source of truth.
+4. Never duplicate, recreate, overwrite, or replace valid work merely because it was completed by another co-worker.
+5. When the requested plan item is already fully filled and passes the acceptance criteria, validate it, record evidence, return `SKIPPED_ALREADY_COMPLETE`, and proceed only to the next incomplete item inside the same authorized phase.
+6. When the item is partially filled, preserve valid existing content and add only the exact missing requirements.
+7. When work conflicts with the approved architecture or with another active change, do not silently choose one version; return `BLOCKED`, identify the conflict, and require controlled resolution.
+8. Re-read the target file immediately before publishing and use its latest SHA or repository version.
+9. Keep commits and reports clear about which work was reused, validated, extended, skipped, or completed by another contributor.
+10. Treat the repository as the shared handoff and coordination system for all co-workers.
+
+The collaboration goal is shared completion of the plan and application, not repeated ownership of the same task.
+
 ## NON-NEGOTIABLE RULES
 
 - Search before creating.
-- Skip and validate work already complete.
+- Fetch the latest repository state before editing.
+- Skip and validate work already complete, including work completed by another co-worker.
+- Fill only missing gaps when another contributor has partially completed the task.
 - Do not duplicate canonical documents or shared business logic.
 - Finish the current authorized task accurately before beginning a later related task.
 - Do not jump to the next phase before validation, publishing, read-back, master synchronization, memory, diagnostic, and final summary.
@@ -124,9 +145,10 @@ Requirement
 - Pipeline and phase plan: COMPLETE.
 - Live Studio handoff instruction: COMPLETE IN REPOSITORY.
 - Canonical implementation build playbook: COMPLETE.
+- Co-worker collaboration and no-duplicate handoff rule: DEFINED.
 - Live Studio alignment: PENDING LIVE EXECUTION AND READ-BACK.
 - Actual application implementation: SEPARATE STATUS.
 - Missing planned TECA repository documents in the current governance package: 0.
 - Accidental duplicate TECA documents: 0.
 
-**TECA REPOSITORY GOVERNANCE AND CANONICAL IMPLEMENTATION BUILD-ORDER DOCUMENTATION COMPLETE (100%). ACTUAL CODING, TESTING, DEPLOYMENT, AND RELEASE REMAIN SEPARATE EVIDENCE-BASED STATUSES.**
+**TECA REPOSITORY GOVERNANCE, CO-WORKER COLLABORATION RULES, AND CANONICAL IMPLEMENTATION BUILD-ORDER DOCUMENTATION COMPLETE (100%). ACTUAL CODING, TESTING, DEPLOYMENT, AND RELEASE REMAIN SEPARATE EVIDENCE-BASED STATUSES.**
