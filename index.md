@@ -5,8 +5,12 @@
 - [Project README](README.md)
 - [Master Architecture Plan](1plan.md)
 - [Shared SaaS Platform Architecture Index](SaaS%20Platform/README.md)
+- [Design Architecture Index](Design/README.md)
+- [TECA Repository Governance Index](TECA/README.md)
 - [Master Architecture Audit](MASTER_AUDIT.md)
 - [Final Architecture Verification](FINAL_ARCHITECTURE_VERIFICATION.md)
+- [Duplicate and Placement Validation](duplicate.md)
+- [Revision Queue](revise.md)
 
 ## APPLICATIONS
 
@@ -89,15 +93,32 @@
 - [Non-Functional Requirements](SaaS%20Platform/NON_FUNCTIONAL_REQUIREMENTS.md)
 - [Development Readiness Audit](SaaS%20Platform/DEVELOPMENT_READINESS_AUDIT.md)
 
+## DESIGN ARCHITECTURE — COMPLETE (100%)
+
+- [Design Architecture Master Index](Design/README.md)
+- [Wireframe Architecture](Design/WIREFRAME_ARCHITECTURE.md)
+- [Wireflow Architecture](Design/WIREFLOW_ARCHITECTURE.md)
+- [Non-Technical User UI Design System](Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md)
+
+## TECA REPOSITORY GOVERNANCE — COMPLETE (100%)
+
+- [TECA Repository Governance Master Index](TECA/README.md)
+- [TECA Agent Job Assignments](TECA/AGENT_JOB_ASSIGNMENTS.md)
+- [TECA Pipeline Execution Plan](TECA/PIPELINE_EXECUTION_PLAN.md)
+- [TECA CrewAI Studio Configuration Update](TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
+
 ## CURRENT STATUS
 
 - Application architecture: COMPLETE (100%).
 - Shared SaaS platform documents: 14 of 14 complete.
-- Partial architecture documents: 0.
-- Missing planned architecture documents: 0.
-- Accidental duplicate architecture documents: 0.
-- Current architecture documentation upload: 100%.
+- Design architecture documents: 3 of 3 complete.
+- TECA repository governance documents: 3 of 3 complete.
+- Partial planned repository documents: 0.
+- Missing planned repository documents: 0.
+- Accidental duplicate canonical documents: 0.
+- Current repository documentation upload: 100%.
+- Live TECA Studio alignment: pending Studio execution and read-back.
 - Coding included: NO.
 - Next controlled phase: IMPLEMENTATION PLANNING.
 
-**TECHNICIAN REPAIR SAAS ARCHITECTURE COMPLETE (100%)**
+**TECHNICIAN REPAIR SAAS ARCHITECTURE, DESIGN, AND TECA REPOSITORY GOVERNANCE COMPLETE (100%)**
