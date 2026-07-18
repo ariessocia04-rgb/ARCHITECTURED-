@@ -2,7 +2,7 @@
 
 ## PURPOSE
 
-This is the canonical execution plan that tells TECA what is complete, what is not complete, what to read, what to produce, and when it may proceed to the next stage.
+This is the canonical phase-control plan that tells TECA what is complete, what is incomplete, what to read, what to produce, when it may proceed, and how an authorized implementation slice must use the canonical implementation build playbook.
 
 ## REPOSITORY READ ORDER
 
@@ -14,36 +14,46 @@ This is the canonical execution plan that tells TECA what is complete, what is n
 6. `Design/README.md`
 7. `TECA/README.md`
 8. `TECA/AGENT_JOB_ASSIGNMENTS.md`
-9. Relevant canonical documents
-10. `.teca/memory/index.json` and relevant memory files
+9. `TECA/PIPELINE_EXECUTION_PLAN.md`
+10. `TECA/IMPLEMENTATION_BUILD_PLAN.md` when implementation planning, coding, testing, deployment, or release work is requested
+11. Relevant canonical application, shared-contract, design, release, schema, API, security, test, and operations documents
+12. `.teca/memory/index.json` and relevant memory files
 
 ## PHASE CONTROL RULE
 
 ```text
 READ CURRENT PHASE
-→ VERIFY COMPLETE / INCOMPLETE / MISSING
+→ VERIFY COMPLETE / INCOMPLETE / MISSING / BLOCKED / AUTHORIZED
+→ FINISH THE CURRENT AUTHORIZED TASK BEFORE A LATER RELATED TASK
 → SKIP ALREADY COMPLETE ITEMS
-→ COMPLETE ONLY THE CURRENT PHASE
-→ VALIDATE 100%
+→ COMPLETE ONLY THE CURRENT PHASE OR IMPLEMENTATION SLICE
+→ VALIDATE WITH EVIDENCE
 → PUBLISH AND READ BACK
-→ UPDATE MASTER STATUS
+→ UPDATE MASTER STATUS AND TRACEABILITY
 → STORE DURABLE MEMORY
 → DIAGNOSE
 → SUMMARIZE
-→ ONLY THEN PROCEED TO THE NEXT PHASE
+→ ONLY THEN PROCEED
 ```
 
 ## STATUS VALUES
 
+- `PLANNED`
+- `READY`
+- `IN_PROGRESS`
 - `COMPLETE`
 - `INCOMPLETE`
+- `PARTIAL`
 - `MISSING`
 - `BLOCKED`
 - `SKIPPED_ALREADY_COMPLETE`
 - `FAILED`
 - `NOT_AUTHORIZED`
+- `ROLLED_BACK`
+- `DEPLOYED`
+- `VERIFIED`
 
-No item may be marked COMPLETE without evidence.
+No item may be marked COMPLETE, DEPLOYED, VERIFIED, or PRODUCTION_READY without evidence.
 
 # PHASE 1 — APPLICATION ARCHITECTURE
 
@@ -51,7 +61,7 @@ No item may be marked COMPLETE without evidence.
 
 - Technician Application
 - Front Desk Application
-- Owner Application
+- Owner Application for the current core Repair SaaS baseline
 - Customer Portal
 
 ## Status
@@ -60,26 +70,26 @@ No item may be marked COMPLETE without evidence.
 
 ## Rule
 
-Read and preserve. Do not rewrite or duplicate.
+Read and preserve. A high-level mention of a future expansion is not proof that the expansion is fully architected.
 
 # PHASE 2 — SHARED SAAS CONTRACT ARCHITECTURE
 
 ## Scope
 
-- users, roles, permissions, workflow
+- users, roles, permissions, and workflow
 - global contracts
 - data and entity ownership
-- database relationship model
-- API, event, webhook, real-time
+- database relationships
+- API, event, webhook, and realtime behavior
 - authentication and sessions
 - subscription and tenant lifecycle
 - communication
-- finance
-- file and media
-- audit, backup, recovery, incidents
+- financial control
+- files and media
+- audit, backup, recovery, and incidents
 - cross-application handoffs
 - non-functional requirements
-- development-readiness audit
+- development readiness
 
 ## Status
 
@@ -87,9 +97,9 @@ Read and preserve. Do not rewrite or duplicate.
 
 ## Rule
 
-Read and preserve. Update only when an approved dependent change requires synchronized revision.
+Read and preserve. Update only through an approved synchronized revision.
 
-# PHASE 3 — WIREFRAME ARCHITECTURE
+# PHASE 3 — CORE WIREFRAME ARCHITECTURE
 
 ## Canonical File
 
@@ -97,25 +107,13 @@ Read and preserve. Update only when an approved dependent change requires synchr
 
 ## Status
 
-`COMPLETE`
-
-## Acceptance Evidence
-
-- global application shell
-- shared page and list frames
-- Technician wireframes
-- Front Desk wireframes
-- Owner wireframes
-- Customer Portal wireframes
-- Platform Administration wireframe
-- desktop, tablet, and mobile
-- loading, empty, error, offline, conflict, permission, and subscription states
+`COMPLETE` for the current core Repair SaaS baseline.
 
 ## Rule
 
-Future high-fidelity screens trace back to this file. Do not create competing wireframes.
+High-fidelity UI and implementation must trace back to canonical wireframes. Future expansions require their own complete Section 8A design package.
 
-# PHASE 4 — WIREFLOW ARCHITECTURE
+# PHASE 4 — CORE WIREFLOW ARCHITECTURE
 
 ## Canonical File
 
@@ -123,30 +121,11 @@ Future high-fidelity screens trace back to this file. Do not create competing wi
 
 ## Status
 
-`COMPLETE`
-
-## Acceptance Evidence
-
-- entry and routing
-- intake
-- queue and assignment
-- diagnosis
-- quotation and approval
-- parts and inventory
-- repair
-- testing and quality
-- invoice, payment, and release
-- customer portal
-- warranty return
-- owner approval
-- configuration publish
-- subscription lifecycle
-- support access
-- errors, retry, recovery, offline synchronization
+`COMPLETE` for the current core Repair SaaS baseline.
 
 ## Rule
 
-No screen or prototype may bypass the canonical lifecycle or handoff gates.
+No screen, API, worker, integration, or prototype may bypass canonical lifecycle, permission, approval, financial, inventory, audit, or handoff gates.
 
 # PHASE 5 — NON-TECHNICAL USER UI DESIGN SYSTEM
 
@@ -158,24 +137,9 @@ No screen or prototype may bypass the canonical lifecycle or handoff gates.
 
 `COMPLETE`
 
-## Acceptance Evidence
-
-- plain language
-- one clear task at a time
-- guided journeys
-- stable role navigation
-- reusable information
-- form, error, review, and confirmation rules
-- customer-friendly status mapping
-- shared components
-- responsive behavior
-- accessibility
-- consistent help
-- representative usability-testing personas
-
 ## Rule
 
-High-fidelity design may improve visual presentation but cannot change the completed workflow.
+Implementation must preserve plain language, one clear task at a time, responsive behavior, accessibility, retained valid input, clear errors, review, confirmation, help, and recovery.
 
 # PHASE 6 — TECA REPOSITORY GOVERNANCE
 
@@ -185,107 +149,218 @@ High-fidelity design may improve visual presentation but cannot change the compl
 - `TECA/AGENT_JOB_ASSIGNMENTS.md`
 - `TECA/PIPELINE_EXECUTION_PLAN.md`
 - `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md`
+- `TECA/IMPLEMENTATION_BUILD_PLAN.md`
 
 ## Status
 
-`COMPLETE` after all four files exist, master documents are synchronized, and repository read-back passes.
+`COMPLETE IN REPOSITORY`
+
+## Completion Evidence
+
+- 9 agent jobs documented.
+- 11 sequential tasks documented.
+- repository read order documented.
+- no-jump, finish-current-task, skip-complete, no-duplicate, validation, publishing, memory, diagnostic, and summary rules documented.
+- live Studio configuration handoff documented.
+- exact database, backend, frontend, module, test, environment, deployment, and rollback build order documented.
 
 ## Rule
 
-The live CrewAI Studio automation must be aligned from the canonical configuration update document. Repository documentation alone does not prove live Studio persistence.
+Repository documents do not prove live Studio persistence. Live alignment requires actual Studio execution and read-back.
 
 # PHASE 7 — CONTROLLED IMPLEMENTATION PLANNING
 
 ## Status
 
-`NEXT_CONTROLLED_PHASE`
+`IN_PROGRESS / NEXT CONTROLLED PHASE`
+
+The canonical implementation build playbook is complete, but the remaining release-specific planning inputs must still be approved.
+
+## Canonical Build-Order Source
+
+`TECA/IMPLEMENTATION_BUILD_PLAN.md`
 
 ## Required Work
 
-1. Approve MVP and later release boundaries.
-2. Create implementation release map.
-3. Select technology stack and supported versions.
-4. Select hosting, environments, regions, and deployment strategy.
-5. Define physical database schema and ER diagram.
-6. Define exact API, event, and webhook schemas.
-7. Create high-fidelity UI screens and interactive prototype from the canonical wireframes and wireflows.
-8. Create design tokens and component specifications.
-9. Select identity, payment, storage, messaging, monitoring, and integration providers.
-10. Approve measurable non-functional targets.
-11. Approve threat model, privacy review, test plan, migration plan, release plan, rollback plan, support plan, and operations plan.
-12. Create implementation tasks with acceptance criteria and ownership.
+1. Create and approve the expansion registry.
+2. Approve core MVP and later-release boundaries.
+3. Approve release IDs, included modules, exclusions, dependencies, owners, and acceptance criteria.
+4. Select frontend, backend, database, API, event, cache, queue, realtime, search, authentication, file, payment, messaging, monitoring, testing, hosting, and deployment technologies with supported versions.
+5. Approve repository and workspace structure.
+6. Define physical schemas, migrations, indexes, constraints, tenant and branch enforcement, seeds, backup, restore, and rollback.
+7. Define exact API, event, webhook, realtime, import, export, notification, integration, idempotency, and synchronization schemas.
+8. Create high-fidelity UI screens and interactive prototypes traced to canonical wireframes and wireflows.
+9. Approve design tokens, components, states, variants, responsive, accessibility, content, and interaction specifications.
+10. Approve measurable performance, availability, capacity, scalability, recovery, retention, accessibility, observability, support, security, and cost targets.
+11. Approve threat model, privacy review, test strategy, migration plan, deployment plan, rollback plan, monitoring plan, incident plan, support plan, and operations runbooks.
+12. Convert the build playbook into release and slice task graphs with requirement IDs, file targets, dependencies, tests, gates, and owners.
+13. Align and verify the live TECA Studio configuration before autonomous TECA coding.
 
 ## Completion Gate
 
-Phase 7 is complete only when every required planning artifact exists, is validated, linked from indexes, and approved for the selected release.
+Phase 7 is complete only when every required planning artifact for the selected release exists, is linked, validated, read back, synchronized, and owner-approved.
 
 # PHASE 8 — CONTROLLED IMPLEMENTATION
 
 ## Status
 
-`NOT_AUTHORIZED`
+`NOT_AUTHORIZED` globally. Individual work may begin only through exact scoped authorization.
 
 ## Entry Requirements
 
-- Phase 7 COMPLETE.
-- `implementation_authorized=true` explicitly approved.
-- Stack, environment, schema, API, design, security, testing, and release contracts approved.
+- Phase 7 complete for the exact release or slice.
+- applicable expansion passed Section 8A of `1plan.md`.
+- `implementation_authorized=true` explicitly approved for the exact release, module, or atomic slice.
+- live TECA Studio aligned and verified when TECA performs autonomous work.
+- approved stack, environment, schema, API, design, security, testing, deployment, rollback, and release contracts exist.
+- no earlier related implementation task remains unfinished.
+
+## Mandatory Build Source
+
+`TECA/IMPLEMENTATION_BUILD_PLAN.md`
+
+## Mandatory Global Order
+
+```text
+BUILD-00 Authorization and Live State
+→ BUILD-01 Release Boundary and Dependencies
+→ BUILD-02 Technology and Version Lock
+→ BUILD-03 Repository and Workspace Foundation
+→ BUILD-04 CI, Quality, and Security Baseline
+→ BUILD-05 Configuration and Observability
+→ BUILD-06 Design System and App Shell
+→ BUILD-07 Physical Database Foundation
+→ BUILD-08 Identity, Tenant, Roles, Permissions, and Approvals
+→ BUILD-09 Shared Backend Services
+→ BUILD-10 Shared Frontend Services
+→ CORE-01 through CORE-16 in dependency order
+→ Release Validation
+→ Staging
+→ Approved Production Deployment
+→ Post-Deployment Verification
+```
+
+## Mandatory Per-Module Order
+
+```text
+Requirement
+→ Contract
+→ Migration
+→ Domain
+→ Backend
+→ API / Event / Integration
+→ Backend Tests
+→ Frontend Data
+→ Frontend UI
+→ Integration Tests
+→ E2E Tests
+→ Security / Accessibility / Performance
+→ Documentation and Traceability
+→ STG-6 Validation
+→ STG-7 Publish and Read-Back
+→ STG-8 Memory
+→ STG-9 Diagnostic
+→ STG-10 Summary
+```
 
 ## Rule
 
-Do not generate or publish application source code before this gate.
+Do not implement a later module, release, or expansion early. Do not mark a module complete from backend-only, frontend-only, mock UI, placeholder API, disabled tests, or unverified deployment.
+
+# PHASE 9 — CONTROLLED RELEASE AND DEPLOYMENT
+
+## Status
+
+`NOT_AUTHORIZED` until the selected release passes implementation and release gates.
+
+## Required Promotion Path
+
+```text
+Local
+→ CI Test Environment
+→ Preview when applicable
+→ Development
+→ Staging
+→ Production
+```
+
+## Entry Requirements
+
+- included modules complete;
+- full regression and cross-application E2E pass;
+- migration rehearsal pass;
+- backup and restore evidence;
+- security, privacy, accessibility, performance, resilience, monitoring, support, and rollback gates pass;
+- user acceptance and owner approval;
+- approved production change window and release record.
+
+## Rule
+
+A commit, merged PR, build artifact, or staging deployment does not prove production deployment or production readiness.
 
 # MASTER COMPLETION MATRIX
 
 | Area | Canonical Source | Status | Next Action |
 |---|---|---|---|
-| Technician Application | `Applications/Technician Application/INDEX.md` | COMPLETE | Preserve |
-| Front Desk Application | `Applications/Front Desk Application/README.md` | COMPLETE | Preserve |
-| Owner Application | `Applications/Owner Application/README.md` | COMPLETE | Preserve |
-| Customer Portal | `Applications/Customer Portal/README.md` | COMPLETE | Preserve |
-| Shared SaaS Contracts | `SaaS Platform/README.md` | COMPLETE | Preserve |
-| Wireframes | `Design/WIREFRAME_ARCHITECTURE.md` | COMPLETE | Trace high-fidelity UI |
-| Wireflows | `Design/WIREFLOW_ARCHITECTURE.md` | COMPLETE | Trace prototype behavior |
-| UI Design System | `Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md` | COMPLETE | Create high-fidelity design later |
+| Core Technician Application Architecture | `Applications/Technician Application/INDEX.md` | COMPLETE | Preserve |
+| Core Front Desk Architecture | `Applications/Front Desk Application/README.md` | COMPLETE | Preserve |
+| Core Owner Architecture | `Applications/Owner Application/README.md` | COMPLETE | Preserve; expansions remain separate |
+| Core Customer Portal Architecture | `Applications/Customer Portal/README.md` | COMPLETE | Preserve |
+| Shared SaaS Contracts | `SaaS Platform/README.md` | COMPLETE | Preserve and trace |
+| Core Wireframes | `Design/WIREFRAME_ARCHITECTURE.md` | COMPLETE | Trace high-fidelity UI |
+| Core Wireflows | `Design/WIREFLOW_ARCHITECTURE.md` | COMPLETE | Trace behavior |
+| UI Design System | `Design/NON_TECHNICAL_USER_UI_DESIGN_SYSTEM.md` | COMPLETE | Implement after stack approval |
 | TECA Agent Assignments | `TECA/AGENT_JOB_ASSIGNMENTS.md` | COMPLETE | Align live Studio |
-| Implementation Planning | Future controlled artifacts | NEXT | Begin only after governance sync |
-| Application Code | Future implementation repository structure | NOT AUTHORIZED | Do not start |
+| TECA Pipeline Plan | `TECA/PIPELINE_EXECUTION_PLAN.md` | COMPLETE | Enforce |
+| TECA Studio Handoff | `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md` | COMPLETE IN REPOSITORY | Execute and read back live |
+| Canonical Implementation Build Playbook | `TECA/IMPLEMENTATION_BUILD_PLAN.md` | COMPLETE | Convert into approved release slices |
+| Release-Specific Implementation Planning | Future approved artifacts | INCOMPLETE | Complete Phase 7 |
+| Live TECA Alignment | CrewAI Studio | PENDING | Apply and verify |
+| Application Code | Approved implementation structure | NOT AUTHORIZED GLOBALLY | Require scoped approval |
+| Production Deployment | Approved infrastructure | NOT AUTHORIZED | Require release evidence |
 
 # REQUIRED MASTER DOCUMENT UPDATES
 
-After any completed phase, synchronize:
+After any completed planning, implementation, release, or deployment slice, synchronize when applicable:
 
 - `1plan.md`
 - `README.md`
 - `index.md`
-- affected folder index
+- affected application, shared-platform, design, implementation, and TECA indexes
 - `MASTER_AUDIT.md`
 - `FINAL_ARCHITECTURE_VERIFICATION.md`
 - `duplicate.md`
-- `revise.md` when a correction is pending or completed
+- `revise.md`
+- implementation traceability, release records, runbooks, and evidence indexes
 
 # TECA RUN OUTPUT REQUIREMENTS
 
 Each run must report:
 
-- requested phase
-- current repository state
-- already-complete items skipped
-- exact artifacts created or updated
-- validation result
-- publish result and commit SHA
-- read-back result
-- master-document synchronization result
-- memory result
-- diagnostic result
-- next controlled phase
+- requested phase, release, and slice;
+- authorization evidence;
+- current repository, branch, migration, CI, environment, and deployment state;
+- already-complete items skipped;
+- exact artifacts created, updated, rejected, or blocked;
+- database, backend, frontend, test, CI, security, accessibility, performance, deployment, and rollback results applicable to the slice;
+- validation result;
+- publish mode, branch, commit SHA, PR, and read-back result;
+- master-document and traceability synchronization;
+- memory result;
+- diagnostic result;
+- truthful current status and next controlled task.
 
 ## STATUS
 
 - Completed and remaining work map: COMPLETE.
 - Sequential phase gates: COMPLETE.
+- Finish-current-task rule: COMPLETE.
 - No-jump rule: COMPLETE.
 - No-duplicate and skip-complete behavior: COMPLETE.
 - Implementation authorization gate: COMPLETE.
+- Canonical implementation build order: COMPLETE.
+- Release-specific planning: INCOMPLETE.
+- Live TECA Studio alignment: PENDING READ-BACK.
+- Actual application implementation: SEPARATE STATUS.
 
-**TECA PIPELINE EXECUTION PLAN COMPLETE (100%)**
+**TECA PIPELINE EXECUTION AND CANONICAL IMPLEMENTATION BUILD-ORDER PLAN COMPLETE (100% AS A GOVERNING PLAN, NOT AS PROOF OF APPLICATION COMPLETION).**
