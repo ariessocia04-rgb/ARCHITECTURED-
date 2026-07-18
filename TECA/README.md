@@ -1,24 +1,48 @@
-# TECA REPOSITORY GOVERNANCE — MASTER INDEX
+# TECA REPOSITORY GOVERNANCE — OPERATIONAL INDEX
 
-## PURPOSE
+## PURPOSE AND AUTHORITY
 
-This folder contains the canonical repository instructions for the TECA CrewAI automation assigned to the ARCHITECTURED Technician Repair SaaS.
+This folder contains the operational instructions for the TECA CrewAI automation assigned to the ARCHITECTURED Technician Repair SaaS.
 
-TECA must use these documents to understand its agents, jobs, stage order, completed work, incomplete work, rules, publishing behavior, implementation build order, validation gates, memory behavior, deployment controls, co-worker handoffs, reference research requirements, and live Studio alignment requirements.
+`1plan.md` is the master source of truth. TECA documents implement and explain the approved plan but must not create competing project scope, worker-coordination, handoff, provenance, deletion, priority, or completion rules.
 
-## CANONICAL DOCUMENTS
+Canonical worker authority:
+
+- `1plan.md`, Section 1A — co-worker continuity, active-work detection, factual worker notification, continue-current-work behavior, save-before-transfer, source-of-truth provenance, unsupported-conflict removal, and gap-fill-only rules.
+- `1plan.md`, Section 8A — full-architecture and UI/UX gate for every expansion.
+- `TECA/IMPLEMENTATION_BUILD_PLAN.md` — exact implementation build sequence after the applicable `1plan.md` authorization gates pass.
+
+## CANONICAL TECA DOCUMENTS
 
 1. [Agent Job Assignments](AGENT_JOB_ASSIGNMENTS.md)
    - Exact jobs, goals, boundaries, inputs, outputs, prohibited actions, IDs, stages, and repository responsibilities for all 9 agents and 11 tasks.
 
 2. [Pipeline Execution Plan](PIPELINE_EXECUTION_PLAN.md)
-   - Required read order, completed and remaining phases, no-jump rule, skip-complete rule, no-code gate, synchronization requirements, and master completion matrix.
+   - Required read order, phase control, no-jump behavior, implementation gates, synchronization, validation, publishing, memory, diagnostics, and reporting.
 
 3. [CrewAI Studio Configuration Update](CREWAI_STUDIO_CONFIGURATION_UPDATE.md)
-   - Copy-ready controlled instruction for aligning the live TECA Builder automation while preserving agent IDs, task IDs, task order, contexts, tools, models, and sequential execution.
+   - Copy-ready instruction for aligning the live TECA Builder while preserving approved IDs, task order, contexts, tools, models, and sequential execution.
 
 4. [Canonical Implementation Build Plan](IMPLEMENTATION_BUILD_PLAN.md)
-   - Exact dependency order for authorization, release locking, stack selection, repository foundation, CI, design system, physical database, identity and permissions, shared backend and frontend services, core modules, vertical-slice coding, tests, deployment, rollback, and production-readiness evidence.
+   - Exact order for authorization, release locking, technology selection, repository foundation, CI, design system, physical database, permissions, shared services, modules, tests, deployment, rollback, and production-readiness evidence.
+
+## REQUIRED REPOSITORY READ ORDER
+
+```text
+1plan.md
+→ README.md
+→ revise.md
+→ index.md
+→ SaaS Platform/README.md
+→ Design/README.md
+→ TECA/README.md
+→ TECA/AGENT_JOB_ASSIGNMENTS.md
+→ TECA/PIPELINE_EXECUTION_PLAN.md
+→ TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation planning, coding, testing, deployment, or release is requested
+→ exact canonical files assigned by 1plan.md
+→ current branches, pull requests, commits, checks, migrations, assignments, and active-work evidence
+→ .teca/memory/index.json and relevant memories
+```
 
 ## REQUIRED LIVE PIPELINE
 
@@ -36,61 +60,72 @@ STG-0 Memory Retrieval
 → STG-10 Self-Diagnostic Summary
 ```
 
-## REQUIRED REPOSITORY READ ORDER
+## WORKER-COORDINATION EXECUTION
 
-```text
-1plan.md
-→ README.md
-→ revise.md
-→ index.md
-→ SaaS Platform/README.md
-→ Design/README.md
-→ TECA/README.md
-→ TECA/AGENT_JOB_ASSIGNMENTS.md
-→ TECA/PIPELINE_EXECUTION_PLAN.md
-→ TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation planning or coding is requested
-→ relevant canonical files
-→ current branches, pull requests, commits, checks, migrations, and active work evidence
-→ .teca/memory/index.json and relevant memories
-```
+TECA must use the exact command and classifications in `1plan.md`, Section 1A.
 
-## CURRENT WORK STATE
+Operational behavior:
 
-### Complete
+1. Inspect the latest repository evidence before selecting work.
+2. When recent or active work is detected, send the factual `NEW CANONICAL GOVERNANCE RULE — CONTINUE CURRENT WORK` notice from `1plan.md`, Section 1A.
+3. The active worker continues the current valid task unless the owner explicitly stops, cancels, replaces, revises, or reassigns it.
+4. Other workers move to another unclaimed incomplete item instead of racing or duplicating the active task.
+5. A reassigned worker must save a safe checkpoint and exact handoff before moving.
+6. Partial available work is preserved and only exact missing gaps are filled.
+7. Complete work is validated and returned as `SKIPPED_ALREADY_COMPLETE`.
+8. Conflicted work is returned as `BLOCKED`; it is never silently overwritten.
+9. Unsupported conflicting or duplicate content is removed or formally superseded only according to `1plan.md`, Section 1A, with Git and revision evidence.
 
-- Technician Application architecture.
-- Front Desk Application architecture.
-- Owner Application architecture for the current core Repair SaaS baseline.
-- Customer Portal architecture.
-- Shared SaaS contract architecture.
-- Core Repair SaaS wireframe architecture.
-- Core Repair SaaS wireflow architecture.
-- Non-technical-user UI design system.
-- TECA agent repository job assignments.
-- TECA sequential pipeline execution plan.
-- TECA live Studio configuration handoff.
-- TECA canonical implementation build playbook.
+The full definitions are intentionally not copied here. `1plan.md`, Section 1A remains authoritative.
 
-### Next Controlled Phase
+## SOURCE-OF-TRUTH AND SAVE-TARGET EXECUTION
 
-- Complete the remaining implementation-planning artifacts required by `1plan.md` and the build playbook.
-- Align and verify the live TECA Studio automation before autonomous TECA implementation work.
+Every TECA specification, requirement package, artifact, validation report, publish action, and handoff must record:
 
-### Not Authorized
+- `source_path`;
+- `source_section_or_requirement_id`;
+- `canonical_target_path`;
+- `active_owner_or_handoff_state`;
+- `dependency_paths`;
+- `last_verified_commit_or_sha`;
+- `validation_evidence`.
 
-- Uncontrolled application coding.
-- Coding outside an exact release or slice authorization.
-- Future expansion implementation before its Section 8A architecture and UI/UX gate passes.
-- Production claims without approved measurable targets and test evidence.
+A project-wide rule must be approved in `1plan.md`. Detailed module work must be saved to the canonical target assigned by `1plan.md`, and the plan status or mapping must be synchronized when required.
+
+Chat responses, local drafts, prompts, memories, old branches, generated files, and copied documents are not project truth until validated and published to the assigned canonical repository location.
+
+## COMPARABLE-PRODUCT RESEARCH PROCEDURE
+
+External systems are research references only. They do not override `1plan.md` or the canonical ARCHITECTURED files.
+
+When external comparison materially improves a missing module, workflow, UI/UX pattern, business rule, report, mobile flow, automation, or implementation decision:
+
+1. Use current official vendor pages and official documentation first.
+2. Compare at least three relevant products when the decision is material and multiple comparable systems exist.
+3. Record the vendor, official source, access date, feature reviewed, useful pattern, ARCHITECTURED adaptation, and rejected or unsuitable behavior.
+4. Compare the finding against `1plan.md` and the assigned canonical application, contract, design, or implementation source.
+5. Do not copy proprietary source code, exact layouts, branding, text, icons, images, paid assets, database structures, or confidential behavior.
+6. An adapted finding becomes ARCHITECTURED truth only after it is approved and saved in the correct canonical repository source assigned by `1plan.md`.
+7. Store concise conclusions only; do not duplicate full vendor documentation.
+
+Approved initial official references include:
+
+- RepairDesk — `https://www.repairdesk.co/features/`
+- Odoo Repairs — `https://www.odoo.com/documentation/19.0/applications/inventory_and_mrp/repairs/repair_orders.html`
+- Microsoft Dynamics 365 Field Service — `https://learn.microsoft.com/en-us/dynamics365/field-service/`
+- ServiceNow Field Service Management — `https://www.servicenow.com/docs/r/field-service-management/fsm-application-landing-page.html`
+- Zoho FSM — `https://www.zoho.com/fsm/features.html`
+
+Initial baseline reviewed: `2026-07-18`.
 
 ## IMPLEMENTATION CONTROL
 
-The implementation build playbook defines how approved work must be built. It does not itself set `implementation_authorized=true` and does not prove that application source code, tests, deployment, or production readiness are complete.
+The implementation build playbook defines how approved work must be built. It does not set `implementation_authorized=true` and does not prove that source code, tests, deployment, or production readiness are complete.
 
-Every implementation slice must follow:
+Each implementation slice follows:
 
 ```text
-Requirement
+Approved Requirement
 → Data and State Contract
 → Database Migration
 → Domain and Backend
@@ -101,132 +136,46 @@ Requirement
 → Security / Accessibility / Performance Checks
 → Validation
 → Publish and Read-Back
+→ Master Synchronization
 → Memory / Diagnostic / Summary
 ```
 
-## ACTIVE-WORK OWNERSHIP AND NO-RACING RULE
+## CURRENT WORK STATE
 
-TECA, ChatGPT, assigned builders, and other agents are co-workers contributing to the same repository and master plan. The goal is shared completion, not competition for the same task.
+### Complete in repository
 
-Before starting any plan item, module, architecture section, implementation slice, test, migration, UI screen, or repository change, the assigned worker must inspect the latest repository state and classify the target work as one of the following:
+- Core Technician, Front Desk, Owner-baseline, and Customer Portal architecture.
+- Shared SaaS contract architecture.
+- Core wireframe and wireflow architecture.
+- Non-technical-user UI design system.
+- TECA agent assignments and sequential pipeline plan.
+- TECA live Studio configuration handoff.
+- TECA canonical implementation build playbook.
+- Master co-worker, handoff, provenance, and conflict-removal authority in `1plan.md`, Section 1A.
 
-- `UNCLAIMED_INCOMPLETE` — no active worker owns it and required work is missing.
-- `ACTIVE_BY_COWORKER` — another worker is currently changing the same target, dependency, branch, pull request, or tightly coupled files.
-- `PARTIAL_AVAILABLE` — valid work exists but specific required gaps remain and the work is no longer actively owned or has been handed off.
-- `COMPLETE` — the canonical item satisfies its acceptance criteria with evidence.
-- `CONFLICTED` — existing or active changes disagree and controlled resolution is required.
-- `STALE_REVIEW_REQUIRED` — work appears abandoned or outdated, but ownership and correctness must be verified before editing.
+### Next controlled work
 
-### Mandatory routing behavior
+- Complete the remaining release-specific implementation-planning artifacts required by `1plan.md` and `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
+- Align and verify the live TECA Studio automation before autonomous TECA implementation work.
 
-1. Fetch and read the latest target file, `revise.md`, relevant indexes, recent commits, branches, pull requests, checks, migrations, and current work evidence.
-2. Never assume an earlier local copy, prompt, chat response, generated file, or memory entry is still current.
-3. When the target is `ACTIVE_BY_COWORKER`, do not edit, replace, reformat, rename, move, or publish changes to that active work.
-4. When the target is `ACTIVE_BY_COWORKER`, select the next highest-priority `UNCLAIMED_INCOMPLETE` item from the same approved phase and work there instead.
-5. Do not wait beside, race, shadow, or independently recreate the same work another co-worker is producing.
-6. When the target is `PARTIAL_AVAILABLE`, preserve all valid existing work and fill only the exact missing requirements, screens, flows, fields, states, tests, links, evidence, or acceptance criteria.
-7. Partial work may be extended only after confirming it is not currently being edited or after a clear handoff from the active worker.
-8. When the target is `COMPLETE`, validate it, record evidence, return `SKIPPED_ALREADY_COMPLETE`, and continue to the next incomplete item inside the same authorized phase.
-9. When the target is `CONFLICTED`, return `BLOCKED`, identify the conflicting files, owners, branches, requirements, and required resolution; never silently overwrite one version.
-10. When the target is `STALE_REVIEW_REQUIRED`, verify last activity, current owner, branch or pull-request status, dependencies, and acceptance evidence before deciding whether it may be resumed.
-11. Re-read every target file immediately before publishing and use its latest SHA or repository version.
-12. Commits and reports must state what was reused, validated, extended, skipped, blocked, or completed by another contributor.
+### Not authorized globally
 
-### Evidence that work may be active
-
-Active-work evidence may include:
-
-- an open branch or pull request targeting the same files or tightly coupled requirements;
-- a current entry in `revise.md` or another approved work register;
-- recent commits for the same module or plan item;
-- unresolved review comments or failed checks under active correction;
-- an explicit current assignment or handoff note;
-- migrations, schemas, contracts, or UI work whose dependent files are presently changing.
-
-Absence of one signal does not automatically prove the work is free. The worker must use the combined repository evidence.
-
-## GAP-FILL-ONLY RULE
-
-When a co-worker has already produced valid partial work, the next worker must not rewrite the whole item. The next worker must:
-
-1. compare the current artifact against its canonical requirements and acceptance criteria;
-2. create a precise missing-items list;
-3. preserve correct content, numbering, naming, links, paths, workflows, permissions, decisions, and history;
-4. change only the smallest necessary files and sections;
-5. add only missing or required corrections;
-6. test and validate both the preserved work and the new gap-fill work together;
-7. report the exact gaps filled and the existing work intentionally left unchanged.
-
-Cosmetic preference, writing style, personal ownership, or a different implementation approach is not a valid reason to replace correct current work.
-
-## COMPARABLE-PRODUCT RESEARCH RULE
-
-Before designing or filling a missing module, workflow, UI/UX pattern, business rule, report, mobile flow, automation, or implementation approach, the assigned worker must research current comparable products and official documentation when external comparison can materially improve completeness or accuracy.
-
-### Research procedure
-
-1. Use official vendor product pages and official documentation first.
-2. Compare at least three relevant products when the decision is material and multiple comparable systems exist.
-3. Extract reusable concepts such as workflow stages, roles, permissions, scheduling, dispatch, repair tickets, parts movement, quotations, customer approval, mobile execution, service reports, warranty, invoicing, notifications, audit, and reporting.
-4. Record the vendor, official source, access date, feature or workflow reviewed, useful pattern, ARCHITECTURED adaptation, and rejected or unsuitable behavior.
-5. Compare findings against `1plan.md`, canonical application architecture, shared contracts, wireframes, wireflows, UI rules, and current repository decisions.
-6. Use external products as research references only. Do not copy proprietary source code, exact screen layouts, branding, text, icons, images, paid assets, database structures, or confidential behavior.
-7. Do not replace ARCHITECTURED terminology, workflows, permissions, tenant rules, accessibility requirements, or approved decisions merely because another product behaves differently.
-8. Research must identify missing requirements and improve the original architecture; it must not turn the product into an unauthorized clone.
-9. Store only concise, traceable research conclusions in the correct canonical planning artifact. Do not duplicate full vendor documentation in the repository.
-10. Re-check official sources when the referenced product, feature, version, standard, or provider may have changed.
-
-### Approved initial comparison baseline
-
-The following official systems are approved starting references. This list is not exclusive and must be expanded when another product is more relevant:
-
-- **RepairDesk** — repair ticket management, POS, inventory, employee management, appointments, customer communication, reporting, payments, and multi-location repair operations.
-  - Official source: `https://www.repairdesk.co/features/`
-- **Odoo Repairs** — repair orders, returned products, warranty handling, parts add/remove/recycle movements, component availability, repair stages, quotations, invoicing, and return to customer.
-  - Official source: `https://www.odoo.com/documentation/19.0/applications/inventory_and_mrp/repairs/repair_orders.html`
-- **Microsoft Dynamics 365 Field Service** — customer accounts, resources, work orders, scheduling, field-service mobile operation, price lists, security roles, and implementation configuration.
-  - Official source: `https://learn.microsoft.com/en-us/dynamics365/field-service/`
-- **ServiceNow Field Service Management** — work orders, tasks, resources, skills, assets, locations, dispatch, workforce planning, mobile collaboration, and operational dashboards.
-  - Official source: `https://www.servicenow.com/docs/r/field-service-management/fsm-application-landing-page.html`
-- **Zoho FSM** — service requests, estimates, work orders, scheduling, dispatch, appointments, job sheets, mobile work, timesheets, service reports, invoicing, notifications, automation, security, dashboards, and integrations.
-  - Official source: `https://www.zoho.com/fsm/features.html`
-
-Initial baseline reviewed: `2026-07-18`.
-
-## NON-NEGOTIABLE RULES
-
-- Search before creating.
-- Fetch the latest repository state before editing.
-- Check active ownership before selecting a task.
-- Do not touch work currently owned or actively changed by another co-worker.
-- When another co-worker is active on the target, move to a different unclaimed incomplete plan item.
-- Skip and validate work already complete, including work completed by another co-worker.
-- Fill only missing gaps when another contributor has partially completed the task and the work is available for handoff.
-- Do not duplicate canonical documents or shared business logic.
-- Research relevant comparable products through current official sources before filling material design or workflow gaps.
-- Use research as a reference, not as authorization to clone proprietary products.
-- Finish the current authorized task accurately before beginning a later related task.
-- Do not jump to the next phase before validation, publishing, read-back, master synchronization, memory, diagnostic, and final summary.
-- Do not generate application code while `implementation_authorized=false`.
-- Authorization for one release or module does not authorize another.
-- Do not expose secrets.
-- Do not claim live Studio alignment without Studio read-back.
-- Do not claim repository publishing without commit and file read-back evidence.
-- Do not claim deployment or production readiness from source-code completion alone.
+- Uncontrolled application coding.
+- Coding outside an exact approved release or slice.
+- Expansion implementation before its Section 8A gate passes.
+- Production claims without approved targets and test evidence.
 
 ## STATUS
 
+- Master worker-coordination and source-of-truth authority: `1plan.md` Section 1A — DEFINED.
 - Canonical TECA repository documents: 4 of 4 complete.
 - Agent job assignments: COMPLETE.
 - Pipeline and phase plan: COMPLETE.
-- Live Studio handoff instruction: COMPLETE IN REPOSITORY.
-- Canonical implementation build playbook: COMPLETE.
-- Co-worker active-work ownership and no-racing rule: DEFINED.
-- Gap-fill-only rule: DEFINED.
-- Comparable-product research rule and initial official reference baseline: DEFINED.
+- Live Studio handoff: COMPLETE IN REPOSITORY.
+- Canonical implementation build playbook: COMPLETE AS A GOVERNING PLAN.
+- Comparable-product research procedure: DEFINED UNDER `1plan.md` AUTHORITY.
 - Live Studio alignment: PENDING LIVE EXECUTION AND READ-BACK.
-- Actual application implementation: SEPARATE STATUS.
-- Missing planned TECA repository documents in the current governance package: 0.
-- Accidental duplicate TECA documents: 0.
+- Actual application implementation: SEPARATE EVIDENCE-BASED STATUS.
+- Accidental competing worker-rule definitions in this file: REMOVED.
 
-**TECA REPOSITORY GOVERNANCE, CO-WORKER NO-RACING AND GAP-FILL RULES, COMPARABLE-PRODUCT RESEARCH REQUIREMENTS, AND CANONICAL IMPLEMENTATION BUILD-ORDER DOCUMENTATION ARE COMPLETE AS GOVERNING RULES. ACTUAL CODING, TESTING, DEPLOYMENT, AND RELEASE REMAIN SEPARATE EVIDENCE-BASED STATUSES.**
+**TECA MUST TAKE PROJECT SCOPE, TASK PRIORITY, ACTIVE-WORK ROUTING, HANDOFF, SOURCE PROVENANCE, AND CONFLICT-REMOVAL AUTHORITY FROM `1plan.md`. THIS FILE IS THE OPERATIONAL INDEX, NOT A COMPETING MASTER PLAN.**
