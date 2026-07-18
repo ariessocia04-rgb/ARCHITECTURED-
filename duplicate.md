@@ -41,6 +41,8 @@ Deletion requires high overlap and the same purpose or authority. Shared structu
 - Owner entry/canonical core detail: `INDEX.md` → `README.md`
 - Customer Portal entry/canonical detail: `INDEX.md` → `README.md`
 - Shared platform: `SaaS Platform/README.md`
+- Subscription shared authority: `SaaS Platform/SUBSCRIPTION_ENTITLEMENT_USAGE_AND_TENANT_LIFECYCLE_CONTRACT.md`
+- Free/Pro/Premium decomposed detail authority: `SaaS Platform/Plans and Billing/INDEX.md`
 - Design: `Design/README.md`
 - TECA: `TECA/README.md`
 - Memory index: `.teca/memory/index.json`
@@ -157,6 +159,24 @@ Front Desk, Owner, and Customer Portal indexes are navigation and guardrail file
 
 The shared contracts use coordinated formatting but govern different cross-application responsibilities, including identity, data, API, subscription, communication, finance, files, audit, handoffs, non-functional requirements, and readiness.
 
+### Plans and Billing decomposed detail package
+
+Classification: `SHARED_TEMPLATE_NOT_DUPLICATE` plus `INTENTIONAL_SUMMARY_OR_INDEX` for its navigation and completion files.
+
+- The parent subscription contract defines the cross-platform tenant lifecycle and shared rules.
+- `SaaS Platform/Plans and Billing/` supplies exact Free/Pro/Premium commercial versions, limits, feature keys, data/API/provider/metering details, screens, wireflows, security, tests, rollout, rollback, and implementation sequencing.
+- It references rather than republishes authentication, financial, API, audit, NFR, and global Design authorities.
+- `INDEX.md`, `COMPLETION_RECORD.md`, and `SCREEN_TRACEABILITY_MATRIX.md` are navigation/governance/validation records, not competing full definitions.
+- The domain-specific Plans/Billing wireframes and wireflows specialize the global Design patterns for 24 screens and 20 subscription/billing flows; they do not replace the global shell, components, content, accessibility, or core repair flows.
+- Free, Pro, and Premium plan files share a common plan template but contain different audiences, capabilities, limits, lifecycle policies, security requirements, and acceptance tests.
+
+Result:
+
+- Parent subscription contract deleted or superseded: NO.
+- Existing global Design files deleted or superseded: NO.
+- Competing copied shared contract created: NO.
+- Domain-specific canonical detail package correctly placed: YES.
+
 ### Technician domain modules
 
 Dashboard, Repair Queue, Job Order, Diagnosis, Quotation, Repair, Parts, Testing, Completed, Reports, Notification, Profile, and Logout may use common headings such as dashboard, workflow, search, analytics, integration, security, and audit. Their domain entities, actions, lifecycle responsibilities, and rules differ. This is intentional structural consistency, not duplicate content.
@@ -167,17 +187,19 @@ Breadcrumb, Page Header, Toolbar, Filter Bar, Search Result, Data Table, Cards, 
 
 ### Wireflow and handoff matrix
 
-- `Design/WIREFLOW_ARCHITECTURE.md` governs user navigation and screen decisions.
+- `Design/WIREFLOW_ARCHITECTURE.md` governs global user navigation and core screen decisions.
 - `SaaS Platform/CROSS_APPLICATION_WORKFLOW_AND_HANDOFF_MATRIX.md` governs application/service ownership and operational handoffs.
+- `SaaS Platform/Plans and Billing/04. Wireframe and Wireflow/WIREFLOW_ARCHITECTURE.md` governs the detailed Free/Pro/Premium subscription and billing specialization.
 
 They are related but not duplicate authorities.
 
 ### TECA pipeline and implementation plans
 
 - `TECA/PIPELINE_EXECUTION_PLAN.md` governs TECA phases and stage gates.
-- `TECA/IMPLEMENTATION_BUILD_PLAN.md` governs the detailed dependency-ordered build, test, deployment, and rollback sequence.
+- `TECA/IMPLEMENTATION_BUILD_PLAN.md` governs the detailed global dependency-ordered build, test, deployment, and rollback sequence.
+- `SaaS Platform/Plans and Billing/05. Security Quality and Delivery/IMPLEMENTATION_SEQUENCE.md` specializes that sequence for the approved plans/billing domain.
 
-They have separate responsibilities.
+They have separate global, automation, and domain-specific responsibilities.
 
 ## TECHNICIAN RESULT
 
@@ -186,6 +208,16 @@ They have separate responsibilities.
 - Header quick-access references to Sidebar canonical modules: 2.
 - Duplicate full Profile/Notification architecture files: 0.
 - Canonical Repair Queue copies: 1.
+
+## PLANS AND BILLING RESULT
+
+- Canonical parent subscription contracts: 1.
+- Decomposed Free/Pro/Premium detail packages: 1.
+- Canonical plan files: Free, Pro, Premium, and one versioning/matrix authority each.
+- Domain-specific low-fidelity screens: 24.
+- Domain-specific detailed wireflows: 20.
+- Competing copied global wireframes/wireflows: 0.
+- Accidental duplicate plan/entitlement/data/API/security files: 0 after responsibility review.
 
 ## MEMORY RESULT
 
@@ -207,5 +239,7 @@ They have separate responsibilities.
 - Broken Header Profile/Notification index links after consolidation: 0.
 - Wrongly placed active canonical documents: 0.
 - Existing domain-specific modules deleted only because they shared a template: 0.
+- Plans and Billing parent/detail authority conflict: 0.
+- Plans and Billing placement and navigation validation: PASS.
 
-**NO-DUPLICATE AND PLACEMENT VALIDATION: PASS AFTER EVIDENCE-BASED CONSOLIDATION.**
+**NO-DUPLICATE AND PLACEMENT VALIDATION: PASS AFTER FREE / PRO / PREMIUM PACKAGE ADDITION.**
