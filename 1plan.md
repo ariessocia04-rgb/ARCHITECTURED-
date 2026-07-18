@@ -14,6 +14,7 @@ This document is the master workflow, progress tracker, architecture authority, 
 ## 1. GOVERNANCE RULES
 
 - GitHub is the single source of truth.
+- `1plan.md` is the master source of truth for project scope, priority, phase order, worker coordination, source ownership, completion rules, and canonical-path assignments.
 - Architecture and controlled implementation planning are completed before coding.
 - Current repository work is documentation and planning only unless `implementation_authorized=true` is explicitly approved.
 - Every module, shared concern, design concern, plan, and registry has one canonical repository file.
@@ -27,6 +28,117 @@ This document is the master workflow, progress tracker, architecture authority, 
 - Major decisions, permissions, transitions, data ownership, integrations, risks, tradeoffs, wireframes, wireflows, and UI behavior must be documented.
 - No performance, availability, recovery, security, accessibility, compliance, or scale claim is valid without approved targets and test evidence.
 - No token, API key, password, credential, private key, or environment-variable value may be stored in architecture, design, logs, or memory.
+
+## 1A. CANONICAL CO-WORKER CONTINUITY, HANDOFF, AND SOURCE-OF-TRUTH COMMAND
+
+This section is the canonical command for ChatGPT, TECA, implementation agents, designers, reviewers, and every assigned co-worker working on this repository. Operational documents may summarize or reference it, but they must not create a competing version.
+
+### Required worker-state classification
+
+Before selecting or changing any task, inspect the latest repository evidence and classify the target as exactly one of:
+
+- `UNCLAIMED_INCOMPLETE` — required work is missing and no current worker owns it.
+- `ACTIVE_BY_COWORKER` — another worker is currently changing the same target, dependency, branch, pull request, or tightly coupled files.
+- `PARTIAL_AVAILABLE` — valid partial work exists, the work is not currently active, and exact gaps remain.
+- `COMPLETE` — the canonical item passes its acceptance criteria with evidence.
+- `CONFLICTED` — existing definitions or active changes disagree.
+- `STALE_REVIEW_REQUIRED` — work appears abandoned or outdated, but ownership and correctness are not yet proven.
+
+### Exact command when recent or active work is detected
+
+The detecting worker must give the active co-worker a factual notice using this structure:
+
+```text
+NEW CANONICAL GOVERNANCE RULE — CONTINUE CURRENT WORK
+
+Repository: ariessocia04-rgb/ARCHITECTURED-
+Master source of truth: 1plan.md, Section 1A
+Current active target: <exact module, requirement, file, branch, or pull request>
+Current worker evidence: <recent commit, branch, pull request, revise.md entry, assignment, check, or handoff>
+Canonical requirement source: <exact source path and section or requirement ID>
+Canonical save target: <exact file, branch, pull request, or approved artifact path>
+
+You must continue and finish your current assigned task. Do not abandon it, restart it, duplicate it, or change to another task unless the owner explicitly reassigns you.
+
+Before publishing:
+1. Re-read 1plan.md and the exact canonical requirement source.
+2. Re-read the latest target file and repository state.
+3. Preserve valid co-worker work.
+4. Fill only the authorized gaps.
+5. Save the result to the canonical save target.
+6. Validate, publish, read back, and report the exact commit or pull-request evidence.
+7. Record remaining gaps and the next safe handoff.
+```
+
+The notice must contain facts from the current repository. It must not invent an active owner, status, branch, commit, pull request, or completion claim.
+
+### Continue-current-work rule
+
+1. A worker already performing a valid current task continues that task under the new rule.
+2. A new rule does not cancel or replace valid active work unless the owner explicitly says `STOP`, `CANCEL`, `REPLACE`, `REVISE`, or assigns an exact different task.
+3. Other workers must not race, shadow, re-create, reformat, rename, move, overwrite, or independently publish the same active work.
+4. When a target is `ACTIVE_BY_COWORKER`, another worker must select the next highest-priority `UNCLAIMED_INCOMPLETE` item from the same approved phase.
+5. Tightly coupled files may not be split between workers when simultaneous changes would create schema, contract, migration, workflow, UI, or merge conflicts.
+
+### Save-before-transfer and reassignment rule
+
+When the owner explicitly moves a worker to another task, the current worker must not discard or leave work only in chat, memory, an uncommitted workspace, or an unknown location. Before transferring, the worker must:
+
+1. Stop only at a safe and internally consistent checkpoint.
+2. Save all valid current work to the exact canonical file, approved branch, pull request, draft artifact, or other save target named by the owner or canonical plan.
+3. Re-read the destination immediately before saving and preserve its latest valid content.
+4. Record status as `IN_PROGRESS_HANDOFF`, `PARTIAL_AVAILABLE`, `BLOCKED`, or `COMPLETE` truthfully.
+5. Record the source requirement, completed items, missing items, changed files, tests or validation performed, blockers, dependencies, latest commit or file SHA, branch or pull request, and exact next action.
+6. Publish and read back the saved checkpoint when repository publishing is authorized.
+7. Give the receiving worker an exact handoff path; the receiving worker must continue from that saved state instead of starting again.
+8. Begin the new assignment only after the current work is safely saved and the handoff is reported.
+
+### Source-of-truth provenance rule
+
+Every added requirement, decision, design, workflow, implementation artifact, correction, and status update must be traceable to an approved source of truth.
+
+1. All project work starts by reading `1plan.md`.
+2. `1plan.md` defines the approved scope, phase, priority, coordination rule, and canonical source or destination for the work.
+3. The worker must record:
+   - `source_path`;
+   - `source_section_or_requirement_id`;
+   - `canonical_target_path`;
+   - `active_owner_or_handoff_state`;
+   - `dependency_paths`;
+   - `last_verified_commit_or_sha`;
+   - `validation_evidence`.
+4. A project-wide rule or scope decision taken from `1plan.md` must be added or corrected in `1plan.md` first.
+5. Detailed module content must be saved in the exact canonical module, shared-contract, design, implementation, test, or operations file assigned by `1plan.md`; `1plan.md` must then retain the authoritative mapping and truthful status.
+6. Research findings may support a requirement, but external websites are references—not project authority. An approved adaptation becomes project truth only after it is written into the correct canonical repository source and synchronized with `1plan.md`.
+7. A generated prompt, chat answer, local draft, memory entry, old branch, or copied document is not a source of truth unless it has been validated and published into the canonical repository location.
+8. Workers must retrieve future work from `1plan.md` and the canonical files it assigns, not from stale chat copies or unverified drafts.
+
+### Unsupported and conflicting content removal rule
+
+To prevent conflicts, content must not remain active merely because it exists somewhere in the repository.
+
+1. Compare every disputed item against `1plan.md` and the exact canonical source assigned by it.
+2. Content that has no approved source, no traceable requirement, and conflicts with or duplicates canonical truth must be classified `UNSUPPORTED_CONFLICT`.
+3. `UNSUPPORTED_CONFLICT` content must be removed from active canonical documents or formally superseded after validation; Git history and `revise.md` preserve the reason and evidence.
+4. Do not delete current active co-worker work while it is being changed. First establish ownership, save a checkpoint or handoff, and resolve the conflict.
+5. Do not delete valid derived detail merely because every sentence is not repeated in `1plan.md`; it is valid when it traces to an approved requirement and resides in the canonical target assigned by the plan.
+6. Stale copies, duplicate definitions, abandoned placeholders, and unsupported instructions must not override the current canonical source.
+7. Deletion or supersession reports must state the removed path or section, conflicting source, canonical replacement, reason, validation evidence, and commit SHA.
+8. Secrets, unsafe content, or clearly invalid generated artifacts may be removed immediately according to security and repository rules, with an audit record when required.
+
+### Gap-fill-only rule
+
+When valid partial work is available and no co-worker is actively editing it:
+
+1. Compare it against the canonical source and acceptance criteria.
+2. Produce an exact missing-items list.
+3. Preserve correct content, numbering, naming, links, history, workflows, permissions, and decisions.
+4. Change only the smallest necessary files and sections.
+5. Add only missing requirements or approved corrections.
+6. Validate preserved work and new work together.
+7. Report exactly what was reused, what gaps were filled, what was deliberately left unchanged, and what remains incomplete.
+
+Cosmetic preference, personal ownership, or a different writing or coding style is not permission to replace correct current work.
 
 ## 2. PRODUCT TARGET
 
@@ -311,7 +423,8 @@ Completed canonical documents:
 
 1. `TECA/AGENT_JOB_ASSIGNMENTS.md` — COMPLETE.
 2. `TECA/PIPELINE_EXECUTION_PLAN.md` — COMPLETE.
-3. `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md` — COMPLETE.
+3. `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md` — COMPLETE IN REPOSITORY.
+4. `TECA/IMPLEMENTATION_BUILD_PLAN.md` — COMPLETE AS A GOVERNING BUILD PLAYBOOK.
 
 TECA repository assignment status:
 
@@ -322,10 +435,14 @@ TECA repository assignment status:
 - Skip-complete and no-duplicate behavior documented.
 - Architecture/design mode no-code gate documented.
 - Validation, publishing, memory, diagnostic, and summary behavior documented.
+- Active-work no-racing and continue-current-work authority: canonical in Section 1A of this plan.
+- Save-before-transfer and co-worker handoff authority: canonical in Section 1A of this plan.
+- Source-of-truth provenance and unsupported-conflict removal authority: canonical in Section 1A of this plan.
+- Exact implementation build order: `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
 
 Live CrewAI Studio status:
 
-- Canonical update instruction: COMPLETE.
+- Canonical update instruction: COMPLETE IN REPOSITORY.
 - Live Studio persistence: NOT VERIFIED until the CrewAI Studio Assistant applies the update and returns live read-back.
 - Repository documentation must not falsely claim that live Studio configuration has already changed.
 
@@ -387,6 +504,7 @@ Supported exception states:
 - Help appears consistently.
 - No completed workflow may be changed by a new visual design without an approved architecture revision.
 - No expansion may be declared complete from a high-level feature list alone; every expansion must pass Section 8A.
+- No worker may override Section 1A with a competing collaboration, handoff, source-of-truth, deletion, or task-routing rule.
 
 ## 12. TECA REQUIRED PIPELINE
 
@@ -416,9 +534,12 @@ Required TECA repository read order:
 → TECA/README.md
 → TECA/AGENT_JOB_ASSIGNMENTS.md
 → TECA/PIPELINE_EXECUTION_PLAN.md
-→ relevant canonical files
+→ TECA/IMPLEMENTATION_BUILD_PLAN.md when implementation planning, coding, testing, deployment, or release work is requested
+→ relevant canonical files assigned by this plan
 → .teca/memory/index.json and relevant memories
 ```
+
+TECA must enforce Section 1A during task selection, active-work detection, worker notification, reassignment, handoff, gap filling, source verification, conflict resolution, deletion or supersession, publishing, diagnostics, and completion reporting.
 
 TECA must enforce Section 8A during specification, planning, validation, publishing, diagnostics, and completion reporting. It must reject or downgrade any unsupported `COMPLETE` claim for an expansion that lacks the required architecture and design evidence.
 
@@ -426,6 +547,7 @@ TECA must enforce Section 8A during specification, planning, validation, publish
 
 | Area | Status | Canonical Source |
 |---|---|---|
+| Master worker coordination, handoff, and source provenance | DEFINED | `1plan.md` Section 1A |
 | Core Technician Application | COMPLETE | `Applications/Technician Application/INDEX.md` |
 | Core Front Desk Application | COMPLETE | `Applications/Front Desk Application/README.md` |
 | Core Owner Application | COMPLETE | `Applications/Owner Application/README.md` |
@@ -439,10 +561,11 @@ TECA must enforce Section 8A during specification, planning, validation, publish
 | Other Future Business and Platform Expansions | PLANNED — EACH REQUIRES FULL ARCHITECTURE | Canonical expansion registry and packages under Section 8A |
 | TECA Agent Assignments | COMPLETE | `TECA/AGENT_JOB_ASSIGNMENTS.md` |
 | TECA Pipeline Plan | COMPLETE | `TECA/PIPELINE_EXECUTION_PLAN.md` |
-| TECA Studio Update Handoff | COMPLETE | `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md` |
+| TECA Canonical Implementation Build Playbook | COMPLETE AS A PLAN | `TECA/IMPLEMENTATION_BUILD_PLAN.md` |
+| TECA Studio Update Handoff | COMPLETE IN REPOSITORY | `TECA/CREWAI_STUDIO_CONFIGURATION_UPDATE.md` |
 | Live TECA Studio Alignment | PENDING LIVE READ-BACK | CrewAI Studio |
 | Controlled Implementation Planning | NEXT CONTROLLED PHASE | Future canonical planning artifacts |
-| Application Code | NOT AUTHORIZED | Requires explicit gate |
+| Application Code | NOT AUTHORIZED GLOBALLY | Requires exact scoped gate |
 
 ## 14. NEXT CONTROLLED PHASE — IMPLEMENTATION PLANNING
 
@@ -464,8 +587,8 @@ Required planning gates:
 12. Select authentication, payment, file, message, monitoring, payroll, accounting, HR, analytics, and integration providers where applicable.
 13. Approve measurable availability, performance, capacity, recovery, retention, accessibility, security, support, and cost targets.
 14. Approve threat model, privacy review, test plan, migration plan, release plan, rollback plan, and operations plan.
-15. Create implementation tasks with acceptance criteria, owners, review gates, dependencies, and release boundaries.
-16. Validate every completion claim against Section 8A and update the completion matrix with evidence.
+15. Create implementation tasks with acceptance criteria, owners, review gates, dependencies, release boundaries, canonical source paths, canonical save targets, and handoff states.
+16. Validate every completion claim against Sections 1A and 8A and update the completion matrix with evidence.
 17. Apply and verify the TECA live Studio configuration update before assigning autonomous repository implementation work.
 
 ## 15. FINAL MASTER STATUS
@@ -476,13 +599,17 @@ CORE SHARED SAAS CONTRACTS: COMPLETE
 CORE REPAIR SAAS WIREFRAME ARCHITECTURE: COMPLETE
 CORE REPAIR SAAS WIREFLOW ARCHITECTURE: COMPLETE
 NON-TECHNICAL UI DESIGN SYSTEM: COMPLETE
+MASTER CO-WORKER CONTINUITY AND NO-RACING COMMAND: DEFINED IN 1PLAN SECTION 1A
+SAVE-BEFORE-TRANSFER AND HANDOFF COMMAND: DEFINED IN 1PLAN SECTION 1A
+SOURCE-OF-TRUTH PROVENANCE AND CONFLICT-REMOVAL RULE: DEFINED IN 1PLAN SECTION 1A
 MANDATORY FULL-ARCHITECTURE EXPANSION STANDARD: DEFINED
 FULL HR AND WORKFORCE EXPANSION: PLANNED — NOT YET COMPLETE
 FULL PAYROLL, COMPENSATION, AND BENEFITS EXPANSION: PLANNED — NOT YET COMPLETE
 OTHER FUTURE EXPANSIONS: MUST PASS SECTION 8A INDIVIDUALLY
 TECA REPOSITORY JOB ASSIGNMENTS: COMPLETE
 TECA PIPELINE EXECUTION PLAN: COMPLETE
-TECA STUDIO UPDATE HANDOFF: COMPLETE
+TECA CANONICAL IMPLEMENTATION BUILD PLAYBOOK: COMPLETE AS A GOVERNING PLAN
+TECA STUDIO UPDATE HANDOFF: COMPLETE IN REPOSITORY
 LIVE TECA STUDIO ALIGNMENT: PENDING LIVE READ-BACK
 ACCIDENTAL DUPLICATES: 0
 MASTER ARCHITECTURE PLAN AND GOVERNING BLUEPRINT: 100% DEFINED
@@ -496,4 +623,4 @@ UNCONTROLLED CODING AUTHORIZED: NO
 
 **THE CURRENT CORE TECHNICIAN REPAIR SAAS BASELINE IS ARCHITECTED AND DESIGNED. EVERY HR, PAYROLL, WORKFORCE, FINANCE, INVENTORY, SALES, ANALYTICS, AUTOMATION, OR OTHER FUTURE EXPANSION MUST BE FULLY ARCHITECTED WITH COMPLETE UI/UX, WIREFRAMES, WIREFLOWS, DATA, SECURITY, INTEGRATION, VALIDATION, AND TRACEABILITY BEFORE IT MAY BE CALLED COMPLETE OR ENTER IMPLEMENTATION.**
 
-**STATUS NOTE: THIS DOCUMENT IS THE 100% MASTER ARCHITECTURE PLAN. IT IS A PLAN AND GOVERNING BLUEPRINT ONLY. THE ACTUAL APPLICATION IS BEING BUILT SEPARATELY AND ITS IMPLEMENTATION, TESTING, AND DEPLOYMENT PROGRESS MUST NEVER BE REPORTED AS COMPLETE SOLELY BECAUSE THE ARCHITECTURE PLAN IS COMPLETE.**
+**STATUS NOTE: THIS DOCUMENT IS THE 100% MASTER ARCHITECTURE PLAN AND THE CANONICAL SOURCE FOR CO-WORKER CONTINUITY, HANDOFF, SOURCE PROVENANCE, AND CONFLICT-REMOVAL RULES. IT IS A PLAN AND GOVERNING BLUEPRINT ONLY. THE ACTUAL APPLICATION IS BEING BUILT SEPARATELY AND ITS IMPLEMENTATION, TESTING, AND DEPLOYMENT PROGRESS MUST NEVER BE REPORTED AS COMPLETE SOLELY BECAUSE THE ARCHITECTURE PLAN IS COMPLETE.**
