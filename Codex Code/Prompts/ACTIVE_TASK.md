@@ -18,7 +18,7 @@ completion_law_path: Codex Code/CURRENT_TASK_COMPLETION_LAW.md
 prompt_requirements_path: Codex Code/ARMORED_PROMPT_REQUIREMENTS.md
 canonical_implementation_root: Codex Code/Implementation/
 work_branch: governance/codex-execution-modes
-pull_request: NONE_YET
+pull_request: https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/19
 previous_task_id: CX-R1-002
 previous_task_status: APPROVED_COMPLETE
 previous_task_review_path: Codex Code/Tasks/CX-R1-002/REVIEW_RESULT.md
