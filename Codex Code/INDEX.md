@@ -9,10 +9,17 @@
 → index.md
 → Implementation Planning/Release 1 MVP/INDEX.md
 → Codex Code/README.md
+→ Codex Code/Implementation/README.md
 → Codex Code/ARMORED_CODEX_MASTER_PROMPT.md
 → current task folder
-→ current canonical implementation paths
+→ current code under Codex Code/Implementation/
 ```
+
+## Canonical implementation
+
+1. [Canonical Implementation Root](Implementation/README.md)
+
+All executable source code, migrations, tests, infrastructure, configuration, and implementation runbooks produced by Codex belong under `Codex Code/Implementation/`.
 
 ## Control documents
 
@@ -29,14 +36,23 @@
 
 ## Storage rule
 
-`Codex Code/` stores control and evidence. Actual implementation stays in canonical source paths and is referenced by exact path, commit, PR, migration, API/event/schema version, and test evidence.
+```text
+Codex Code/Implementation/ = actual application code
+Codex Code/Tasks/          = contracts and task evidence
+Codex Code/Evidence/       = cross-task evidence
+Codex Code/Reviews/        = reviewer records
+```
+
+Root-level parallel implementation trees are prohibited.
 
 ## Status
 
 ```text
+CANONICAL IMPLEMENTATION ROOT: PRESENT AS CONTROLLED EMPTY ROOT
 CONTROL DOCUMENTS: PRESENT
 TASK STORAGE MODEL: PRESENT
 EVIDENCE MODEL: PRESENT
 REVIEW MODEL: PRESENT
 DUPLICATE APPLICATION CODE: PROHIBITED
+APPLICATION CODE: NOT YET CREATED
 ```

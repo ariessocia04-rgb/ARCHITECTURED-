@@ -9,6 +9,7 @@ release_id: ROS-R1-MVP-2026-01
 repository: ariessocia04-rgb/ARCHITECTURED-
 base_branch: main
 work_branch: agent/<task-id>-<short-name>
+canonical_implementation_root: Codex Code/Implementation
 
 implementation_authorized: false
 authorization_statement: ""
@@ -25,6 +26,7 @@ source_paths:
   - 1plan.md
   - Implementation Planning/Release 1 MVP/INDEX.md
   - Codex Code/README.md
+  - Codex Code/Implementation/README.md
   - Codex Code/ARMORED_CODEX_MASTER_PROMPT.md
   - Codex Code/TASK_STORAGE_AND_HANDOFF_RULES.md
   - Codex Code/Tasks/<task-id>/TASK_RECORD.md
@@ -42,7 +44,14 @@ forbidden_paths:
   - 1plan.md
   - canonical architecture files unless the task explicitly authorizes documentation synchronization only
   - unrelated modules
-  - duplicate copies of application source under Codex Code/
+  - root-level apps/
+  - root-level packages/
+  - root-level supabase/
+  - root-level tests/
+  - root-level infrastructure/
+  - source-code copies under Codex Code/Tasks/
+  - source-code copies under Codex Code/Evidence/
+  - source-code copies under Codex Code/Reviews/
 
 required_entities_or_tables: []
 required_migration_ids: []
@@ -83,6 +92,8 @@ rollback_or_forward_recovery: ""
 
 stop_conditions:
   - authorization missing or ambiguous
+  - working directory is not the real ARCHITECTURED- Git checkout
+  - origin remote does not match ariessocia04-rgb/ARCHITECTURED-
   - source architecture missing or contradictory
   - dependency incomplete
   - active worker overlaps tightly coupled paths
@@ -91,7 +102,8 @@ stop_conditions:
   - tests cannot be run or fail
   - requested file is outside allowed paths
   - proposed creation duplicates existing canonical implementation
-  - task attempts to copy application source code into Codex Code/
+  - task attempts to create application code outside Codex Code/Implementation/
+  - implementation code already exists outside the canonical root and no migration task is authorized
 
 task_record_path: Codex Code/Tasks/<task-id>/TASK_RECORD.md
 task_contract_path: Codex Code/Tasks/<task-id>/TASK_CONTRACT.md
@@ -107,12 +119,15 @@ merge_record_path: Codex Code/Tasks/<task-id>/MERGE_RECORD.md
 
 ### Before editing
 
-1. Read every source path in order.
-2. Verify the exact authorization statement.
-3. Verify latest `main`, open PRs, branch, checks, migrations, and active worker.
-4. Inspect existing implementation and tests.
-5. Search and classify existing work before creating anything.
-6. Return one factual state:
+1. Verify that the working directory is the real Git checkout containing `.git`, `1plan.md`, and `Codex Code/Implementation/README.md`.
+2. Verify that `origin` points to `ariessocia04-rgb/ARCHITECTURED-`.
+3. Read every source path in order.
+4. Verify the exact authorization statement.
+5. Verify latest `main`, open PRs, branches, checks, migrations, and active workers.
+6. Inspect the entire repository for existing implementation and tests.
+7. Search and classify existing work before creating anything.
+8. Confirm every authorized implementation path begins with `Codex Code/Implementation/`.
+9. Return one factual state:
 
 ```text
 NOT_AUTHORIZED
@@ -123,9 +138,21 @@ SKIPPED_ALREADY_COMPLETE
 READY
 ```
 
+### Existing code outside canonical root
+
+When code is found outside `Codex Code/Implementation/`:
+
+- do not copy it;
+- do not delete it;
+- do not move it;
+- do not create a parallel implementation;
+- report exact paths;
+- return `BLOCKED_ARCHITECTURE_CLARIFICATION` unless an explicit migration task is authorized.
+
 ### During editing
 
 - Edit only allowed paths.
+- Store executable implementation only under `Codex Code/Implementation/`.
 - Preserve unrelated user work.
 - Use the approved stack and locked versions.
 - Keep business rules in shared domain/application services.
@@ -133,7 +160,6 @@ READY
 - Add migration and rollback/forward-recovery evidence where applicable.
 - Do not weaken RLS, authorization, audit, validation, idempotency, accessibility, or error handling to make a test pass.
 - Do not commit secrets or real customer data.
-- Store actual source code only in canonical implementation paths.
 - Use `Codex Code/Tasks/<task-id>/` for contracts, manifests, evidence, review, and merge records only.
 - Stop when the task acceptance criteria are met; do not begin the next manifest task.
 
@@ -145,10 +171,11 @@ READY
 4. Review migration from empty and previous supported state.
 5. Review UI against assigned screen IDs/states.
 6. Confirm no unrelated files changed.
-7. Confirm every changed canonical path appears in `CHANGED_FILES.md`.
-8. Create the completion and evidence records under the task folder.
-9. Commit intentionally and open a draft PR unless explicitly approved otherwise.
-10. Read back the PR files/checks.
+7. Confirm no executable code was created outside `Codex Code/Implementation/`.
+8. Confirm every changed path appears in `CHANGED_FILES.md`.
+9. Create completion and evidence records under the task folder.
+10. Commit intentionally and open a draft PR unless explicitly approved otherwise.
+11. Read back the PR files/checks.
 
 ## Mandatory completion report
 
@@ -163,11 +190,16 @@ READY
 - PR:
 - Commit(s):
 
+## Environment
+- Repository root:
+- Origin remote:
+- Canonical implementation root: `Codex Code/Implementation/`
+
 ## Sources read
 - path / section / requirement
 
 ## Changes
-- canonical path: purpose
+- canonical path under `Codex Code/Implementation/`: purpose
 - changed-files manifest: `Codex Code/Tasks/<TASK-ID>/CHANGED_FILES.md`
 
 ## Contracts and migrations
@@ -206,7 +238,7 @@ READY
 
 ## Error handling
 
-Codex must report the exact blocker, file, command, error, and required decision. It must not guess architecture, silently skip a test, broaden scope to solve an unrelated problem, or create a parallel implementation.
+Codex must report the exact blocker, path, command, error, and required decision. It must not guess architecture, silently skip a test, broaden scope, create a parallel implementation, or use a generated non-Git workspace as the project repository.
 
 ## Approval rule
 
@@ -215,7 +247,9 @@ A task becomes `APPROVED_COMPLETE` only after repository review verifies:
 - scope and architecture compliance;
 - required checks passing;
 - no unauthorized files/features;
-- no duplicated canonical implementation or copied source tree;
+- all executable code is under `Codex Code/Implementation/`;
+- no competing root-level source tree exists;
+- no duplicated canonical implementation;
 - correct migration/data/security behavior;
 - required UI/UX and accessibility evidence;
 - rollback/recovery documentation;

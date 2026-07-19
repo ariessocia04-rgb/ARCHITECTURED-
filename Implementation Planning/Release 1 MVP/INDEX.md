@@ -6,23 +6,31 @@
 - Implementation authority: `TECA/IMPLEMENTATION_BUILD_PLAN.md`.
 - Architecture authority: `Applications/`, `SaaS Platform/`, and the ROS architecture packages.
 - Design authority: `Design/` plus domain-specific wireframe/wireflow packages.
+- Canonical executable-code root: `Codex Code/Implementation/`.
 - Release ID: `ROS-R1-MVP-2026-01`.
 - Release class: controlled pilot MVP.
 - Coding authority: absent until the owner explicitly sets `implementation_authorized=true` for an exact Codex task or task batch.
 
-This package locks the first executable release boundary, technology direction, printer support tiers, high-fidelity UI execution plan, Codex task sequence, test gates, rollout, and rollback. It does not contain application source code.
+This package locks the first executable release boundary, technology direction, printer support tiers, high-fidelity UI execution plan, Codex task sequence, test gates, rollout, rollback, and the owner-selected physical code location. It does not yet contain application source code.
 
 ## Required reading order
 
 ```text
 1plan.md
 → 1plan-RELEASE_1_MVP_IMPLEMENTATION_PLANNING_EXTENSION.md
+→ 1plan-CODEX_CODE_CONTROL_CENTER_EXTENSION.md
 → this INDEX.md
 → Release Manifest
 → Technology Stack and Version Lock
+→ Canonical Implementation Path Override
 → Printer Support and Certification Matrix
 → High-Fidelity UI Execution Plan
 → Codex Task Manifest
+→ Codex Task Contract Template
+→ Codex Code/README.md
+→ Codex Code/Implementation/README.md
+→ Codex Code/ARMORED_CODEX_MASTER_PROMPT.md
+→ current task record
 → Risk/Test/Rollout/Rollback
 → relevant application and SaaS architecture
 → TECA/IMPLEMENTATION_BUILD_PLAN.md
@@ -39,15 +47,18 @@ This package locks the first executable release boundary, technology direction, 
 6. [Printer Support and Certification Matrix](03.%20Printer%20Certification/PRINTER_SUPPORT_AND_CERTIFICATION_MATRIX.md)
 7. [High-Fidelity UI Execution Plan](04.%20High-Fidelity%20Design/HIGH_FIDELITY_UI_EXECUTION_PLAN.md)
 8. [Screen Delivery Matrix](04.%20High-Fidelity%20Design/SCREEN_DELIVERY_MATRIX.md)
-9. [Codex Task Manifest](05.%20Codex%20Execution/CODEX_TASK_MANIFEST.md)
-10. [Codex Task Contract Template](05.%20Codex%20Execution/CODEX_TASK_CONTRACT_TEMPLATE.md)
-11. [Risk, Test, Rollout, and Rollback](06.%20Security%20Quality%20and%20Release/RISK_TEST_ROLLOUT_ROLLBACK.md)
-12. [Completion Record](COMPLETION_RECORD.md)
+9. [Canonical Implementation Path Override](05.%20Codex%20Execution/CANONICAL_IMPLEMENTATION_PATH_OVERRIDE.md)
+10. [Codex Task Manifest](05.%20Codex%20Execution/CODEX_TASK_MANIFEST.md)
+11. [Codex Task Contract Template](05.%20Codex%20Execution/CODEX_TASK_CONTRACT_TEMPLATE.md)
+12. [Codex Code Canonical Implementation Root](../../../Codex%20Code/Implementation/README.md)
+13. [Risk, Test, Rollout, and Rollback](06.%20Security%20Quality%20and%20Release/RISK_TEST_ROLLOUT_ROLLBACK.md)
+14. [Completion Record](COMPLETION_RECORD.md)
 
 ## Locked implementation strategy
 
 ```text
-MODULAR MONOLITH WEB APPLICATION
+CODEX CODE/IMPLEMENTATION/ AS THE SINGLE CODE ROOT
++ MODULAR MONOLITH WEB APPLICATION
 + POSTGRES/SUPABASE PLATFORM SERVICES
 + SEPARATE LOCAL PRINT AGENT
 + FOUNDATION-FIRST VERTICAL SLICES
@@ -56,6 +67,16 @@ MODULAR MONOLITH WEB APPLICATION
 ```
 
 Release 1 intentionally avoids premature microservices. Domain packages, database schemas, events, and adapters maintain boundaries so later extraction remains possible without duplicating business rules.
+
+## Path interpretation rule
+
+All implementation paths written in shorthand inside the Codex task manifest are relative to:
+
+```text
+Codex Code/Implementation/
+```
+
+For example, `apps/web/` means `Codex Code/Implementation/apps/web/`. Root-level competing code trees are prohibited.
 
 ## Release 1 outcome
 
@@ -87,6 +108,7 @@ Release 1 is a controlled pilot. It is not authorization to advertise production
 
 ```text
 RELEASE BOUNDARY: LOCKED AS PLANNING SPECIFICATION
+CANONICAL IMPLEMENTATION ROOT: CODEX CODE/IMPLEMENTATION/
 TECHNOLOGY DIRECTION: LOCKED; PACKAGE PATCHES PINNED DURING AUTHORIZED BOOTSTRAP
 PRINTER SUPPORT TIERS: LOCKED; PHYSICAL MODELS REQUIRE TEST CERTIFICATION
 HIGH-FIDELITY EXECUTION PLAN: COMPLETE AS PLAN

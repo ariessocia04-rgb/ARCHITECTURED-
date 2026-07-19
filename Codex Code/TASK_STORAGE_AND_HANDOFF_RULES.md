@@ -1,5 +1,16 @@
 # CODEX TASK STORAGE AND HANDOFF RULES
 
+## Canonical separation
+
+```text
+Codex Code/Implementation/   = actual executable code
+Codex Code/Tasks/<TASK-ID>/  = task contracts and task-specific evidence
+Codex Code/Evidence/         = cross-task evidence indexes
+Codex Code/Reviews/          = reviewer records
+```
+
+No source-code copy may be stored in a task, evidence, or review folder.
+
 ## One task, one record folder
 
 Every authorized Codex task uses:
@@ -11,6 +22,7 @@ Codex Code/Tasks/<TASK-ID>/
 ├── CHANGED_FILES.md
 ├── TEST_EVIDENCE.md
 ├── SECURITY_AND_SCOPE_REVIEW.md
+├── COMPLETION_REPORT.md
 ├── REVIEW_RESULT.md
 └── MERGE_RECORD.md
 ```
@@ -19,29 +31,37 @@ Files may be created only when they contain real evidence. Empty appearance-only
 
 ## Actual code placement
 
-Actual source code is never copied into the task record folder.
-
-The task record points to canonical changed paths, for example:
+All application code created by Codex belongs under:
 
 ```text
-apps/web/...
-apps/print-agent/...
-packages/domain/...
-packages/contracts/...
-supabase/migrations/...
-tests/...
-infrastructure/...
+Codex Code/Implementation/
 ```
+
+Example canonical paths:
+
+```text
+Codex Code/Implementation/apps/web/...
+Codex Code/Implementation/apps/print-agent/...
+Codex Code/Implementation/packages/domain/...
+Codex Code/Implementation/packages/contracts/...
+Codex Code/Implementation/supabase/migrations/...
+Codex Code/Implementation/tests/...
+Codex Code/Implementation/infrastructure/...
+Codex Code/Implementation/docs/...
+```
+
+Root-level parallel source trees are prohibited.
 
 ## Update workflow
 
 ```text
-READ LATEST MAIN
+VERIFY REAL GIT CHECKOUT
+→ READ LATEST MAIN
 → CHECK ACTIVE WORK
-→ SEARCH EXISTING IMPLEMENTATION
+→ SEARCH ENTIRE REPOSITORY
 → CLASSIFY EXISTING_COMPLETE / EXISTING_PARTIAL / NEW_ADDITIVE / CONFLICT / DUPLICATE
 → CREATE ISOLATED TASK BRANCH
-→ EDIT ONLY ALLOWED CANONICAL PATHS
+→ EDIT ONLY AUTHORIZED PATHS UNDER CODEX CODE/IMPLEMENTATION/
 → UPDATE TASK RECORD
 → RUN TESTS
 → OPEN DRAFT PR
@@ -55,10 +75,21 @@ READ LATEST MAIN
 
 - No deletion without exact authorized target, reason, migration, compatibility, recovery, and owner approval.
 - No rename or move without exact authorization.
-- No parallel replacement of an existing service, table, API, event, component, migration chain, or domain model.
-- No copied application source inside `Codex Code/`.
+- No parallel replacement of an existing service, table, API, event, component, migration chain, package, or domain model.
+- No root-level `apps/`, `packages/`, `supabase/`, `tests/`, or `infrastructure/` competing with the canonical implementation root.
+- No copied source inside `Codex Code/Tasks/`, `Evidence/`, or `Reviews/`.
 - No second task folder for the same task ID.
 - No completion claim without test and PR evidence.
+
+## Existing code outside the canonical root
+
+When code is found outside `Codex Code/Implementation/`:
+
+1. Record every exact path.
+2. Classify it as existing work.
+3. Do not copy, delete, move, rename, or recreate it.
+4. Return `BLOCKED_ARCHITECTURE_CLARIFICATION`.
+5. Require a separate owner-authorized migration task.
 
 ## Changed-files manifest
 
@@ -75,7 +106,13 @@ backward_compatibility
 review_status
 ```
 
-Any changed path missing from the manifest blocks review.
+Every implementation path must begin with:
+
+```text
+Codex Code/Implementation/
+```
+
+unless the task explicitly authorizes a documentation/evidence file under the task folder. Any changed path missing from the manifest blocks review.
 
 ## Evidence rules
 
@@ -96,6 +133,7 @@ Never store:
 Codex stops after opening a draft PR. The reviewer checks:
 
 - authorization and allowed paths;
+- every code path is under `Codex Code/Implementation/`;
 - architecture compliance;
 - no duplication or deletion;
 - migrations and rollback;

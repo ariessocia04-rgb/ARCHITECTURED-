@@ -1,38 +1,31 @@
-# CODEX CODE — CONTROL CENTER
+# CODEX CODE — CONTROL CENTER AND IMPLEMENTATION CONTAINER
 
 ## Purpose
 
-This folder is the canonical storage and handoff area for work executed by Codex.
+`Codex Code/` is the canonical GitHub area for all work executed by Codex.
 
-It stores task control, evidence, review, and merge records. It does **not** duplicate the actual application source code.
+It contains both:
 
-Actual implementation remains in its approved canonical paths such as:
+1. the single official executable source tree under `Codex Code/Implementation/`; and
+2. task control, evidence, review, and merge records.
 
-```text
-apps/
-packages/
-supabase/
-tests/
-infrastructure/
-docs/
-```
+No second application codebase may be created elsewhere in the repository.
 
-`Codex Code/` stores the proof of what Codex was authorized to do, what it changed, what tests ran, what failed, what was reviewed, and what was merged.
-
-## Core rule
+## Canonical code location
 
 ```text
-ARCHITECTURE AND TASK CONTRACT
-→ CODEX TASK BRANCH
-→ CANONICAL SOURCE-CODE PATHS
-→ TESTS AND EVIDENCE
-→ CODEX CODE TASK RECORD
-→ DRAFT PR
-→ REVIEW
-→ MERGE OR CORRECTION
+Codex Code/Implementation/
+├── apps/
+├── packages/
+├── supabase/
+├── tests/
+├── infrastructure/
+└── docs/
 ```
 
-## Canonical structure
+Actual source code, migrations, tests, configuration, local-agent code, CI support, and implementation runbooks belong under that root.
+
+## Control and evidence locations
 
 ```text
 Codex Code/
@@ -40,25 +33,58 @@ Codex Code/
 ├── INDEX.md
 ├── ARMORED_CODEX_MASTER_PROMPT.md
 ├── TASK_STORAGE_AND_HANDOFF_RULES.md
+├── Implementation/
+│   └── README.md
 ├── Tasks/
 │   ├── README.md
 │   └── CX-R1-000/
-│       └── TASK_RECORD.md
+│       ├── TASK_RECORD.md
+│       └── PROMPT.md
 ├── Evidence/
 │   └── README.md
 └── Reviews/
     └── README.md
 ```
 
+## Core workflow
+
+```text
+APPROVED ARCHITECTURE AND TASK CONTRACT
+→ VERIFY REAL GIT CHECKOUT
+→ CHECK LATEST MAIN AND ACTIVE WORK
+→ ISOLATED CODEX TASK BRANCH
+→ CODE ONLY UNDER CODEX CODE/IMPLEMENTATION/
+→ TESTS AND TASK EVIDENCE
+→ DRAFT PR
+→ EXTERNAL REVIEW
+→ MERGE OR CORRECTION
+→ MERGE RECORD
+→ STOP
+```
+
 ## Non-negotiable boundaries
 
-- Do not copy complete application source files into this folder.
-- Do not create a second implementation here.
-- Do not use this folder to bypass `apps/`, `packages/`, `supabase/`, or other canonical implementation paths.
+- Do not create root-level `apps/`, `packages/`, `supabase/`, `tests/`, or `infrastructure/` as a competing implementation tree.
+- Do not copy source code into `Codex Code/Tasks/`, `Evidence/`, or `Reviews/`.
+- Do not create a second implementation of an existing domain, service, package, table, API, event, queue, component, migration chain, or test helper.
+- Do not delete, move, rename, or replace valid work without an exact authorized task contract and recovery plan.
 - Do not store secrets, API keys, production data, customer data, device passcodes, payment details, or private certificates.
-- Do not delete, move, rename, or replace valid work without an exact authorized task contract.
 - Every Codex task receives one task folder and one factual completion record.
-- A new update connects to existing canonical code; it does not recreate it.
+- Every update must reuse, extend, and connect to the existing canonical implementation.
+
+## Existing-code conflict rule
+
+If implementation code is discovered outside `Codex Code/Implementation/`:
+
+```text
+DO NOT COPY
+DO NOT DELETE
+DO NOT CREATE A PARALLEL VERSION
+→ REPORT EXACT PATHS
+→ RETURN BLOCKED_ARCHITECTURE_CLARIFICATION
+```
+
+A controlled migration requires a separate owner-authorized task.
 
 ## Required task record
 
@@ -69,7 +95,7 @@ Every task folder must record:
 - latest verified `main` SHA;
 - active-worker and open-PR checks;
 - existing-work classification;
-- allowed and changed paths;
+- allowed and changed paths under `Codex Code/Implementation/`;
 - migrations, API/event/schema versions;
 - commands and tests;
 - security, RLS, UX, accessibility, recovery, and hardware evidence when applicable;
@@ -81,8 +107,9 @@ Every task folder must record:
 
 ```text
 CODEX CONTROL CENTER: DEFINED
-ACTUAL APPLICATION CODE STORED HERE: NO
+CANONICAL APPLICATION CODE ROOT: CODEX CODE/IMPLEMENTATION/
+ACTUAL APPLICATION CODE PRESENT: NO
+PARALLEL ROOT-LEVEL SOURCE TREES ALLOWED: NO
 TASK/EVIDENCE/REVIEW STORAGE: YES
-DUPLICATE SOURCE-CODE COPIES ALLOWED: NO
 IMPLEMENTATION AUTHORIZATION GRANTED BY THIS FOLDER: NO
 ```
