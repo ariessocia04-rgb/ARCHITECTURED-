@@ -2,9 +2,9 @@
 
 ## PURPOSE
 
-This folder contains the canonical global wireframe, wireflow, and user-interface design architecture for the ARCHITECTURED Repair SaaS.
+This folder contains the canonical global wireframe, wireflow, user-interface design architecture, and prompt-design navigation for the ARCHITECTURED Repair SaaS.
 
-Application and shared-platform documents define what the system must do. The global design documents define how users see and complete that work without changing the approved workflow. Domain-specific packages specialize the global rules for complex areas.
+Application and shared-platform documents define what the system must do. The global design documents define how users see and complete that work without changing the approved workflow. Domain-specific packages specialize the global rules for complex areas. Prompt Design defines how Codex instructions are structured and discovered while preserving `Codex Code/Prompts/` as the executable prompt authority.
 
 ## CANONICAL GLOBAL DOCUMENTS
 
@@ -55,6 +55,16 @@ Coverage: 26 screens and 20 flows for staff help, service desk, incidents, probl
 
 Coverage: 20 shared screens and 16 flows connecting all departments, applications, external participants, Owner oversight, IT blockers, approvals, communication, shared timeline, and domain links.
 
+## CODEX PROMPT DESIGN
+
+- [Codex Prompt Design Index](Prompt%20Design/INDEX.md)
+- [Current Codex Prompt Design Reference](Prompt%20Design/CURRENT_CODEX_PROMPT.md)
+- Canonical prompt requirements: `Codex Code/ARMORED_PROMPT_REQUIREMENTS.md`
+- Canonical prompt template: `Codex Code/Prompts/Templates/PROMPT_ENTRY_TEMPLATE.md`
+- Canonical current executable prompt: `Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-AND-FINISH.md`
+
+The Prompt Design folder defines discoverability, presentation order, clarity, traceability, completion gates, and design-level prompt guidance. It references rather than duplicates the executable prompt so the repository retains one canonical prompt authority.
+
 ## GLOBAL-TO-DOMAIN DESIGN RULE
 
 The global Design documents remain authoritative for:
@@ -68,6 +78,8 @@ The global Design documents remain authoritative for:
 - customer/internal separation.
 
 Domain packages define their own screen inventory, field/action logic, states, wireflows, traceability, and acceptance while referencing global rules. They do not duplicate or replace the global system.
+
+Prompt Design specializes instruction presentation and navigation while `Codex Code/` retains authorization, execution, prompt history, checkpoints, evidence, and current-task control.
 
 ## CROSS-DEPARTMENT UX RULE
 
@@ -105,6 +117,8 @@ Approved Domain-Specific Wireflows and Traceability
 ↓
 Non-Technical User UI Design System
 ↓
+Prompt Design when preparing Codex execution instructions
+↓
 High-Fidelity UI and Interactive Prototype
 ↓
 Implementation Planning
@@ -113,8 +127,9 @@ Implementation Planning
 ## NON-NEGOTIABLE RULES
 
 - One canonical file per design concern.
-- Do not create duplicate page or workflow definitions.
+- Do not create duplicate page, workflow, or executable prompt definitions.
 - Domain packages specialize global rules rather than copying the global design system.
+- Prompt Design references canonical Codex prompts instead of copying them.
 - Design cannot remove, bypass, reorder, or weaken approved gates.
 - Customer-visible and internal information remain separated.
 - Desktop, tablet, mobile, keyboard, touch, assistive technology, offline, and error behavior are planned.
@@ -132,8 +147,11 @@ PLANS AND BILLING: 24 SCREENS / 20 FLOWS / TRACEABILITY COMPLETE
 PRINTING: 20 SCREENS / 16 FLOWS / TRACEABILITY COMPLETE
 IT OPERATIONS: 26 SCREENS / 20 FLOWS / TRACEABILITY COMPLETE
 CROSS-DEPARTMENT FABRIC: 20 SCREENS / 16 FLOWS / TRACEABILITY COMPLETE
+CODEX PROMPT DESIGN FOLDER: PRESENT
+CURRENT CODEX PROMPT REFERENCE: PRESENT
+DUPLICATE EXECUTABLE CODEX PROMPT IN DESIGN: NO
 HIGH-FIDELITY VISUALS AND INTERACTIVE PROTOTYPES: SEPARATE DESIGN EXECUTION
 ACCIDENTAL DUPLICATE DESIGN AUTHORITIES: 0 AFTER VALIDATION
 ```
 
-**GLOBAL AND DOMAIN-SPECIFIC DESIGN ARCHITECTURE NOW CONNECTS STAFF, OWNER, IT, PRINTING, BILLING, ALL DEPARTMENTS, AND EXTERNAL PORTALS THROUGH CONSISTENT WIREFRAMES, WIREFLOWS, STATES, AND TRACEABILITY.**
+**GLOBAL, DOMAIN-SPECIFIC, AND PROMPT DESIGN ARCHITECTURE NOW CONNECTS STAFF, OWNER, IT, PRINTING, BILLING, ALL DEPARTMENTS, EXTERNAL PORTALS, AND CODEX EXECUTION GUIDANCE THROUGH CONSISTENT WIREFRAMES, WIREFLOWS, STATES, TRACEABILITY, AND SINGLE-SOURCE PROMPT CONTROL.**
