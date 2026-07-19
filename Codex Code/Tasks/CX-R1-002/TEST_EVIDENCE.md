@@ -71,3 +71,8 @@ system `glib-2.0` package required by the locked Tauri dependency graph. The wor
 the standard Linux Tauri development packages (`libwebkit2gtk-4.1-dev`,
 `libayatana-appindicator3-dev`, `librsvg2-dev`, and `libxdo-dev`) before the unchanged pinned Rust
 format and locked Cargo commands. This changes no application dependency, source, or lockfile.
+
+The resulting workflow correction commit `17b1402bc68e2383090b91e0a4cc30a3edf7c9c3` passed every
+named draft-PR check: `frozen-install-and-quality`, `build-evidence`, `migration-boundary`,
+`rust-tauri`, `secret-scan`, and `dependency-review`. GitHub reported PR #18 as `MERGEABLE` with
+`mergeStateStatus: CLEAN` at that checked head.

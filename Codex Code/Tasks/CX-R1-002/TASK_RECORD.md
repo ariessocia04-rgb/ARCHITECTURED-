@@ -53,3 +53,12 @@ The baseline must pass frozen install, format, lint, typecheck, tests, productio
 boundary validation, Rust/Tauri checks, dependency review, secret scanning, and artifact evidence
 checks from a clean checkout twice. The task stops after a draft PR is opened; only the owner may
 review and merge it.
+
+## Publication and review state
+
+Draft PR [#18](https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/18) targets `main` from
+`agent/cx-r1-002-ci-quality-security`. At workflow correction commit
+`17b1402bc68e2383090b91e0a4cc30a3edf7c9c3`, GitHub Actions passed all named checks:
+`frozen-install-and-quality`, `build-evidence`, `migration-boundary`, `rust-tauri`, `secret-scan`,
+and `dependency-review`. The PR is draft, mergeable, and clean; external review and owner merge
+approval remain required. CX-R1-003 has not been started or authorized.

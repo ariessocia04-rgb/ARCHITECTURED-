@@ -3,19 +3,18 @@
 ## Result
 
 ```text
-VALIDATION_COMPLETE_AWAITING_DRAFT_PR
+CX-R1-002_READY_FOR_OWNER_MERGE
 ```
 
-CX-R1-002 implementation and validation are complete on
-`agent/cx-r1-002-ci-quality-security`. Publication is the remaining authorized action: commit this
-factual evidence, push the branch, open one draft PR to `main`, inspect its checks, and stop before
-merge.
+CX-R1-002 implementation, validation, publication, and draft-PR checks are complete on
+`agent/cx-r1-002-ci-quality-security`. Draft PR #18 targets `main`; it is ready for external owner
+review. Codex must stop before merge.
 
 ## Authorization and environment
 
 - Dependency: CX-R1-001 `APPROVED_COMPLETE`, PR #16 merge commit
   `0fb218a3f8f8c100b8fd4655b6f04c14fcabd839`.
-- Validated branch commit: `c6edb62004538b4966fd064f258bba2d7cacc532`.
+- Latest workflow-validated branch commit: `17b1402bc68e2383090b91e0a4cc30a3edf7c9c3`.
 - Node `24.18.0`, pnpm `10.34.0`, Rust/Cargo `1.97.1`.
 - Canonical executable root: `Codex Code/Implementation/`; `.github/workflows/` is the necessary,
   documented GitHub Actions entry-point exception only.
@@ -31,6 +30,8 @@ merge.
 - Minimal corrections discovered during validation: preserve established line endings; ignore only
   generated `apps/web/.next/**`; explicitly load the workspace Prettier config for workflow YAML;
   install standard Linux Tauri development packages on the ephemeral Ubuntu Rust runner.
+- Published only `agent/cx-r1-002-ci-quality-security` and opened draft PR
+  [#18](https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/18) to `main`; no merge occurred.
 
 ## Tests and evidence
 
@@ -41,6 +42,8 @@ merge.
   frozen install and complete `pnpm ci:check` with exit code `0`.
 - The dependency-review fallback passed with no high or critical production finding. One moderate
   PostCSS advisory is retained visibly for an owner-authorized dependency-maintenance task.
+- All six named GitHub Actions checks passed at the latest workflow correction head: frozen install
+  and quality, build evidence, migration boundary, Rust/Tauri, secret scan, and dependency review.
 - Exact commands, output facts, and durations: `TEST_EVIDENCE.md`.
 
 ## Security, scope, and limitations
@@ -57,9 +60,9 @@ merge.
 ## Publication state
 
 ```text
-COMMIT: PENDING final evidence commit
-PUSH: PENDING
-DRAFT PR: PENDING
+WORKFLOW-VALIDATED COMMIT: 17b1402bc68e2383090b91e0a4cc30a3edf7c9c3
+REMOTE BRANCH: origin/agent/cx-r1-002-ci-quality-security verified at workflow-validated commit
+DRAFT PR: #18 https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/18 (draft; checks passed)
 MERGE: PROHIBITED FOR CODEX
 NEXT TASK CX-R1-003: NOT AUTHORIZED
 ```
