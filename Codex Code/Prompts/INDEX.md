@@ -16,22 +16,23 @@ Read in this order:
 10. active task's `TASK_CONTRACT.md`
 11. active task's `CHECKPOINT.md` when present
 12. exact master-plan/release/technology sources required by the current prompt
-13. live Git branch, PR, code, migration, test, and worker state
+13. live Git branch, PR, code, migration, test, review, automation, and worker state
 
 ## Current active task
 
 ```text
-TASK: CX-R1-002
-TITLE: CI, Quality, and Security Baseline
-CURRENT PROMPT: CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md
-TASK RECORD: ../Tasks/CX-R1-002/TASK_RECORD.md
-TASK CONTRACT: ../Tasks/CX-R1-002/TASK_CONTRACT.md
-CHECKPOINT: ../Tasks/CX-R1-002/CHECKPOINT.md
-PREVIOUS TASK: CX-R1-001 = APPROVED_COMPLETE
-WORK BRANCH: agent/cx-r1-002-ci-quality-security
-CURRENT EXECUTION: BUILD CI, QUALITY, SECURITY, AND EVIDENCE BASELINE ONLY
-CANONICAL IMPLEMENTATION ROOT: ../Implementation/
-SOURCE CODE AUTHORIZED: YES, CX-R1-002 SCOPE ONLY, WITH REQUIRED .github/workflows/ EXCEPTION
+TASK: GOV-CONTROL-001
+TITLE: Repository-Controlled Continue, Sleep Mode, and Model Fallback
+CURRENT PROMPT: GOV-CONTROL-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md
+TASK RECORD: ../Tasks/GOV-CONTROL-001/TASK_RECORD.md
+TASK CONTRACT: ../Tasks/GOV-CONTROL-001/TASK_CONTRACT.md
+CHECKPOINT: ../Tasks/GOV-CONTROL-001/CHECKPOINT.md
+PREVIOUS IMPLEMENTATION TASK: CX-R1-002 = MERGED IN PR #18
+WORK BRANCH: governance/activate-cx-r1-002
+PULL REQUEST: 17
+CURRENT EXECUTION: RECONCILE EXISTING PR #17 AND COMPLETE CANONICAL CONTROL METHOD ONLY
+PRODUCT SOURCE CODE AUTHORIZED: NO
+NEW BRANCH OR PR AUTHORIZED: NO
 NEXT TASK CX-R1-003 AUTHORIZED: NO
 ```
 
@@ -68,14 +69,23 @@ NEXT TASK CX-R1-003 AUTHORIZED: NO
 - Merge record: `../Tasks/CX-R1-001/MERGE_RECORD.md`
 - Terminal state: `APPROVED_COMPLETE` (PR #16 merged as `0fb218a3f8f8c100b8fd4655b6f04c14fcabd839`)
 
-## Current task prompt chain
-
 ### CX-R1-002
 
-- Current Prompt 0001: [CI, Quality, and Security Baseline](CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md)
+- Prompt 0001: [CI, Quality, and Security Baseline](CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md)
 - Task record: `../Tasks/CX-R1-002/TASK_RECORD.md`
 - Task contract: `../Tasks/CX-R1-002/TASK_CONTRACT.md`
-- Checkpoint: `../Tasks/CX-R1-002/CHECKPOINT.md`
+- Completion evidence: `../Tasks/CX-R1-002/COMPLETION_REPORT.md`
+- Merge: PR #18
+- Registry status: `COMPLETED_TASK_ARCHIVE`
+
+## Current task prompt chain
+
+### GOV-CONTROL-001
+
+- Current Prompt 0001: [Canonical Continue, Sleep Mode, and Model Fallback](GOV-CONTROL-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md)
+- Task record: `../Tasks/GOV-CONTROL-001/TASK_RECORD.md`
+- Task contract: `../Tasks/GOV-CONTROL-001/TASK_CONTRACT.md`
+- Checkpoint: `../Tasks/GOV-CONTROL-001/CHECKPOINT.md`
 
 ## Non-negotiable completion rule
 
@@ -83,7 +93,7 @@ NEXT TASK CX-R1-003 AUTHORIZED: NO
 FINISH THE ENTIRE CURRENT AUTHORIZED TASK
 → RUN ALL REQUIRED VALIDATIONS
 → PRODUCE ALL REQUIRED EVIDENCE
-→ DRAFT PR OR OWNER-PUBLISH HANDOFF
+→ UPDATE THE EXISTING PR #17
 → EXTERNAL REVIEW/CORRECTION OF THE SAME TASK
 → AUTHORIZED MERGE AND MAIN READ-BACK
 → APPROVED_COMPLETE
