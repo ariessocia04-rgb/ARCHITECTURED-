@@ -69,6 +69,20 @@ If executable code is later discovered outside the canonical root, Codex must st
 - Release 1 Canonical Implementation Path Override
 - Release 1 Codex Task Contract Template
 - Release 1 Index
+- `Codex Code/COMPLETION_RECORD.md`
+
+## Merge evidence
+
+```text
+BRANCH: codex-code-canonical-implementation-root
+PULL REQUEST: #11 — Store all Codex implementation under Codex Code
+PR MERGEABLE: YES
+CONFIGURED FAILING STATUS CHECKS: NONE
+UNRESOLVED REVIEW THREADS: NONE
+MERGE COMMIT: dde28fc3b531fb04b985da23af7903e07c99dfaf
+POST-MERGE COMPLETION EVIDENCE: aff1fddff2dcaa748c2d60267b4a90f82adffdc5
+FINAL STATE: COMPLETE_MERGED_TO_MAIN
+```
 
 ## Authorization status
 
