@@ -103,3 +103,10 @@ GLOBAL CODING AUTHORIZATION: NO
 PULL REQUEST #11: MERGED
 MERGE COMMIT: dde28fc3b531fb04b985da23af7903e07c99dfaf
 ```
+
+## Superseding current-task state
+
+The preceding record is historical CX-R1-000 completion evidence. Current state is controlled by
+`Codex Code/Prompts/ACTIVE_TASK.md`: CX-R1-001 was approved and merged as PR #16 at
+`0fb218a3f8f8c100b8fd4655b6f04c14fcabd839`, and the owner explicitly authorized CX-R1-002.
+CX-R1-003 remains unauthorized.

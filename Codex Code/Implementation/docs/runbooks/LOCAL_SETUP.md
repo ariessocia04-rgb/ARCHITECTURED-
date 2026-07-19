@@ -13,22 +13,15 @@ isolated, unmodified checkout of this repository and run commands from
 ## Install and validate
 
 ```text
-corepack pnpm install
-corepack pnpm format:check
-corepack pnpm lint
-corepack pnpm typecheck
-corepack pnpm test
-corepack pnpm build
-corepack pnpm release-lock:check
-corepack pnpm paths:check
-corepack pnpm secrets:check
 corepack pnpm install --frozen-lockfile
-cargo fmt --all -- --check
-cargo check --workspace --locked
+corepack pnpm ci:check
 ```
 
 For clean dependency recovery, remove only generated `node_modules`, `.next`, and `target`
 directories, then repeat the frozen install and validation commands. Do not remove lockfiles.
+
+The CI-specific check names, artifact retention, branch-review configuration, and equivalent
+individual commands are in [CI Quality and Security](CI_QUALITY_SECURITY.md).
 
 ## Environment-name schema
 

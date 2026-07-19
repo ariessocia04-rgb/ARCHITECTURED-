@@ -36,6 +36,9 @@ Create only records that contain actual evidence. Missing evidence remains expli
 
 ## Registered tasks
 
+- [CX-R1-001](CX-R1-001/TASK_RECORD.md) — Workspace and Version Bootstrap (`APPROVED_COMPLETE`; PR #16 merged).
+- [CX-R1-002](CX-R1-002/TASK_RECORD.md) — CI, Quality, and Security Baseline (`ACTIVE`).
+
 - [CX-R1-000](CX-R1-000/TASK_RECORD.md) — Repository Safety and Live-State Verification.
 
 Future task folders are added only after exact task authorization.
