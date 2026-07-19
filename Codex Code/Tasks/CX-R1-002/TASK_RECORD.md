@@ -8,18 +8,19 @@ title: CI, Quality, and Security Baseline
 release_id: ROS-R1-MVP-2026-01
 execution_type: CONTROLLED_IMPLEMENTATION
 implementation_authorized: true
-authorization_statement: The owner explicitly authorizes CX-R1-002 after CX-R1-001 reached externally reviewed APPROVED_COMPLETE and merged to main.
+authorization_statement: The owner explicitly authorizes CX-R1-002 after CX-R1-001 reached APPROVED_COMPLETE and was merged to main.
 authorized_by: Aries Socia
 authorized_at: 2026-07-19
 dependency_task: CX-R1-001
 dependency_status: APPROVED_COMPLETE
 dependency_merge_commit: 0fb218a3f8f8c100b8fd4655b6f04c14fcabd839
+base_branch: main
 work_branch: agent/cx-r1-002-ci-quality-security
 canonical_implementation_root: Codex Code/Implementation/
 source_code_changes_authorized: true
 documentation_changes_authorized: true
-workflow_changes_authorized: true
-dependency_installation_authorized: only_when_required_and_exactly_pinned
+github_workflow_exception_authorized: true
+dependency_installation_authorized: true
 branch_creation_authorized: true
 commit_authorized: true
 push_authorized: true
@@ -34,20 +35,30 @@ next_task_authorized: false
 
 ## Objective
 
-Create the Release 1 CI, quality, and security baseline so the existing empty technical foundation is reproducibly validated on GitHub and from a clean local checkout.
+Implement the Release 1 CI, quality, and security baseline: GitHub Actions checks, reproducible
+contributor commands, required-check and branch-review documentation, artifact retention, and
+factual validation evidence. All executable project files remain under
+`Codex Code/Implementation/`; `.github/workflows/` is the narrowly required GitHub Actions
+location and does not establish a second implementation tree.
 
-## Required outputs
+## Scope boundary
 
-- GitHub Actions workflows for deterministic install, format, lint, typecheck, unit tests, Next production build, Rust format/check, dependency review, secret scanning, and evidence artifacts.
-- Stable required-check names and branch-review-policy documentation.
-- Test/build evidence retention.
-- Reproducible contributor commands.
-- Factual task evidence under `Codex Code/Tasks/CX-R1-002/`.
+This task does not authorize product UI, business/domain modules, authentication, tenant or role
+logic, database schema, migrations, Supabase configuration, observability, deployment
+infrastructure, external providers, production secrets, or CX-R1-003 and later tasks.
 
-## Acceptance
+## Required completion gate
 
-The foundation passes the complete required suite twice from clean checkouts. Failed required checks block merge. No product feature, database business schema, observability foundation, or CX-R1-003 work is authorized.
+The baseline must pass frozen install, format, lint, typecheck, tests, production build, migration
+boundary validation, Rust/Tauri checks, dependency review, secret scanning, and artifact evidence
+checks from a clean checkout twice. The task stops after a draft PR is opened; only the owner may
+review and merge it.
 
-## Stop rule
+## Publication and review state
 
-Finish every authorized CX-R1-002 item, fix genuine in-scope failures, publish a draft PR, and stop for owner review/merge. Do not begin CX-R1-003.
+Draft PR [#18](https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/18) targets `main` from
+`agent/cx-r1-002-ci-quality-security`. At workflow correction commit
+`17b1402bc68e2383090b91e0a4cc30a3edf7c9c3`, GitHub Actions passed all named checks:
+`frozen-install-and-quality`, `build-evidence`, `migration-boundary`, `rust-tauri`, `secret-scan`,
+and `dependency-review`. The PR is draft, mergeable, and clean; external review and owner merge
+approval remain required. CX-R1-003 has not been started or authorized.

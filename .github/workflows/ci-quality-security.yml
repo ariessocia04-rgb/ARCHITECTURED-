@@ -1,0 +1,138 @@
+name: CI Quality and Security
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-quality-security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frozen-install-and-quality:
+    name: frozen-install-and-quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24.18.0
+          cache: pnpm
+          cache-dependency-path: Codex Code/Implementation/pnpm-lock.yaml
+      - name: Verify frozen workspace install
+        working-directory: Codex Code/Implementation
+        run: corepack pnpm install --frozen-lockfile
+      - name: Run format, lint, typecheck, unit, lock, and path checks
+        working-directory: Codex Code/Implementation
+        run: |
+          corepack pnpm format:check
+          corepack pnpm lint
+          corepack pnpm typecheck
+          corepack pnpm exec vitest run packages/configuration/src --reporter=junit --outputFile="$RUNNER_TEMP/vitest.junit.xml"
+          corepack pnpm release-lock:check
+          corepack pnpm paths:check
+          corepack pnpm workflows:format:check
+      - name: Upload unit-test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-results
+          path: ${{ runner.temp }}/vitest.junit.xml
+          if-no-files-found: warn
+          retention-days: 14
+
+  build-evidence:
+    name: build-evidence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24.18.0
+          cache: pnpm
+          cache-dependency-path: Codex Code/Implementation/pnpm-lock.yaml
+      - name: Verify frozen workspace install
+        working-directory: Codex Code/Implementation
+        run: corepack pnpm install --frozen-lockfile
+      - name: Build the web foundation
+        working-directory: Codex Code/Implementation
+        run: |
+          set -o pipefail
+          corepack pnpm build 2>&1 | tee "$RUNNER_TEMP/next-build.log"
+      - name: Upload web-build evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build-evidence
+          path: |
+            Codex Code/Implementation/apps/web/.next
+            ${{ runner.temp }}/next-build.log
+          if-no-files-found: warn
+          include-hidden-files: true
+          retention-days: 14
+
+  migration-boundary:
+    name: migration-boundary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24.18.0
+          cache: pnpm
+          cache-dependency-path: Codex Code/Implementation/pnpm-lock.yaml
+      - name: Verify frozen workspace install
+        working-directory: Codex Code/Implementation
+        run: corepack pnpm install --frozen-lockfile
+      - name: Validate migration ownership boundary
+        working-directory: Codex Code/Implementation
+        run: corepack pnpm migration:check
+
+  rust-tauri:
+    name: rust-tauri
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install Linux Tauri build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes \
+            libwebkit2gtk-4.1-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            libxdo-dev
+      - name: Install the pinned Rust toolchain
+        run: rustup toolchain install 1.97.1 --profile minimal --component rustfmt
+      - name: Check Rust formatting
+        working-directory: Codex Code/Implementation
+        run: cargo +1.97.1 fmt --all -- --check
+      - name: Check locked Rust/Tauri workspace
+        working-directory: Codex Code/Implementation
+        run: cargo +1.97.1 check --workspace --locked
+
+  secret-scan:
+    name: secret-scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24.18.0
+      - name: Scan implementation content for configured secret patterns
+        working-directory: Codex Code/Implementation
+        run: node packages/testing/scripts/check-secrets.mjs

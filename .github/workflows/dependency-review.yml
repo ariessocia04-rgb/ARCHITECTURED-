@@ -1,0 +1,36 @@
+name: Dependency Review
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    name: dependency-review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.0
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24.18.0
+          cache: pnpm
+          cache-dependency-path: Codex Code/Implementation/pnpm-lock.yaml
+
+      - name: Verify frozen workspace install
+        working-directory: Codex Code/Implementation
+        run: corepack pnpm install --frozen-lockfile
+
+      - name: Review production dependency vulnerabilities
+        working-directory: Codex Code/Implementation
+        run: corepack pnpm audit --prod --audit-level=high

@@ -119,3 +119,10 @@ APPLICATION IMPLEMENTATION: NOT STARTED
 ```
 
 This governance package is complete. The separate `CX-R1-000` execution must still be performed by Codex from the real checkout and externally reviewed.
+
+## Superseding current-task state
+
+This file preserves the historical Prompt 0004 governance completion record. It is not the active
+task pointer. CX-R1-001 subsequently reached `APPROVED_COMPLETE` through merged PR #16 at
+`0fb218a3f8f8c100b8fd4655b6f04c14fcabd839`; the owner then authorized the current CX-R1-002
+prompt. See `ACTIVE_TASK.md`, `PROMPT_REGISTRY.md`, and `CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md`.

@@ -5,6 +5,7 @@ export default defineConfig([
   ...nextVitals,
   globalIgnores([
     '.next/**',
+    'apps/web/.next/**',
     'coverage/**',
     'node_modules/**',
     'target/**',

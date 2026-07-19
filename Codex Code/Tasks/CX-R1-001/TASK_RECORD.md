@@ -27,7 +27,7 @@ deletion_authorized: false
 rename_or_move_authorized: false
 automatic_next_task_authorized: false
 next_task_id: CX-R1-002
-next_task_authorized: false
+next_task_authorized: true
 ```
 
 ## Objective
@@ -93,3 +93,22 @@ Codex Code/Tasks/CX-R1-001/
 ## Stop rule
 
 Finish every in-scope implementation and validation step. Stop only for a factual external blocker or after returning `READY_FOR_REVIEW`. Do not begin `CX-R1-002`.
+
+## Terminal closure
+
+```yaml
+terminal_status: APPROVED_COMPLETE
+review_result_path: Codex Code/Tasks/CX-R1-001/REVIEW_RESULT.md
+merge_record_path: Codex Code/Tasks/CX-R1-001/MERGE_RECORD.md
+task_commit: ef8c0bc6e5abfb1de765bf043d08218ab7065eb4
+pull_request: 16
+pull_request_url: https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/16
+merge_commit_on_main: 0fb218a3f8f8c100b8fd4655b6f04c14fcabd839
+main_read_back: VERIFIED
+successor_task: CX-R1-002
+successor_authorized_by: Aries Socia
+successor_authorized_at: 2026-07-19
+```
+
+The original bootstrap authorization did not automatically authorize a successor. The owner
+separately authorized CX-R1-002 after PR #16 was reviewed and merged.
