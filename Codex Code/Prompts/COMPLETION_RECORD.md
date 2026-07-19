@@ -2,7 +2,7 @@
 
 ## Scope
 
-This record covers the GitHub-backed Codex prompt history, fully armored prompt standard, active-task pointer, interruption checkpoint, continuation protocol, and finish-current-task-before-next gate.
+This record covers the GitHub-backed Codex prompt history, fully armored prompt standard, active-task pointer, interruption checkpoint, continuation protocol, and finish-current-task-before-next gate through current Prompt 0004.
 
 ## Current delivered structure
 
@@ -21,6 +21,7 @@ Codex Code/
 │   ├── FINAL_VERIFICATION.md
 │   ├── MAIN_READBACK.md
 │   ├── MERGE_RECORD.md
+│   ├── MERGE_RECORD_MASTER_SAAS_SYNC.md
 │   ├── Templates/
 │   │   ├── PROMPT_ENTRY_TEMPLATE.md
 │   │   └── CHECKPOINT_TEMPLATE.md
@@ -52,19 +53,7 @@ OWNER SAYS CONTINUE
 → DO NOT START NEXT TASK
 ```
 
-## Current-task rule
-
-The active task remains active until externally recorded as:
-
-```text
-APPROVED_COMPLETE
-OWNER_CANCELLED
-OWNER_SUPERSEDED_WITH_MIGRATION_PLAN
-```
-
-`BLOCKED`, `FAILED_VALIDATION`, `INTERRUPTED`, `READY_FOR_REVIEW`, and completion of one substep do not authorize task advancement.
-
-## Current prompt state
+## Current task and prompt state
 
 ```yaml
 active_task_id: CX-R1-000
@@ -73,16 +62,17 @@ latest_prompt_path: Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-
 checkpoint_path: Codex Code/Tasks/CX-R1-000/CHECKPOINT.md
 master_sync_path: 1plan-SAAS_APPLICATION_WIREFRAME_WIREFLOW_INTEGRATION_EXTENSION.md
 previous_result: BLOCKED_ENVIRONMENT
-continuation_safe: true_after_real_checkout_recovery_and_live_reconciliation
 source_code_authorized: false
 next_task_authorized: false
 ```
 
+The active task remains active until externally recorded as `APPROVED_COMPLETE`, `OWNER_CANCELLED`, or `OWNER_SUPERSEDED_WITH_MIGRATION_PLAN`.
+
 ## Fully armored standard
 
-Every current/future prompt must define applicable Role, Goal, Background, Live State, Sources, Authorization, Tools, Paths, Existing-Work Classification, Complete Steps, Architecture/Security/UX Rules, Tests, Evidence, Git/PR Rules, Blockers, Final Report, Completion, and Stop behavior.
+Every prompt must define applicable Role, Goal, Background, Live State, Sources, Authorization, Tools, Paths, Existing-Work Classification, Complete Steps, Architecture/Security/UX Rules, Tests, Evidence, Git/PR Rules, Blockers, Final Report, Completion, and Stop behavior.
 
-The current Prompt 0004 includes the later synchronized:
+Prompt 0004 includes the synchronized:
 
 - IT Operations;
 - Department Store Retail SaaS;
@@ -102,41 +92,30 @@ All future executable code remains under:
 Codex Code/Implementation/
 ```
 
-No root-level parallel implementation tree is authorized.
+No root-level parallel implementation tree is authorized. Prompt/task/evidence/review folders must not contain copied executable source trees.
 
-Prompt/task/evidence/review folders must not contain copied executable source trees.
-
-## Truthful boundary
-
-This prompt/governance package does not:
-
-- execute `CX-R1-000` in Codex's local environment;
-- create application code;
-- authorize `CX-R1-001`;
-- install dependencies;
-- create or run migrations;
-- execute application tests;
-- certify hardware;
-- deploy anything.
-
-It creates the persistent, current, fully armored GitHub instructions that allow Codex to resume and finish `CX-R1-000` safely.
-
-## Current validation target
+## Publication evidence
 
 ```text
-FULLY ARMORED PROMPT REQUIREMENTS: PRESENT
-ARMORED MASTER PROMPT: SYNCHRONIZED
-PROMPT TEMPLATE: SYNCHRONIZED
-ACTIVE TASK POINTER: POINTING TO 0004
-PROMPT REGISTRY: 0004 CURRENT
-PROMPT INDEX/README: SYNCHRONIZED
-CX-R1-000 PROMPT 0004: PRESENT
-CHECKPOINT: PRESENT
-CURRENT TASK COMPLETION LAW: PRESENT
-MASTER SAAS/APPLICATION/DESIGN SYNC: PRESENT
-DELETIONS: NONE
-APPLICATION CODE: NONE
-NEXT TASK AUTHORIZATION: NO
+PULL REQUEST: #13
+MERGE SHA: f60466785715ac37d94da81e864108c1d9a202a3
+PROMPT-SYNC MERGE RECORD: 2db6ead4c2d338ec72fc885f93008e7234133be0
+FINAL MAIN READ-BACK: b003af813ae1b3d688195cc51c5d25fb8dcfd885
+DELETED FILES: 0
+APPLICATION CODE: 0
+MIGRATIONS: 0
+CX-R1-001 AUTHORIZED: NO
 ```
 
-Final PR, merge SHA, post-merge evidence, and main read-back for this synchronization revision are recorded after publication.
+## Final status
+
+```text
+PROMPT CHAIN GOVERNANCE: COMPLETE_MERGED_TO_MAIN
+FULLY ARMORED PROMPT STANDARD: COMPLETE_MERGED_TO_MAIN
+CURRENT PROMPT 0004: COMPLETE_MERGED_TO_MAIN AND CURRENT
+ACTIVE TASK: CX-R1-000
+NEXT TASK AUTO-ADVANCE: PROHIBITED
+APPLICATION IMPLEMENTATION: NOT STARTED
+```
+
+This governance package is complete. The separate `CX-R1-000` execution must still be performed by Codex from the real checkout and externally reviewed.
