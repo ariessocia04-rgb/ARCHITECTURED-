@@ -39,11 +39,15 @@ run directly with verified exit code 0; this avoids treating a terminal timeout 
 
 | Run | Checkout | Frozen install | Full local gate | Result |
 | --- | --- | --- | --- | --- |
-| 1 | PENDING committed branch clone | PENDING | PENDING | PENDING |
-| 2 | PENDING committed branch clone | PENDING | PENDING | PENDING |
+| 1 | Fresh clone at `c6edb62004538b4966fd064f258bba2d7cacc532` in `%TEMP%\\cx-r1-002-clean-checkout-4` | `pnpm install --frozen-lockfile` exit 0; lockfile unchanged; completed in 3m 8.5s. | `pnpm ci:check` exit 0; format, workflow format, lint, typecheck, 4 tests, build, release lock, paths, migration boundary, secret scan, rustfmt, and locked Cargo check passed. Cold Cargo check completed in 11m 40s. | PASS |
+| 2 | Fresh clone at `c6edb62004538b4966fd064f258bba2d7cacc532` in `%TEMP%\\cx-r1-002-clean-checkout-3` | `pnpm install --frozen-lockfile` exit 0; lockfile unchanged; completed in 2m 3.2s. | `pnpm ci:check` exit 0; the same complete command set passed. Cold Cargo check completed in 10m 34s. | PASS |
 
 Both rows are completed only from fresh clones of the committed CX-R1-002 branch. Generated
 `node_modules`, `.next`, and `target` directories are never committed or credited as clean state.
+
+Both acceptance clones began at the same corrected commit with clean Git working trees and no
+generated dependency/build output. Both locked installs and complete local gates exited `0`; their
+long Rust durations are independent clean-build evidence, not cached-success substitutes.
 
 ## Corrective validation before acceptance runs
 

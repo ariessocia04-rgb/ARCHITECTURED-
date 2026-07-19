@@ -33,8 +33,9 @@ Every listed path was changed on `agent/cx-r1-002-ci-quality-security` from main
 | `Codex Code/Tasks/CX-R1-002/TASK_CONTRACT.md` | CREATED | Exact allowed paths, checks, evidence, and stop conditions. | CX-R1-002 | Task control | Reviewed. |
 | `Codex Code/Tasks/CX-R1-002/CHECKPOINT.md` | CREATED | Activation state and first incomplete action. | CX-R1-002 | Task control | Reviewed. |
 | `Codex Code/Tasks/CX-R1-002/CHANGED_FILES.md` | CREATED | This complete changed-path manifest. | CX-R1-002 | Evidence | Reviewed. |
-| `Codex Code/Tasks/CX-R1-002/TEST_EVIDENCE.md` | CREATED | Exact validation evidence and clean-checkout results. | CX-R1-002 | Evidence | In progress until both clean runs are recorded. |
+| `Codex Code/Tasks/CX-R1-002/TEST_EVIDENCE.md` | CREATED / MODIFIED | Exact validation evidence and two clean-checkout results. | CX-R1-002 | Evidence | PASS; both required clean runs recorded. |
 | `Codex Code/Tasks/CX-R1-002/SECURITY_AND_SCOPE_REVIEW.md` | CREATED | Security, secret, duplicate, and scope review. | CX-R1-002 | Evidence | Reviewed. |
+| `Codex Code/Tasks/CX-R1-002/COMPLETION_REPORT.md` | CREATED | Factual validation-complete and publication-handoff report. | CX-R1-002 | Evidence | Prepared for draft PR publication. |
 | `Design/Prompt Design/CURRENT_CODEX_PROMPT.md` | MODIFIED | Updates the non-executable Design reference to CX-R1-002. | Governance | Task activation | Reviewed. |
 
 No path was deleted, renamed, or moved. No root-level application source tree was created; the two
