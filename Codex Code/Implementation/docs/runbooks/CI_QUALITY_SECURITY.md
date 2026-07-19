@@ -29,6 +29,7 @@ corepack pnpm release-lock:check
 corepack pnpm paths:check
 corepack pnpm migration:check
 corepack pnpm secrets:check
+corepack pnpm workflows:format:check
 cargo fmt --all -- --check
 cargo check --workspace --locked
 ```

@@ -18,9 +18,10 @@
     "paths:check": "node packages/testing/scripts/check-paths.mjs",
     "migration:check": "node packages/testing/scripts/check-migration-boundary.mjs",
     "secrets:check": "node packages/testing/scripts/check-secrets.mjs",
+    "workflows:format:check": "prettier --config prettier.config.mjs --check ../../.github/workflows/*.yml",
     "rust:format:check": "cargo fmt --all -- --check",
     "rust:check": "cargo check --workspace --locked",
-    "ci:check": "corepack pnpm format:check && corepack pnpm lint && corepack pnpm typecheck && corepack pnpm test && corepack pnpm build && corepack pnpm release-lock:check && corepack pnpm paths:check && corepack pnpm migration:check && corepack pnpm secrets:check && corepack pnpm rust:format:check && corepack pnpm rust:check"
+    "ci:check": "corepack pnpm format:check && corepack pnpm workflows:format:check && corepack pnpm lint && corepack pnpm typecheck && corepack pnpm test && corepack pnpm build && corepack pnpm release-lock:check && corepack pnpm paths:check && corepack pnpm migration:check && corepack pnpm secrets:check && corepack pnpm rust:format:check && corepack pnpm rust:check"
   },
   "devDependencies": {
     "@types/node": "24.13.3",

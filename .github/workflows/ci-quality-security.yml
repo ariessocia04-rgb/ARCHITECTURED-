@@ -40,6 +40,7 @@ jobs:
           corepack pnpm exec vitest run packages/configuration/src --reporter=junit --outputFile="$RUNNER_TEMP/vitest.junit.xml"
           corepack pnpm release-lock:check
           corepack pnpm paths:check
+          corepack pnpm workflows:format:check
       - name: Upload unit-test results
         if: always()
         uses: actions/upload-artifact@v4

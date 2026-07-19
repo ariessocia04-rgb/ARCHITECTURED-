@@ -44,3 +44,15 @@ run directly with verified exit code 0; this avoids treating a terminal timeout 
 
 Both rows are completed only from fresh clones of the committed CX-R1-002 branch. Generated
 `node_modules`, `.next`, and `target` directories are never committed or credited as clean state.
+
+## Corrective validation before acceptance runs
+
+Fresh clone 1 of preliminary commit `94e05e43450d420136ee3aab8e3849d8df279451` passed frozen
+install, implementation format/lint/typecheck/tests/build, release-lock, duplicate-path, and
+migration-boundary checks. Its explicit root-workflow Prettier command failed because it did not
+load the workspace `prettier.config.mjs`, so a CRLF checkout fell back to Prettier's LF default.
+
+The smallest correction adds `workflows:format:check`, which explicitly loads that config, and
+places it in both the aggregate local gate and the named GitHub Actions quality job. The corrected
+command passed locally. The preliminary clone is not counted toward the two required acceptance
+runs; both are repeated from the corrected commit.

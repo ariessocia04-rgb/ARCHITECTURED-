@@ -4,14 +4,14 @@
 
 Configure GitHub branch protection or rulesets for `main` to require these checks before merge:
 
-| Required check                                         | Workflow responsibility                                                                                                  |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `CI Quality and Security / frozen-install-and-quality` | Exact Node/pnpm setup, frozen install, format, lint, typecheck, unit tests, release-lock, and duplicate-path validation. |
-| `CI Quality and Security / build-evidence`             | Frozen install, Next production build, and retained build output/log evidence.                                           |
-| `CI Quality and Security / migration-boundary`         | Confirms CX-R1-002 added no future-owned Supabase migration/configuration content.                                       |
-| `CI Quality and Security / rust-tauri`                 | Rustfmt and locked workspace Cargo check using Rust `1.97.1`.                                                            |
-| `CI Quality and Security / secret-scan`                | Runs the configured implementation secret-pattern scan.                                                                  |
-| `Dependency Review / dependency-review`                | Reviews dependency changes in the pull request.                                                                          |
+| Required check                                         | Workflow responsibility                                                                                                                          |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `CI Quality and Security / frozen-install-and-quality` | Exact Node/pnpm setup, frozen install, implementation/workflow format, lint, typecheck, unit tests, release-lock, and duplicate-path validation. |
+| `CI Quality and Security / build-evidence`             | Frozen install, Next production build, and retained build output/log evidence.                                                                   |
+| `CI Quality and Security / migration-boundary`         | Confirms CX-R1-002 added no future-owned Supabase migration/configuration content.                                                               |
+| `CI Quality and Security / rust-tauri`                 | Rustfmt and locked workspace Cargo check using Rust `1.97.1`.                                                                                    |
+| `CI Quality and Security / secret-scan`                | Runs the configured implementation secret-pattern scan.                                                                                          |
+| `Dependency Review / dependency-review`                | Reviews dependency changes in the pull request.                                                                                                  |
 
 Repository administrators must require a pull request before merging to `main`, require the checks
 above to pass, require at least one external approving review, dismiss stale approvals after new
