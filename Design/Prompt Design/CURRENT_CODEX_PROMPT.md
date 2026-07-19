@@ -7,62 +7,60 @@ This file gives designers, architects, reviewers, and future prompt authors one 
 ## CURRENT AUTHORITY
 
 ```yaml
-active_task_id: CX-R1-002
-active_task_title: CI, Quality, and Security Baseline
+active_task_id: GOV-CONTROL-001
+active_task_title: Repository-Controlled Continue, Sleep Mode, and Model Fallback
 current_prompt_sequence: 0001
-current_prompt_type: INITIAL
+current_prompt_type: GOVERNANCE_RECONCILIATION
 current_prompt_status: CURRENT
-current_prompt_path: Codex Code/Prompts/CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md
+current_prompt_path: Codex Code/Prompts/GOV-CONTROL-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md
 active_pointer_path: Codex Code/Prompts/ACTIVE_TASK.md
 prompt_registry_path: Codex Code/Prompts/PROMPT_REGISTRY.md
-checkpoint_path: Codex Code/Tasks/CX-R1-002/CHECKPOINT.md
-task_contract_path: Codex Code/Tasks/CX-R1-002/TASK_CONTRACT.md
+checkpoint_path: Codex Code/Tasks/GOV-CONTROL-001/CHECKPOINT.md
+task_contract_path: Codex Code/Tasks/GOV-CONTROL-001/TASK_CONTRACT.md
 prompt_design_standard: Codex Code/ARMORED_PROMPT_REQUIREMENTS.md
 canonical_implementation_root: Codex Code/Implementation/
-work_branch: agent/cx-r1-002-ci-quality-security
+work_branch: governance/activate-cx-r1-002
+pull_request: 17
 next_task_authorized: false
 ```
 
 ## CURRENT PROMPT ROLE
 
-Codex is the controlled CI, quality, and security baseline engineer for `CX-R1-002`.
-
-It is authorized to create the CI, quality, security, evidence-retention, and contributor-command
-baseline under `Codex Code/Implementation/`, plus the narrowly necessary
-`.github/workflows/` GitHub Actions exception and task/governance evidence.
+Codex is the controlled governance reconciler for existing PR #17. It must preserve merged PR #18 and every unique valid permanent control while completing one canonical repository-backed method for manual `continue`, `sleep mode`, deactivation, reviewer handoff, and safe owner-approved model fallback.
 
 It is not authorized to act as:
 
 - Product Owner or autonomous Architect;
-- high-fidelity UI designer or approver;
-- business/domain/database/observability implementer beyond the exact CI baseline contract;
-- provider selector;
-- reviewer or merger;
-- task selector.
+- product, business, UI, database, observability, or deployment implementer;
+- external reviewer or approver;
+- merger;
+- later-task selector;
+- creator of another branch or PR for this work.
 
 ## CURRENT PROMPT GOAL
 
 ```text
-VERIFY CX-R1-001 APPROVED_COMPLETE AND MERGED
-→ WORK ONLY ON agent/cx-r1-002-ci-quality-security
-→ IMPLEMENT FROZEN-INSTALL, QUALITY, SECURITY, AND ARTIFACT CI CHECKS
-→ DOCUMENT REQUIRED CHECK NAMES, BRANCH REVIEW POLICY, RETENTION, AND CONTRIBUTOR COMMANDS
-→ RUN THE COMPLETE CLEAN-CHECKOUT BASELINE TWICE
-→ CREATE FACTUAL EVIDENCE
-→ PREPARE A DRAFT PR
-→ STOP FOR EXTERNAL REVIEW
+FETCH LATEST ORIGIN/MAIN
+→ VERIFY MERGED PR #18
+→ COMPARE AND RECONCILE EXISTING PR #17
+→ PRESERVE ALL UNIQUE VALID WORK
+→ COMPLETE ONE CANONICAL CONTINUE/SLEEP/REVIEW-HANDOFF/MODEL-FALLBACK METHOD
+→ RUN ALL AFFECTED VALIDATIONS
+→ UPDATE SAME PR #17
+→ RETURN READY_FOR_OWNER_MERGE
+→ STOP
 ```
 
 ## DESIGN-GATE BOUNDARY
 
-High-fidelity screens, clickable prototype, and design UAT remain incomplete. That does not block this non-UI workspace bootstrap, but Codex may not implement or claim approval for product screens, role workspaces, visual tokens, or workflow UI.
+No product design or implementation is authorized. This task changes repository governance and prompt-control behavior only.
 
 ## EXECUTION RULE
 
 Always open and execute the canonical prompt from:
 
 ```text
-Codex Code/Prompts/CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md
+Codex Code/Prompts/GOV-CONTROL-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md
 ```
 
 This Design reference is not an executable replacement and must not be treated as newer authority than the canonical prompt chain.
@@ -70,10 +68,10 @@ This Design reference is not an executable replacement and must not be treated a
 ## COMPLETION RULE
 
 ```text
-FINISH THE ENTIRE CX-R1-002 SCOPE
+FINISH THE ENTIRE GOV-CONTROL-001 SCOPE
 → RUN EVERY REQUIRED VALIDATION
-→ CREATE COMPLETE EVIDENCE
-→ DRAFT PR
+→ CREATE FACTUAL EVIDENCE
+→ UPDATE SAME PR #17
 → EXTERNAL REVIEW/CORRECTION
 → AUTHORIZED MERGE AND MAIN READ-BACK
 → APPROVED_COMPLETE
@@ -103,9 +101,10 @@ When another prompt becomes current:
 CURRENT PROMPT REFERENCE: SYNCHRONIZED
 FULL PROMPT COPIED HERE: NO
 DUPLICATE EXECUTABLE AUTHORITY CREATED: NO
-PREVIOUS TASK CX-R1-001: APPROVED_COMPLETE
-ACTIVE TASK: CX-R1-002
+PREVIOUS IMPLEMENTATION TASK CX-R1-002: MERGED IN PR #18
+ACTIVE TASK: GOV-CONTROL-001
 CURRENT PROMPT: 0001
-SOURCE CODE AUTHORIZED: CX-R1-002 SCOPE ONLY; .github/workflows/ EXCEPTION ONLY
+PRODUCT SOURCE CODE AUTHORIZED: NO
+NEW BRANCH OR PR AUTHORIZED: NO
 NEXT TASK AUTHORIZED: NO
 ```
