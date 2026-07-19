@@ -10,7 +10,7 @@ The registry is append-only. Every prompt has one unique task ID and sequence nu
 | CX-R1-000 | 0004 | FINAL_CONTINUE_AND_FINISH | `Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-AND-FINISH.md` | COMPLETED_TASK_ARCHIVE | 0003 execution instructions | Completed CX-R1-000 against the synchronized master state; externally reviewed as APPROVED_COMPLETE. |
 | CX-R1-001 | 0001 | INITIAL | `Codex Code/Prompts/CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md` | COMPLETED_TASK_ARCHIVE | none | Built, reviewed, and merged the exact version-pinned workspace foundation under the canonical implementation root only. |
 | CX-R1-002 | 0001 | INITIAL | `Codex Code/Prompts/CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md` | COMPLETED_TASK_ARCHIVE | none | Implemented and merged the Release 1 CI, quality, and security baseline in PR #18. |
-| GOV-CONTROL-001 | 0001 | GOVERNANCE_RECONCILIATION | `Codex Code/Prompts/GOV-CONTROL-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md` | CURRENT | obsolete overlapping CX-R1-002 activation text in existing PR #17 only | Reconcile PR #17 and finish one canonical repository-backed continue, sleep-mode, reviewer-handoff, and safe model-fallback method. |
+| GOV-CONTROL-001 | 0001 | GOVERNANCE_RECONCILIATION | `Codex Code/Prompts/GOV-CONTROL-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md` | CURRENT | obsolete overlapping task-state text in draft PR #20 only | Reconcile draft PR #20 and finish one canonical repository-backed continue, sleep-mode, reviewer-handoff, and safe model-fallback method. |
 
 ## Status values
 
@@ -45,16 +45,17 @@ Every new prompt records:
 ## Current authorization
 
 ```text
+MERGED GOVERNANCE PR: 17
 PREVIOUS IMPLEMENTATION TASK: CX-R1-002 = MERGED IN PR #18
 CURRENT TASK: GOV-CONTROL-001
 CURRENT PROMPT: 0001
 TASK TITLE: Repository-Controlled Continue, Sleep Mode, and Model Fallback
 WORK BRANCH: governance/activate-cx-r1-002
-PULL REQUEST: 17
+DRAFT PULL REQUEST: 20
 CANONICAL IMPLEMENTATION ROOT: Codex Code/Implementation/
 PRODUCT SOURCE-CODE AUTHORIZATION: NO
-GOVERNANCE RECONCILIATION: YES, EXISTING PR #17 ONLY
-NEW BRANCH OR PR: NO
+GOVERNANCE RECONCILIATION: YES, DRAFT PR #20 ONLY
+SECOND BRANCH OR SECOND PR: NO
 FORCE PUSH: NO
 MERGE AUTHORIZATION FOR CODEX: NO
 NEXT TASK CX-R1-003: NOT AUTHORIZED
