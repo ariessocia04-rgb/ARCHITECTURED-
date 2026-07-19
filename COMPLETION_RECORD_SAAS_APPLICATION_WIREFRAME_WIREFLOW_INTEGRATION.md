@@ -92,12 +92,11 @@ Every future prompt now requires applicable:
 
 ## Branch validation
 
-Final pre-PR comparison:
+Final pre-PR comparison established:
 
 ```text
-BRANCH STATUS: AHEAD
-COMMITS AHEAD: 19
-COMMITS BEHIND: 0
+BRANCH STATUS: AHEAD OF MAIN AND NOT BEHIND
+EXACT COMMIT COUNT: RECORDED BY THE FINAL PR METADATA
 CHANGED FILES: 19
 FILE DELETIONS: 0
 APPLICATION SOURCE FILES CREATED: 0
