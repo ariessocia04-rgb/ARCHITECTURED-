@@ -4,6 +4,12 @@
 
 Release 1 uses a cost-controlled modular monolith with one responsive web application, one Supabase/PostgreSQL platform layer, and one separately packaged local print agent.
 
+All executable code for this release is stored inside the GitHub repository under the owner-selected canonical root:
+
+```text
+Codex Code/Implementation/
+```
+
 ```text
 Browser / PWA-capable Web UI
         ↓
@@ -44,7 +50,7 @@ OS Queue / IPP / ESC-POS / tested printer adapter
 
 ## Version-lock rule
 
-The versions above are architecture baselines. Before the first code commit, Codex must create and commit:
+The versions above are architecture baselines. Before the first code commit, Codex must create and commit under `Codex Code/Implementation/`:
 
 - `.nvmrc` or equivalent Node pin;
 - `packageManager` with exact pnpm version;
@@ -63,59 +69,66 @@ A package update after lock requires a dedicated dependency PR, changelog/securi
 
 ```text
 ARCHITECTURED-/
-├── apps/
-│   ├── web/
-│   │   ├── app/
-│   │   │   ├── (auth)/
-│   │   │   ├── (owner)/
-│   │   │   ├── (front-desk)/
-│   │   │   ├── (technician)/
-│   │   │   ├── (customer)/
-│   │   │   ├── (it-operations)/
-│   │   │   └── (platform-admin)/
-│   │   ├── server/
-│   │   └── tests/
-│   └── print-agent/
-│       ├── src-tauri/
-│       ├── ui/
-│       └── tests/
-├── packages/
-│   ├── design-system/
-│   ├── domain/
-│   ├── contracts/
-│   ├── authorization/
-│   ├── database-types/
-│   ├── document-rendering/
-│   ├── printing-contracts/
-│   ├── observability/
-│   ├── configuration/
-│   └── testing/
-├── supabase/
-│   ├── migrations/
-│   ├── functions/
-│   ├── tests/
-│   ├── seed.sql
-│   └── config.toml
-├── tests/
-│   ├── contract/
-│   ├── integration/
-│   ├── e2e/
-│   ├── security/
-│   ├── accessibility/
-│   ├── performance/
-│   ├── recovery/
-│   └── hardware/
-├── infrastructure/
-│   ├── ci/
-│   ├── environments/
-│   ├── containers/
-│   ├── monitoring/
-│   └── rollback/
-└── docs/
-    ├── implementation/
-    ├── runbooks/
-    └── evidence/
+└── Codex Code/
+    ├── Implementation/
+    │   ├── apps/
+    │   │   ├── web/
+    │   │   │   ├── app/
+    │   │   │   │   ├── (auth)/
+    │   │   │   │   ├── (owner)/
+    │   │   │   │   ├── (front-desk)/
+    │   │   │   │   ├── (technician)/
+    │   │   │   │   ├── (customer)/
+    │   │   │   │   ├── (it-operations)/
+    │   │   │   │   └── (platform-admin)/
+    │   │   │   ├── server/
+    │   │   │   └── tests/
+    │   │   └── print-agent/
+    │   │       ├── src-tauri/
+    │   │       ├── ui/
+    │   │       └── tests/
+    │   ├── packages/
+    │   │   ├── design-system/
+    │   │   ├── domain/
+    │   │   ├── contracts/
+    │   │   ├── authorization/
+    │   │   ├── database-types/
+    │   │   ├── document-rendering/
+    │   │   ├── printing-contracts/
+    │   │   ├── observability/
+    │   │   ├── configuration/
+    │   │   └── testing/
+    │   ├── supabase/
+    │   │   ├── migrations/
+    │   │   ├── functions/
+    │   │   ├── tests/
+    │   │   ├── seed.sql
+    │   │   └── config.toml
+    │   ├── tests/
+    │   │   ├── contract/
+    │   │   ├── integration/
+    │   │   ├── e2e/
+    │   │   ├── security/
+    │   │   ├── accessibility/
+    │   │   ├── performance/
+    │   │   ├── recovery/
+    │   │   └── hardware/
+    │   ├── infrastructure/
+    │   │   ├── ci/
+    │   │   ├── environments/
+    │   │   ├── containers/
+    │   │   ├── monitoring/
+    │   │   └── rollback/
+    │   └── docs/
+    │       ├── implementation/
+    │       ├── runbooks/
+    │       └── evidence/
+    ├── Tasks/
+    ├── Evidence/
+    └── Reviews/
 ```
+
+Root-level `apps/`, `packages/`, `supabase/`, `tests/`, and `infrastructure/` implementation trees are prohibited. If any implementation code is discovered outside `Codex Code/Implementation/`, Codex must stop and request an owner-authorized migration task rather than copy, delete, move, or recreate it.
 
 The role-specific route groups do not create separate business logic. They call shared domain/application services and use one data authority.
 
@@ -249,6 +262,7 @@ Exact patch versions are pinned during bootstrap.
 
 ```text
 ARCHITECTURE STYLE: LOCKED — MODULAR MONOLITH
+CANONICAL IMPLEMENTATION ROOT: CODEX CODE/IMPLEMENTATION/
 WEB STACK: LOCKED
 DATABASE/AUTH/STORAGE/REALTIME/QUEUE STACK: LOCKED
 LOCAL PRINT AGENT STACK: LOCKED
