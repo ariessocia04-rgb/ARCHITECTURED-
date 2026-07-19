@@ -57,6 +57,39 @@ Codex Code/Implementation/
 
 Directories are created only by an explicitly authorized Codex task. Do not create empty appearance-only folders.
 
+## CX-R1-001 bootstrap
+
+CX-R1-001 establishes the deterministic workspace foundation in this directory.
+It deliberately contains no product workflows, role screens, business schema, migrations,
+CI workflow, observability implementation, or provider credentials.
+
+The executable bootstrap is intentionally small:
+
+- `apps/web` is a semantic technical build page only.
+- `apps/print-agent` is a Rust/Tauri-compatible compile skeleton only.
+- `packages/configuration` owns the small, test-covered environment-name schema.
+- all other package, test, infrastructure, and Supabase directories record their future owner
+  and prevent accidental duplicate implementation.
+
+Use the pinned local toolchain and scripts from this directory:
+
+```text
+pnpm install --frozen-lockfile
+pnpm format:check
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+pnpm release-lock:check
+pnpm paths:check
+pnpm secrets:check
+cargo fmt --all -- --check
+cargo check --workspace --locked
+```
+
+Exact baseline and source-verification records are in `RELEASE_LOCK.json`. Local setup,
+environment-name classification, and scope boundaries are in `docs/runbooks/LOCAL_SETUP.md`.
+
 ## No-duplication boundary
 
 The following root-level implementation trees are prohibited after this decision:
@@ -104,7 +137,8 @@ The local working directory must contain `.git`, `1plan.md`, and `Codex Code/Imp
 
 ```text
 CANONICAL IMPLEMENTATION ROOT: CODEX CODE/IMPLEMENTATION/
-APPLICATION CODE CURRENTLY PRESENT: NO
+APPLICATION BUSINESS CODE CURRENTLY PRESENT: NO
+CX-R1-001 TECHNICAL BOOTSTRAP PRESENT: YES
 ROOT-LEVEL PARALLEL CODE TREES AUTHORIZED: NO
 IMPLEMENTATION AUTHORIZATION GRANTED BY THIS FILE: NO
 ```

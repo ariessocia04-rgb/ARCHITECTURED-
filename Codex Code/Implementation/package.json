@@ -1,0 +1,34 @@
+{
+  "name": "@architectured/release-1-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.34.0",
+  "engines": {
+    "node": "24.18.0",
+    "pnpm": "10.34.0"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "corepack pnpm --filter @architectured/web exec tsc --noEmit && corepack pnpm --filter @architectured/configuration exec tsc --noEmit",
+    "test": "vitest run packages/configuration/src",
+    "build": "corepack pnpm --filter @architectured/web build",
+    "release-lock:check": "node packages/testing/scripts/check-release-lock.mjs",
+    "paths:check": "node packages/testing/scripts/check-paths.mjs",
+    "secrets:check": "node packages/testing/scripts/check-secrets.mjs",
+    "rust:format:check": "cargo fmt --all -- --check",
+    "rust:check": "cargo check --workspace --locked"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.9",
+    "prettier": "3.9.5",
+    "supabase": "2.101.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  }
+}

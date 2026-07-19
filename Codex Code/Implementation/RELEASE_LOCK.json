@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "ROS-R1-MVP-2026-01",
+  "taskId": "CX-R1-001",
+  "verificationDate": "2026-07-19",
+  "versions": {
+    "node": "24.18.0",
+    "pnpm": "10.34.0",
+    "next": "16.2.9",
+    "react": "19.2.0",
+    "reactDom": "19.2.0",
+    "typescript": "5.9.3",
+    "supabaseCli": "2.101.0",
+    "tauri": "2.11.2",
+    "rust": "1.97.1"
+  },
+  "packageVersions": {
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.9",
+    "prettier": "3.9.5",
+    "supabase": "2.101.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "officialSources": {
+    "node": "https://nodejs.org/en/blog/release/v24.18.0",
+    "pnpm": "https://github.com/pnpm/pnpm/releases/tag/v10.34.0",
+    "next": "https://github.com/vercel/next.js/releases/tag/v16.2.9",
+    "react": "https://react.dev/blog/2025/10/01/react-19-2",
+    "typescript": "https://devblogs.microsoft.com/typescript/announcing-typescript-5-9/",
+    "supabaseCli": "https://github.com/supabase/cli/releases/tag/v2.101.0",
+    "tauri": "https://github.com/tauri-apps/tauri/releases/tag/tauri-v2.11.2",
+    "rust": "https://blog.rust-lang.org/2026/07/16/Rust-1.97.1/"
+  },
+  "validationPolicy": {
+    "dependencySpecifications": "Exact semantic versions only; no latest, caret, tilde, wildcard, or unbounded ranges.",
+    "lockfiles": ["pnpm-lock.yaml", "Cargo.lock"],
+    "upgradePath": "Use a dedicated reviewed dependency change with changelog and regression review."
+  },
+  "scope": {
+    "supabase": "CLI pin only; CX-R1-004 owns local config, migration, schema, RLS, and functions.",
+    "tauri": "Compile-compatible placeholder only; no enrollment, queue, printer, or network behavior.",
+    "web": "Semantic technical build page only; no product UI or approved design claim."
+  }
+}

@@ -1,0 +1,10 @@
+[workspace]
+members = ["apps/print-agent"]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.97"
+
+[workspace.dependencies]
+tauri = { version = "=2.11.2", default-features = false }
