@@ -6,7 +6,7 @@ The owner explicitly authorized this task and instructed ChatGPT to place the pr
 
 ## Role
 
-Act as the controlled repository-governance implementer for existing PR #17 only.
+Act as the controlled repository-governance implementer for the open draft PR #20 only. PR #17 and PR #18 are already merged and must be preserved as historical/main-branch truth.
 
 ## Mandatory reading order
 
@@ -30,7 +30,7 @@ Before any edit, read and obey:
 
 ## Objective
 
-Reconcile existing branch `governance/activate-cx-r1-002` and existing PR #17 against latest `origin/main` after merged PR #18, then finish one canonical repository-backed control system for:
+Reconcile existing branch `governance/activate-cx-r1-002` and open draft PR #20 against latest `origin/main`, preserving merged PR #17 and PR #18, then finish one canonical repository-backed control system for:
 
 - manual `continue`;
 - `sleep mode`;
@@ -44,14 +44,14 @@ Reconcile existing branch `governance/activate-cx-r1-002` and existing PR #17 ag
 ```text
 VERIFY REAL REPOSITORY AND REMOTE
 → FETCH LATEST ORIGIN/MAIN
-→ VERIFY PR #18 MERGE CONTENT
-→ COMPARE EVERY PR #17 OVERLAP AGAINST LATEST MAIN
+→ VERIFY MERGED PR #17 AND PR #18 CONTENT
+→ COMPARE EVERY DRAFT PR #20 OVERLAP AGAINST LATEST MAIN
 → PRESERVE BOTH VALID CHANGE SETS
 → IDENTIFY ONE CANONICAL OWNER FOR EACH RULE
-→ REMOVE OR SUPERSEDE ONLY OBSOLETE DUPLICATED CX-R1-002 ACTIVATION TEXT
+→ REMOVE OR SUPERSEDE ONLY OBSOLETE DUPLICATED TASK-STATE TEXT
 → IMPLEMENT CONTINUE/SLEEP/DEACTIVATION/REVIEW-HANDOFF/MODEL-FALLBACK STATE MACHINE
 → RUN ALL AFFECTED VALIDATIONS
-→ UPDATE SAME BRANCH AND SAME PR #17
+→ UPDATE SAME BRANCH AND SAME DRAFT PR #20
 → RETURN READY_FOR_OWNER_MERGE
 → STOP
 ```
@@ -81,8 +81,8 @@ When the preferred model reaches capacity, preserve all state and use only an ow
 ## Strict constraints
 
 - Use existing branch `governance/activate-cx-r1-002`.
-- Update existing PR #17.
-- No new branch or PR.
+- Update existing draft PR #20.
+- No second branch or second PR for this task.
 - No force-push.
 - No product code.
 - No `CX-R1-003` work.
@@ -98,7 +98,7 @@ When the preferred model reaches capacity, preserve all state and use only an ow
 - exactly one current execution-mode source if none already exists;
 - exact reviewer handoff convention without empty appearance-only files;
 - updated task checkpoint and changed-file evidence;
-- updated same PR #17;
+- updated same draft PR #20;
 - validation results;
 - final state `READY_FOR_OWNER_MERGE` or exact factual blocker.
 
