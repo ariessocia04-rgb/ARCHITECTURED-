@@ -53,13 +53,14 @@ No screen/flow count was invented for Department Store Retail SaaS because its c
 
 ```text
 1plan.md remains master governance authority: YES
-New file is an additive current-status/connection extension: YES
+Additive current-status/connection extension: YES
 Application detail remains under Applications/: YES
 Shared-contract detail remains under SaaS Platform/: YES
 Design detail remains under Design/ and domain packages: YES
 Release-specific planning remains under Implementation Planning/: YES
 Codex source remains under Codex Code/Implementation/: YES
 Task/prompt/evidence remain separated from executable code: YES
+1plan extension reading order is indexed: YES
 ```
 
 ## Cross-domain integrity verification
@@ -85,6 +86,7 @@ Task/prompt/evidence remain separated from executable code: YES
 - Every future prompt must define Role, Goal, Background, Tools, Authority, Scope, Paths, Steps, Tests, Evidence, Blockers, Completion and Stop behavior.
 - `continue` resumes the same active task from the latest checkpoint.
 - The current `CX-R1-000` task remains active; `CX-R1-001` is not authorized.
+- Prompt 0004 is the current prompt; Prompts 0001–0003 remain historical.
 - New prompt-chain instructions may update the current task but may not silently activate another task.
 
 ## Preservation and duplicate verification
@@ -99,10 +101,28 @@ ARCHITECTURE OWNERSHIP CONFLICTS INTRODUCED: 0
 APPLICATION CODE OR MIGRATIONS CREATED: 0
 ```
 
+## Publication evidence
+
+```text
+PULL REQUEST: #13 — Connect all later SaaS architecture and fully armor Codex prompts
+BASE SHA: 75cd4aa5bf446105acf537b0c4149f8d8cd5b018
+HEAD SHA: 2f158f45b978a8ed2835dedab2e514846fa31a4d
+MERGEABLE BEFORE MERGE: YES
+CHANGED FILES: 19
+ADDITIONS: 3747
+UPDATED GOVERNANCE LINES REMOVED/REPLACED: 302
+DELETED FILES: 0
+CONFIGURED STATUS FAILURES: NONE
+COMMENTS / REVIEWS / UNRESOLVED THREADS: NONE
+MERGE SHA: f60466785715ac37d94da81e864108c1d9a202a3
+POST-MERGE MERGE-RECORD COMMIT: 12c46973dcfe2f5d2bf868bfb3c4577fd600c5a4
+COMPLETION-RECORD FINALIZATION COMMIT: 213fe929baf600d76d9c2be25e0ddf1d315a6601
+```
+
 ## Separate incomplete work
 
 ```text
-CX-R1-000 LIVE REPOSITORY VERIFICATION: STILL REQUIRES CODEX EXECUTION/EXTERNAL REVIEW
+CX-R1-000 LOCAL REPOSITORY VERIFICATION: REQUIRES CODEX EXECUTION AND EXTERNAL REVIEW
 RELEASE 1 HIGH-FIDELITY VISUALS: NOT RENDERED
 CLICKABLE PROTOTYPE: NOT CREATED/APPROVED
 APPLICATION CODE: NOT CREATED
@@ -114,15 +134,20 @@ PILOT DEPLOYMENT: NOT PERFORMED
 PUBLIC PRODUCTION: NOT RELEASED
 ```
 
-## Final pre-publication result
+## Final result
 
 ```text
-CONNECTED MASTER-PLAN EXTENSION: COMPLETE ON WORK BRANCH
-ARCHITECTURE INTEGRATION AUDIT: COMPLETE
-WIREFRAME/WIREFLOW REGISTRY: COMPLETE
-RELEASE/IMPLEMENTATION CONNECTION: COMPLETE
-CODEX PROMPT ARMOR REQUIREMENT: REQUIRED IN SAME TASK
-PULL REQUEST / MERGE / MAIN READ-BACK: PENDING CURRENT TASK COMPLETION
+CONNECTED MASTER-PLAN EXTENSION: COMPLETE_MERGED_TO_MAIN
+ARCHITECTURE INTEGRATION AUDIT: COMPLETE_MERGED_TO_MAIN
+WIREFRAME/WIREFLOW REGISTRY: COMPLETE_MERGED_TO_MAIN
+RELEASE/IMPLEMENTATION CONNECTION: COMPLETE_MERGED_TO_MAIN
+FULLY ARMORED CODEX PROMPT STANDARD: COMPLETE_MERGED_TO_MAIN
+CURRENT PROMPT 0004: MERGED AND CURRENT
+PR REVIEW / MERGE: COMPLETE
+MAIN READ-BACK: REQUIRED AND RECORDED BY FINAL POST-MERGE CONTROL FILES
+APPLICATION CODE: NOT CREATED
+IMPLEMENTATION AUTHORIZATION: NO
+CX-R1-001 AUTHORIZED: NO
 ```
 
-The current task must continue through prompt-standard publication, active prompt-chain synchronization, PR review, merge, and main read-back before it can be declared complete.
+The requested repository architecture/governance integration is complete on `main`. The separate `CX-R1-000` read-only execution remains the only active Codex task and must reach an externally reviewed terminal state before any later task may be activated.
