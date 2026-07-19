@@ -29,6 +29,7 @@ corepack pnpm release-lock:check
 corepack pnpm paths:check
 corepack pnpm migration:check
 corepack pnpm secrets:check
+corepack pnpm audit --prod --audit-level=high
 corepack pnpm workflows:format:check
 cargo fmt --all -- --check
 cargo check --workspace --locked
@@ -47,3 +48,7 @@ The exact required GitHub checks and owner-managed branch policy are in
 [`../../infrastructure/ci/BRANCH_REVIEW_POLICY.md`](../../infrastructure/ci/BRANCH_REVIEW_POLICY.md).
 GitHub Actions retains non-secret unit-test and web-build evidence for 14 days. Do not download,
 attach, or commit generated artifacts containing environment files, credentials, or customer data.
+
+The named `Dependency Review / dependency-review` job performs the locked production audit because
+the repository's GitHub Dependency Graph is disabled. High and critical findings block the job;
+moderate and lower findings remain visible in evidence and must not be suppressed.

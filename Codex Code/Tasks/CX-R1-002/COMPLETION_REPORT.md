@@ -38,6 +38,8 @@ merge.
 - The CI JUnit command was independently verified to create its result file.
 - Two independent clean checkouts at `c6edb62004538b4966fd064f258bba2d7cacc532` each passed a
   frozen install and complete `pnpm ci:check` with exit code `0`.
+- The dependency-review fallback passed with no high or critical production finding. One moderate
+  PostCSS advisory is retained visibly for an owner-authorized dependency-maintenance task.
 - Exact commands, output facts, and durations: `TEST_EVIDENCE.md`.
 
 ## Security, scope, and limitations
@@ -48,6 +50,8 @@ merge.
   deployment, or CX-R1-003 work was added.
 - GitHub branch protection remains owner-managed; the policy and exact required checks are
   documented rather than mutated through repository automation.
+- GitHub Dependency Graph is currently disabled, so the dependency-review job uses the equivalent
+  locked production audit rather than the unavailable GitHub-only dependency-review action.
 
 ## Publication state
 

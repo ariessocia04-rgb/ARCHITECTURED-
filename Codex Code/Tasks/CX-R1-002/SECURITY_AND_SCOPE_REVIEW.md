@@ -26,7 +26,8 @@ SCOPE REVIEW: PASS
 - Exact existing package/toolchain pins, `pnpm-lock.yaml`, `Cargo.lock`, and `RELEASE_LOCK.json`
   remain unchanged and passed their checks.
 - Pull requests receive GitHub's `Dependency Review` check; local frozen-install validation prevents
-  lockfile drift.
+  lockfile drift. Because GitHub Dependency Graph is disabled, this named check runs the locked
+  `pnpm audit --prod --audit-level=high` equivalent instead of an unavailable GitHub-only action.
 - A separate named secret-scan job fails on configured implementation secret patterns.
 - The small Prettier correction preserves the repository's established line endings; the ESLint
   correction ignores only generated Next output. Neither suppresses source checks.
@@ -51,3 +52,16 @@ SCOPE REVIEW: PASS
 GitHub branch protection/ruleset settings are owner-controlled. The required check names and
 recommended review policy are documented, but the workflow intentionally does not attempt to
 modify repository policy through an API or secret-bearing automation.
+
+## Known dependency risk retained for authorized maintenance
+
+`pnpm audit --prod --json` reports one moderate transitive production advisory:
+
+- `postcss@8.4.31` through `apps__web > next > postcss`, GHSA-qx2v-qp2m-jg93 / CVE-2026-41305,
+  an XSS risk when untrusted CSS is parsed and stringified into HTML style content; patched in
+  `postcss >=8.5.10`.
+
+The current release lock permits no dependency-version update in CX-R1-002. The named audit check
+therefore fails high/critical findings while retaining this moderate finding in visible evidence.
+Do not mute, suppress, or silently alter the locked dependency baseline; resolve it in a dedicated
+owner-authorized dependency-maintenance task.

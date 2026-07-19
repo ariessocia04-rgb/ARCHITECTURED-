@@ -11,12 +11,20 @@ Configure GitHub branch protection or rulesets for `main` to require these check
 | `CI Quality and Security / migration-boundary`         | Confirms CX-R1-002 added no future-owned Supabase migration/configuration content.                                                               |
 | `CI Quality and Security / rust-tauri`                 | Rustfmt and locked workspace Cargo check using Rust `1.97.1`.                                                                                    |
 | `CI Quality and Security / secret-scan`                | Runs the configured implementation secret-pattern scan.                                                                                          |
-| `Dependency Review / dependency-review`                | Reviews dependency changes in the pull request.                                                                                                  |
+| `Dependency Review / dependency-review`                | Frozen-install production dependency audit; fails on high or critical vulnerabilities.                                                           |
 
 Repository administrators must require a pull request before merging to `main`, require the checks
 above to pass, require at least one external approving review, dismiss stale approvals after new
 commits, and block direct pushes that bypass review. These settings are intentionally documented,
 not changed by workflow code: they are owner-controlled GitHub repository policy.
+
+## Dependency Graph limitation
+
+GitHub Dependency Graph is currently disabled for this repository, so GitHub's hosted
+`dependency-review-action` cannot run. The required `Dependency Review / dependency-review` check
+therefore performs the equivalent locked production `pnpm audit --prod --audit-level=high` review.
+It blocks high and critical production vulnerabilities. Moderate and lower findings stay visible in
+task evidence and must be resolved only through an owner-authorized dependency-maintenance task.
 
 ## Evidence retention and safety
 

@@ -7,7 +7,7 @@ Every listed path was changed on `agent/cx-r1-002-ci-quality-security` from main
 | Path | Change type | Purpose | Canonical owner | Requirement | Compatibility / review status |
 | --- | --- | --- | --- | --- | --- |
 | `.github/workflows/ci-quality-security.yml` | CREATED | Named GitHub Actions quality, build, migration-boundary, Rust, secret-scan, and artifact-evidence checks. | CX-R1-002 | CI baseline | Required GitHub workflow-location exception; reviewed locally. |
-| `.github/workflows/dependency-review.yml` | CREATED | Pull-request dependency-review check. | CX-R1-002 | CI baseline | Required GitHub workflow-location exception; reviewed locally. |
+| `.github/workflows/dependency-review.yml` | CREATED | Frozen-install production dependency audit that blocks high/critical findings. | CX-R1-002 | CI baseline | GitHub Dependency Graph fallback; reviewed locally. |
 | `Codex Code/Implementation/package.json` | MODIFIED | Adds migration-boundary and aggregate reproducible CI commands. | CX-R1-002 | Contributor commands | No dependency or version change; validated. |
 | `Codex Code/Implementation/prettier.config.mjs` | MODIFIED | Preserves established CRLF/LF endings during format validation. | CX-R1-002 | Quality baseline | Minimal config correction; validated. |
 | `Codex Code/Implementation/eslint.config.mjs` | MODIFIED | Ignores generated `apps/web/.next` build output. | CX-R1-002 | Quality baseline | Minimal generated-output correction; validated. |

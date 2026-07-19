@@ -26,6 +26,7 @@ Cargo: 1.97.1 (c980f4866 2026-06-30)
 | `corepack pnpm paths:check` | PASS | Canonical workspace present; no root-level duplicate source tree. |
 | `corepack pnpm migration:check` | PASS | No future-owned Supabase migration/configuration content present. |
 | `corepack pnpm secrets:check` | PASS | No configured secret patterns found in implementation files. |
+| `corepack pnpm audit --prod --audit-level=high` | PASS | No high or critical production finding; one documented moderate transitive PostCSS advisory remains visible. |
 | `cargo fmt --all -- --check` | PASS | Exit code 0. |
 | `cargo check --workspace --locked` | PASS | `architectured-print-agent-bootstrap` checked successfully in 18.83s. |
 | `corepack pnpm exec vitest run packages/configuration/src --reporter=junit --outputFile=<temp>` | PASS | JUnit evidence was written successfully (1,116 bytes), proving the CI artifact command. |
