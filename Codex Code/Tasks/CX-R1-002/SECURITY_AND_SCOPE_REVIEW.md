@@ -31,6 +31,9 @@ SCOPE REVIEW: PASS
 - A separate named secret-scan job fails on configured implementation secret patterns.
 - The small Prettier correction preserves the repository's established line endings; the ESLint
   correction ignores only generated Next output. Neither suppresses source checks.
+- The Ubuntu Rust/Tauri job installs only standard system development packages on its ephemeral
+  GitHub runner. It changes no repository dependency, lockfile, application source, or deployment
+  environment.
 
 ## Architecture, duplicate, and ownership review
 

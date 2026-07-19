@@ -29,7 +29,8 @@ merge.
   check names, owner-managed branch-review policy, and reproducible contributor commands.
 - CX-R1-001 closure and CX-R1-002 activation controls, canonical prompt, contract, and evidence.
 - Minimal corrections discovered during validation: preserve established line endings; ignore only
-  generated `apps/web/.next/**`; explicitly load the workspace Prettier config for workflow YAML.
+  generated `apps/web/.next/**`; explicitly load the workspace Prettier config for workflow YAML;
+  install standard Linux Tauri development packages on the ephemeral Ubuntu Rust runner.
 
 ## Tests and evidence
 

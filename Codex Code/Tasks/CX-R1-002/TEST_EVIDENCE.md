@@ -61,3 +61,13 @@ The smallest correction adds `workflows:format:check`, which explicitly loads th
 places it in both the aggregate local gate and the named GitHub Actions quality job. The corrected
 command passed locally. The preliminary clone is not counted toward the two required acceptance
 runs; both are repeated from the corrected commit.
+
+## GitHub Actions runner correction
+
+The first GitHub Actions run for corrective commit `7c5273109fb2c39638282a030e8ffe820c10304a`
+passed every Node, security, build, migration-boundary, and dependency-review job. Its
+`rust-tauri` job failed before compiling the workspace because the Ubuntu runner lacked the
+system `glib-2.0` package required by the locked Tauri dependency graph. The workflow now installs
+the standard Linux Tauri development packages (`libwebkit2gtk-4.1-dev`,
+`libayatana-appindicator3-dev`, `librsvg2-dev`, and `libxdo-dev`) before the unchanged pinned Rust
+format and locked Cargo commands. This changes no application dependency, source, or lockfile.
