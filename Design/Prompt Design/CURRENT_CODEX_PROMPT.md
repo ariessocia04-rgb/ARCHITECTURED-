@@ -7,88 +7,96 @@ This file gives designers, architects, reviewers, and future prompt authors one 
 ## CURRENT AUTHORITY
 
 ```yaml
-active_task_id: CX-R1-000
-active_task_title: Repository Safety and Live-State Verification
-current_prompt_sequence: 0004
-current_prompt_type: FINAL_CONTINUE_AND_FINISH
+active_task_id: CX-R1-001
+active_task_title: Workspace and Version Bootstrap
+current_prompt_sequence: 0001
+current_prompt_type: INITIAL
 current_prompt_status: CURRENT
-current_prompt_path: Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-AND-FINISH.md
+current_prompt_path: Codex Code/Prompts/CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md
 active_pointer_path: Codex Code/Prompts/ACTIVE_TASK.md
 prompt_registry_path: Codex Code/Prompts/PROMPT_REGISTRY.md
-checkpoint_path: Codex Code/Tasks/CX-R1-000/CHECKPOINT.md
+checkpoint_path: Codex Code/Tasks/CX-R1-001/CHECKPOINT.md
+task_contract_path: Codex Code/Tasks/CX-R1-001/TASK_CONTRACT.md
 prompt_design_standard: Codex Code/ARMORED_PROMPT_REQUIREMENTS.md
 canonical_implementation_root: Codex Code/Implementation/
+work_branch: agent/cx-r1-001-workspace-bootstrap
 next_task_authorized: false
 ```
 
 ## CURRENT PROMPT ROLE
 
-Codex is the controlled read-only repository safety, architecture synchronization, and live-state verifier for `CX-R1-000`.
+Codex is the controlled workspace/bootstrap engineer for `CX-R1-001`.
+
+It is authorized to create only the deterministic technical foundation under `Codex Code/Implementation/`, including exact toolchain/dependency locks, minimal build skeletons, environment schema, quality scripts, tests, documentation, and task evidence.
 
 It is not authorized to act as:
 
-- Product Owner;
-- autonomous Architect;
-- source-code implementer;
-- migration author;
-- dependency installer;
-- task selector;
-- reviewer;
-- pull-request approver or merger.
+- Product Owner or autonomous Architect;
+- high-fidelity UI designer or approver;
+- business/domain/database/CI/observability implementer beyond the exact bootstrap contract;
+- provider selector;
+- reviewer or merger;
+- task selector.
 
 ## CURRENT PROMPT GOAL
 
 ```text
-LOCATE OR CLONE ONE REAL ARCHITECTURED- CHECKOUT
-→ VERIFY ORIGIN AND LATEST MAIN
-→ VERIFY CLEAN AND SAFE LOCAL STATE
-→ READ THE COMPLETE CURRENT AUTHORITY CHAIN
-→ VERIFY ALL SYNCHRONIZED SAAS/APPLICATION/DESIGN PACKAGES
-→ INSPECT LIVE BRANCH/PR/COMMIT/CI/CODE/MIGRATION STATE
-→ CLASSIFY EXISTING WORK, DUPLICATES, CONFLICTS, AND ACTIVE WORKERS
-→ DETERMINE WHETHER CX-R1-001 COULD LATER START SAFELY
-→ RETURN THE COMPLETE CX-R1-000 REPORT
+VERIFY CX-R1-000 APPROVED_COMPLETE
+→ WORK ONLY ON agent/cx-r1-001-workspace-bootstrap
+→ CREATE THE CANONICAL WORKSPACE UNDER Codex Code/Implementation/
+→ PIN EXACT APPROVED TOOLCHAIN AND DEPENDENCIES
+→ CREATE LOCKFILES AND RELEASE LOCK
+→ CREATE MINIMAL NON-PRODUCT WEB/LOCAL-AGENT FOUNDATIONS
+→ CREATE ENVIRONMENT SCHEMA AND BOOTSTRAP TESTS
+→ RUN FORMAT/LINT/TYPECHECK/TEST/BUILD/RECOVERY CHECKS
+→ CREATE FACTUAL EVIDENCE
+→ PREPARE DRAFT PR OR OWNER-PUBLISH HANDOFF
 → STOP FOR EXTERNAL REVIEW
 ```
 
-## CURRENT PROMPT COMPLETION RULE
+## DESIGN-GATE BOUNDARY
 
-```text
-DO NOT STOP AFTER ONE FILE.
-DO NOT STOP AFTER ONE COMMAND.
-DO NOT STOP AFTER ONE STEP.
-DO NOT STOP AFTER ONE PHASE.
-DO NOT STOP AFTER A PARTIAL REPORT.
-FINISH THE ENTIRE CURRENT AUTHORIZED TASK.
-```
-
-After the full current-task report or a genuine fully documented blocker:
-
-```text
-STOP
-```
-
-`STOP` does not authorize `CX-R1-001` or any later task.
+High-fidelity screens, clickable prototype, and design UAT remain incomplete. That does not block this non-UI workspace bootstrap, but Codex may not implement or claim approval for product screens, role workspaces, visual tokens, or workflow UI.
 
 ## EXECUTION RULE
 
 Always open and execute the canonical prompt from:
 
 ```text
-Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-AND-FINISH.md
+Codex Code/Prompts/CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md
 ```
 
 This Design reference is not an executable replacement and must not be treated as newer authority than the canonical prompt chain.
+
+## COMPLETION RULE
+
+```text
+FINISH THE ENTIRE CX-R1-001 SCOPE
+→ RUN EVERY REQUIRED VALIDATION
+→ CREATE COMPLETE EVIDENCE
+→ DRAFT PR OR OWNER-PUBLISH HANDOFF
+→ EXTERNAL REVIEW/CORRECTION
+→ AUTHORIZED MERGE AND MAIN READ-BACK
+→ APPROVED_COMPLETE
+```
+
+After a full report or genuine external blocker:
+
+```text
+STOP
+```
+
+`STOP` does not authorize `CX-R1-002` or any later task.
 
 ## UPDATE RULE
 
 When another prompt becomes current:
 
-- preserve Prompt 0004 as historical evidence;
-- create the next append-only prompt sequence under `Codex Code/Prompts/<TASK-ID>/`;
-- update the canonical active pointer and prompt registry;
+- preserve the current prompt as append-only historical evidence;
+- create the next numbered prompt under `Codex Code/Prompts/<TASK-ID>/`;
+- update the canonical active pointer and registry;
 - update this reference to the new exact canonical path;
-- never paste a second full executable prompt into `Design/Prompt Design/`.
+- never copy the full executable prompt into this Design folder.
 
 ## STATUS
 
@@ -96,7 +104,9 @@ When another prompt becomes current:
 CURRENT PROMPT REFERENCE: SYNCHRONIZED
 FULL PROMPT COPIED HERE: NO
 DUPLICATE EXECUTABLE AUTHORITY CREATED: NO
-ACTIVE TASK: CX-R1-000
-CURRENT PROMPT: 0004
+PREVIOUS TASK CX-R1-000: APPROVED_COMPLETE
+ACTIVE TASK: CX-R1-001
+CURRENT PROMPT: 0001
+SOURCE CODE AUTHORIZED: CX-R1-001 SCOPE ONLY
 NEXT TASK AUTHORIZED: NO
 ```
