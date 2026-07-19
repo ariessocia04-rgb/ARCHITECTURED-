@@ -29,6 +29,27 @@ On every `continue`, including after a model switch, session restart, interrupti
 
 The repository is the persistent instruction memory. Do not rely on chat memory, model memory, an earlier summary, an old branch, an unverified local draft, or assumptions about what happened before. Re-read the current canonical files and verify live state every time.
 
+## Permanent owner command: `sleep mode`
+
+The owner may activate the controlled overnight coordination mode by sending exactly:
+
+```text
+sleep mode
+```
+
+This is a ChatGPT coordination command, not permission to broaden scope, bypass review, merge a PR, or start another task. When `sleep mode` is activated:
+
+1. ChatGPT enables the existing canonical reviewer watch for the active task.
+2. ChatGPT periodically checks the repository-backed active task, authorized branch and PR, checkpoint, changed files, evidence, review state, and GitHub checks.
+3. While Codex is still working or external checks are pending, ChatGPT does not alter the implementation and does not create duplicate instructions, branches, PRs, reports, or review files.
+4. When Codex stops at `READY_FOR_REVIEW` or `READY_FOR_OWNER_MERGE`, ChatGPT independently reviews the output against the active prompt, task contract, architecture, allowed and forbidden paths, duplicate rules, security requirements, tests, evidence, and live GitHub state.
+5. ChatGPT writes or updates only the one canonical reviewer handoff for the active task. It records either `FIX_REQUIRED` with exact factual corrections or `REVIEW_PASS_PENDING_OWNER`.
+6. On the next repository-backed `continue`, Codex must read the canonical reviewer handoff before coding. When the status is `FIX_REQUIRED`, Codex fixes only the exact authorized findings, preserves valid work, runs all affected validations, updates the same task branch and PR, and returns to review. When the status is `REVIEW_PASS_PENDING_OWNER`, Codex does not change code and stops for owner action.
+7. `PENDING_OWNER_ACTION`, `BLOCKED_*`, and architecture or security decisions always stop the automated loop.
+8. Neither ChatGPT nor Codex may self-approve, self-merge, delete or overwrite owner-authored work, activate a later task, or change the strict plan during sleep mode.
+
+The strict plan, one-active-task rule, canonical paths, no-duplication law, owner approval gates, and completion law remain fully intact in both `continue` and `sleep mode`.
+
 ## Mandatory pre-coding gate
 
 Before creating, editing, deleting, renaming, moving, generating, installing, committing, pushing, or opening a PR, Codex must verify and record:
