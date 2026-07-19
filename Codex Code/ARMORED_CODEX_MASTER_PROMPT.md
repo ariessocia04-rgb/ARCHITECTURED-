@@ -33,6 +33,25 @@ DELETE
 → REWRITE EVERYTHING
 ```
 
+## Required environment
+
+Work only from a real Git checkout of:
+
+```text
+ariessocia04-rgb/ARCHITECTURED-
+```
+
+The working directory must contain:
+
+```text
+.git/
+1plan.md
+Codex Code/README.md
+Codex Code/Implementation/README.md
+```
+
+A generated folder containing only `work/`, `outputs/`, or files mentioned by the user is not the repository. Return `BLOCKED_ENVIRONMENT`; do not create a substitute project.
+
 ## Required authority order
 
 ```text
@@ -44,13 +63,14 @@ DELETE
 → Implementation Planning/Release 1 MVP/05. Codex Execution/CODEX_TASK_MANIFEST.md
 → Implementation Planning/Release 1 MVP/05. Codex Execution/CODEX_TASK_CONTRACT_TEMPLATE.md
 → Codex Code/README.md
+→ Codex Code/Implementation/README.md
 → Codex Code/TASK_STORAGE_AND_HANDOFF_RULES.md
 → current task record
 → relevant application/SaaS/Design/TECA sources
 → latest main, branches, PRs, migrations, CI, and existing code
 ```
 
-A chat copy, old branch, stale prompt, or memory entry is not authority over merged canonical files.
+A chat copy, old branch, stale prompt, generated task workspace, or memory entry is not authority over merged canonical files.
 
 ## Authorization
 
@@ -69,24 +89,23 @@ merge_to_main_authorized: false
 automatic_next_task_authorized: false
 ```
 
-Missing or ambiguous authorization means `NOT_AUTHORIZED`.
-
-Authorization for one task never authorizes the next task.
+Missing or ambiguous authorization means `NOT_AUTHORIZED`. Authorization for one task never authorizes the next task.
 
 ## Before editing
 
-1. Read all required sources.
-2. Verify latest `main` SHA.
-3. Check open PRs, active branches, recent commits, migrations, CI, and active workers.
-4. Inspect existing code and tests.
-5. Search before creating anything.
-6. Classify every proposed creation:
+1. Verify the real Git repository root and `origin` remote.
+2. Read all required sources.
+3. Verify latest `main` SHA.
+4. Check open PRs, active branches, recent commits, migrations, CI, and active workers.
+5. Inspect the entire repository for existing code and tests.
+6. Search before creating anything.
+7. Classify every proposed creation:
    - `EXISTING_COMPLETE`
    - `EXISTING_PARTIAL`
    - `NEW_ADDITIVE`
    - `CONFLICT`
    - `DUPLICATE`
-7. Return a factual start state: `READY`, `NOT_AUTHORIZED`, `BLOCKED_ARCHITECTURE_CLARIFICATION`, `BLOCKED_DEPENDENCY`, `BLOCKED_ENVIRONMENT`, or `SKIPPED_ALREADY_COMPLETE`.
+8. Return a factual start state: `READY`, `NOT_AUTHORIZED`, `BLOCKED_ARCHITECTURE_CLARIFICATION`, `BLOCKED_DEPENDENCY`, `BLOCKED_ENVIRONMENT`, or `SKIPPED_ALREADY_COMPLETE`.
 
 ## Absolute protection rules
 
@@ -95,7 +114,7 @@ Authorization for one task never authorizes the next task.
 - Never force-push without explicit authorization.
 - Never edit outside allowed paths.
 - Never delete, rename, or move valid files without exact authorization and recovery evidence.
-- Never create a second implementation of an existing domain, service, table, API, event, queue, component, route, migration chain, or test helper.
+- Never create a second implementation of an existing domain, service, table, API, event, queue, component, route, migration chain, package, or test helper.
 - Never change plans, prices, limits, roles, permissions, workflows, release scope, or architecture.
 - Never commit secrets, tokens, real customer data, payment details, private certificates, device passcodes, or production dumps.
 - Never weaken RLS, authorization, audit, validation, idempotency, tests, accessibility, or error handling to make a check pass.
@@ -103,22 +122,45 @@ Authorization for one task never authorizes the next task.
 
 ## Canonical code placement
 
-Actual code belongs only in approved implementation paths such as:
+All executable implementation belongs only under:
 
 ```text
-apps/
-packages/
-supabase/
-tests/
-infrastructure/
-docs/
+Codex Code/Implementation/
 ```
 
-`Codex Code/` stores task contracts, changed-file manifests, evidence, review, and merge records only. Do not copy application source code into `Codex Code/`.
+Canonical examples:
+
+```text
+Codex Code/Implementation/apps/web/...
+Codex Code/Implementation/apps/print-agent/...
+Codex Code/Implementation/packages/domain/...
+Codex Code/Implementation/packages/contracts/...
+Codex Code/Implementation/supabase/migrations/...
+Codex Code/Implementation/tests/...
+Codex Code/Implementation/infrastructure/...
+Codex Code/Implementation/docs/...
+```
+
+Do not create competing root-level `apps/`, `packages/`, `supabase/`, `tests/`, or `infrastructure/` trees.
+
+`Codex Code/Tasks/`, `Evidence/`, and `Reviews/` contain records only. Never copy source code into those folders.
+
+When existing code is found outside the canonical implementation root:
+
+```text
+DO NOT COPY
+DO NOT DELETE
+DO NOT MOVE
+DO NOT RECREATE
+→ REPORT EXACT PATHS
+→ BLOCKED_ARCHITECTURE_CLARIFICATION
+```
+
+A separate owner-authorized migration task is required.
 
 ## Database and security
 
-- Use additive, reviewable migrations.
+- Use additive, reviewable migrations under `Codex Code/Implementation/supabase/migrations/`.
 - Test empty database and previous supported upgrade.
 - Preserve financial, inventory, warranty, audit, lifecycle, and legal history.
 - Enable RLS on exposed tenant tables.
@@ -159,15 +201,16 @@ Codex Code/Tasks/<TASK-ID>/
 ├── CHANGED_FILES.md
 ├── TEST_EVIDENCE.md
 ├── SECURITY_AND_SCOPE_REVIEW.md
+├── COMPLETION_REPORT.md
 ├── REVIEW_RESULT.md
 └── MERGE_RECORD.md
 ```
 
-Create only files containing real evidence. Record exact canonical code paths rather than copying source code.
+Create only files containing real evidence. Every source path in `CHANGED_FILES.md` must point to `Codex Code/Implementation/`, except explicitly authorized task evidence/documentation records.
 
 ## Completion
 
-A task is ready for review only when scope, architecture, allowed paths, tests, security, migrations/recovery, UX/accessibility, task records, commit, and draft PR are factual and complete.
+A task is ready for review only when scope, architecture, allowed paths, canonical placement, tests, security, migrations/recovery, UX/accessibility, task records, commit, and draft PR are factual and complete.
 
 End every task with:
 
@@ -178,7 +221,7 @@ Authorization evidence
 Base SHA
 Branch
 Sources read
-Changed canonical paths
+Changed canonical paths under Codex Code/Implementation/
 Migrations/contracts/events
 Tests and results
 Security/RLS evidence
