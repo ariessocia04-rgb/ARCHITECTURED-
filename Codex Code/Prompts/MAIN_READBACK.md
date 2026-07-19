@@ -1,0 +1,74 @@
+# CODEX PROMPT CHAIN — MAIN READ-BACK
+
+## Repository state
+
+```text
+REPOSITORY: ariessocia04-rgb/ARCHITECTURED-
+DEFAULT BRANCH: main
+PROMPT-CHAIN PR: #12
+PROMPT-CHAIN MERGE SHA: f12be57fa25fe7a25ae71be7d499cd9d6b7407de
+MERGE-EVIDENCE COMMIT: d375f8cea3d02890657b1b0898630d4ed2327462
+```
+
+## Main-delivered paths
+
+```text
+1plan-CODEX_PROMPT_CHAIN_CONTINUATION_EXTENSION.md
+revise-CODEX_PROMPT_CHAIN_CONTINUATION.md
+Codex Code/CURRENT_TASK_COMPLETION_LAW.md
+Codex Code/Prompts/README.md
+Codex Code/Prompts/INDEX.md
+Codex Code/Prompts/ACTIVE_TASK.md
+Codex Code/Prompts/PROMPT_REGISTRY.md
+Codex Code/Prompts/CONTINUE_PROTOCOL.md
+Codex Code/Prompts/Templates/PROMPT_ENTRY_TEMPLATE.md
+Codex Code/Prompts/Templates/CHECKPOINT_TEMPLATE.md
+Codex Code/Prompts/CX-R1-000/0002-CONTINUE-AFTER-ENVIRONMENT-BLOCK.md
+Codex Code/Tasks/CX-R1-000/CHECKPOINT.md
+Codex Code/Prompts/COMPLETION_RECORD.md
+Codex Code/Prompts/FINAL_VERIFICATION.md
+Codex Code/Prompts/MERGE_RECORD.md
+Codex Code/Prompts/MAIN_READBACK.md
+```
+
+## Functional read-back
+
+```text
+ACTIVE TASK: CX-R1-000
+LATEST VALID PROMPT: 0002-CONTINUE-AFTER-ENVIRONMENT-BLOCK
+LATEST CHECKPOINT: Codex Code/Tasks/CX-R1-000/CHECKPOINT.md
+PREVIOUS STOP: BLOCKED_ENVIRONMENT
+CONTINUE ACTION: RESUME CX-R1-000 FROM FIRST INCOMPLETE READ-ONLY VERIFICATION STEP
+CURRENT TASK COMPLETION REQUIRED BEFORE NEXT TASK: YES
+CX-R1-001 AUTHORIZED: NO
+```
+
+## Storage read-back
+
+```text
+PROMPTS: Codex Code/Prompts/
+TASK/CHECKPOINT EVIDENCE: Codex Code/Tasks/<TASK-ID>/
+EXECUTABLE CODE: Codex Code/Implementation/
+ROOT-LEVEL PARALLEL CODE TREES: PROHIBITED
+```
+
+## Completion assessment
+
+```text
+PROMPT HISTORY STORAGE: COMPLETE
+ACTIVE-TASK POINTER: COMPLETE
+CONTINUATION PROTOCOL: COMPLETE
+CHECKPOINT MODEL: COMPLETE
+FULL CURRENT CONTINUATION PROMPT: COMPLETE
+CURRENT-TASK COMPLETION LAW: COMPLETE
+PR REVIEW/MERGE EVIDENCE: COMPLETE
+MAIN READ-BACK RECORD: COMPLETE
+APPLICATION CODING: NOT STARTED
+NEXT TASK: NOT STARTED AND NOT AUTHORIZED
+```
+
+## Final state
+
+The Prompt Chain and deterministic continuation task is `COMPLETE_MERGED_TO_MAIN`.
+
+The separate active Codex task `CX-R1-000` remains unfinished because its local read-only repository verification must still be executed by Codex from the actual Git checkout. The Prompt Chain correctly prevents progression to `CX-R1-001` until `CX-R1-000` reaches an externally reviewed terminal state.
