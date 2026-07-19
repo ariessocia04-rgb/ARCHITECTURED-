@@ -3,24 +3,23 @@
 This file identifies the only task that the owner command `continue` may resume.
 
 ```yaml
-active_task_id: CX-R1-002
-active_task_title: CI, Quality, and Security Baseline
-release_id: ROS-R1-MVP-2026-01
-execution_type: CONTROLLED_IMPLEMENTATION
-current_status: ACTIVE_IMPLEMENTATION
+active_task_id: GOV-CONTROL-001
+active_task_title: Repository-Controlled Continue, Sleep Mode, and Model Fallback
+release_id: GOVERNANCE-CONTROL
+execution_type: CONTROLLED_GOVERNANCE_RECONCILIATION
+current_status: AUTHORIZED_NOT_STARTED
 latest_prompt_sequence: 0001
-latest_prompt_path: Codex Code/Prompts/CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md
-latest_checkpoint_path: Codex Code/Tasks/CX-R1-002/CHECKPOINT.md
-task_record_path: Codex Code/Tasks/CX-R1-002/TASK_RECORD.md
-task_contract_path: Codex Code/Tasks/CX-R1-002/TASK_CONTRACT.md
+latest_prompt_path: Codex Code/Prompts/GOV-CONTROL-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md
+latest_checkpoint_path: Codex Code/Tasks/GOV-CONTROL-001/CHECKPOINT.md
+task_record_path: Codex Code/Tasks/GOV-CONTROL-001/TASK_RECORD.md
+task_contract_path: Codex Code/Tasks/GOV-CONTROL-001/TASK_CONTRACT.md
 completion_law_path: Codex Code/CURRENT_TASK_COMPLETION_LAW.md
 prompt_requirements_path: Codex Code/ARMORED_PROMPT_REQUIREMENTS.md
 canonical_implementation_root: Codex Code/Implementation/
-work_branch: agent/cx-r1-002-ci-quality-security
-pull_request: NONE_YET
-previous_task_id: CX-R1-001
-previous_task_status: APPROVED_COMPLETE
-previous_task_review_path: Codex Code/Tasks/CX-R1-001/REVIEW_RESULT.md
+work_branch: governance/activate-cx-r1-002
+pull_request: 17
+previous_task_id: CX-R1-002
+previous_task_status: MERGED_REQUIRES_MAIN_READBACK_PRESERVATION
 next_task_id: CX-R1-003
 next_task_authorized: false
 ```
@@ -30,34 +29,37 @@ next_task_authorized: false
 `continue` means:
 
 ```text
-RESUME AND FINISH CX-R1-002
+RESUME AND FINISH GOV-CONTROL-001
 FROM ITS LATEST VERIFIED CHECKPOINT
 USING PROMPT 0001, TASK RECORD, AND TASK CONTRACT
-WORK ONLY ON agent/cx-r1-002-ci-quality-security
-STORE EXECUTABLE OUTPUT UNDER Codex Code/Implementation/ AND THE NARROW, REQUIRED .github/workflows/ CI EXCEPTION
-RUN ALL REQUIRED CHECKS AND CREATE FACTUAL EVIDENCE
-RETURN READY_FOR_REVIEW OR CX-R1-002_READY_FOR_OWNER_MERGE
+WORK ONLY ON governance/activate-cx-r1-002 AND EXISTING PR #17
+FETCH AND RECONCILE AGAINST LATEST ORIGIN/MAIN
+PRESERVE MERGED PR #18 AND ALL UNIQUE VALID PR #17 CONTROLS
+IMPLEMENT THE CANONICAL CONTINUE/SLEEP/DEACTIVATION/REVIEW-HANDOFF/MODEL-FALLBACK METHOD
+RUN ALL AFFECTED VALIDATIONS
+RETURN READY_FOR_OWNER_MERGE
+DO NOT MERGE
 DO NOT BEGIN CX-R1-003
 ```
 
 It does not mean:
 
 - work directly on `main`;
-- repeat `CX-R1-000`;
-- create root-level implementation folders;
-- implement business modules, product UI, database business schema, CI, observability, or later tasks;
-- bypass a Windows `.git` sandbox restriction;
-- merge its own PR;
-- proceed automatically to `CX-R1-002`.
+- recreate or resume CX-R1-002 implementation;
+- create another governance branch or PR;
+- implement product, UI, database, observability, deployment, or later release work;
+- force-push, reset, clean, delete, rename, relocate, or overwrite valid owner-authored work;
+- self-review, self-approve, or self-merge;
+- automatically select another task.
 
 ## Current-task completion rule
 
 ```text
 ONE ACTIVE TASK
-→ FULL AUTHORIZED SCOPE
+→ FULL AUTHORIZED GOVERNANCE RECONCILIATION
 → ALL REQUIRED VALIDATIONS
-→ COMPLETE EVIDENCE/REPORT
-→ DRAFT PR OR OWNER-PUBLISH HANDOFF
+→ COMPLETE FACTUAL EVIDENCE
+→ UPDATE SAME PR #17
 → EXTERNAL REVIEW/CORRECTION
 → AUTHORIZED MERGE AND MAIN READ-BACK
 → APPROVED_COMPLETE
@@ -70,7 +72,7 @@ A blocker, interruption, failed validation, owner-publish handoff, or ready-for-
 
 This pointer may be updated to another task only when:
 
-1. `CX-R1-002` receives an externally reviewed terminal state; or
+1. `GOV-CONTROL-001` receives an externally reviewed terminal state; or
 2. the owner explicitly cancels or supersedes it with a controlled recovery plan.
 
 Completing one task never automatically authorizes the next task.
