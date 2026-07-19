@@ -20,13 +20,14 @@ task_contract_path: Codex Code/Tasks/GOV-CONTROL-001/TASK_CONTRACT.md
 prompt_design_standard: Codex Code/ARMORED_PROMPT_REQUIREMENTS.md
 canonical_implementation_root: Codex Code/Implementation/
 work_branch: governance/activate-cx-r1-002
-pull_request: 17
+pull_request: 20
+pull_request_state: DRAFT_OPEN
 next_task_authorized: false
 ```
 
 ## CURRENT PROMPT ROLE
 
-Codex is the controlled governance reconciler for existing PR #17. It must preserve merged PR #18 and every unique valid permanent control while completing one canonical repository-backed method for manual `continue`, `sleep mode`, deactivation, reviewer handoff, and safe owner-approved model fallback.
+Codex is the controlled governance reconciler for open draft PR #20. It must preserve merged PR #17, merged PR #18, and every unique valid permanent control while completing one canonical repository-backed method for manual `continue`, `sleep mode`, deactivation, reviewer handoff, and safe owner-approved model fallback.
 
 It is not authorized to act as:
 
@@ -41,12 +42,12 @@ It is not authorized to act as:
 
 ```text
 FETCH LATEST ORIGIN/MAIN
-→ VERIFY MERGED PR #18
-→ COMPARE AND RECONCILE EXISTING PR #17
+→ VERIFY MERGED PR #17 AND PR #18
+→ COMPARE AND RECONCILE OPEN DRAFT PR #20
 → PRESERVE ALL UNIQUE VALID WORK
 → COMPLETE ONE CANONICAL CONTINUE/SLEEP/REVIEW-HANDOFF/MODEL-FALLBACK METHOD
 → RUN ALL AFFECTED VALIDATIONS
-→ UPDATE SAME PR #17
+→ UPDATE SAME DRAFT PR #20
 → RETURN READY_FOR_OWNER_MERGE
 → STOP
 ```
@@ -71,7 +72,7 @@ This Design reference is not an executable replacement and must not be treated a
 FINISH THE ENTIRE GOV-CONTROL-001 SCOPE
 → RUN EVERY REQUIRED VALIDATION
 → CREATE FACTUAL EVIDENCE
-→ UPDATE SAME PR #17
+→ UPDATE SAME DRAFT PR #20
 → EXTERNAL REVIEW/CORRECTION
 → AUTHORIZED MERGE AND MAIN READ-BACK
 → APPROVED_COMPLETE
@@ -101,10 +102,12 @@ When another prompt becomes current:
 CURRENT PROMPT REFERENCE: SYNCHRONIZED
 FULL PROMPT COPIED HERE: NO
 DUPLICATE EXECUTABLE AUTHORITY CREATED: NO
+MERGED GOVERNANCE PR: 17
 PREVIOUS IMPLEMENTATION TASK CX-R1-002: MERGED IN PR #18
 ACTIVE TASK: GOV-CONTROL-001
 CURRENT PROMPT: 0001
+DRAFT PULL REQUEST: 20
 PRODUCT SOURCE CODE AUTHORIZED: NO
-NEW BRANCH OR PR AUTHORIZED: NO
+SECOND BRANCH OR PR AUTHORIZED: NO
 NEXT TASK AUTHORIZED: NO
 ```
