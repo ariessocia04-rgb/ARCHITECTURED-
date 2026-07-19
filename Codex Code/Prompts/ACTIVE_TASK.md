@@ -3,22 +3,25 @@
 This file identifies the only task that the owner command `continue` may resume.
 
 ```yaml
-active_task_id: CX-R1-000
-active_task_title: Repository Safety and Live-State Verification
+active_task_id: CX-R1-001
+active_task_title: Workspace and Version Bootstrap
 release_id: ROS-R1-MVP-2026-01
-execution_type: READ_ONLY_REPOSITORY_AND_ARCHITECTURE_SYNCHRONIZATION_VERIFICATION
-current_status: READY_TO_RETRY_AND_FINISH_AGAINST_SYNCHRONIZED_MASTER_STATE
-latest_prompt_sequence: 0004
-latest_prompt_path: Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-AND-FINISH.md
-latest_checkpoint_path: Codex Code/Tasks/CX-R1-000/CHECKPOINT.md
-task_record_path: Codex Code/Tasks/CX-R1-000/TASK_RECORD.md
+execution_type: CONTROLLED_IMPLEMENTATION
+current_status: AUTHORIZED_READY_FOR_OWNER_BRANCH_SETUP_AND_EXECUTION
+latest_prompt_sequence: 0001
+latest_prompt_path: Codex Code/Prompts/CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md
+latest_checkpoint_path: Codex Code/Tasks/CX-R1-001/CHECKPOINT.md
+task_record_path: Codex Code/Tasks/CX-R1-001/TASK_RECORD.md
+task_contract_path: Codex Code/Tasks/CX-R1-001/TASK_CONTRACT.md
 completion_law_path: Codex Code/CURRENT_TASK_COMPLETION_LAW.md
 prompt_requirements_path: Codex Code/ARMORED_PROMPT_REQUIREMENTS.md
-master_sync_path: 1plan-SAAS_APPLICATION_WIREFRAME_WIREFLOW_INTEGRATION_EXTENSION.md
 canonical_implementation_root: Codex Code/Implementation/
-work_branch: NONE_AUTHORIZED
-pull_request: NONE_AUTHORIZED
-next_task_id: CX-R1-001
+work_branch: agent/cx-r1-001-workspace-bootstrap
+pull_request: NONE_YET
+previous_task_id: CX-R1-000
+previous_task_status: APPROVED_COMPLETE
+previous_task_review_path: Codex Code/Tasks/CX-R1-000/REVIEW_RESULT.md
+next_task_id: CX-R1-002
 next_task_authorized: false
 ```
 
@@ -27,48 +30,47 @@ next_task_authorized: false
 `continue` means:
 
 ```text
-RESUME AND FINISH CX-R1-000
-FROM ITS LATEST CHECKPOINT
-USING PROMPT 0004 AND THE COMPLETE VALID PROMPT CHAIN
-LOCATE OR CLONE THE REAL GIT REPOSITORY WHEN REQUIRED
-READ THE SYNCHRONIZED MASTER SAAS/APPLICATION/DESIGN PLAN
-VERIFY THE COMPLETE LIVE REPOSITORY AND ARCHITECTURE STATE
-RETURN THE FULL CX-R1-000 REPORT
-DO NOT BEGIN CX-R1-001
+RESUME AND FINISH CX-R1-001
+FROM ITS LATEST VERIFIED CHECKPOINT
+USING PROMPT 0001, TASK RECORD, AND TASK CONTRACT
+WORK ONLY ON agent/cx-r1-001-workspace-bootstrap
+STORE EXECUTABLE OUTPUT ONLY UNDER Codex Code/Implementation/
+RUN ALL REQUIRED CHECKS AND CREATE FACTUAL EVIDENCE
+RETURN READY_FOR_REVIEW OR READY_FOR_OWNER_PUBLISH
+DO NOT BEGIN CX-R1-002
 ```
 
 It does not mean:
 
-- start `CX-R1-001`;
-- create application source code;
-- create a task branch;
-- repeat completed architecture or prompt-chain work;
-- stop after merely locating/cloning the repository;
-- stop after one verification phase;
-- ignore the latest master-plan extension;
-- use a temporary non-Git workspace as the repository.
+- work directly on `main`;
+- repeat `CX-R1-000`;
+- create root-level implementation folders;
+- implement business modules, product UI, database business schema, CI, observability, or later tasks;
+- bypass a Windows `.git` sandbox restriction;
+- merge its own PR;
+- proceed automatically to `CX-R1-002`.
 
 ## Current-task completion rule
 
-The entire current authorized task must finish before any next task is proposed.
-
 ```text
 ONE ACTIVE TASK
-→ FULL SCOPE
-→ ALL VALIDATIONS
+→ FULL AUTHORIZED SCOPE
+→ ALL REQUIRED VALIDATIONS
 → COMPLETE EVIDENCE/REPORT
+→ DRAFT PR OR OWNER-PUBLISH HANDOFF
 → EXTERNAL REVIEW/CORRECTION
+→ AUTHORIZED MERGE AND MAIN READ-BACK
 → APPROVED_COMPLETE
-→ OWNER MAY ACTIVATE ANOTHER TASK
+→ ONLY OWNER MAY ACTIVATE ANOTHER TASK
 ```
 
-A blocker, interruption, failed validation, or ready-for-review state does not activate the next task.
+A blocker, interruption, failed validation, owner-publish handoff, or ready-for-review state does not activate the next task.
 
 ## Pointer update rule
 
 This pointer may be updated to another task only when:
 
-1. `CX-R1-000` receives an externally reviewed terminal state; or
-2. the owner explicitly cancels or supersedes it.
+1. `CX-R1-001` receives an externally reviewed terminal state; or
+2. the owner explicitly cancels or supersedes it with a controlled recovery plan.
 
 Completing one task never automatically authorizes the next task.
