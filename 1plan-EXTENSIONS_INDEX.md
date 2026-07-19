@@ -77,7 +77,7 @@ Records:
 - no parallel root-level code trees;
 - repository environment and task controls.
 
-### 5. Codex Prompt Chain and Continuation
+### 5. Codex Prompt Chain, Continuation, Sleep Mode, and Model Continuity
 
 ```text
 1plan-CODEX_PROMPT_CHAIN_CONTINUATION_EXTENSION.md
@@ -89,7 +89,20 @@ Records:
 - active-task pointer;
 - prompt registry;
 - checkpoint-based continuation;
+- manual `continue` mode;
+- scheduled `sleep mode` review/correction flow;
+- deactivation back to manual mode;
+- bounded five-minute external-check rechecks inside a Codex run;
+- operational reviewer handoff;
+- strict owner-authorized sleep-queue gates;
+- model-switch continuity and `BLOCKED_MODEL_CAPACITY` safety;
 - finish-current-task-before-next rule.
+
+Detailed executable mode authority is stored once in:
+
+```text
+Codex Code/Prompts/EXECUTION_MODE.md
+```
 
 ### 6. Connected SaaS Application, Wireframe, Wireflow, and Implementation Plan
 
@@ -142,8 +155,10 @@ No extension authorizes source code unless an exact implementation task separate
 BASE MASTER PLAN: 1plan.md
 EXTENSION INDEX: DEFINED
 CURRENT CONNECTED STATUS EXTENSION: 1plan-SAAS_APPLICATION_WIREFRAME_WIREFLOW_INTEGRATION_EXTENSION.md
-APPLICATION CODE: NOT CREATED
-GLOBAL IMPLEMENTATION AUTHORIZATION: NO
-CURRENT CODEX TASK: CX-R1-000
-NEXT TASK CX-R1-001 AUTHORIZED: NO
+CURRENT CODEX EXECUTION EXTENSION: 1plan-CODEX_PROMPT_CHAIN_CONTINUATION_EXTENSION.md
+CANONICAL EXECUTION MODE POLICY: Codex Code/Prompts/EXECUTION_MODE.md
+LATEST COMPLETED RELEASE TASK: CX-R1-002 = APPROVED_COMPLETE
+CURRENT GOVERNANCE TASK: GOV-CX-001
+PRODUCT APPLICATION CODE AUTHORIZED BY GOV-CX-001: NO
+NEXT RELEASE TASK CX-R1-003 AUTHORIZED: NO
 ```
