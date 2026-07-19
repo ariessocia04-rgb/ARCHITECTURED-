@@ -5,19 +5,21 @@
 Read in this order:
 
 1. repository `AGENTS.md`
-2. [Current Task Completion Law](../CURRENT_TASK_COMPLETION_LAW.md)
-3. [Fully Armored Prompt Requirements](../ARMORED_PROMPT_REQUIREMENTS.md)
-4. [Armored Codex Master Prompt](../ARMORED_CODEX_MASTER_PROMPT.md)
-5. [Prompt Chain Control Center](README.md)
-6. [Active Task Pointer](ACTIVE_TASK.md)
-7. [Prompt Registry](PROMPT_REGISTRY.md)
-8. [Continue Protocol](CONTINUE_PROTOCOL.md)
-9. active task's numbered prompts in registry order
-10. active task's `TASK_RECORD.md`
-11. active task's `TASK_CONTRACT.md`
-12. active task's `CHECKPOINT.md`
-13. exact master-plan/release/technology sources required by the current prompt
-14. live Git branch, PR, workflow, check, code, migration, test, and worker state
+2. `1plan.md`
+3. [Current Task Completion Law](../CURRENT_TASK_COMPLETION_LAW.md)
+4. [Fully Armored Prompt Requirements](../ARMORED_PROMPT_REQUIREMENTS.md)
+5. [Armored Codex Master Prompt](../ARMORED_CODEX_MASTER_PROMPT.md)
+6. [Task Storage, Feature Intake, Alignment, and Handoff Rules](../TASK_STORAGE_AND_HANDOFF_RULES.md)
+7. [Prompt Chain Control Center](README.md)
+8. [Active Task Pointer](ACTIVE_TASK.md)
+9. [Prompt Registry](PROMPT_REGISTRY.md)
+10. [Continue Protocol](CONTINUE_PROTOCOL.md)
+11. active task's numbered prompts in registry order
+12. active task's `TASK_RECORD.md`
+13. active task's `TASK_CONTRACT.md`
+14. active task's `CHECKPOINT.md`
+15. exact master-plan/release/technology sources required by the current prompt
+16. live Git branch, PR, workflow, check, code, migration, test, and worker state
 
 ## Current active task
 
@@ -33,6 +35,7 @@ WORK BRANCH: agent/cx-r1-002-ci-quality-security
 CURRENT EXECUTION: BUILD COMPLETE CI, QUALITY, AND SECURITY BASELINE ONLY
 CANONICAL IMPLEMENTATION ROOT: ../Implementation/
 SOURCE/WORKFLOW CHANGES AUTHORIZED: YES, CX-R1-002 SCOPE ONLY
+OWNER ADDITIONS: PRESERVE, CLASSIFY, ALIGN, AND QUEUE UNLESS EXPLICITLY AMENDED
 NEXT TASK CX-R1-003 AUTHORIZED: NO
 ```
 
@@ -93,4 +96,4 @@ FINISH THE ENTIRE CURRENT AUTHORIZED TASK
 → ONLY OWNER MAY ACTIVATE ANOTHER TASK
 ```
 
-`continue` always resumes the active task from the latest verified checkpoint. It never means select the next task automatically. A blocker or ready-for-review state keeps the same task active.
+`continue` always resumes the active task from the latest verified checkpoint. It never means select the next task automatically. A new idea never silently broadens the active task. A blocker or ready-for-review state keeps the same task active.
