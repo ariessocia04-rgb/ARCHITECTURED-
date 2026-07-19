@@ -3,6 +3,7 @@ const configuration = {
   semi: true,
   singleQuote: true,
   trailingComma: 'all',
+  endOfLine: 'auto',
 };
 
 export default configuration;

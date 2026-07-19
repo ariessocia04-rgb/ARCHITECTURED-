@@ -21,18 +21,18 @@ Read in this order:
 ## Current active task
 
 ```text
-TASK: CX-R1-001
-TITLE: Workspace and Version Bootstrap
-CURRENT PROMPT: CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md
-TASK RECORD: ../Tasks/CX-R1-001/TASK_RECORD.md
-TASK CONTRACT: ../Tasks/CX-R1-001/TASK_CONTRACT.md
-CHECKPOINT: ../Tasks/CX-R1-001/CHECKPOINT.md WHEN CREATED
-PREVIOUS TASK: CX-R1-000 = APPROVED_COMPLETE
-WORK BRANCH: agent/cx-r1-001-workspace-bootstrap
-CURRENT EXECUTION: BUILD DETERMINISTIC VERSION-PINNED FOUNDATION ONLY
+TASK: CX-R1-002
+TITLE: CI, Quality, and Security Baseline
+CURRENT PROMPT: CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md
+TASK RECORD: ../Tasks/CX-R1-002/TASK_RECORD.md
+TASK CONTRACT: ../Tasks/CX-R1-002/TASK_CONTRACT.md
+CHECKPOINT: ../Tasks/CX-R1-002/CHECKPOINT.md
+PREVIOUS TASK: CX-R1-001 = APPROVED_COMPLETE
+WORK BRANCH: agent/cx-r1-002-ci-quality-security
+CURRENT EXECUTION: BUILD CI, QUALITY, SECURITY, AND EVIDENCE BASELINE ONLY
 CANONICAL IMPLEMENTATION ROOT: ../Implementation/
-SOURCE CODE AUTHORIZED: YES, CX-R1-001 SCOPE ONLY
-NEXT TASK CX-R1-002 AUTHORIZED: NO
+SOURCE CODE AUTHORIZED: YES, CX-R1-002 SCOPE ONLY, WITH REQUIRED .github/workflows/ EXCEPTION
+NEXT TASK CX-R1-003 AUTHORIZED: NO
 ```
 
 ## Control files
@@ -60,13 +60,22 @@ NEXT TASK CX-R1-002 AUTHORIZED: NO
 - External review: `../Tasks/CX-R1-000/REVIEW_RESULT.md`
 - Terminal state: `APPROVED_COMPLETE`
 
-## Current task prompt chain
-
 ### CX-R1-001
 
-- Current Prompt 0001: [Workspace and Version Bootstrap](CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md)
-- Task record: `../Tasks/CX-R1-001/TASK_RECORD.md`
-- Task contract: `../Tasks/CX-R1-001/TASK_CONTRACT.md`
+- Prompt 0001: [Workspace and Version Bootstrap](CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md)
+- Completion report: `../Tasks/CX-R1-001/COMPLETION_REPORT.md`
+- External review: `../Tasks/CX-R1-001/REVIEW_RESULT.md`
+- Merge record: `../Tasks/CX-R1-001/MERGE_RECORD.md`
+- Terminal state: `APPROVED_COMPLETE` (PR #16 merged as `0fb218a3f8f8c100b8fd4655b6f04c14fcabd839`)
+
+## Current task prompt chain
+
+### CX-R1-002
+
+- Current Prompt 0001: [CI, Quality, and Security Baseline](CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md)
+- Task record: `../Tasks/CX-R1-002/TASK_RECORD.md`
+- Task contract: `../Tasks/CX-R1-002/TASK_CONTRACT.md`
+- Checkpoint: `../Tasks/CX-R1-002/CHECKPOINT.md`
 
 ## Non-negotiable completion rule
 

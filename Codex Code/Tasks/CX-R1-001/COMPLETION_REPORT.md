@@ -54,3 +54,12 @@ gh pr create --draft --base main --head agent/cx-r1-001-workspace-bootstrap --ti
 
 Before approving the PR, the owner/reviewer must review the passed evidence and the changed files.
 Do not merge without external review, and do not begin CX-R1-002.
+
+## Closure after external review and merge
+
+The owner published the approved workspace changes as
+`ef8c0bc6e5abfb1de765bf043d08218ab7065eb4`, opened PR #16, and approved its merge to `main`.
+The resulting main merge commit is `0fb218a3f8f8c100b8fd4655b6f04c14fcabd839`; it was read back
+before successor-task activation. The earlier handoff section is retained as contemporaneous
+publication guidance, while the terminal result is now `APPROVED_COMPLETE`. See
+`REVIEW_RESULT.md` and `MERGE_RECORD.md` for the factual review and merge records.
