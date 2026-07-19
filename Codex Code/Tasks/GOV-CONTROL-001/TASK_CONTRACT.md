@@ -2,16 +2,16 @@
 
 ## Authorized role
 
-Codex is the controlled repository-governance implementer for the existing PR #17 only. Codex is not the product owner, autonomous architect, external reviewer, approver, merger, or next-task selector.
+Codex is the controlled repository-governance implementer for the open draft PR #20 only. PR #17 is already merged and is historical context. Codex is not the product owner, autonomous architect, external reviewer, approver, merger, or next-task selector.
 
 ## Required work
 
-1. Fetch and verify the latest `origin/main`, including merged PR #18.
-2. Compare every overlapping PR #17 file against latest `main` before editing.
-3. Reconcile the existing branch `governance/activate-cx-r1-002` without force-push and update the same PR #17.
-4. Preserve only unique valid permanent controls from PR #17 and preserve all valid work from merged PR #18.
+1. Fetch and verify the latest `origin/main`, including merged PR #18 and merged governance PR #17.
+2. Compare every overlapping file in draft PR #20 against latest `main` before editing.
+3. Reconcile the existing branch `governance/activate-cx-r1-002` without force-push and update the same draft PR #20.
+4. Preserve every valid permanent control already merged through PR #17 and every valid implementation/evidence change merged through PR #18.
 5. Complete one canonical control method for `continue`, `sleep mode`, `deactivate sleep mode`, reviewer handoff, and approved-model fallback.
-6. Remove or supersede obsolete overlapping CX-R1-002 activation text only after exact comparison and unique-content preservation.
+6. Remove or supersede obsolete overlapping task-state text only after exact comparison and unique-content preservation.
 7. Run every affected formatting, link, duplicate, secret, governance, and CI validation available to the repository.
 8. Update factual checkpoint, changed-file manifest, evidence, and PR description.
 9. Return `READY_FOR_OWNER_MERGE` and stop.
@@ -77,7 +77,7 @@ Do not claim the repository itself can change the selected Codex model. Model se
 
 ## Allowed paths
 
-Only the existing PR #17 governance paths and factual task evidence required for this task. Product implementation paths are forbidden.
+Only the existing PR #20 governance paths and factual task evidence required for this task. Product implementation paths are forbidden.
 
 Expected governance paths may include:
 
@@ -97,7 +97,7 @@ Any additional path requires proof that it is an existing canonical owner of an 
 
 ## Forbidden actions
 
-- new branch or new PR;
+- a second branch or second PR for `GOV-CONTROL-001`;
 - force-push, reset, clean, history rewrite, branch deletion;
 - product code or later-task implementation;
 - duplicate prompt, plan, state file, review handoff, task, checkpoint, report, workflow, branch, or PR;
@@ -109,14 +109,14 @@ Any additional path requires proof that it is an existing canonical owner of an 
 
 ## Acceptance criteria
 
-- latest main and PR #18 content are preserved;
-- PR #17 becomes cleanly reconcilable/mergeable or returns an exact factual blocker;
+- latest main plus merged PR #17 and PR #18 content are preserved;
+- draft PR #20 becomes cleanly mergeable or returns an exact factual blocker;
 - one canonical continue method exists;
 - one canonical sleep-mode state machine exists;
 - one canonical reviewer handoff convention exists;
 - model fallback is safe, truthful, and repository-recoverable;
 - strict plan and no-duplicate rules remain intact;
 - all affected validations pass;
-- same PR #17 is updated;
+- same draft PR #20 is updated;
 - no later implementation task is started;
 - Codex stops at `READY_FOR_OWNER_MERGE`.
