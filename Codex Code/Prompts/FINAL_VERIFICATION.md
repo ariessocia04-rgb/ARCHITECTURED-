@@ -8,7 +8,7 @@ YES. `Codex Code/Prompts/ACTIVE_TASK.md` identifies `CX-R1-000`, Prompt `0004`, 
 
 ### Can Codex reconstruct the instruction history without chat memory?
 
-YES. `PROMPT_REGISTRY.md` and the append-only prompt files preserve Prompts 0001–0004 in sequence. Prompt 0004 is current; earlier prompts remain historical.
+YES. `PROMPT_REGISTRY.md` and the append-only prompt files preserve Prompts 0001–0004. Prompt 0004 is current; earlier prompts remain historical.
 
 ### Is every prompt required to contain Role, Goal, Background, Tools, Scope, Tests and Completion behavior?
 
@@ -16,7 +16,7 @@ YES. `Codex Code/ARMORED_PROMPT_REQUIREMENTS.md`, the canonical master prompt, a
 
 ### Can Codex know where interrupted work stopped?
 
-YES. `Codex Code/Tasks/CX-R1-000/CHECKPOINT.md` records the earlier `BLOCKED_ENVIRONMENT`, completed safety behavior, remaining work, and first next action.
+YES. `Codex Code/Tasks/CX-R1-000/CHECKPOINT.md` records the prior `BLOCKED_ENVIRONMENT`, completed safety behavior, remaining work, and first next action.
 
 ### Can Codex safely reconcile an old checkpoint with the live repository?
 
@@ -38,25 +38,17 @@ YES. It explicitly requires the connected master-plan extension and verifies:
 - Release 1 implementation planning and high-fidelity definitions;
 - Codex governance and canonical code root.
 
-### Can Codex accidentally restart or duplicate completed work?
-
-The rules prohibit it. Codex must search, compare, classify, reuse completed work, extend partial canonical work, and block on conflicts or duplicates.
-
 ### Can Codex stop after fixing only the environment or completing one phase?
 
-NO. The current-task completion law and Prompt 0004 require the entire read-only `CX-R1-000` verification and full report. Environment recovery is only the first step.
+NO. The current-task completion law and Prompt 0004 require the entire read-only `CX-R1-000` verification and complete final report.
 
 ### Can Codex start the next task after a partial result or review handoff?
 
-NO. Blocked, interrupted, failed-validation, and ready-for-review states keep `CX-R1-000` active. `CX-R1-001` requires a separate owner authorization after externally recorded completion.
+NO. Blocked, interrupted, failed-validation, and ready-for-review states keep `CX-R1-000` active. `CX-R1-001` requires separate owner authorization after externally recorded completion.
 
 ### Can Codex store executable code outside the requested folder?
 
-NO. The only canonical executable-code root remains:
-
-```text
-Codex Code/Implementation/
-```
+NO. The only canonical executable-code root remains `Codex Code/Implementation/`.
 
 ### Does this package falsely claim coding, design execution, testing, hardware certification or deployment?
 
@@ -94,21 +86,37 @@ MASTER SAAS/APPLICATION/DESIGN EXTENSION: PRESENT
 1PLAN EXTENSIONS INDEX: PRESENT
 ARCHITECTURE INTEGRATION AUDIT: PRESENT
 COMPLETION/REVISION/VERIFICATION RECORDS: PRESENT
-DELETED FILES: 0 REQUIRED
+DELETED FILES: 0
 APPLICATION CODE CREATED: 0
 MIGRATIONS CREATED: 0
 ```
 
-## Current pre-merge state
+## Publication verification
 
 ```text
-CONNECTED MASTER PLAN: COMPLETE ON WORK BRANCH
-FULLY ARMORED CODEX GOVERNANCE: COMPLETE ON WORK BRANCH
-CURRENT TASK: CX-R1-000 REMAINS ACTIVE
+PULL REQUEST: #13
+MERGEABLE BEFORE MERGE: YES
+CONFIGURED STATUS FAILURES: NONE
+COMMENTS / REVIEWS / UNRESOLVED THREADS: NONE
+MERGE SHA: f60466785715ac37d94da81e864108c1d9a202a3
+MASTER MERGE RECORD: 12c46973dcfe2f5d2bf868bfb3c4577fd600c5a4
+PROMPT-SYNC MERGE RECORD: 2db6ead4c2d338ec72fc885f93008e7234133be0
+FINAL MAIN READ-BACK: b003af813ae1b3d688195cc51c5d25fb8dcfd885
+PROMPT COMPLETION FINALIZATION: 79542f991ccb8ce65302cec71a7c5e5e58b2a053
+```
+
+## Final state
+
+```text
+CONNECTED MASTER PLAN: COMPLETE_MERGED_TO_MAIN
+FULLY ARMORED CODEX GOVERNANCE: COMPLETE_MERGED_TO_MAIN
+CURRENT PROMPT: 0004 CURRENT ON MAIN
+CURRENT TASK: CX-R1-000 REMAINS ACTIVE FOR CODEX EXECUTION
 CONTINUE IS DETERMINISTIC: YES
 FINISH-CURRENT-TASK RULE: ENFORCED
 NEXT TASK AUTO-ADVANCE: PROHIBITED
-PR REVIEW / MERGE / MAIN READ-BACK: PENDING SAME CURRENT TASK
+APPLICATION CODE: NOT STARTED
+CX-R1-001: NOT AUTHORIZED
 ```
 
-The repository publication task is not complete until the work branch is validated, the PR is reviewed, merged, and read back from `main` with final evidence.
+The requested repository architecture/governance publication is complete and read back from `main`. The separate `CX-R1-000` execution remains active until Codex completes the full read-only report and an external reviewer records a terminal state.
