@@ -6,7 +6,7 @@ The repository owner explicitly authorized this governance task in chat and aske
 
 ## Objective
 
-Reconcile the existing governance branch and PR #17 against the latest `origin/main`, then complete one canonical, repository-backed control system for:
+Reconcile the existing governance branch and open draft PR #20 against the latest `origin/main`, then complete one canonical, repository-backed control system for:
 
 - `continue` manual execution mode;
 - `sleep mode` automated review/fix mode;
@@ -15,14 +15,17 @@ Reconcile the existing governance branch and PR #17 against the latest `origin/m
 - safe approved-model fallback when the preferred model reaches capacity;
 - strict preservation of the existing plan, active-task rules, no-duplicate rules, owner-authored work, exact paths, evidence, security, review, merge, and stop boundaries.
 
-## Existing branch and PR
+PR #17 is already merged and remains historical evidence. This task was authorized afterward and is carried by draft PR #20.
+
+## Existing branch and current PR
 
 ```yaml
 work_branch: governance/activate-cx-r1-002
-pull_request: 17
+pull_request: 20
+pull_request_state: DRAFT_OPEN
 base_branch: main
-new_branch_allowed: false
-new_pull_request_allowed: false
+second_branch_allowed: false
+second_pull_request_allowed: false
 force_push_allowed: false
 ```
 
