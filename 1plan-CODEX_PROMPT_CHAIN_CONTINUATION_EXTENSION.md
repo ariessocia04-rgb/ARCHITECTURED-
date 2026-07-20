@@ -133,7 +133,7 @@ deactivate sleep mode
 stop sleep mode
 ```
 
-They return the workflow to manual `CONTINUE_MODE`. When the external ChatGPT controller observes at least 60 minutes without newer owner activity or an explicit hold, it may re-arm sleep behavior on its next hourly check. The truthful possible activation window is 60 to 120 minutes because scheduled checks are hourly.
+They return the workflow to manual `CONTINUE_MODE`. When the external ChatGPT controller observes at least 120 minutes without newer owner activity or an explicit hold, it may re-arm sleep behavior on its next hourly check. The truthful possible activation window is 120 to 180 minutes because scheduled checks are hourly.
 
 ## Reviewer-worker separation
 
