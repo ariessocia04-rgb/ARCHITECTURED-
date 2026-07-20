@@ -155,7 +155,7 @@ When checks remain pending after the allowed wait, Codex records `PENDING_EXTERN
 
 ## Model continuity and fallback
 
-Primary preference is `GPT-5.6 Sol`. The repository preserves the same instructions, scope, branch, checkpoint, tests, and review gates when a different available Codex model is selected.
+Primary preference is `GPT-5.6-Sol`. The repository preserves the same instructions, scope, branch, checkpoint, tests, and review gates when a different available Codex model is selected.
 
 Different models are not guaranteed to have identical capability. A fallback may continue fully specified, non-destructive, in-scope work only when it can safely meet the contract. It must stop with `BLOCKED_MODEL_CAPACITY` for unresolved architecture, migrations, authentication/authorization/RLS, secrets, payments, privacy, security contracts, destructive operations, broad unapproved refactors, or unclear acceptance criteria.
 

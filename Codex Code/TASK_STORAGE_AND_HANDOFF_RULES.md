@@ -11,6 +11,12 @@ Codex Code/Reviews/          = reviewer records
 
 No source-code copy may be stored in a task, evidence, or review folder.
 
+## Operational mode and reviewer handoff
+
+The single execution-mode, sleep-loop, reviewer-handoff, sleep-queue, and model-fallback policy is `Codex Code/Prompts/EXECUTION_MODE.md`.
+
+The only operational reviewer exchange for an active task is `Codex Code/Reviews/<TASK-ID>/REVIEW_HANDOFF.md`, created only when a factual handoff state or finding exists. It does not replace the terminal external-review evidence in `Codex Code/Tasks/<TASK-ID>/REVIEW_RESULT.md`, and no parallel handoff or copied policy is permitted.
+
 ## One task, one record folder
 
 Every authorized Codex task uses:

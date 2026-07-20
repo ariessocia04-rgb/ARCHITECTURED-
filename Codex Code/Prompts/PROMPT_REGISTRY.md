@@ -2,15 +2,15 @@
 
 The registry is append-only. Every prompt has one unique task ID and sequence number.
 
-| Task ID | Sequence | Type | Path | Status | Supersedes | Purpose |
-|---|---:|---|---|---|---|---|
-| CX-R1-000 | 0001 | INITIAL | `Codex Code/Tasks/CX-R1-000/PROMPT.md` | VALID_HISTORICAL | none | Initial read-only repository safety verification prompt. |
-| CX-R1-000 | 0002 | CONTINUE_CORRECTION | `Codex Code/Prompts/CX-R1-000/0002-CONTINUE-AFTER-ENVIRONMENT-BLOCK.md` | VALID_HISTORICAL | environment assumptions in 0001 only | Recorded the non-Git temporary-workspace blocker, prompt chain, checkpoint, and canonical implementation-root rule. |
-| CX-R1-000 | 0003 | FINAL_CONTINUE_AND_FINISH | `Codex Code/Prompts/CX-R1-000/0003-FINAL-ARMORED-CONTINUE-AND-FINISH.md` | VALID_HISTORICAL | 0002 execution instructions | Authorized repository discovery/clone and required full read-only verification rather than stopping after environment recovery. |
-| CX-R1-000 | 0004 | FINAL_CONTINUE_AND_FINISH | `Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-AND-FINISH.md` | COMPLETED_TASK_ARCHIVE | 0003 execution instructions | Completed CX-R1-000 against the synchronized master state; externally reviewed as APPROVED_COMPLETE. |
-| CX-R1-001 | 0001 | INITIAL | `Codex Code/Prompts/CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md` | COMPLETED_TASK_ARCHIVE | none | Built, reviewed, and merged the exact version-pinned workspace foundation under the canonical implementation root only. |
-| CX-R1-002 | 0001 | INITIAL | `Codex Code/Prompts/CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md` | COMPLETED_TASK_ARCHIVE | none | Implemented, externally reviewed, and merged the Release 1 CI, quality, and security baseline. |
-| GOV-CX-001 | 0001 | GOVERNANCE_CONTROL | `Codex Code/Prompts/GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md` | CURRENT | none | Connect the permanent continue command, sleep-mode loop, reviewer handoff, bounded CI waiting, strict queue gates, and model fallback without product implementation. |
+| Task ID    | Sequence | Type                      | Path                                                                                | Status                 | Supersedes                           | Purpose                                                                                                                                                               |
+| ---------- | -------: | ------------------------- | ----------------------------------------------------------------------------------- | ---------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CX-R1-000  |     0001 | INITIAL                   | `Codex Code/Tasks/CX-R1-000/PROMPT.md`                                              | VALID_HISTORICAL       | none                                 | Initial read-only repository safety verification prompt.                                                                                                              |
+| CX-R1-000  |     0002 | CONTINUE_CORRECTION       | `Codex Code/Prompts/CX-R1-000/0002-CONTINUE-AFTER-ENVIRONMENT-BLOCK.md`             | VALID_HISTORICAL       | environment assumptions in 0001 only | Recorded the non-Git temporary-workspace blocker, prompt chain, checkpoint, and canonical implementation-root rule.                                                   |
+| CX-R1-000  |     0003 | FINAL_CONTINUE_AND_FINISH | `Codex Code/Prompts/CX-R1-000/0003-FINAL-ARMORED-CONTINUE-AND-FINISH.md`            | VALID_HISTORICAL       | 0002 execution instructions          | Authorized repository discovery/clone and required full read-only verification rather than stopping after environment recovery.                                       |
+| CX-R1-000  |     0004 | FINAL_CONTINUE_AND_FINISH | `Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-AND-FINISH.md`         | COMPLETED_TASK_ARCHIVE | 0003 execution instructions          | Completed CX-R1-000 against the synchronized master state; externally reviewed as APPROVED_COMPLETE.                                                                  |
+| CX-R1-001  |     0001 | INITIAL                   | `Codex Code/Prompts/CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md`              | COMPLETED_TASK_ARCHIVE | none                                 | Built, reviewed, and merged the exact version-pinned workspace foundation under the canonical implementation root only.                                               |
+| CX-R1-002  |     0001 | INITIAL                   | `Codex Code/Prompts/CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md`             | COMPLETED_TASK_ARCHIVE | none                                 | Implemented, externally reviewed, and merged the Release 1 CI, quality, and security baseline.                                                                        |
+| GOV-CX-001 |     0001 | GOVERNANCE_CONTROL        | `Codex Code/Prompts/GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md` | CURRENT                | none                                 | Connect the permanent continue command, sleep-mode loop, reviewer handoff, bounded CI waiting, strict queue gates, and model fallback without product implementation. |
 
 ## Status values
 
@@ -73,6 +73,7 @@ SLEEP QUEUE: NOT AUTHORIZED
 ## Sequence rule
 
 - The next prompt for GOV-CX-001, only when a material correction is required, is `0002`.
+- Prompt 0001 remains the current pre-acceptance draft while its own checkpoint is `READY_FOR_CODEX_VALIDATION`; the exact validation corrections required by that checkpoint stay in 0001. After the first `READY_FOR_REVIEW` handoff, any material executable correction requires prompt 0002 and a contract amendment.
 - Do not reuse or overwrite any registered prompt.
 - A correction does not authorize another task.
 - A mode change or model switch never creates a new prompt by itself unless the executable repository instruction materially changes.

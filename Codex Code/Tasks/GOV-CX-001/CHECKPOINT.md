@@ -3,17 +3,31 @@
 ```yaml
 task_id: GOV-CX-001
 execution_mode: CONTINUE_MODE
-checkpoint_status: READY_FOR_CODEX_VALIDATION
+mode_state: MANUAL_OWNER_ACTIVE
+mode_changed_at_utc: 2026-07-20T02:06:29Z
+mode_change_source: owner_command
+last_owner_activity_at_utc: 2026-07-20T02:06:29Z
+explicit_hold: false
+sleep_armed: false
+auto_sleep_rearm_eligible_after_utc: 2026-07-20T03:06:29Z
+checkpoint_status: PENDING_EXTERNAL_CHECKS
 base_branch: main
 base_sha: e93cbe519ea2cb9d913ce17b0bd9732836a63d9f
 branch: governance/codex-execution-modes
+starting_head_sha: 1b984f6536b2b9d03254dba98728b2d57ab653ca
 pull_request: https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/19
+pull_request_state: OPEN_DRAFT
+pull_request_merge_state_at_start: CLEAN
+pull_request_checks_at_starting_head: SIX_PASS
 model_policy:
   primary_coding_model: GPT-5.6-Sol
   fallback_model: GPT-5.6-Terra
   polling_model: GPT-5.6-Luna
-fallback_model_used: none
+  runtime_availability: UNVERIFIED
+selected_model: NOT_EXPOSED_BY_ENVIRONMENT
+fallback_model_used: NOT_VERIFIABLE
 review_handoff_state: NO_REVIEW_HANDOFF
+local_validation_status: PASS
 previous_release_task: CX-R1-002
 previous_release_task_status: APPROVED_COMPLETE
 previous_release_task_merge_sha: d0fe1d23fc1aa19b61958986709d7bc9fd01261b
@@ -37,24 +51,30 @@ continuation_safe: true
 - Updated the prompt index, prompt registry, existing 1plan continuation extension, and 1plan extension index.
 - Opened exactly one draft PR, #19, to `main`.
 - Added the owner-directed canonical Sol/Terra/Luna model policy to the existing `EXECUTION_MODE.md` authority instead of creating a duplicate policy.
-- Added matching Codex self-behavior to active Prompt 0001: preserve work, restrict Terra, make Luna read-only, block unsafe fallback, wait for Sol, and never duplicate the task, branch, or PR.
+- Kept detailed model self-behavior in `EXECUTION_MODE.md` only; Prompt 0001 now links to that authority rather than copying its matrix.
+- Re-read the complete repository chain in response to the owner's manual `continue` command.
+- Compared every PR path with latest `origin/main` and preserved owner-authored work.
+- Added the minimal `TASK_STORAGE_AND_HANDOFF_RULES.md` link to the one mode policy and operational handoff path.
+- Standardized model identifiers and the safe stop state to `GPT-5.6-Sol` and `BLOCKED_MODEL_CAPACITY`; `WAIT_FOR_SOL` remains the exact unsafe-fallback action.
+- Defined this active checkpoint as the sole persisted live mode-state record and recorded manual `CONTINUE_MODE` factually.
+- Removed the parallel `STOP_*` aliases and retained one unprefixed top-level result taxonomy in `AGENTS.md`.
+- Corrected the CX-R1-002 review record so it preserves verified scope/check/owner-merge/read-back facts without inventing a formal review event.
+- Added factual changed-file, test, security/scope, and completion evidence in the existing GOV-CX-001 task folder.
+- Verified the official Node `v24.18.0` archive checksum and used pinned Node `24.18.0`, pnpm `10.34.0`, Rust/Cargo `1.97.1`, and Rustfmt `1.9.0-stable`.
+- Ran frozen installation successfully.
+- Ran the full `pnpm ci:check` successfully, including formatting, lint, typecheck, 4 tests, build, release lock, duplicate paths, migration boundary, secrets, Rust formatting, and locked Cargo check.
+- Ran authorization, canonical-path, prompt-registry, active-pointer, link, changed-file secret, model-term, CX-R1-002 merge, and diff validation successfully.
+- Ran the final pinned Prettier check successfully across all 19 PR Markdown paths after creating evidence.
+- Ran final structural validation successfully with 19/19 manifest coverage and no duplicate canonical authority, secret pattern, missing reference, or unauthorized path.
+- Ran the production dependency audit at the high threshold successfully; one existing moderate advisory remains visible.
 
 ## Incomplete items
 
-- Codex must re-read the complete repository chain using only `continue`.
-- Codex must compare every changed path against latest `main` and verify no owner work was lost.
-- Codex must decide whether `TASK_STORAGE_AND_HANDOFF_RULES.md` needs only a minimal link/clarification; do not copy the full execution-mode policy.
-- Codex must validate the new model-policy terms against every existing continuation, fallback, result-state, and checkpoint reference and remove only contradictions within the allowed scope without creating another authority.
-- Run and record all applicable Markdown formatting, link/path, duplicate, prompt uniqueness, active-pointer, secret, frozen-install, and CI validations.
-- Update factual evidence and the same draft PR only when required.
-- Stop at `READY_FOR_REVIEW` or `READY_FOR_OWNER_MERGE` for independent review and owner approval.
+- Commit and push the smallest correction to the same authorized branch.
+- Verify the final PR #19 head, changed paths, mergeability, and GitHub checks.
+- Stop at `READY_FOR_REVIEW` for independent review and owner approval.
+- GOV-CX-001 remains active until external review, owner merge, and main read-back; CX-R1-003 remains unauthorized.
 
 ## Exact next action
 
-In the Codex project opened on `governance/codex-execution-modes`, the owner's next message is only:
-
-```text
-continue
-```
-
-Codex must execute Prompt 0001, obey the canonical Sol/Terra/Luna self-behavior, make only the smallest required corrections, validate PR #19, and stop before merge. Do not start CX-R1-003.
+Finish final local validation, commit and push only `governance/codex-execution-modes`, verify draft PR #19 and its checks, update this same evidence if a genuine failure requires correction, and stop before merge. Do not start CX-R1-003.

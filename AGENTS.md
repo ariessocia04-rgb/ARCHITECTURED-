@@ -109,7 +109,7 @@ Never create a second handoff for the same task. The operational handoff does no
 
 The repository preserves task continuity across model switches, but it cannot make different models identical in capability.
 
-Primary preference is `GPT-5.6 Sol`. When it is unavailable or out of usage, use only an owner-selected or automation-configured Codex model that is actually available. After every model switch, re-read the complete repository instruction chain and preserve the same branch, task, checkpoint, contract, tests, security rules, evidence, and reviewer gate.
+Primary preference is `GPT-5.6-Sol`. When it is unavailable or out of usage, use only an owner-selected or automation-configured Codex model that is actually available. After every model switch, re-read the complete repository instruction chain and preserve the same branch, task, checkpoint, contract, tests, security rules, evidence, and reviewer gate.
 
 A fallback may continue fully specified, non-destructive, in-scope work when it can safely satisfy the contract. Return `BLOCKED_MODEL_CAPACITY` instead of guessing when the remaining work is architecture-sensitive, migration-sensitive, security-sensitive, destructive, broadly cross-system, or beyond the verified fallback capability. Automatic switching is not assumed unless the Codex automation is configured to do it.
 
@@ -159,6 +159,7 @@ BLOCKED_AUTHORIZATION
 BLOCKED_DEPENDENCY
 BLOCKED_ARCHITECTURE
 BLOCKED_CONFLICT
+BLOCKED_CONTINUATION_STATE
 BLOCKED_ENVIRONMENT
 BLOCKED_REVIEW
 BLOCKED_MODEL_CAPACITY

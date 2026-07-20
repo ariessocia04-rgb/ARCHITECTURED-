@@ -43,12 +43,15 @@ next_release_task_authorized: false
 
 - Repository command and global worker entry rules: `AGENTS.md`.
 - Detailed execution-mode, sleep-loop, review, queue, and model-fallback authority: `Codex Code/Prompts/EXECUTION_MODE.md`.
+- Live execution-mode state: the active task's existing `CHECKPOINT.md`; static policy defaults are not live activation evidence.
 - Resume-state algorithm: `Codex Code/Prompts/CONTINUE_PROTOCOL.md`.
 - Master-plan connection: existing `1plan-CODEX_PROMPT_CHAIN_CONTINUATION_EXTENSION.md`.
 - Operational review exchange: `Codex Code/Reviews/<TASK-ID>/REVIEW_HANDOFF.md`.
 - Terminal external review and merge evidence: `Codex Code/Tasks/<TASK-ID>/REVIEW_RESULT.md` and `MERGE_RECORD.md`.
 
 No second sleep-mode plan or parallel continuation protocol is authorized.
+
+Prompt 0001 remains the unmerged pre-acceptance draft while this checkpoint requires Codex validation. The owner-directed model addition and exact validation corrections are therefore reconciled in the current draft; after the first `READY_FOR_REVIEW` handoff, a material executable change requires prompt 0002 and a recorded contract amendment.
 
 ## Alignment-impact review
 

@@ -96,62 +96,9 @@ A path may be changed only when necessary. Do not create appearance-only evidenc
 
 ## Canonical model policy and self-behavior
 
-Obey the single authority in `Codex Code/Prompts/EXECUTION_MODE.md` and apply this behavior on every run:
+`Codex Code/Prompts/EXECUTION_MODE.md` is the only detailed model-policy authority; this prompt does not duplicate its model matrix.
 
-```yaml
-model_policy:
-  primary_coding_model: GPT-5.6-Sol
-  fallback_model: GPT-5.6-Terra
-  polling_model: GPT-5.6-Luna
-
-sol_limit_behavior:
-  preserve_all_work: true
-  never_restart_task: true
-  never_duplicate_branch_or_pr: true
-  retry_after_reset: true
-
-terra_allowed:
-  - inspect_status
-  - read_rules_and_checkpoint
-  - read_review_handoff
-  - run_existing_validations
-  - apply_exact_low_risk_fix
-  - update_evidence
-
-terra_forbidden:
-  - architecture_change
-  - schema_or_migration_design
-  - security_contract_change
-  - broad_refactor
-  - new_feature_selection
-  - merge_or_approval
-
-luna_allowed:
-  - inspect_status
-  - report_pending_state
-
-on_insufficient_model_capacity:
-  status: BLOCKED_MODEL_QUOTA
-  action: WAIT_FOR_SOL
-```
-
-Self-behavior requirements:
-
-1. Verify the actual selected model when the environment exposes it; otherwise state that model identity is unverified.
-2. After any switch, interruption, resumed run, or scheduled activation, re-read the full canonical chain before acting.
-3. Preserve this same active task, branch, commits, checkpoint, evidence, review handoff, and PR. Never restart or duplicate them.
-4. Sol handles authorized architecture-sensitive, broad multi-file, schema/migration, security-contract, difficult-debugging, and complex final-correction work.
-5. Terra may perform only the listed `terra_allowed` actions. Any low-risk fix must already be exact, fully documented, within allowed paths, and require no new design decision.
-6. Terra must not perform any `terra_forbidden` action. It must stop with `BLOCKED_MODEL_QUOTA` and `WAIT_FOR_SOL` instead of approximating or broadening scope.
-7. Luna is read-only status polling. It must not edit, commit, push, change records, fix code, approve, merge, or activate another task.
-8. Automatic switching is not assumed. It is valid only when the owner or Codex automation actually supports and selects the models.
-9. `retry_after_reset` authorizes only a later owner-controlled or scheduled re-read and retry after Sol becomes available; it does not authorize a hidden loop or fabricated background worker.
-10. If no currently available model can safely execute the first incomplete authorized item, preserve everything and return exactly:
-
-```text
-BLOCKED_MODEL_QUOTA
-WAIT_FOR_SOL
-```
+On every run, verify the actual selected model and live availability when the environment exposes them, preserve the same task/branch/checkpoint/evidence/PR after a switch, and obey the role bounds in that policy. A policy preference is not proof that Sol, Terra, Luna, or automatic switching is configured. When the available model cannot safely perform the first incomplete item, return `BLOCKED_MODEL_CAPACITY` with `WAIT_FOR_SOL` as the exact next action.
 
 ## Required validation
 
@@ -190,17 +137,6 @@ If a command is unavailable or inappropriate, record the exact reason instead of
 
 ## Stop rule
 
-After validation, update the same task checkpoint and evidence, commit and push to the same branch, open or update the one draft PR, then return exactly one truthful state:
-
-```text
-READY_FOR_REVIEW
-READY_FOR_OWNER_MERGE
-BLOCKED_AUTHORIZATION
-BLOCKED_CONFLICT
-BLOCKED_ENVIRONMENT
-BLOCKED_MODEL_CAPACITY
-BLOCKED_MODEL_QUOTA
-FAILED_VALIDATION
-```
+After validation, update the same task checkpoint and evidence, commit and push to the same branch, open or update the one draft PR, then return exactly one unprefixed top-level state defined in `AGENTS.md`. Do not create a second `STOP_*` result taxonomy.
 
 Stop before merge. Do not start CX-R1-003.

@@ -42,6 +42,7 @@ Rules:
 - In manual `CONTINUE_MODE`, proceed only because the owner issued `continue`.
 - In a scheduled run while manual mode remains active, return `WAITING_FOR_OWNER_CONTINUE` without modifying code.
 - In `SLEEP_MODE`, follow the active-task and reviewer-handoff priority in the execution-mode policy.
+- Treat the active task checkpoint as the only live mode-state record; static defaults never prove that sleep mode is armed.
 - After any model switch, re-read the full repository instruction chain.
 - Preserve the same branch, PR, task, contract, checkpoint, tests, and evidence across model switches.
 - Return `BLOCKED_MODEL_CAPACITY` when the available model cannot safely perform the remaining work.
@@ -102,6 +103,7 @@ REVIEW_PASS_PENDING_OWNER
 BLOCKED_ENVIRONMENT
 BLOCKED_DEPENDENCY
 BLOCKED_ARCHITECTURE
+BLOCKED_CONTINUATION_STATE
 BLOCKED_REVIEW
 BLOCKED_MODEL_CAPACITY
 READY_FOR_REVIEW
@@ -222,7 +224,7 @@ Task order in a plan or manifest is not automatic authorization.
 
 ### Phase 9 — Model fallback
 
-Primary model preference is `GPT-5.6 Sol`. A fallback may be used only when it is actually available through the owner's Codex model selector or automation configuration.
+Primary model preference is `GPT-5.6-Sol`. A fallback may be used only when it is actually available through the owner's Codex model selector or automation configuration.
 
 A model switch must not:
 
@@ -265,22 +267,9 @@ The checkpoint must state:
 - whether the next task is explicitly authorized;
 - whether an authorized sleep queue exists and its verified next item.
 
-## Stop states
+## Stop-state authority
 
-```text
-STOP_COMPLETE
-STOP_READY_FOR_REVIEW
-STOP_REVIEW_PASS_PENDING_OWNER
-STOP_WAITING_FOR_OWNER_CONTINUE
-STOP_PENDING_EXTERNAL_CHECKS
-STOP_BLOCKED_ENVIRONMENT
-STOP_BLOCKED_DEPENDENCY
-STOP_BLOCKED_ARCHITECTURE
-STOP_BLOCKED_REVIEW
-STOP_BLOCKED_MODEL_CAPACITY
-STOP_FAILED_VALIDATION
-STOP_INTERRUPTED_SAFE_TO_CONTINUE
-```
+Return exactly one unprefixed top-level state defined by `AGENTS.md`. Do not create or emit parallel `STOP_*` aliases. The checkpoint records the same state plus the factual continuation details required above.
 
 ## Non-destructive continuation rules
 

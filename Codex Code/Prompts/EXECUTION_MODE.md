@@ -15,9 +15,35 @@ auto_sleep_after_owner_inactivity_minutes: 60
 chatgpt_review_interval_minutes: 60
 codex_automation_interval_minutes: 60
 actual_auto_sleep_activation_window_minutes: 60_to_120
+policy_defaults_only: true
+live_mode_record: Codex Code/Tasks/<ACTIVE-TASK-ID>/CHECKPOINT.md
 ```
 
 The hourly activation window exists because scheduled checks cannot run more frequently than once per hour. No worker may claim an exact minute-60 activation unless live scheduler evidence proves it.
+
+## Canonical live mode state
+
+The active task's existing `Codex Code/Tasks/<ACTIVE-TASK-ID>/CHECKPOINT.md` is the only live repository-backed mode-state record. The defaults above are policy inputs, not proof that sleep mode is currently armed.
+
+The checkpoint must record:
+
+```yaml
+execution_mode: CONTINUE_MODE | SLEEP_MODE
+mode_state: MANUAL_OWNER_ACTIVE | SLEEP_ARMED
+mode_changed_at_utc: exact_timestamp
+mode_change_source: owner_command | external_controller
+last_owner_activity_at_utc: exact_timestamp_or_UNVERIFIED
+explicit_hold: true | false
+sleep_armed: true | false
+auto_sleep_rearm_eligible_after_utc: exact_timestamp_or_NOT_ELIGIBLE
+```
+
+Rules:
+
+- An owner `continue`, `deactivate sleep mode`, or `stop sleep mode` command records `CONTINUE_MODE`, `MANUAL_OWNER_ACTIVE`, and `sleep_armed: false` before any further repository write.
+- An owner `sleep mode` command records `SLEEP_MODE`, `SLEEP_ARMED`, and `sleep_armed: true` before unattended work begins.
+- Automatic re-arming requires live evidence of the inactivity threshold, no explicit hold, and an external-controller update of the checkpoint. `auto_sleep_enabled: true` alone never activates sleep mode.
+- A scheduled run with a missing, stale, or contradictory live mode record must make no code change and return `BLOCKED_CONTINUATION_STATE`.
 
 ## Owner commands
 
@@ -153,12 +179,14 @@ model_policy:
   primary_coding_model: GPT-5.6-Sol
   fallback_model: GPT-5.6-Terra
   polling_model: GPT-5.6-Luna
+  runtime_availability: VERIFY_EACH_RUN
+  policy_is_runtime_configuration_evidence: false
 
 sol_limit_behavior:
   preserve_all_work: true
   never_restart_task: true
   never_duplicate_branch_or_pr: true
-  retry_after_reset: true
+  retry_after_quota_reset: true
 
 terra_allowed:
   - inspect_status
@@ -181,7 +209,7 @@ luna_allowed:
   - report_pending_state
 
 on_insufficient_model_capacity:
-  status: BLOCKED_MODEL_QUOTA
+  status: BLOCKED_MODEL_CAPACITY
   action: WAIT_FOR_SOL
 ```
 
@@ -192,14 +220,14 @@ on_insufficient_model_capacity:
 3. Preserve the same task, branch, commits, checkpoint, evidence, review handoff, and PR. Never restart from zero or create a replacement branch or PR.
 4. If Sol is available, use it for architecture-sensitive implementation, broad multi-file coding, schema or migration work, security contracts, difficult debugging, and final complex corrections already authorized by the active task.
 5. If Sol is unavailable and Terra is selected, Terra may perform only the exact `terra_allowed` actions. A low-risk fix must already be fully documented by the active prompt, task contract, or `FIX_REQUIRED` handoff and must not require a new design decision.
-6. Terra must refuse every `terra_forbidden` action and stop with `BLOCKED_MODEL_QUOTA` / `WAIT_FOR_SOL` rather than approximating, broadening scope, or weakening validation.
+6. Terra must refuse every `terra_forbidden` action and stop with `BLOCKED_MODEL_CAPACITY` / `WAIT_FOR_SOL` rather than approximating, broadening scope, or weakening validation.
 7. Luna is read-only. It may inspect live status and report the pending state only. It must not edit files, commit, push, change checkpoints, apply fixes, approve, merge, or activate another task.
-8. `retry_after_reset: true` means a later owner-controlled or scheduled run may re-read repository state and retry after Sol becomes available. It does not authorize a hidden background loop, fabricated scheduler, repeated commits, or automatic model switching unsupported by the Codex product.
+8. `retry_after_quota_reset: true` means a later owner-controlled or scheduled run may re-read repository state and retry after Sol becomes available. It does not authorize a hidden background loop, fabricated scheduler, repeated commits, or automatic model switching unsupported by the Codex product.
 9. Automatic switching among Sol, Terra, and Luna is valid only when the owner or Codex automation configuration actually supports and selects those models. Otherwise preserve state and report the exact manual model action required.
 10. When no available model can safely perform the first incomplete authorized item, write no speculative code. Preserve all work and return:
 
 ```text
-BLOCKED_MODEL_QUOTA
+BLOCKED_MODEL_CAPACITY
 WAIT_FOR_SOL
 ```
 
