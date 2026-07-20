@@ -149,29 +149,65 @@ Without all eight conditions, stop. Never infer authorization from task order al
 Repository instructions, contracts, checkpoints, tests, and evidence preserve workflow continuity across model switches. They do not make different models identical in capability.
 
 ```yaml
-primary_model_preference: GPT-5.6-Sol
-fallback_selection: OWNER_OR_AUTOMATION_CONFIGURED_AVAILABLE_CODEX_MODEL
-fallback_goal: preserve_progress_and_apply_same_repository_rules
-identical_skill_guaranteed: false
+model_policy:
+  primary_coding_model: GPT-5.6-Sol
+  fallback_model: GPT-5.6-Terra
+  polling_model: GPT-5.6-Luna
+
+sol_limit_behavior:
+  preserve_all_work: true
+  never_restart_task: true
+  never_duplicate_branch_or_pr: true
+  retry_after_reset: true
+
+terra_allowed:
+  - inspect_status
+  - read_rules_and_checkpoint
+  - read_review_handoff
+  - run_existing_validations
+  - apply_exact_low_risk_fix
+  - update_evidence
+
+terra_forbidden:
+  - architecture_change
+  - schema_or_migration_design
+  - security_contract_change
+  - broad_refactor
+  - new_feature_selection
+  - merge_or_approval
+
+luna_allowed:
+  - inspect_status
+  - report_pending_state
+
+on_insufficient_model_capacity:
+  status: BLOCKED_MODEL_QUOTA
+  action: WAIT_FOR_SOL
 ```
 
-When the primary model is unavailable, rate-limited, or out of usage:
+### Required self-behavior on every run
 
-1. preserve all work, branch, commits, checkpoint, evidence, and PR state;
-2. never restart or duplicate the task;
-3. switch only to a model that is actually available in the owner's Codex selector or automation configuration;
-4. re-read the entire required instruction chain after switching;
-5. apply the same task contract, tests, security boundaries, review gate, and stop rules;
-6. permit low-risk exact corrections, validation, evidence updates, and continued implementation only when the selected model is capable of the task and the contract does not require the primary model;
-7. stop with `BLOCKED_MODEL_CAPACITY` when the available fallback cannot safely handle architecture-sensitive, migration-sensitive, security-sensitive, destructive, or broad multi-system work.
+1. Identify the actual selected model when the environment exposes it. Never claim a model identity that cannot be verified.
+2. Re-read the complete canonical instruction chain after every model switch, interruption, resumed run, or scheduled activation.
+3. Preserve the same task, branch, commits, checkpoint, evidence, review handoff, and PR. Never restart from zero or create a replacement branch or PR.
+4. If Sol is available, use it for architecture-sensitive implementation, broad multi-file coding, schema or migration work, security contracts, difficult debugging, and final complex corrections already authorized by the active task.
+5. If Sol is unavailable and Terra is selected, Terra may perform only the exact `terra_allowed` actions. A low-risk fix must already be fully documented by the active prompt, task contract, or `FIX_REQUIRED` handoff and must not require a new design decision.
+6. Terra must refuse every `terra_forbidden` action and stop with `BLOCKED_MODEL_QUOTA` / `WAIT_FOR_SOL` rather than approximating, broadening scope, or weakening validation.
+7. Luna is read-only. It may inspect live status and report the pending state only. It must not edit files, commit, push, change checkpoints, apply fixes, approve, merge, or activate another task.
+8. `retry_after_reset: true` means a later owner-controlled or scheduled run may re-read repository state and retry after Sol becomes available. It does not authorize a hidden background loop, fabricated scheduler, repeated commits, or automatic model switching unsupported by the Codex product.
+9. Automatic switching among Sol, Terra, and Luna is valid only when the owner or Codex automation configuration actually supports and selects those models. Otherwise preserve state and report the exact manual model action required.
+10. When no available model can safely perform the first incomplete authorized item, write no speculative code. Preserve all work and return:
 
-Automatic model switching is not assumed. It must be configured in the Codex automation or selected by the owner when the product requires manual model choice.
+```text
+BLOCKED_MODEL_QUOTA
+WAIT_FOR_SOL
+```
 
 ## Model-risk gate
 
 The fallback may proceed without owner intervention only for work that is already fully specified and does not introduce a new architecture decision.
 
-Stop for the primary model or owner decision when work includes:
+Stop for Sol or an owner decision when work includes:
 
 - unresolved architecture or product choices;
 - new schema or migration design;
