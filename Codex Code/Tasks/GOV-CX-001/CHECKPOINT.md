@@ -2,14 +2,14 @@
 
 ```yaml
 task_id: GOV-CX-001
-execution_mode: CONTINUE_MODE
-mode_state: MANUAL_OWNER_ACTIVE
-mode_changed_at_utc: 2026-07-20T02:06:29Z
-mode_change_source: owner_command
+execution_mode: SLEEP_MODE
+mode_state: SLEEP_ARMED
+mode_changed_at_utc: 2026-07-20T08:19:14Z
+mode_change_source: external_controller
 last_owner_activity_at_utc: 2026-07-20T02:06:29Z
 explicit_hold: false
-sleep_armed: false
-auto_sleep_rearm_eligible_after_utc: 2026-07-20T03:06:29Z
+sleep_armed: true
+auto_sleep_rearm_eligible_after_utc: 2026-07-20T04:06:29Z
 checkpoint_status: READY_FOR_REVIEW
 base_branch: main
 base_sha: e93cbe519ea2cb9d913ce17b0bd9732836a63d9f
@@ -29,7 +29,7 @@ model_policy:
   runtime_availability: UNVERIFIED
 selected_model: NOT_EXPOSED_BY_ENVIRONMENT
 fallback_model_used: NOT_VERIFIABLE
-review_handoff_state: NO_REVIEW_HANDOFF
+review_handoff_state: FIX_REQUIRED
 local_validation_status: PASS
 previous_release_task: CX-R1-002
 previous_release_task_status: APPROVED_COMPLETE
@@ -72,13 +72,16 @@ continuation_safe: true
 - Ran the production dependency audit at the high threshold successfully; one existing moderate advisory remains visible.
 - Committed and pushed correction commit `48d2991e980cf28df5228369e808ca17470d76cf` normally to the same authorized branch.
 - Verified PR #19 at that head as draft, `MERGEABLE`, and `CLEAN`, with all six named GitHub checks passing.
+- Armed repository-backed Sleep Mode through the external controller after more than 120 minutes of verifiable owner inactivity, with no explicit hold.
 
 ## Incomplete items
 
-- Independent external review and any one canonical `REVIEW_HANDOFF.md` state remain pending.
+- The canonical `FIX_REQUIRED` review handoff remains unresolved.
+- Codex must correct only the documented 120-minute threshold and final-head evidence findings on the same branch and PR, then rerun all affected validations.
+- Independent external re-review remains pending after those corrections.
 - Owner approval and merge remain pending after independent review.
 - GOV-CX-001 remains active until external review, owner merge, and main read-back; CX-R1-003 remains unauthorized.
 
 ## Exact next action
 
-Independent reviewer: inspect the same draft PR #19 and write only the one canonical `Codex Code/Reviews/GOV-CX-001/REVIEW_HANDOFF.md` when a factual review state or finding exists. Codex must stop before merge and must not start CX-R1-003.
+Codex: remain on task `GOV-CX-001`, branch `governance/codex-execution-modes`, and draft PR `#19`; read the existing `FIX_REQUIRED` handoff; correct only its two documented findings; rerun every affected and required validation; update this same checkpoint and evidence package to the exact final head; push to the same branch; and stop again at `READY_FOR_REVIEW`. Do not merge or start `CX-R1-003`.
