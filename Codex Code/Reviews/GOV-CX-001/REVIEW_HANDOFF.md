@@ -3,7 +3,7 @@
 ## Review state
 
 ```text
-FIX_REQUIRED
+REVIEW_PASS_PENDING_OWNER
 ```
 
 ## Scope reviewed
@@ -11,35 +11,52 @@ FIX_REQUIRED
 - Active task: `GOV-CX-001`
 - Branch: `governance/codex-execution-modes`
 - Pull request: `#19`
-- Live PR head at review: `99056182459546113abb313e54762733d43822b4`
-- Review basis: `1plan.md`, applicable plan extensions, `AGENTS.md`, completion law, active prompt, task contract, checkpoint, evidence records, exact PR diff, and live workflow state.
+- Exact evidence-only correction head reviewed: `876f3d915c6b8d8c9cb44b243d1670c3b18a4d77`
+- Review basis: `1plan.md`, applicable plan extensions, `AGENTS.md`, completion law, active prompt, task contract, checkpoint, test evidence, completion report, exact evidence-only diff, live PR metadata, and live workflow state.
 
-## Resolved finding
+## Review result
 
-The owner-inactivity policy is now aligned to the required threshold:
+The remaining stale-evidence finding is resolved.
 
-- `auto_sleep_after_owner_inactivity_minutes: 120`
-- `actual_auto_sleep_activation_window_minutes: 120_to_180`
-- deactivation/re-arm wording uses at least 120 minutes with hourly polling.
-
-No further correction is required for the former 60-minute threshold finding.
-
-## Finding 1 — canonical validated-head evidence remains stale
-
-**Files:**
+The reviewed correction is limited to the existing canonical evidence paths:
 
 - `Codex Code/Tasks/GOV-CX-001/CHECKPOINT.md`
 - `Codex Code/Tasks/GOV-CX-001/TEST_EVIDENCE.md`
 - `Codex Code/Tasks/GOV-CX-001/COMPLETION_REPORT.md`
 
-**Problem:** The live PR head reviewed is `99056182459546113abb313e54762733d43822b4`, and both `CI Quality and Security` and `Dependency Review` completed successfully on that exact head. However, the checkpoint still records `validated_correction_head_sha: 48d2991e980cf28df5228369e808ca17470d76cf`, retains `review_handoff_state: FIX_REQUIRED`, and describes the threshold and evidence corrections as incomplete. The canonical evidence package therefore does not match the exact current PR head or the work already present in the branch.
+The evidence package consistently records:
 
-**Required correction:** Update the same checkpoint and evidence package to record the exact final correction head, current draft/open/mergeable state, exact named workflow results at that head, resolved threshold finding, and the remaining external-review state. Ensure `CHECKPOINT.md`, `TEST_EVIDENCE.md`, and `COMPLETION_REPORT.md` all reference the same immutable head and do not describe already-applied corrections as incomplete.
+- the resolved owner-inactivity policy correction at immutable head `99056182459546113abb313e54762733d43822b4`;
+- the corrected `120`-minute inactivity threshold;
+- the truthful `120_to_180` hourly polling window;
+- successful `CI Quality and Security` and `Dependency Review` results on the reviewed policy-correction head;
+- the latest prior external-review head and its successful workflow results;
+- Sleep Mode remaining armed;
+- `GOV-CX-001` remaining the sole active task;
+- `CX-R1-003` and the sleep queue remaining unauthorized;
+- independent owner approval and merge remaining separate.
 
-**Reason:** Owner review and merge decisions must be anchored to the exact commit that contains the reviewed policy and passed the required workflows. Stale evidence creates a contradictory continuation state even when the underlying policy is corrected.
+The exact evidence-only correction head `876f3d915c6b8d8c9cb44b243d1670c3b18a4d77` is open, draft, unmerged, and mergeable. Both required workflow groups completed successfully on that exact head:
 
-**Required validation:** After the evidence-only correction, rerun all affected structural, formatting, path/link/duplicate, secret, and contract validations; push to the same branch; verify required GitHub checks on the new exact final head; and confirm the checkpoint, evidence, completion report, PR metadata, and live head agree.
+| Workflow group | Result |
+| --- | --- |
+| `CI Quality and Security` | PASS |
+| `Dependency Review` | PASS |
 
-## Exact next action
+The diff from the previous external-review head changes only the three authorized evidence files. No product code, dependency, workflow, schema, migration, API, UI, queue implementation, deployment, task selection, branch, or pull request was added or changed.
 
-Codex must remain on task `GOV-CX-001`, branch `governance/codex-execution-modes`, and PR `#19`. Correct only the stale final-head evidence finding above within the existing allowed paths, rerun required validations, update the same evidence package, and stop again at `READY_FOR_REVIEW`. Do not merge, activate `CX-R1-003`, create another task, branch, PR, policy, checkpoint, or review handoff.
+## Completion boundary
+
+```text
+GOV-CX-001 REVIEW: PASS
+CURRENT STATE: REVIEW_PASS_PENDING_OWNER
+NEXT TASK: NOT AUTHORIZED
+SLEEP QUEUE: NOT AUTHORIZED
+MERGE: OWNER ONLY
+```
+
+Codex must make no further autonomous change for this task. Passing external review does not authorize `CX-R1-003`, another prompt, another task, another branch, another pull request, or merge.
+
+## Exact owner action
+
+Review draft PR #19 and, if satisfied, approve and merge it into `main`. After merge, perform the required `main` read-back and terminal completion/merge recording for `GOV-CX-001`. Do not start `CX-R1-003` unless it is separately and explicitly authorized after the merged governance state is verified.
