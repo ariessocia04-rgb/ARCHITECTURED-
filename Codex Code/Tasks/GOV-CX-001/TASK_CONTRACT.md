@@ -80,7 +80,7 @@ Codex Code/Reviews/GOV-CX-001/REVIEW_HANDOFF.md
 - The four owner commands are unambiguous and linked from the repository entry point.
 - Manual mode requires owner `continue`.
 - Sleep mode supports scheduled current-task work, review correction, and safe waiting.
-- Deactivation returns to manual mode and documents the hourly 60-to-120-minute possible re-arm window truthfully.
+- Deactivation returns to manual mode and documents the hourly 120-to-180-minute possible re-arm window truthfully.
 - Reviewer and worker ownership never overlap.
 - Five-minute waiting is bounded and cannot become a busy loop.
 - Sleep-queue advancement requires all explicit predecessor and owner gates.
