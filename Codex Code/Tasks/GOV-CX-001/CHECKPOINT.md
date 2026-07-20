@@ -10,15 +10,18 @@ last_owner_activity_at_utc: 2026-07-20T02:06:29Z
 explicit_hold: false
 sleep_armed: false
 auto_sleep_rearm_eligible_after_utc: 2026-07-20T03:06:29Z
-checkpoint_status: PENDING_EXTERNAL_CHECKS
+checkpoint_status: READY_FOR_REVIEW
 base_branch: main
 base_sha: e93cbe519ea2cb9d913ce17b0bd9732836a63d9f
 branch: governance/codex-execution-modes
 starting_head_sha: 1b984f6536b2b9d03254dba98728b2d57ab653ca
+validated_correction_head_sha: 48d2991e980cf28df5228369e808ca17470d76cf
 pull_request: https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/19
 pull_request_state: OPEN_DRAFT
 pull_request_merge_state_at_start: CLEAN
 pull_request_checks_at_starting_head: SIX_PASS
+pull_request_merge_state_at_validated_head: CLEAN
+pull_request_checks_at_validated_head: SIX_PASS
 model_policy:
   primary_coding_model: GPT-5.6-Sol
   fallback_model: GPT-5.6-Terra
@@ -67,14 +70,15 @@ continuation_safe: true
 - Ran the final pinned Prettier check successfully across all 19 PR Markdown paths after creating evidence.
 - Ran final structural validation successfully with 19/19 manifest coverage and no duplicate canonical authority, secret pattern, missing reference, or unauthorized path.
 - Ran the production dependency audit at the high threshold successfully; one existing moderate advisory remains visible.
+- Committed and pushed correction commit `48d2991e980cf28df5228369e808ca17470d76cf` normally to the same authorized branch.
+- Verified PR #19 at that head as draft, `MERGEABLE`, and `CLEAN`, with all six named GitHub checks passing.
 
 ## Incomplete items
 
-- Commit and push the smallest correction to the same authorized branch.
-- Verify the final PR #19 head, changed paths, mergeability, and GitHub checks.
-- Stop at `READY_FOR_REVIEW` for independent review and owner approval.
+- Independent external review and any one canonical `REVIEW_HANDOFF.md` state remain pending.
+- Owner approval and merge remain pending after independent review.
 - GOV-CX-001 remains active until external review, owner merge, and main read-back; CX-R1-003 remains unauthorized.
 
 ## Exact next action
 
-Finish final local validation, commit and push only `governance/codex-execution-modes`, verify draft PR #19 and its checks, update this same evidence if a genuine failure requires correction, and stop before merge. Do not start CX-R1-003.
+Independent reviewer: inspect the same draft PR #19 and write only the one canonical `Codex Code/Reviews/GOV-CX-001/REVIEW_HANDOFF.md` when a factual review state or finding exists. Codex must stop before merge and must not start CX-R1-003.

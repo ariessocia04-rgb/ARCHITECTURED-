@@ -3,7 +3,7 @@
 ## Status
 
 ```text
-PENDING_EXTERNAL_CHECKS
+READY_FOR_REVIEW
 ```
 
 ## Completed scope
@@ -26,7 +26,7 @@ PENDING_EXTERNAL_CHECKS
 - Structural path/duplicate/registry/pointer/link/secret/model/merge validation: final pass with 19/19 manifest coverage.
 - Full `pnpm ci:check`: pass, including build, tests, security/path gates, Rust formatting, and locked Cargo check.
 - Production dependency audit at the required high threshold: pass; one existing moderate advisory remains visible.
-- Final draft-PR checks: pending the correction push.
+- Correction commit `48d2991e980cf28df5228369e808ca17470d76cf`: all six draft-PR checks passed; GitHub reported `MERGEABLE` and `CLEAN`.
 
 ## Boundaries and limitations
 
@@ -38,4 +38,4 @@ PENDING_EXTERNAL_CHECKS
 
 ## Next action
 
-Commit and push the same authorized branch, verify the same draft PR and checks, then stop at `READY_FOR_REVIEW`. Do not merge and do not start CX-R1-003.
+Independent reviewer: inspect the same draft PR #19 and create the one canonical handoff only if a factual review state or finding exists. Owner merge approval remains separate. Do not begin CX-R1-003.

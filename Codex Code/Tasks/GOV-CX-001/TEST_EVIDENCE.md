@@ -66,4 +66,15 @@ The aggregate `ci:check` pass included:
 
 ## Publication check state
 
-The final correction commit and its GitHub checks are recorded in the live PR state and checkpoint after publication. Codex does not self-review or merge the PR.
+Correction commit `48d2991e980cf28df5228369e808ca17470d76cf` was pushed normally to the existing branch and became PR #19's head. GitHub reported the PR as draft, `MERGEABLE`, and `CLEAN`; all six named checks passed:
+
+| Check                        | Result | Duration   |
+| ---------------------------- | ------ | ---------- |
+| `frozen-install-and-quality` | PASS   | 20 seconds |
+| `dependency-review`          | PASS   | 17 seconds |
+| `build-evidence`             | PASS   | 27 seconds |
+| `migration-boundary`         | PASS   | 14 seconds |
+| `rust-tauri`                 | PASS   | 2 minutes  |
+| `secret-scan`                | PASS   | 6 seconds  |
+
+The follow-up handoff commit changes only this factual evidence/checkpoint/completion state. Its live checks are verified before the final response. Codex does not self-review or merge the PR.
