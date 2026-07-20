@@ -94,11 +94,64 @@ A path may be changed only when necessary. Do not create appearance-only evidenc
 - No deletion, rename, relocation, force-push, reset, clean, stash, or history rewrite.
 - No self-review, self-approval, or merge.
 
-## Model fallback rule
+## Canonical model policy and self-behavior
 
-Primary preference is `GPT-5.6 Sol`. If it is unavailable, preserve the same task, branch, commits, checkpoint, and PR. Use only an actually available owner-selected or automation-configured Codex model that can safely satisfy this fully specified governance task.
+Obey the single authority in `Codex Code/Prompts/EXECUTION_MODE.md` and apply this behavior on every run:
 
-Do not claim different models have identical skill. Stop with `BLOCKED_MODEL_CAPACITY` if the fallback cannot safely reason about canonical-source conflicts, authorization, security boundaries, or repository reconciliation.
+```yaml
+model_policy:
+  primary_coding_model: GPT-5.6-Sol
+  fallback_model: GPT-5.6-Terra
+  polling_model: GPT-5.6-Luna
+
+sol_limit_behavior:
+  preserve_all_work: true
+  never_restart_task: true
+  never_duplicate_branch_or_pr: true
+  retry_after_reset: true
+
+terra_allowed:
+  - inspect_status
+  - read_rules_and_checkpoint
+  - read_review_handoff
+  - run_existing_validations
+  - apply_exact_low_risk_fix
+  - update_evidence
+
+terra_forbidden:
+  - architecture_change
+  - schema_or_migration_design
+  - security_contract_change
+  - broad_refactor
+  - new_feature_selection
+  - merge_or_approval
+
+luna_allowed:
+  - inspect_status
+  - report_pending_state
+
+on_insufficient_model_capacity:
+  status: BLOCKED_MODEL_QUOTA
+  action: WAIT_FOR_SOL
+```
+
+Self-behavior requirements:
+
+1. Verify the actual selected model when the environment exposes it; otherwise state that model identity is unverified.
+2. After any switch, interruption, resumed run, or scheduled activation, re-read the full canonical chain before acting.
+3. Preserve this same active task, branch, commits, checkpoint, evidence, review handoff, and PR. Never restart or duplicate them.
+4. Sol handles authorized architecture-sensitive, broad multi-file, schema/migration, security-contract, difficult-debugging, and complex final-correction work.
+5. Terra may perform only the listed `terra_allowed` actions. Any low-risk fix must already be exact, fully documented, within allowed paths, and require no new design decision.
+6. Terra must not perform any `terra_forbidden` action. It must stop with `BLOCKED_MODEL_QUOTA` and `WAIT_FOR_SOL` instead of approximating or broadening scope.
+7. Luna is read-only status polling. It must not edit, commit, push, change records, fix code, approve, merge, or activate another task.
+8. Automatic switching is not assumed. It is valid only when the owner or Codex automation actually supports and selects the models.
+9. `retry_after_reset` authorizes only a later owner-controlled or scheduled re-read and retry after Sol becomes available; it does not authorize a hidden loop or fabricated background worker.
+10. If no currently available model can safely execute the first incomplete authorized item, preserve everything and return exactly:
+
+```text
+BLOCKED_MODEL_QUOTA
+WAIT_FOR_SOL
+```
 
 ## Required validation
 
@@ -130,6 +183,7 @@ If a command is unavailable or inappropriate, record the exact reason instead of
 - ChatGPT review and Codex correction cannot modify the same active work simultaneously.
 - no later task starts without the exact sleep-queue prerequisites.
 - model switching preserves progress and strict controls without promising identical capability.
+- Sol, Terra, and Luna behavior is bounded by the canonical model policy and safe stop state.
 - CX-R1-002 is factually closed as `APPROVED_COMPLETE` with actual merge evidence.
 - all indexes and pointers resolve to one canonical source for each responsibility.
 - no product code or duplicate authority is introduced.
@@ -145,6 +199,7 @@ BLOCKED_AUTHORIZATION
 BLOCKED_CONFLICT
 BLOCKED_ENVIRONMENT
 BLOCKED_MODEL_CAPACITY
+BLOCKED_MODEL_QUOTA
 FAILED_VALIDATION
 ```
 
