@@ -15,8 +15,10 @@ next_release_task_authorized: false
 work_branch: governance/codex-execution-modes
 base_branch: main
 base_sha_at_activation: e93cbe519ea2cb9d913ce17b0bd9732836a63d9f
-prompt_sequence: 0001
-prompt_path: Codex Code/Prompts/GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md
+initial_prompt_sequence: 0001
+initial_prompt_path: Codex Code/Prompts/GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md
+latest_prompt_sequence: 0002
+latest_prompt_path: Codex Code/Prompts/GOV-CX-001/0002-SLEEP-RUNTIME-REVIEW-AND-REARM-CORRECTION.md
 contract_path: Codex Code/Tasks/GOV-CX-001/TASK_CONTRACT.md
 checkpoint_path: Codex Code/Tasks/GOV-CX-001/CHECKPOINT.md
 canonical_mode_policy: Codex Code/Prompts/EXECUTION_MODE.md
@@ -52,6 +54,21 @@ next_release_task_authorized: false
 No second sleep-mode plan or parallel continuation protocol is authorized.
 
 Prompt 0001 remains the unmerged pre-acceptance draft while this checkpoint requires Codex validation. The owner-directed model addition and exact validation corrections are therefore reconciled in the current draft; after the first `READY_FOR_REVIEW` handoff, a material executable change requires prompt 0002 and a recorded contract amendment.
+
+## Review-fix amendment
+
+```yaml
+owner_request_classification: CURRENT_TASK_AMENDMENT_REQUIRED
+source_path_and_requirement_id: Codex Code/Reviews/GOV-CX-001/REVIEW_HANDOFF.md, FIX_REQUIRED Findings 1-7
+source_head: 2ac4ff631d5bff4912e3fb03c39ac3ff9ec3f98a
+canonical_target: existing GOV-CX-001 governance files, Prompt 0002, checkpoint, and evidence
+active_task_impact: material executable correction to the same task, branch, and PR
+product_scope_impact: NONE
+next_task_authorized: false
+sleep_queue_authorized_for_current_pointer: false
+```
+
+The owner-authored handoff preserves the 60-minute policy cadence and requires runtime truth, mode-sensitive review pass, exact sleep-queue entries, safe deactivation/rearm, actor mutual exclusion, and current evidence. Completed valid work remains preserved.
 
 ## Alignment-impact review
 
