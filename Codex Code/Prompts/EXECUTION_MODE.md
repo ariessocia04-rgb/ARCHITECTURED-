@@ -11,15 +11,15 @@ It defines operational behavior only. It does not authorize a product task, broa
 ```yaml
 default_mode: CONTINUE_MODE
 auto_sleep_enabled: true
-auto_sleep_after_owner_inactivity_minutes: 60
+auto_sleep_after_owner_inactivity_minutes: 120
 chatgpt_review_interval_minutes: 60
 codex_automation_interval_minutes: 60
-actual_auto_sleep_activation_window_minutes: 60_to_120
+actual_auto_sleep_activation_window_minutes: 120_to_180
 policy_defaults_only: true
 live_mode_record: Codex Code/Tasks/<ACTIVE-TASK-ID>/CHECKPOINT.md
 ```
 
-The hourly activation window exists because scheduled checks cannot run more frequently than once per hour. No worker may claim an exact minute-60 activation unless live scheduler evidence proves it.
+The hourly activation window exists because scheduled checks cannot run more frequently than once per hour. No worker may claim an exact minute-120 activation unless live scheduler evidence proves it.
 
 ## Canonical live mode state
 
@@ -77,8 +77,8 @@ These commands mean:
 - immediately return to `CONTINUE_MODE`;
 - scheduled Codex runs must not modify code while the owner remains active;
 - the owner resumes work using the single command `continue`;
-- if no newer owner activity or explicit hold is observed for at least 60 minutes, the external ChatGPT controller may re-arm `SLEEP_MODE` on its next hourly run;
-- because the controller checks hourly, re-arming may occur between 60 and 120 minutes after the last observable owner activity.
+- if no newer owner activity or explicit hold is observed for at least 120 minutes, the external ChatGPT controller may re-arm `SLEEP_MODE` on its next hourly run;
+- because the controller checks hourly, re-arming may occur between 120 and 180 minutes after the last observable owner activity.
 
 ## Required reading order
 
