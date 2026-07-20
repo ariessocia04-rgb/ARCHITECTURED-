@@ -8,7 +8,10 @@ base_branch: main
 base_sha: e93cbe519ea2cb9d913ce17b0bd9732836a63d9f
 branch: governance/codex-execution-modes
 pull_request: https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/19
-primary_model_preference: GPT-5.6-Sol
+model_policy:
+  primary_coding_model: GPT-5.6-Sol
+  fallback_model: GPT-5.6-Terra
+  polling_model: GPT-5.6-Luna
 fallback_model_used: none
 review_handoff_state: NO_REVIEW_HANDOFF
 previous_release_task: CX-R1-002
@@ -33,12 +36,15 @@ continuation_safe: true
 - Activated GOV-CX-001 as the only task and kept CX-R1-003 unauthorized.
 - Updated the prompt index, prompt registry, existing 1plan continuation extension, and 1plan extension index.
 - Opened exactly one draft PR, #19, to `main`.
+- Added the owner-directed canonical Sol/Terra/Luna model policy to the existing `EXECUTION_MODE.md` authority instead of creating a duplicate policy.
+- Added matching Codex self-behavior to active Prompt 0001: preserve work, restrict Terra, make Luna read-only, block unsafe fallback, wait for Sol, and never duplicate the task, branch, or PR.
 
 ## Incomplete items
 
 - Codex must re-read the complete repository chain using only `continue`.
 - Codex must compare every changed path against latest `main` and verify no owner work was lost.
 - Codex must decide whether `TASK_STORAGE_AND_HANDOFF_RULES.md` needs only a minimal link/clarification; do not copy the full execution-mode policy.
+- Codex must validate the new model-policy terms against every existing continuation, fallback, result-state, and checkpoint reference and remove only contradictions within the allowed scope without creating another authority.
 - Run and record all applicable Markdown formatting, link/path, duplicate, prompt uniqueness, active-pointer, secret, frozen-install, and CI validations.
 - Update factual evidence and the same draft PR only when required.
 - Stop at `READY_FOR_REVIEW` or `READY_FOR_OWNER_MERGE` for independent review and owner approval.
@@ -51,4 +57,4 @@ In the Codex project opened on `governance/codex-execution-modes`, the owner's n
 continue
 ```
 
-Codex must execute Prompt 0001, make only the smallest required corrections, validate PR #19, and stop before merge. Do not start CX-R1-003.
+Codex must execute Prompt 0001, obey the canonical Sol/Terra/Luna self-behavior, make only the smallest required corrections, validate PR #19, and stop before merge. Do not start CX-R1-003.
