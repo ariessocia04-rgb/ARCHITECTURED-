@@ -55,7 +55,7 @@ A later task may run only when it is explicitly listed in a repository-backed ow
 
 These commands return to manual `CONTINUE_MODE`. Scheduled Codex runs must not modify code while the owner remains active. The owner's next coding command is `continue`.
 
-When the external ChatGPT controller observes no newer owner activity or explicit hold for at least 60 minutes, it may re-arm sleep behavior on its next hourly check. Because scheduled checks are hourly, the factual activation window may be 60 to 120 minutes. Never claim an exact minute-60 transition without live evidence.
+When the external ChatGPT controller observes no newer owner activity or explicit hold for at least 120 minutes, it may re-arm sleep behavior on its next hourly check. Because scheduled checks are hourly, the factual activation window may be 120 to 180 minutes. Never claim an exact minute-120 transition without live evidence.
 
 The complete command, sleep-loop, reviewer-handoff, queue, and model-fallback law is canonical in `Codex Code/Prompts/EXECUTION_MODE.md`.
 
