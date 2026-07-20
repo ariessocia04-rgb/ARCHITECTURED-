@@ -11,72 +11,68 @@ FIX_REQUIRED
 - Active task: `GOV-CX-001`
 - Branch: `governance/codex-execution-modes`
 - Pull request: `#19`
-- Live PR head before this clarification: `dbf3d995aad6c4517371cc334e24bd51a53da562`
 - Review basis: `1plan.md`, applicable extensions, `AGENTS.md`, completion law, active prompt, task contract, checkpoint, evidence, live PR/check state, official OpenAI automation documentation, and the owner's clarified Sleep Mode intent.
 
-## Owner clarification — authoritative Sleep Mode intent
+## Authoritative owner intent
 
-The owner explicitly clarified that Sleep Mode is an autonomous reviewed execution pipeline while the owner is asleep.
-
-The intended distinction is:
+The owner explicitly clarified that:
 
 ```text
 SLEEP_MODE
-= Codex works on authorized queued work
-→ ChatGPT automatically reviews on its hourly poll
+= Codex works on exact authorized queued work
+→ ChatGPT reviews automatically on its hourly repository poll
 → Codex fixes exact findings when required
-→ after automated review passes, Codex may continue to the next explicitly authorized sleep-queue task
-→ owner final/manual review is deferred until Sleep Mode is deactivated
+→ after an automated review pass, Codex may continue only to the next task already listed in the owner-authorized sleep queue
+→ owner final/manual consolidated review is deferred until Sleep Mode is deactivated
 
 CONTINUE_MODE
 = owner controls each continuation
 → owner asks ChatGPT to review the repository work
 → Codex corrects exact findings when instructed
-→ owner decides final approval and merge
+→ owner controls final approval and merge
 ```
 
-Therefore, the previous interpretation that `REVIEW_PASS_PENDING_OWNER` always stops Codex is superseded. It must be mode-sensitive:
+The owner also clarified this deactivation behavior:
 
-- In `CONTINUE_MODE`, `REVIEW_PASS_PENDING_OWNER` stops for the owner.
-- In `SLEEP_MODE`, `REVIEW_PASS_PENDING_OWNER` records that automated external review passed and owner final review remains pending, but it does not block advancement to the next task already listed in an explicit owner-authorized sleep queue when every Sleep Mode continuation gate is satisfied.
+```text
+DEACTIVATE SLEEP MODE
+→ enter CONTINUE_MODE immediately
+→ stop new autonomous task advancement
+→ preserve a safe reviewable checkpoint
+→ if the owner sends no newer message or command for at least 60 minutes
+→ on the external controller's next hourly poll, verify the inactivity timestamp and all safety gates
+→ automatically re-arm SLEEP_MODE
+→ resume the existing Codex Sleep Mode sequence without changing its work/review priority
+```
 
-This clarification does not authorize Codex to invent or select a task. A successor must already be explicitly listed and fully prepared in the canonical sleep queue.
+This automatic re-arm may factually occur between 60 and 120 minutes after the latest verified owner activity because the controller polls hourly. It must never be claimed at exact minute 60 without scheduler evidence.
 
-## External factual basis
+## External factual constraints
 
-Official OpenAI sources checked on `2026-07-20` support the following factual constraints:
+Current official OpenAI automation documentation supports these constraints:
 
-1. Scheduled tasks can perform recurring monitoring but cannot run more than once per hour.
-2. ChatGPT scheduled review and Codex automation are separate scheduled capabilities; neither should be treated as an immediate webhook trigger for the other.
-3. Scheduled tasks do not support completion webhooks, so coordination must use repository polling and canonical state.
-4. Tasks can pause and require actual configuration, permissions, and active runtime evidence.
+1. Scheduled monitoring cannot run more than once per hour.
+2. ChatGPT scheduled review and Codex automation are separate scheduled capabilities.
+3. There is no supported completion webhook joining the two; coordination must use repository polling and canonical state.
+4. Scheduled tasks may be paused and require actual configuration, permissions, and active-runtime evidence.
 5. Local project execution may require the computer to remain on, the desktop app to remain running, and sleep prevention to be configured.
-
-These facts support the repository's existing 60-minute cadence but require an explicit polling sequence and runtime-truth record.
 
 ## Finding 1 — preserve the canonical 60-minute design
 
-**Files:**
-
-- `Codex Code/Prompts/EXECUTION_MODE.md`
-- connected mode, prompt, contract, and checkpoint references
-
-**Problem:** An earlier review version incorrectly requested a 120-minute threshold.
-
-**Required correction:** Preserve:
+**Required correction:** Preserve all of these values:
 
 ```text
 ChatGPT reviewer cadence: 60 minutes
 Codex automation cadence: 60 minutes
-automatic re-arm threshold: 60 minutes
+automatic re-arm inactivity threshold: 60 minutes
 hourly polling activation window: 60 to 120 minutes
 ```
 
-Do not implement the withdrawn 120-minute direction.
+Do not implement the withdrawn 120-minute threshold direction.
 
-**Required validation:** Search the branch and PR for unintended 120-minute replacements and verify all canonical references remain aligned with the 60-minute design.
+**Required validation:** Search all changed and connected governance records for unintended threshold conflicts and verify consistent 60-minute / 60-to-120-minute semantics.
 
-## Finding 2 — actual automation configuration and runtime truth are not recorded
+## Finding 2 — automation policy and runtime truth must be separate
 
 **Files:**
 
@@ -87,7 +83,7 @@ Do not implement the withdrawn 120-minute direction.
 - `Codex Code/Tasks/GOV-CX-001/TEST_EVIDENCE.md`
 - `Codex Code/Tasks/GOV-CX-001/COMPLETION_REPORT.md`
 
-**Problem:** Policy values exist, but the repository does not distinguish policy from an actually configured and active reviewer or worker automation.
+**Problem:** A policy cadence is not proof that either automation is configured, enabled, correctly permissioned, or bound to this repository and project/thread.
 
 **Required correction:** Add one non-duplicative runtime-truth section to the existing canonical mode authority and extend the same checkpoint with factual fields such as:
 
@@ -114,30 +110,14 @@ codex_worker_task:
   next_run_at_utc: exact_timestamp_or_UNVERIFIED
 ```
 
-Do not fabricate task IDs, timestamps, permissions, bindings, or active state. Record `UNVERIFIED` when product evidence is unavailable.
+Do not fabricate task IDs, timestamps, permissions, bindings, or active state. Use `UNVERIFIED` when product evidence is unavailable.
 
-## Finding 3 — Sleep Mode sequence must allow automated pass and queued continuation
+## Finding 3 — preserve the existing Codex work/review priority
 
-**Files:**
-
-- `Codex Code/Prompts/EXECUTION_MODE.md`
-- `Codex Code/Prompts/CONTINUE_PROTOCOL.md`
-- `AGENTS.md`
-- `Codex Code/CURRENT_TASK_COMPLETION_LAW.md` when required to remove a direct contradiction
-- `1plan-CODEX_PROMPT_CHAIN_CONTINUATION_EXTENSION.md`
-- `Codex Code/Tasks/GOV-CX-001/TASK_CONTRACT.md`
-- `Codex Code/Tasks/GOV-CX-001/CHECKPOINT.md`
-
-**Problem:** The current repository says `REVIEW_PASS_PENDING_OWNER` forbids further work and requires owner merge before any queued successor. That directly conflicts with the owner's clarified Sleep Mode design.
-
-**Required correction:** Amend the current GOV-CX-001 contract first, using this explicit owner authorization, to permit the smallest governance-file changes necessary to remove that contradiction. Do not touch product code.
-
-Define the exact mode-sensitive sequence:
+The new auto-rearm behavior must wrap the existing sequence; it must not reorder, bypass, or weaken it.
 
 ```text
-OWNER OR VERIFIED CONTROLLER ARMS SLEEP_MODE
-→ CODEX HOURLY RUN READS THE FULL REPOSITORY CHAIN
-→ VERIFY MODE, ACTIVE ACTOR, ACTIVE TASK, SLEEP QUEUE, BRANCH/PR, HEAD, CHECKS, AND EXISTING WORK
+VERIFY REPOSITORY, MODE, CHECKPOINT, ACTOR, ACTIVE TASK, QUEUE, BRANCH/PR, HEAD, CHECKS, AND EXISTING WORK
 → SEARCH FOR EXISTING OR PARTIAL IMPLEMENTATION BEFORE WRITING
 → IF ANOTHER ACTOR OWNS THE STATE: READ-ONLY STOP
 → IF REVIEW_IN_PROGRESS: READ-ONLY STOP
@@ -149,29 +129,31 @@ OWNER OR VERIFIED CONTROLLER ARMS SLEEP_MODE
 → SET REVIEW_IN_PROGRESS
 → VERIFY PLAN, DIFF, TESTS, CHECKS, SECURITY, DUPLICATES, AND EVIDENCE
 → IF ISSUES: WRITE FIX_REQUIRED AND RELEASE REVIEWER OWNERSHIP
-→ IF PASS IN SLEEP_MODE: WRITE REVIEW_PASS_PENDING_OWNER, RECORD THE REVIEWED SHA, RELEASE REVIEWER OWNERSHIP
-→ ON A LATER CODEX RUN, IF SLEEP_MODE IS STILL ACTIVE AND AN EXPLICIT OWNER-AUTHORIZED SLEEP QUEUE LISTS A SUCCESSOR, VERIFY ALL QUEUE AND NON-OVERLAP GATES
-→ ACTIVATE ONLY THAT LISTED SUCCESSOR AND CONTINUE
-→ IF NO AUTHORIZED SUCCESSOR OR A GATE FAILS: STOP WITH THE EXISTING TRUTHFUL PENDING/BLOCKED STATE
+→ IF PASS IN SLEEP_MODE: WRITE REVIEW_PASS_PENDING_OWNER AND RECORD THE REVIEWED SHA
+→ ON A LATER CODEX RUN, ADVANCE ONLY WHEN THE ACTIVE OWNER-AUTHORIZED SLEEP QUEUE EXPLICITLY LISTS THE SUCCESSOR AND EVERY GATE PASSES
 ```
 
-`REVIEW_PASS_PENDING_OWNER` must have these conditional semantics:
+No automatic mode transition may skip required reading, duplicate search, active-worker checks, exact review correction priority, validations, evidence, or reviewer locking.
+
+## Finding 4 — mode-sensitive review-pass behavior and queue safety
+
+`REVIEW_PASS_PENDING_OWNER` must mean:
 
 ```text
 CONTINUE_MODE:
-  no further Codex changes;
-  wait for owner review/approval/merge.
+  no further autonomous Codex changes;
+  wait for owner-controlled continuation, final review, approval, or merge.
 
 SLEEP_MODE:
-  automated external review passed for an exact SHA;
-  owner final review remains pending;
+  automated external review passed for an exact immutable SHA;
+  owner final consolidated review remains pending;
   Codex may advance only to the next task explicitly listed in the active owner-authorized sleep queue;
   no arbitrary task selection;
-  no merge unless the owner separately pre-authorized that exact merge behavior;
-  no successor when branch strategy, dependencies, or path overlap are ambiguous.
+  no merge unless separately and exactly pre-authorized by the owner;
+  no successor when branch strategy, dependency state, or path overlap is ambiguous.
 ```
 
-The sleep queue must specify for each successor:
+Each queued successor must already specify:
 
 ```yaml
 - task_id: exact_task_id
@@ -186,37 +168,51 @@ The sleep queue must specify for each successor:
   stop_conditions: exact_states
 ```
 
-If this information is missing, Codex must not infer it.
+If any required queue field or gate is missing, Codex must not infer it.
 
-## Finding 4 — Continue Mode and deactivation need a deferred owner-review rule
+## Finding 5 — deactivation, manual review, and automatic re-arm
 
-**Files:**
-
-- `Codex Code/Prompts/EXECUTION_MODE.md`
-- `Codex Code/Prompts/CONTINUE_PROTOCOL.md`
-- `AGENTS.md`
-- `Codex Code/Tasks/GOV-CX-001/CHECKPOINT.md`
-
-**Problem:** The repository does not yet express the owner's intended wake-up flow after autonomous Sleep Mode work.
-
-**Required correction:** Define:
+**Required correction:** Add this exact control sequence without changing the Codex work/review priority:
 
 ```text
 OWNER ISSUES deactivate sleep mode OR stop sleep mode
-→ IMMEDIATELY DISABLE NEW AUTOMATED TASK ADVANCEMENT
-→ IF CODEX CURRENTLY OWNS A RUN, IT MAY ONLY REACH A SAFE, INTERNALLY CONSISTENT CHECKPOINT, PUSH THE REVIEWABLE STATE, UPDATE EVIDENCE, RELEASE OWNERSHIP, AND STOP
-→ SET CONTINUE_MODE
+→ RECORD THE OWNER COMMAND AS last_owner_activity_at_utc
+→ SET execution_mode: CONTINUE_MODE
+→ SET mode_state: MANUAL_OWNER_ACTIVE
 → SET sleep_armed: false
 → SET owner_final_review_requested: true
-→ RECORD THE SLEEP SESSION TASKS, REVIEWED SHAS, CORRECTION SHAS, OPEN PRS, AND PENDING MERGES
-→ CHATGPT PERFORMS A MANUAL CONSOLIDATED REVIEW WHEN THE OWNER REQUESTS IT
-→ IF MANUAL REVIEW FINDS ISSUES: WRITE FIX_REQUIRED FOR THE EXACT TASK/PR AND OWNER SENDS continue TO CODEX
-→ IF MANUAL REVIEW PASSES: REPORT THE EXACT OWNER APPROVAL/MERGE ACTIONS
+→ SET auto_sleep_rearm_eligible_after_utc TO EXACTLY 60 MINUTES AFTER last_owner_activity_at_utc
+→ IMMEDIATELY DISABLE NEW AUTOMATED TASK ADVANCEMENT
+→ IF CODEX CURRENTLY OWNS A RUN, IT MAY ONLY REACH A SAFE INTERNALLY CONSISTENT CHECKPOINT, PUSH THE REVIEWABLE STATE, UPDATE EVIDENCE, RELEASE OWNERSHIP, AND STOP
+→ RECORD SLEEP-SESSION TASKS, REVIEWED SHAS, CORRECTION SHAS, OPEN PRS, AND PENDING MERGES
+→ ALLOW OWNER-REQUESTED CHATGPT CONSOLIDATED REVIEW IN CONTINUE_MODE
 ```
 
-Extend the checkpoint with non-duplicative fields such as:
+Every newer owner message, command, manual review request, approval action, correction instruction, or explicit hold must update `last_owner_activity_at_utc` and recalculate the 60-minute eligibility timestamp.
+
+On each hourly external-controller poll while in manual mode:
+
+```text
+VERIFY checkpoint is consistent
+→ VERIFY explicit_hold: false
+→ VERIFY active_actor: NONE
+→ VERIFY no newer owner activity exists
+→ VERIFY current time is at or after auto_sleep_rearm_eligible_after_utc
+→ IF ANY FACT CANNOT BE VERIFIED: MAKE NO WRITE AND RETURN AN EXISTING BLOCKED/PENDING STATE
+→ IF ALL FACTS PASS: SET SLEEP_MODE, SLEEP_ARMED, sleep_armed: true, mode_change_source: external_controller
+→ PRESERVE owner_final_review_requested AND THE RECORDED SLEEP-SESSION REVIEW BACKLOG
+→ RESUME ONLY THROUGH THE UNCHANGED CODEX PRIORITY IN FINDING 3
+```
+
+Automatic re-arm does not approve, merge, erase pending owner review, create a queue, authorize a successor, or permit arbitrary work. It only restores Sleep Mode when all canonical safety facts are verified.
+
+Extend the checkpoint without creating a parallel state record:
 
 ```yaml
+last_owner_activity_at_utc: exact_timestamp_or_UNVERIFIED
+explicit_hold: true | false
+auto_sleep_rearm_eligible_after_utc: exact_timestamp_or_NOT_ELIGIBLE
+auto_sleep_rearm_status: NOT_ELIGIBLE | ELIGIBLE | REARMED | BLOCKED_UNVERIFIED
 owner_final_review_requested: true | false
 sleep_session_id: exact_id_or_NOT_ACTIVE
 sleep_session_started_at_utc: exact_timestamp_or_NOT_ACTIVE
@@ -226,18 +222,9 @@ latest_automated_reviewed_sha: exact_sha_or_UNVERIFIED
 latest_manual_reviewed_sha: exact_sha_or_NOT_REVIEWED
 ```
 
-The manual review must never silently invalidate a factual automated pass; it may confirm it or create exact new findings based on the consolidated repository state.
+## Finding 6 — worker/reviewer mutual exclusion
 
-## Finding 5 — worker/reviewer mutual exclusion is required
-
-**Files:**
-
-- `Codex Code/Prompts/EXECUTION_MODE.md`
-- `Codex Code/Prompts/CONTINUE_PROTOCOL.md`
-- `AGENTS.md`
-- `Codex Code/Tasks/GOV-CX-001/CHECKPOINT.md`
-
-**Required correction:** Use one checkpoint lock:
+Use one existing-checkpoint coordination lock:
 
 ```yaml
 active_actor: NONE | OWNER | CODEX_WORKER | CHATGPT_REVIEWER
@@ -246,53 +233,51 @@ automation_phase: WORK_READY | WORKING | READY_FOR_REVIEW | REVIEW_IN_PROGRESS |
 review_target_sha: exact_sha_or_UNVERIFIED
 ```
 
-No scheduled writer may act while another actor is active. A stale, contradictory, or head-mismatched lock must produce an existing blocked state rather than a guessed recovery.
+No scheduled writer may act while another actor is active. A stale, contradictory, or head-mismatched lock must produce an existing blocked state rather than guessed recovery.
 
-## Finding 6 — canonical checkpoint and evidence are stale
+## Finding 7 — canonical checkpoint and evidence are stale
 
-**Files:**
-
-- `Codex Code/Tasks/GOV-CX-001/CHECKPOINT.md`
-- `Codex Code/Tasks/GOV-CX-001/TEST_EVIDENCE.md`
-- `Codex Code/Tasks/GOV-CX-001/COMPLETION_REPORT.md`
-
-**Problem:** The checkpoint and completion evidence still trail the live PR and review handoff state.
-
-**Required correction:** After implementing Findings 1–5, update the same checkpoint and evidence to record the exact final head, live PR/check state, handoff state, runtime truth, actor/phase state, and mode-sensitive continuation behavior.
-
-The completion report must separately state:
+After implementing Findings 1–6, update the same checkpoint, test evidence, and completion report to record:
 
 ```text
+EXACT FINAL HEAD SHA
+LIVE PR AND CHECK STATE AT THAT SHA
 GOVERNANCE POLICY DEFINED
 AUTOMATION RUNTIME VERIFIED OR UNVERIFIED
 SLEEP MODE ARMED OR NOT ARMED
+AUTO-REARM ELIGIBILITY AND LAST VERIFIED OWNER ACTIVITY
 AUTOMATED REVIEW STATE
 OWNER FINAL REVIEW STATE
 AUTHORIZED SLEEP QUEUE STATE
+ACTIVE ACTOR AND AUTOMATION PHASE
 CURRENT TASK/BRANCH/PR
 NEXT EXACT ACTION
 ```
+
+Do not claim operational automation or automatic re-arm when required configuration, timestamp, owner-activity, permission, or scheduler evidence is unverified.
 
 ## Required validation
 
 Codex must:
 
-1. Preserve the canonical 60-minute values.
-2. Search for contradictory unconditional stop-before-successor rules.
-3. Verify any completion-law change is explicitly authorized by the amended GOV-CX-001 contract and limited to Sleep Mode semantics.
-4. Validate that `CONTINUE_MODE` still stops for owner control.
-5. Validate that `SLEEP_MODE` advances only through an explicit queue.
-6. Validate that automated review pass is anchored to an exact immutable SHA.
-7. Validate that Codex cannot write during `REVIEW_IN_PROGRESS`.
-8. Validate that ChatGPT cannot review while Codex owns the checkpoint.
-9. Validate deactivation prevents new autonomous task activation.
-10. Run all task-contract formatting, link, duplicate, path, secret, install, test, build, and GitHub checks.
-11. Update only the same branch, PR, checkpoint, evidence package, and review handoff.
+1. Preserve the canonical 60-minute values and 60-to-120-minute polling window.
+2. Verify deactivation immediately prevents new autonomous task advancement.
+3. Verify every newer owner interaction resets the inactivity timer.
+4. Verify auto-rearm occurs only after the exact recorded 60-minute threshold and the next hourly controller poll.
+5. Verify unverified owner activity, timestamps, actor state, or explicit hold causes read-only blocked/pending behavior.
+6. Verify automatic re-arm resumes the unchanged Codex priority rather than bypassing or reordering it.
+7. Verify `CONTINUE_MODE` remains owner-controlled.
+8. Verify `SLEEP_MODE` advances only through an explicit owner-authorized queue.
+9. Verify automated review pass is anchored to an exact immutable SHA.
+10. Verify Codex cannot write during `REVIEW_IN_PROGRESS`.
+11. Verify ChatGPT cannot review while Codex owns the checkpoint.
+12. Re-run every task-contract formatting, link, duplicate, path, secret, install, test, build, and GitHub check.
+13. Update only the same branch, PR, checkpoint, evidence package, and review handoff.
 
 ## Exact next action
 
 Codex must remain on `GOV-CX-001`, branch `governance/codex-execution-modes`, and PR `#19`.
 
-Read this corrected handoff, amend the GOV-CX-001 contract only as needed to authorize the smallest governance-path delta, preserve the 60-minute cadence, implement Findings 2–6, rerun all required validations, update the same checkpoint and evidence, and stop again at `READY_FOR_REVIEW` for validation of this governance change.
+Read this updated handoff, amend the GOV-CX-001 contract only as needed to authorize the smallest governance-path delta, preserve the existing Codex work/review sequence, implement Findings 2–7, rerun all required validations, update the same checkpoint and evidence, and stop again at `READY_FOR_REVIEW` for validation of this governance correction.
 
-Do not activate `CX-R1-003` during this governance correction because the current active pointer still records `sleep_queue_authorized: false`. Do not merge, create a duplicate task, branch, PR, policy, checkpoint, evidence package, or reviewer handoff.
+Do not activate `CX-R1-003` during this governance correction because the active pointer still records `sleep_queue_authorized: false`. Do not merge, create a duplicate task, branch, PR, policy, checkpoint, evidence package, or reviewer handoff.
