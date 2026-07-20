@@ -15,13 +15,13 @@ base_branch: main
 base_sha: e93cbe519ea2cb9d913ce17b0bd9732836a63d9f
 branch: governance/codex-execution-modes
 starting_head_sha: 1b984f6536b2b9d03254dba98728b2d57ab653ca
-validated_correction_head_sha: 48d2991e980cf28df5228369e808ca17470d76cf
+validated_correction_head_sha: 99056182459546113abb313e54762733d43822b4
+latest_external_review_head_sha: 8ff5f07ad2f608a97569e40cfb27b09b9d6b66f7
 pull_request: https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/19
 pull_request_state: OPEN_DRAFT
-pull_request_merge_state_at_start: CLEAN
-pull_request_checks_at_starting_head: SIX_PASS
-pull_request_merge_state_at_validated_head: CLEAN
-pull_request_checks_at_validated_head: SIX_PASS
+pull_request_mergeable: true
+pull_request_checks_at_validated_correction_head: PASS
+pull_request_checks_at_latest_external_review_head: PASS
 model_policy:
   primary_coding_model: GPT-5.6-Sol
   fallback_model: GPT-5.6-Terra
@@ -42,46 +42,21 @@ continuation_safe: true
 
 ## Completed items
 
-- Verified PR #17 merged the permanent repository-backed `continue` entry controls into `main`.
-- Verified PR #18 merged CX-R1-002 into `main` with merge commit `d0fe1d23fc1aa19b61958986709d7bc9fd01261b`.
-- Verified there were no open pull requests before activating this governance task.
-- Created the one authorized branch `governance/codex-execution-modes` from latest verified `main`.
-- Added the single canonical `Codex Code/Prompts/EXECUTION_MODE.md` policy.
-- Connected `AGENTS.md` and `CONTINUE_PROTOCOL.md` to manual mode, sleep mode, reviewer handoff, bounded CI waiting, sleep queue, and model fallback.
-- Added factual CX-R1-002 external review and merge records without changing its implementation.
-- Added and registered the GOV-CX-001 prompt, task record, task contract, and checkpoint.
-- Activated GOV-CX-001 as the only task and kept CX-R1-003 unauthorized.
-- Updated the prompt index, prompt registry, existing 1plan continuation extension, and 1plan extension index.
-- Opened exactly one draft PR, #19, to `main`.
-- Added the owner-directed canonical Sol/Terra/Luna model policy to the existing `EXECUTION_MODE.md` authority instead of creating a duplicate policy.
-- Kept detailed model self-behavior in `EXECUTION_MODE.md` only; Prompt 0001 now links to that authority rather than copying its matrix.
-- Re-read the complete repository chain in response to the owner's manual `continue` command.
-- Compared every PR path with latest `origin/main` and preserved owner-authored work.
-- Added the minimal `TASK_STORAGE_AND_HANDOFF_RULES.md` link to the one mode policy and operational handoff path.
-- Standardized model identifiers and the safe stop state to `GPT-5.6-Sol` and `BLOCKED_MODEL_CAPACITY`; `WAIT_FOR_SOL` remains the exact unsafe-fallback action.
-- Defined this active checkpoint as the sole persisted live mode-state record and recorded manual `CONTINUE_MODE` factually.
-- Removed the parallel `STOP_*` aliases and retained one unprefixed top-level result taxonomy in `AGENTS.md`.
-- Corrected the CX-R1-002 review record so it preserves verified scope/check/owner-merge/read-back facts without inventing a formal review event.
-- Added factual changed-file, test, security/scope, and completion evidence in the existing GOV-CX-001 task folder.
-- Verified the official Node `v24.18.0` archive checksum and used pinned Node `24.18.0`, pnpm `10.34.0`, Rust/Cargo `1.97.1`, and Rustfmt `1.9.0-stable`.
-- Ran frozen installation successfully.
-- Ran the full `pnpm ci:check` successfully, including formatting, lint, typecheck, 4 tests, build, release lock, duplicate paths, migration boundary, secrets, Rust formatting, and locked Cargo check.
-- Ran authorization, canonical-path, prompt-registry, active-pointer, link, changed-file secret, model-term, CX-R1-002 merge, and diff validation successfully.
-- Ran the final pinned Prettier check successfully across all 19 PR Markdown paths after creating evidence.
-- Ran final structural validation successfully with 19/19 manifest coverage and no duplicate canonical authority, secret pattern, missing reference, or unauthorized path.
-- Ran the production dependency audit at the high threshold successfully; one existing moderate advisory remains visible.
-- Committed and pushed correction commit `48d2991e980cf28df5228369e808ca17470d76cf` normally to the same authorized branch.
-- Verified PR #19 at that head as draft, `MERGEABLE`, and `CLEAN`, with all six named GitHub checks passing.
-- Armed repository-backed Sleep Mode through the external controller after more than 120 minutes of verifiable owner inactivity, with no explicit hold.
+- Preserved the one authorized task, branch, draft PR, checkpoint, and review handoff.
+- Corrected the owner-inactivity policy to `120` minutes with a truthful `120_to_180` hourly polling window.
+- Verified the policy correction at immutable head `99056182459546113abb313e54762733d43822b4`.
+- Verified `CI Quality and Security` and `Dependency Review` passed on that exact policy-correction head.
+- Verified the latest external-review head `8ff5f07ad2f608a97569e40cfb27b09b9d6b66f7` is open, draft, mergeable, and passed both workflow groups.
+- Reconciled this checkpoint with the reviewed correction and current external-review state.
+- Kept Sleep Mode armed, the next release task unauthorized, and the sleep queue unauthorized.
 
 ## Incomplete items
 
-- The canonical `FIX_REQUIRED` review handoff remains unresolved.
-- Codex must correct only the documented 120-minute threshold and final-head evidence findings on the same branch and PR, then rerun all affected validations.
-- Independent external re-review remains pending after those corrections.
-- Owner approval and merge remain pending after independent review.
-- GOV-CX-001 remains active until external review, owner merge, and main read-back; CX-R1-003 remains unauthorized.
+- Independent external re-review of this evidence-only correction remains pending.
+- Owner approval and merge remain pending after external review.
+- GOV-CX-001 remains active until external review, owner merge, and main read-back.
+- CX-R1-003 remains unauthorized.
 
 ## Exact next action
 
-Codex: remain on task `GOV-CX-001`, branch `governance/codex-execution-modes`, and draft PR `#19`; read the existing `FIX_REQUIRED` handoff; correct only its two documented findings; rerun every affected and required validation; update this same checkpoint and evidence package to the exact final head; push to the same branch; and stop again at `READY_FOR_REVIEW`. Do not merge or start `CX-R1-003`.
+Independent reviewer: inspect the same draft PR #19 after this evidence-only correction, verify the checkpoint, test evidence, completion report, live PR head, and workflow results agree, then update only the existing canonical review handoff. Do not merge or start CX-R1-003.
