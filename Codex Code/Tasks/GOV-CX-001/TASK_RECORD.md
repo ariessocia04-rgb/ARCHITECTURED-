@@ -32,7 +32,7 @@ next_release_task_authorized: false
 - The owner normally sends only `continue` for manual work.
 - The owner sends `sleep mode` to arm unattended scheduled work and review.
 - `deactivate sleep mode` or `stop sleep mode` returns to manual continuation.
-- When the owner is inactive for at least one hour, the external ChatGPT controller may re-arm sleep behavior on its next hourly check.
+- When the owner is inactive for at least 120 minutes, the external ChatGPT controller may re-arm sleep behavior on its next hourly check; because checks are hourly, the truthful activation window is 120 to 180 minutes.
 - ChatGPT independently reviews completed Codex output and writes one canonical reviewer handoff.
 - Codex reads the strict flow and reviewer handoff before correcting code.
 - A five-minute wait may be used only as a bounded CI recheck inside a run; scheduled reviews remain hourly.
