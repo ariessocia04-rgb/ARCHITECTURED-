@@ -25,7 +25,7 @@ Read in this order:
 ```text
 TASK: GOV-CX-001
 TITLE: Canonical Continue, Sleep, Review, and Model Fallback Controls
-CURRENT PROMPT: GOV-CX-001/0002-SLEEP-RUNTIME-REVIEW-AND-REARM-CORRECTION.md
+CURRENT PROMPT: GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md
 TASK RECORD: ../Tasks/GOV-CX-001/TASK_RECORD.md
 TASK CONTRACT: ../Tasks/GOV-CX-001/TASK_CONTRACT.md
 CHECKPOINT: ../Tasks/GOV-CX-001/CHECKPOINT.md
@@ -85,8 +85,7 @@ SLEEP QUEUE AUTHORIZED: NO
 
 ### GOV-CX-001
 
-- Prompt 0001, superseded in part: [Canonical Continue, Sleep, Review, and Model Fallback](GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md)
-- Current Prompt 0002: [Sleep Runtime, Review, and Rearm Correction](GOV-CX-001/0002-SLEEP-RUNTIME-REVIEW-AND-REARM-CORRECTION.md)
+- Current Prompt 0001: [Canonical Continue, Sleep, Review, and Model Fallback](GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md)
 - Task record: `../Tasks/GOV-CX-001/TASK_RECORD.md`
 - Task contract: `../Tasks/GOV-CX-001/TASK_CONTRACT.md`
 - Checkpoint: `../Tasks/GOV-CX-001/CHECKPOINT.md`

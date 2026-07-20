@@ -10,8 +10,7 @@ The registry is append-only. Every prompt has one unique task ID and sequence nu
 | CX-R1-000  |     0004 | FINAL_CONTINUE_AND_FINISH | `Codex Code/Prompts/CX-R1-000/0004-MASTER-SAAS-SYNC-CONTINUE-AND-FINISH.md`         | COMPLETED_TASK_ARCHIVE | 0003 execution instructions          | Completed CX-R1-000 against the synchronized master state; externally reviewed as APPROVED_COMPLETE.                                                                  |
 | CX-R1-001  |     0001 | INITIAL                   | `Codex Code/Prompts/CX-R1-001/0001-WORKSPACE-AND-VERSION-BOOTSTRAP.md`              | COMPLETED_TASK_ARCHIVE | none                                 | Built, reviewed, and merged the exact version-pinned workspace foundation under the canonical implementation root only.                                               |
 | CX-R1-002  |     0001 | INITIAL                   | `Codex Code/Prompts/CX-R1-002/0001-CI-QUALITY-AND-SECURITY-BASELINE.md`             | COMPLETED_TASK_ARCHIVE | none                                 | Implemented, externally reviewed, and merged the Release 1 CI, quality, and security baseline.                                                                        |
-| GOV-CX-001 |     0001 | GOVERNANCE_CONTROL        | `Codex Code/Prompts/GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md` | SUPERSEDED_IN_PART     | none                                 | Established the permanent continue command, initial sleep loop, reviewer handoff, bounded CI waiting, queue gates, and model fallback without product implementation. |
-| GOV-CX-001 |     0002 | REVIEW_FIX                | `Codex Code/Prompts/GOV-CX-001/0002-SLEEP-RUNTIME-REVIEW-AND-REARM-CORRECTION.md`   | CURRENT                | affected executable rules in 0001    | Apply the owner-authored runtime-truth, mode-sensitive review/queue, rearm, actor-lock, and evidence corrections on the same branch and PR.                           |
+| GOV-CX-001 |     0001 | GOVERNANCE_CONTROL        | `Codex Code/Prompts/GOV-CX-001/0001-CANONICAL-CONTINUE-SLEEP-AND-MODEL-FALLBACK.md` | CURRENT                | none                                 | Connect the permanent continue command, sleep-mode loop, reviewer handoff, bounded CI waiting, strict queue gates, and model fallback without product implementation. |
 
 ## Status values
 
@@ -48,7 +47,7 @@ Every new prompt records:
 ```text
 PREVIOUS RELEASE TASK: CX-R1-002 = APPROVED_COMPLETE
 CURRENT TASK: GOV-CX-001
-CURRENT PROMPT: 0002
+CURRENT PROMPT: 0001
 TASK TITLE: Canonical Continue, Sleep, Review, and Model Fallback Controls
 WORK BRANCH: governance/codex-execution-modes
 CANONICAL IMPLEMENTATION ROOT: Codex Code/Implementation/
@@ -70,12 +69,11 @@ SLEEP QUEUE: NOT AUTHORIZED
 - `Codex Code/Tasks/CX-R1-002/MERGE_RECORD.md`
 - `Codex Code/Tasks/GOV-CX-001/TASK_RECORD.md`
 - `Codex Code/Tasks/GOV-CX-001/TASK_CONTRACT.md`
-- `Codex Code/Reviews/GOV-CX-001/REVIEW_HANDOFF.md`
 
 ## Sequence rule
 
-- Prompt 0001 remains immutable history and is superseded only for the executable rules identified by Prompt 0002.
-- Prompt 0002 is the current owner-authorized review-fix prompt. A later material executable correction requires sequence `0003` and another recorded contract amendment.
+- The next prompt for GOV-CX-001, only when a material correction is required, is `0002`.
+- Prompt 0001 remains the current pre-acceptance draft while its own checkpoint is `READY_FOR_CODEX_VALIDATION`; the exact validation corrections required by that checkpoint stay in 0001. After the first `READY_FOR_REVIEW` handoff, any material executable correction requires prompt 0002 and a contract amendment.
 - Do not reuse or overwrite any registered prompt.
 - A correction does not authorize another task.
 - A mode change or model switch never creates a new prompt by itself unless the executable repository instruction materially changes.

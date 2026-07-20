@@ -4,34 +4,17 @@
 task_id: GOV-CX-001
 execution_mode: CONTINUE_MODE
 mode_state: MANUAL_OWNER_ACTIVE
-mode_changed_at_utc: 2026-07-20T05:18:11Z
+mode_changed_at_utc: 2026-07-20T02:06:29Z
 mode_change_source: owner_command
-last_owner_activity_at_utc: 2026-07-20T05:18:11Z
+last_owner_activity_at_utc: 2026-07-20T02:06:29Z
 explicit_hold: false
 sleep_armed: false
-auto_sleep_rearm_eligible_after_utc: 2026-07-20T06:18:11Z
-auto_sleep_rearm_status: NOT_ELIGIBLE
-owner_final_review_requested: false
-sleep_session_id: NOT_ACTIVE
-sleep_session_started_at_utc: NOT_ACTIVE
-sleep_session_completed_tasks: []
-sleep_session_pending_owner_review_tasks: []
-latest_automated_reviewed_sha: UNVERIFIED
-latest_manual_reviewed_sha: NOT_REVIEWED
-automation_coordination_mode: HOURLY_REPOSITORY_POLLING
-webhook_completion_trigger: UNVERIFIED
-active_actor: CODEX_WORKER
-actor_started_at_utc: 2026-07-20T05:18:11Z
-actor_lock_base_sha: 2ac4ff631d5bff4912e3fb03c39ac3ff9ec3f98a
-automation_phase: WORKING
-review_target_sha: 2ac4ff631d5bff4912e3fb03c39ac3ff9ec3f98a
-checkpoint_status: WORKING
+auto_sleep_rearm_eligible_after_utc: 2026-07-20T03:06:29Z
+checkpoint_status: READY_FOR_REVIEW
 base_branch: main
 base_sha: e93cbe519ea2cb9d913ce17b0bd9732836a63d9f
 branch: governance/codex-execution-modes
 starting_head_sha: 1b984f6536b2b9d03254dba98728b2d57ab653ca
-latest_prompt_sequence: 0002
-latest_prompt_path: Codex Code/Prompts/GOV-CX-001/0002-SLEEP-RUNTIME-REVIEW-AND-REARM-CORRECTION.md
 validated_correction_head_sha: 48d2991e980cf28df5228369e808ca17470d76cf
 pull_request: https://github.com/ariessocia04-rgb/ARCHITECTURED-/pull/19
 pull_request_state: OPEN_DRAFT
@@ -46,7 +29,7 @@ model_policy:
   runtime_availability: UNVERIFIED
 selected_model: NOT_EXPOSED_BY_ENVIRONMENT
 fallback_model_used: NOT_VERIFIABLE
-review_handoff_state: FIX_REQUIRED
+review_handoff_state: NO_REVIEW_HANDOFF
 local_validation_status: PASS
 previous_release_task: CX-R1-002
 previous_release_task_status: APPROVED_COMPLETE
@@ -92,12 +75,10 @@ continuation_safe: true
 
 ## Incomplete items
 
-- Apply the exact owner-authored `FIX_REQUIRED` Findings 1-7 under Prompt 0002.
-- Re-run every affected and contract-required validation and synchronize the evidence package.
-- Release the worker lock and return the same PR to independent review.
+- Independent external review and any one canonical `REVIEW_HANDOFF.md` state remain pending.
 - Owner approval and merge remain pending after independent review.
 - GOV-CX-001 remains active until external review, owner merge, and main read-back; CX-R1-003 remains unauthorized.
 
 ## Exact next action
 
-Codex worker: push this expected-head lock normally, implement only Prompt 0002 and the existing handoff findings, validate, release ownership, and return the same draft PR #19 to independent review. Do not merge or start CX-R1-003.
+Independent reviewer: inspect the same draft PR #19 and write only the one canonical `Codex Code/Reviews/GOV-CX-001/REVIEW_HANDOFF.md` when a factual review state or finding exists. Codex must stop before merge and must not start CX-R1-003.
