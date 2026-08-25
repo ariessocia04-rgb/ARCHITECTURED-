@@ -1,0 +1,8 @@
+node_modules/
+.next/
+data/db.json
+*.log
+status.txt
+pgstatus.txt
+.env.local
+.env*.local

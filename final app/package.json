@@ -1,0 +1,24 @@
+{
+  "name": "final-app-repair-saas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Connected Repair Operations Pilot - ready-to-run implementation of the ARCHITECTURED Technician Repair SaaS Release 1 MVP plan.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.1.6",
+    "pg": "^8.23.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}
